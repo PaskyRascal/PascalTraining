@@ -40,7 +40,7 @@
 
 4. Installe Microsoft SQL Server Management Studio (SSMS) (gratuit et optionnel) (https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16). Fais défiler la page vers le bas et tu verras "Download SSMS". Le téléchargement se trouve directement en dessous.
 
-5. GitHub Copilot ($10 / mois). Une fois que tu as installé VS 2022, tu devrais voir GitHub Copilot en haut à droite. Tu auras des options en cliquant dessus.
+5. GitHub Copilot ($10 / mois). Une fois que tu as installé VS 2022, tu devrais voir GitHub Copilot en haut à droite. Tu auras des options en cliquant dessus. N'essaie pas de faire sans cet outil. Tu apprendras beaucoup plus vite avec cet outil en lui posant des questions sur comment faire certaines choses et en lui demandant d'expliquer ce qui se passe dans le code. De plus, il peut t'aider à trouver certains bugs et te suggérer comment les corriger. Il peut aussi écrire la majorité de ton code une fois que tu sais comment lui demander exactement ce que tu veux sous forme de texte.
 
 6. ChatGPT, version gratuite ou à $20 / mois pour cinq fois plus de requêtes (https://openai.com). Clique sur ChatGPT, puis sur "Start now", et enfin sur "Stay logged out". Tu verras la version mini de ChatGPT 4, qui peut être utilisée, mais sans sauvegarde des discussions. Pour avoir une version plus avancée qui sauvegardera tes discussions, il faudra créer un compte et choisir la version complète de ChatGPT 4. La version mini pourrait te suffire pour l'instant. Il n'y a pas d'urgence.
 
