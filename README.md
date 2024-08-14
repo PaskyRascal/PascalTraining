@@ -4,7 +4,7 @@
 
 ### Le premier projet est PascalTraining, qui est tout simplement une application Blazor Web App, combinant une application web avec Frontend et un serveur Backend.
 
-### Cette application sera disponible en tout temps et sera de plus en plus complète au fur et à mesure que j'aurai le temps et l'énergie de l'améliorer.
+### Cette application sera disponible en tout temps et deviendra de plus en plus complète au fur et à mesure que j'aurai le temps et l'énergie de l'améliorer. Voici l'adresse web : (https://pascaltraining.azurewebsites.net/). Pour accéder au code sauvegardé sur GitHub et consulter les ressources utilisées dans Azure, il faudra que je t'y donne accès une fois que tu t'es enregistré sur GitHub et Azure, comme expliqué plus en détail ci-dessous.
 
 ### Mon objectif avec tout cela est que mes connaissances ne disparaissent pas sans que quelqu'un en profite. Au début, tu trouveras peut-être qu'il y a beaucoup d'informations qui semblent compliquées. Mais il s'agit simplement d'apprendre le vocabulaire, et tout deviendra compréhensible et facile à suivre. De mon côté, j'ai tout le temps nécessaire, sachant qu'il y aura des moments où je ne serai pas très efficace, étant donné ma condition. Mais, j'encourage Bobby et Danielle à t'aider dans ta démarche. Il se peut qu'ils soient en mesure de contribuer à cette application et de faire en sorte qu'elle devienne une référence pour tous les participants au projet.
 
