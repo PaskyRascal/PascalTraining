@@ -36,7 +36,7 @@
 
 2. Crée-toi un compte Azure (gratuit) (https://portal.azure.com/). Ils te demanderont de créer un compte directement, car il est impossible d'accéder à ce portail sans avoir un compte. Tu peux aussi commencer par le site (https://azure.com/), où tu trouveras un bouton (Sign in) qui te dirigera vers une page de connexion ou de création de compte.
 
-3. Installe Microsoft Visual Studio 2022 Community (gratuit) (https://visualstudio.microsoft.com/downloads/). Clique sur le bouton "Free Download" sous Community. Ici, je pars du principe que Danielle t'a déjà fait installer VS Code, qui peut accomplir tout ce que je vais te présenter en termes d'utilisation et d'information avec VS 2022. Je laisse Danielle te montrer VS Code; moi, je vais me concentrer sur VS 2022.
+3. Installe Microsoft Visual Studio 2022 Community (gratuit) (https://visualstudio.microsoft.com/downloads/). Clique sur le bouton "Free Download" sous Community. Ici, je pars du principe que Danielle t'a déjà fait installer VS Code, qui peut accomplir tout ce que je vais te présenter en termes d'utilisation et d'information avec VS 2022. Je laisse Danielle te montrer VS Code; moi, je vais me concentrer sur VS 2022. Pour certaines tâches, il est préférable d'utiliser VS Code, et pour d'autres, VS 2022. Par exemple, ce document a été produit en utilisant VS Code, qui est mieux adapté pour la production de documents de type (.md).
 
 4. Installe Microsoft SQL Server Management Studio (SSMS) (gratuit et optionnel) (https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16). Fais défiler la page vers le bas et tu verras "Download SSMS". Le téléchargement se trouve directement en dessous.
 
