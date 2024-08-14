@@ -1,2 +1,47 @@
-Bonjour Pascal
+# Bonjour Pascal et aux autres intéressés (Bobby, Danielle, etc.),
+
+### Voici le GitHub (https://github.com/CharlesNathalie) où se trouveront plusieurs petits projets qui te guideront dans diverses tâches liées à la production de différents types d'applications (Backend et Frontend).
+
+### Le premier projet est PascalTraining, qui est tout simplement une application Blazor Web App, combinant une application web avec Frontend et un serveur Backend.
+
+### Cette application sera disponible en tout temps et sera de plus en plus complète au fur et à mesure que j'aurai le temps et l'énergie de l'améliorer.
+
+### Mon objectif avec tout cela est que mes connaissances ne disparaissent pas sans que quelqu'un en profite. Au début, tu trouveras peut-être qu'il y a beaucoup d'informations qui semblent compliquées. Mais il s'agit simplement d'apprendre le vocabulaire, et tout deviendra compréhensible et facile à suivre. De mon côté, j'ai tout le temps nécessaire, sachant qu'il y aura des moments où je ne serai pas très efficace, étant donné ma condition. Mais, j'encourage Bobby et Danielle à t'aider dans ta démarche. Il se peut qu'ils soient en mesure de contribuer à cette application et de faire en sorte qu'elle devienne une référence pour tous les participants au projet.
+
+### L'objectif principal est d'utiliser le développement d'applications de divers genres pour apprendre plus rapidement et davantage sur des sujets qui ne te seraient pas présentés autrement. L'apprentissage est plus rapide et permanent en travaillant sur des projets un peu simples mais bien réels. Le but n'est pas de vouloir vendre le produit final, mais plutôt de s'amuser en apprenant.
+
+## Voici quatre projets qui pourraient t'intéresser
+
+### Boulette — âge cible : 12-99 ans
+
+#### Ce projet se jouerait comme le jeu de boulette en papier. Ce site web et/ou application permettrait simplement d'entrer le nom des équipes (2 ou plus) et de recevoir les mots de chaque personne participante. Ces mots seraient ensuite utilisés pour les afficher, soit après un petit calcul simple ou autre chose. Il faudra décider de plusieurs aspects comme : est-ce que ça se joue sur un seul téléphone ou chacun avec son propre téléphone, etc.
+
+### CalculoMath --- âge cible : 8-14 ans
+
+#### Une reproduction de l’application de calcul rapide utilisée lorsque les enfants étaient plus jeunes : addition, soustraction, multiplication et division, avec sauvegarde des temps, nombre de calculs, bonnes et mauvaises réponses. Il faudra également décider de plusieurs aspects ici, comme les paramètres, et choisir entre une version desktop, mobile, ou les deux etc.
+
+### BrainSpeed --- âge cible : 12-99 ans
+
+#### Une application qui poserait des questions sur divers sujets (culture, musique, histoire, politique, etc.) pour différents pays et provinces avec des choix multiples. L’utilisateur répondrait aussi rapidement que possible, et l’application enregistrerait le temps, ainsi que les bonnes et mauvaises réponses. Cette application pourrait ressembler à des outils comme Duolingo, que ta mère utilise pour apprendre l'espagnol, ou à d'autres applications que je n'ai peut-être pas vues, mais dont vous êtes au courant. L'importance ici est de sauvegarder les performances des utilisateurs afin qu'ils puissent se comparer avec d'autres personnes de leur âge, sexe, région, etc. J'ai déjà fait quelques tests pour vérifier si Chat GPT-4 pourrait générer tout ce dont nous avons besoin pour formuler des questions, créer plusieurs choix multiples avec une bonne réponse, et oui, c'est possible.
+
+### HVACApp — ciblée pour employés et employeurs HVAC
+
+#### Une application destinée aux employés et employeurs du secteur HVAC. L'objectif de cette application serait de permettre aux techniciens de ne pas avoir à écrire un seul mot lors de leur travail. Le développement de cette application serait un bon exercice pour apprendre à développer une application en utilisant tous les outils d'intelligence artificielle (IA) possibles, pour se familiariser avec les nouvelles technologies IA et comprendre comment créer des applications avec cette technologie qui sera omniprésente dans les années à venir.
+
+#### Les squelettes de ces projets seront créés prochainement et sauvegardés sur GitHub en tant que projets privés, utilisant des applications Blazor et des bases de données sur Azure. Le seul projet qui sera public est celui-ci, qui sera développé au fur et à mesure de notre progression.
+
+### Cela dit, il y a des outils de base dont tu vas avoir besoin pour pouvoir consulter les projets et participer à leur développement.
+
+1. Crée-toi un compte GitHub (gratuit) (https://github.com/). Il y a un bouton en haut à droite (sign up). Suis simplement les instructions.
+
+2. Crée-toi un compte Azure (gratuit) (https://portal.azure.com/). Ils te demanderont de créer un compte directement, car il est impossible d'accéder à ce portail sans avoir un compte. Tu peux aussi commencer par le site (https://azure.com/), où tu trouveras un bouton (Sign in) qui te dirigera vers une page de connexion ou de création de compte.
+
+3. Installe Microsoft Visual Studio 2022 Community (gratuit) (https://visualstudio.microsoft.com/downloads/). Clique sur le bouton "Free Download" sous Community.
+
+4. Installe Microsoft SQL Server Management Studio (SSMS) (gratuit et optionnel) (https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16). Fais défiler la page vers le bas et tu verras "Download SSMS". Le téléchargement se trouve directement en dessous.
+
+5. GitHub Copilot ($10 / mois). Une fois que tu as installé VS 2022, tu devrais voir GitHub Copilot en haut à droite. Tu auras des options en cliquant dessus.
+
+6. ChatGPT, version gratuite ou à $20 / mois pour cinq fois plus de requêtes (https://openai.com). Clique sur ChatGPT, puis sur "Start now", et enfin sur "Stay logged out". Tu verras la version mini de ChatGPT 4, qui peut être utilisée, mais sans sauvegarde des discussions. Pour avoir une version plus avancée qui sauvegardera tes discussions, il faudra créer un compte et choisir la version complète de ChatGPT 4. La version mini pourrait te suffire pour l'instant. Il n'y a pas d'urgence.
+
 
