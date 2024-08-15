@@ -1,4 +1,5 @@
-﻿@page "/"
+﻿@page "/azuredbsetup"
+
 @using Microsoft.Extensions.Localization
 @using System.Globalization;
 
@@ -6,7 +7,7 @@
 
 @inject IStringLocalizer<SharedResource> Localizer
 
-<PageTitle>@Localizer["HomePageTitle"]</PageTitle>
+<PageTitle>@Localizer["AzureDBSetupPageTitle"]</PageTitle>
 
 @code {
     private string currentCulture = CultureInfo.CurrentCulture.Name;
@@ -14,9 +15,9 @@
 
 @if (currentCulture == "fr-CA")
 {
-    <Home_fr />
+    <AzureDBSetup_fr />
 }
 else
 {
-    <Home_en />
+    <AzureDBSetup_en />
 }
