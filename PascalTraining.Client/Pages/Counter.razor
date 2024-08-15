@@ -1,13 +1,23 @@
 ﻿@page "/counter"
+
+@using Microsoft.Extensions.Localization
+@using PascalTraining.Client
+
 @rendermode InteractiveAuto
 
-<PageTitle>Counter</PageTitle>
+@inject IStringLocalizer<SharedClientResource> Localizer
 
-<h1>Counter</h1>
+<PageTitle>@Localizer["Title"]</PageTitle>
+
+<h1>@Localizer["Hello"]</h1>
+<PageTitle>@Localizer["Counter"]</PageTitle>
+
+<h1>@Localizer["Counter"]</h1>
 
 <p role="status">Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
 
 @code {
     private int currentCount = 0;

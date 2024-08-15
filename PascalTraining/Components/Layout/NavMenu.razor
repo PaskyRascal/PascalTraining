@@ -1,6 +1,20 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+@inject IStringLocalizer<SharedResource> Localizer
+@inject NavigationManager Navigation
+
+<div class="top-row ps-5 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">PascalTraining</a>
+        <div>
+            <a class="navbar-brand" href="">Pascal Training</a>
+            <br />
+            <button class="btn btn-primary btn-sm" @onclick='() => SetLanguage("fr", "CA")'>fr</button>
+            <button class="btn btn-primary btn-sm" @onclick='() => SetLanguage("en", "CA")'>en</button>
+            <br />
+        </div>
     </div>
 </div>
 
@@ -10,21 +24,26 @@
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Readme.md
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="azuredbsetup">
+                Azure Database Setup
             </NavLink>
         </div>
     </nav>
 </div>
 
+
+
+@code {
+    private void SetLanguage(string culture, string region)
+    {
+        var defaultCulture = new CultureInfo($"{culture}-{region}");
+        CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
+        Navigation.NavigateTo(Navigation.Uri, forceLoad: true); // Reload the current page
+    }
+}
