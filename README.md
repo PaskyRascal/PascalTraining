@@ -1,5 +1,7 @@
 # Bonjour Pascal et aux autres intéressés (Bobby, Danielle, etc.),
 
+#### NOTE: Afin de ne pas perdre cette fenêtre lorsque tu cliquera sur un lien, tu peux appuyer sur Ctrl avant de cliqué. Je pensais qu'on mettant target="_blank" au tag a aurait fait l'affaire ... mais non.
+
 ### Voici le GitHub <a href="https://github.com/CharlesNathalie/" target="_blank">https://github.com/CharlesNathalie/</a> où se trouveront plusieurs petits projets qui te guideront dans diverses tâches liées à la production de différents types d'applications (Backend et Frontend).
 
 ### Le premier projet est PascalTraining, qui est tout simplement une application Blazor Web App, combinant une application web avec Frontend et un serveur Backend.
