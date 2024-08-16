@@ -120,7 +120,7 @@
   <data name="HomePageTitle" xml:space="preserve">
     <value>Page Maison</value>
   </data>
-  <data name="AzureDBSetupTitle" xml:space="preserve">
+  <data name="AzureDBSetupPageTitle" xml:space="preserve">
     <value>Mise en place d'une base de données Azure</value>
   </data>
 </root>
