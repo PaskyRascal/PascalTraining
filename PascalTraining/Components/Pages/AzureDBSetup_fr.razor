@@ -12,18 +12,433 @@
 <p class="h2 text-center">Mise en place d'une base de données Azure</p>
 <p>&nbsp;</p>
 <p class="h4">
-    Cette page indique tous les étapes nécessaire pour créer 
-    une base de données <strong>Azure SQL Database</strong> sur Azure contenant 
-    les tables nécéssaire dont le dévelopeur aura de besoin au niveau du 
-    Backend. La base de données pourra alors être utiliser pour sauvegarder
-    l'information nécéssaire pour s'enregistrer (Register) et se connecter (Login).
+    Cette page décrit toutes les étapes nécessaires pour créer
+    une base de données <strong>Azure SQL Database</strong> sur Azure, contenant
+    les tables dont le développeur aura besoin au niveau du
+    backend. La base de données pourra alors être utilisée pour sauvegarder
+    les informations nécessaires pour l'enregistrement (Register) et la connexion (Login).
 </p>
 <p>&nbsp;</p>
 <p class="h4">
     Ouvrir <a href="https://portal.azure.com" target="_blank">https://portal.azure.com</a>
 </p>
-<p class="border-3">
-    <img src="/images/selectazuresql.png" />
+<p>&nbsp;</p>
+<p class="h4">
+    Il faut d'abord et avant tout avoir un compte sur Azure.
+    Une fois le compte créé, vous devriez avoir quelque
+    chose comme <strong>Subscription 1</strong>. Tous les services
+    Azure doivent résider dans une souscription. Ensuite, il faut créer
+    un groupe de ressources (Resource Group) qui contiendra tous les services
+    Azure qui y sont associés.
 </p>
-<br />
-<p>bojour</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Assurez-vous d'avoir un Resource Group créé. Pour ce faire, il suffit de commencer à écrire
+    <strong>Resource Groups</strong> dans la boîte de recherche en haut, puis de choisir Resource Group.
+    Les Resource Groups dans Azure servent à organiser et gérer les ressources Azure de manière logique.
+</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createresourcegroup.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cliquez sur <strong>+ Create</strong> pour créer un nouveau Resource Group.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createresourcegroupdetail.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cliquez sur <strong>Next: Tags</strong> en bas de la page.
+    Vous pouvez laisser ces champs d'information vides, puis cliquer sur <strong>Next: Review + create &gt;</strong>.
+    Ensuite, cliquez sur <strong>Create</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Nous pouvons alors créer la base de données et la placer
+    dans ce nouveau <strong>Resource Group -- PatateResource</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Il suffit de commencer à écrire <strong>Azure SQL</strong> dans la
+    boîte de recherche en haut, puis de choisir Azure SQL.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/selectazuresql.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cliquez sur <strong>+ Create</strong> pour créer une nouvelle base de données Azure SQL.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createazuredb.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Vous pouvez alors commencer la création de <strong>SQL databases</strong>
+    en cliquant sur <strong>Create</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Il faudra choisir une souscription, puis sélectionner votre
+    groupe de ressources <strong>PatateResource</strong> dans ce cas.
+    Si un serveur (<strong>Server</strong>) n'existe pas, il faudra en créer un.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/AzureDBCreateDetail.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Il est possible de placer plusieurs bases de données sur un même serveur.
+    Pour créer un serveur, cliquez sur <strong>Create new</strong> sous "Select a server".
+</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/SQLServerCreate.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Pour les mots de passe, assurez-vous qu'ils sont bien gardés à l'abri de toute personne malveillante.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Nous revenons maintenant à la création de la base de données. Vous verrez "Project details" en haut.
+</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/CreateAzureDBDev.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Choisissez "Development" pour Workload Environment.
+    Ensuite, sélectionnez <strong>Compute + storage</strong>.
+    Cliquez sur <strong>Configure database</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Le Service Tier est l'endroit où vous déterminez la taille de votre
+    base de données et la puissance de l'ordinateur sur lequel la base de données sera hébergée.
+</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/ServiceTier.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Pour le moment, nous allons choisir quelque chose de très petit.
+    Ouvrez les options dans <strong>Service tier</strong> et choisissez
+    <strong>Basic</strong>, ce qui nous donnera une base de données de 2 Go.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/BasicDB.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Ensuite, cliquez sur <strong>Next: Networking &gt;</strong>. Aucun changement n'est nécessaire.
+    Ensuite, cliquez sur <strong>Next: Security &gt;</strong>. Aucun changement.
+    Ensuite, cliquez sur <strong>Next: Additional Settings &gt;</strong>. Aucun changement.
+    Ensuite, cliquez sur <strong>Next: Tags &gt;</strong>. Aucun changement.
+    Enfin, cliquez sur <strong>Next: Review + create &gt;</strong>. Aucun changement.
+    Ensuite, cliquez sur <strong>Create</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    La base de données est maintenant en cours de création.
+    Cela peut prendre quelques minutes. Vous verrez <strong>Deployment in progress</strong>.
+    Une fois terminé, vous pouvez cliquer sur <strong>Go to Resources</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Sur cette page, l'information la plus importante, et celle dont vous aurez besoin,
+    est la <strong>Connection String</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Il est maintenant possible d'utiliser certains outils pour voir votre nouvelle base de données.
+    Utilisez <strong>Microsoft SQL Server Management Studio (SSMS)</strong>.
+    Ouvrez SSMS en cliquant sur le bouton Windows, puis commencez à écrire "Microsoft SQL Server..."
+    Cela ouvrira l'application.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/OpenDBInSSMS.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Vous pouvez alors copier le <strong>Server name</strong> et la <strong>Connection String</strong>
+    dans SSMS, comme indiqué sur l'image ci-dessus. Ensuite, cliquez sur <strong>Connect</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Vous verrez probablement une erreur du type indiqué ci-dessous. Comment résoudre cette erreur ? Il faut
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/ErrorAccessingAzureDB.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Pour résoudre cette erreur, il faut configurer le pare-feu du serveur (<strong>Set server firewall</strong>).
+    Mais, pas à partir de <strong>Set server firewall</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/NotSelectingSetFirewall.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Il faut plutôt cliquer sur <strong>Open in Visual Studio</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/OpenInVisualStudio.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Vous verrez un lien <strong>Configure your firewall</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/ConfigureYourFirewall.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Il faudra enlever le check box de <strong>Deny public network access</strong>. 
+    Dans ton cas l'IP sera certainement différent. Donne toi un rule name qui fait du
+    sens et copy ton IP dans les text box Start IP et End IP. 
+    Finalement clique sur <strong>Save</strong>. Il se peut que tu doivent cliqué
+    plus d'une fois pour que ca marche. Dans mon cas, la première fois, ça ma donné
+    une erreure. La deuxième fois ça marché.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/FirewallSettings.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Nous pouvons alors revenir à SSMS et cliqué sur <strong>Connect</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/SSMSDePatateDB.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Il est aussi possible de connecter à la base de données en utilisant VS 2022 ou VS Code.
+    Pour se faire il faut encore une fois utiliser le bon server SQL, le nom d'utilisateur 
+    et mot de passe appropriés. Voici comment se connecter à la base de données en utilisant 
+    VS 2022. Il faut ouvrir la fenêtre <strong>SQL Server Object Explorer</strong> en cliquant
+    sur le menu View -> SQL Server Object Explorer.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/AddSQLServerInVS.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Il faut entré les paramètres correctement (voir image ci-dessous) et cliqué sur <strong>Connect</strong>.
+</p>
+<p>nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/ConnectToDBInVS.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/DBViewInVS.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    À ce stade, il est possible de lire la base de données à partir de SSMS et de Visual Studio. 
+    Comment fait-on pour mettre en place toutes les tables nécessaires pour un bon fonctionnement de 
+    l'authentification (Login, Register, Change Password, etc.) ? Il faut environ 8 tables que Microsoft 
+    va nous aider à mettre en place.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/ShowAspNetTablesInSSMS.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Une manière est de créer un projet <strong>Blazor Web App</strong>. Pour ce faire, il faut démarrer Visual Studio 2022. 
+    Une manière rapide est d'appuyer sur le bouton Windows et de commencer à écrire <strong>Visual Studio...</strong>.
+    Vous devriez voir l'application <strong>Visual Studio 2022</strong>. Une fois dans Visual Studio 2022, vous verrez un écran
+    comme ci-dessous.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/VS2022StartUpWindow.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cliquez sur <strong>Create a new project</strong>. Une autre fenêtre va s'ouvrir avec plusieurs choix de 
+    projets. Dans la fenêtre de recherche, vous pouvez commencer à écrire <strong>Blazor Web</strong>. 
+    Cela vous montrera les projets Blazor. En cliquant sur <strong>Next</strong>, une autre fenêtre vous 
+    demandera des paramètres plus spécifiques au projet.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/CreateBlazorWebApp.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    C'est ici que la magie va opérer pour mettre en place les tables appropriées dans la base de données. 
+    Ici, le nom et l'emplacement où vous sauvegardez votre projet ne sont pas importants puisque ce n'est 
+    qu'un projet temporaire. Un projet qui sera seulement utilisé pour la création des tables
+    d'authentification dans la base de données. Cliquez sur <strong>Next</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/ConfigureNewVSProject.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cette fenêtre et ses paramètres sont importants puisqu'ils seront déterminants pour
+    la création de toutes les pages web et la configuration de l'authentification. Il est important d'utiliser
+    <strong>Individual User Accounts</strong> pour l'authentification. Cliquez sur <strong>Create</strong>.
+    En cliquant sur Create, un projet <strong>Blazor Web App</strong> est créé avec tout le nécessaire 
+    en ce qui concerne l'authentification.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/DetailInSettingUpBlazorWebApp.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Voici quelques fichiers que Microsoft produit pour nous automatiquement. Cela comprend pratiquement 
+    tout ce dont nous avons besoin pour l'authentification, y compris l'authentification à deux facteurs. 
+    Mais ce n'est pas pour cela que nous avons créé le projet. Ce projet contient le nécessaire pour l'ajout des
+    7 tables commençant par <strong>AspNet</strong> dans la base de données.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/BlazorWebAppAutoFiles.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant, il faut changer le fichier appsettings.json. Nous allons ouvrir le fichier appsettings.json
+    afin de changer le DefaultConnection par la chaîne de connexion de la base de données que nous avons créée
+    sur Azure. Dans le nouveau texte de DefaultConnection, vous verrez {your_password} sur la ligne de 
+    DefaultConnection. Il faut remplacer cela par votre mot de passe que vous avez mis pour avoir accès 
+    à la base de données. N'oubliez pas d'enlever les crochets aussi.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/ConnectionString.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    On y arrive. Une fois tout cela mis en place, nous pouvons maintenant exécuter les commandes. 
+    Maintenant, il faut ouvrir votre nouveau projet si ce n'est pas déjà fait. Il faut ouvrir
+    la fenêtre <strong>Package Manager Console</strong> en passant par le menu Tools->NuGet Package Manager
+    et puis cliquez sur Package Manager Console. Dans cette nouvelle fenêtre ouverte, il faudra écrire 2 commandes :
+    Add-Migration MigrationName et Update-Database. 
+</p>
+<p>&nbsp;</p>
+<p>
+    Voici la commande
+</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/MigrationCommand.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    La commande devrait donner quelque chose comme ci-dessous.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/MigrationCommandAfter.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant la commande Update-Database.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/UpdateDatabase.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Qui devrait donner quelque chose comme ci-dessous.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/UpdateDatabaseDone.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    On a maintenant toutes les tables nécessaires pour avoir l'authentification dans nos applications futures.
+    Pour voir les nouvelles tables, tu peux utiliser SSMS ou VS et ouvrir la base de données.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Si tu ne veux pas garder la base de données dans Azure, il est possible d'effacer tous les services 
+    que nous n'utilisons pas. Pour effacer la base de données, il suffit d'aller sur Azure et de cliquer
+    sur la base de données. Il y aura un bouton Delete en haut.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    fin
+    <br /><br /><br /><br />
+</p>
