@@ -1,0 +1,453 @@
+﻿@page "/createblazorwebapp_en"
+
+@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+<PageTitle>Création d'une application Blazor Web App</PageTitle>
+
+<p class="h2 text-center">Création d'une application Blazor Web App</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Il faut démarrer Visual Studio 2022.
+    Une manière rapide est d'appuyer sur le bouton Windows et de commencer à écrire <strong>Visual Studio...</strong>.
+    Vous devriez voir l'application <strong>Visual Studio 2022</strong>. Une fois dans Visual Studio 2022, vous verrez un écran
+    comme celui-ci.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/VS2022StartUpWindow.png" alt="Fenêtre de démarrage de Visual Studio 2022" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cliquez sur <strong>Create a new project</strong>. Une autre fenêtre va s'ouvrir avec plusieurs choix de
+    projets. Dans la fenêtre de recherche, vous pouvez commencer à écrire <strong>Blazor Web</strong>.
+    Cela vous montrera les projets Blazor. En cliquant sur <strong>Next</strong>, une autre fenêtre vous
+    demandera des paramètres plus spécifiques au projet.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/CreateBlazorWebApp.png" alt="Fenêtre de création de projet Blazor Web App" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant que nos bases de données sont déjà sur Azure et qu'elles ont les tables appropriées pour
+    l'authentification, la nomenclature et l'emplacement où sauvegarder le prochain projet Blazor Web App
+    sont cruciaux, car ce nom nous suivra tout au long du développement de la nouvelle application.
+    Cette nouvelle application portera le même nom dans GitHub et Azure. Il est donc important que ce nom
+    soit unique et indique clairement le type d'application. À l'avenir, d'autres applications pourraient
+    faire partie de notre GitHub et Azure. Voir l'image ci-dessous. Ici, nous créons un projet nommé
+    BouletteBlazorWebApp qui sera sauvegardé dans le répertoire C:\_PascalTraining\. Nous avons aussi
+    choisi de placer la solution dans le même répertoire que le projet. Une fois les paramètres choisis,
+    nous appuyons sur <strong>Next</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/ConfigureNewVSProject.png" alt="Configuration d'un nouveau projet Visual Studio" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cette fenêtre et ses paramètres sont importants car ils seront déterminants pour
+    la création de toutes les pages web et la configuration de l'authentification. Il est essentiel d'utiliser
+    <strong>Individual User Accounts</strong> pour l'authentification. Cliquez sur <strong>Create</strong>.
+    En cliquant sur Create, un projet <strong>Blazor Web App</strong> est créé avec tout le nécessaire
+    en ce qui concerne l'authentification.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    <strong>Note :</strong> Microsoft a mis beaucoup d'efforts dans le développement de l'authentification.
+    Actuellement, Microsoft pousse beaucoup Microsoft Authenticator, qui permet d'avoir de nombreuses options
+    pour l'authentification, y compris l'authentification à deux facteurs. Bien qu'il soit avantageux de
+    suivre les recommandations de Microsoft pour l'authentification en utilisant les dernières technologies,
+    je trouve cela encore un peu trop complexe et trop opaque pour apprendre les bases de l'authentification.
+    Un jour, vous serez en mesure d'utiliser les autres outils que Microsoft offre pour l'authentification.
+    Mais pour l'instant, je vous recommande de suivre les étapes suivantes pour l'authentification.
+    Cela vous donnera une bonne base pour comprendre l'authentification.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/DetailInSettingUpBlazorWebApp.png" alt="Détails de la configuration du Blazor Web App" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Microsoft a automatiquement créé tous les fichiers nécessaires pour bien démarrer notre
+    nouvelle application Blazor Web App. Cette nouvelle application contient une structure de base pour le Backend et
+    le Frontend. La structure du Backend contient néanmoins tous les fichiers pour permettre à un utilisateur de
+    s'enregistrer, se connecter, changer son mot de passe, etc.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/NouveauProjet.png" alt="Nouvelle application Blazor Web App" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Voici quelques fichiers que Microsoft produit pour nous automatiquement. Cela comprend pratiquement
+    tout ce dont nous avons besoin pour l'authentification, y compris l'authentification à deux facteurs.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/BlazorWebAppAutoFiles.png" alt="Fichiers générés automatiquement pour le Blazor Web App" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Une chose très importante lorsque l'on met notre code sur GitHub est de toujours cacher les informations
+    telles que les chaînes de connexion, les mots de passe, les noms d'utilisateur, etc. Voici une manière de s'assurer que ces
+    informations restent cachées et ne seront pas transférées sur GitHub ou Azure. Il faut créer un fichier
+    qui contiendra ces informations. Visual Studio 2022 nous permet de faire cela en créant un document
+    <code>secrets.json</code>. Pour ce faire, faites un clic droit sur le nom de l'application,
+    dans ce cas, c'est BouletteBlazorWebApp, et choisissez <strong>Manage User Secrets</strong>.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Mais où ce fichier <code>secrets.json</code> est-il sauvegardé ? Pour le savoir, vous pouvez mettre votre
+    pointeur de souris sur l'onglet avec le nom du fichier. Comme vous pouvez le constater, le nom n'est pas
+    très convivial. Voici une manière rapide de lui donner un nom plus approprié. Il faut
+    double-cliquer sur le nom du projet sous Solution Explorer, BouletteBlazorWebApp dans ce cas.
+    Ensuite, il suffit de changer le texte à l'intérieur de la balise <code>&lt;UserSecretsId&gt;</code>.
+    Quelque chose comme BouletteBlazorWebApp devrait faire l'affaire. En
+    sauvegardant le document, un nouveau répertoire sera créé avec ce nom.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/Secrets_JsonLocation.png" alt="Emplacement du fichier secrets.json" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/BouletteProjectFile.png" alt="Fichier de projet Boulette" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Voici donc la nouvelle structure du fichier.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/BouletteProjectFileNew.png" alt="Nouvelle structure du fichier de projet" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant, nous allons copier les informations de la chaîne de connexion depuis
+    <code>appsettings.json</code> vers <code>secrets.json</code>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/secretsAndappsettings.png" alt="Copie des informations de la chaîne de connexion" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Ainsi, lorsque nous mettrons le code sur GitHub, aucune information sensible ne sera exposée.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Comment pouvons-nous rapidement mettre notre code sur GitHub ? Dans le menu,
+    il devrait y avoir une option <strong>Git</strong>. Sous ce menu, il y aura
+    <strong>Create Git Repository...</strong>. Si vous n'êtes pas connecté à GitHub,
+    il vous demandera de le faire. Une fois connecté, vous pourrez
+    choisir le répertoire où vous souhaitez mettre votre code. Une fois que vous avez choisi
+    le répertoire, vous pourrez pousser votre code sur GitHub. Vos paramètres
+    seront certainement différents des miens. Voici une image de ce à quoi cela
+    pourrait ressembler. Une fois tous vos paramètres bien choisis, appuyez sur
+    <strong>Create and Push</strong> pour l'envoyer sur GitHub.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/CreateGitRepository.png" alt="Création du dépôt Git" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Et voilà, votre code est maintenant sur GitHub. Vous pouvez maintenant
+    le voir sur GitHub. Vous pouvez aussi voir les changements que vous avez
+    effectués en cliquant sur <strong>History</strong>. Vous pouvez également voir les
+    différences entre les versions en cliquant sur <strong>Compare</strong>.
+    D'autres personnes peuvent maintenant contribuer à votre projet. Vous pouvez
+    aussi voir les changements qu'ils ont effectués en cliquant sur
+    <strong>Pull Request</strong>. Une autre page expliquera GitHub et
+    ses fonctionnalités plus en détail.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/GitHubWithNewProject.png" alt="Projet sur GitHub" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    En cliquant sur le projet, tout le code devient disponible et visible.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/GitHubBouletteBlazorWebApp.png" alt="Code visible sur GitHub" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant, nous allons faire une publication afin de rendre notre projet
+    disponible sur Azure. Ici aussi, il se peut que vous soyez invité à
+    vous connecter à Azure, si vous ne l'avez pas déjà fait. Une fois connecté, vous
+    pourrez choisir le répertoire où vous voulez
+    publier votre projet. Une fois que vous avez choisi le répertoire, vous
+    pourrez déployer votre projet sur Azure. Voici une image de ce à quoi cela
+    pourrait ressembler. Une fois tous vos paramètres bien choisis, appuyez
+    sur <strong>Publish</strong> pour l'envoyer sur Azure. Pour envoyer le projet
+    sur Azure, vous devez disposer d'un compte Azure. Une autre page
+    expliquera Azure et ses fonctionnalités. Faites un clic droit sur
+    le projet, dans mon cas nommé <strong>BouletteBlazorWebApp</strong>, et
+    choisissez <strong>Publish</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/ProjectRightClickForPublish.png" alt="Clic droit pour publier le projet" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Puis choisissez <strong>Azure</strong> et cliquez sur <strong>Next</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/PublishChoisirAzure.png" alt="Choix d'Azure pour la publication" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Ensuite, choisissez <strong>Azure App Service (Windows)</strong> et cliquez sur <strong>Next</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/PublishChoisirAzureAppServiceWindows.png" alt="Choix du service Azure App pour la publication" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Ensuite, il faut créer un <strong>App Service</strong>. Nous allons en créer un nouveau
+    en cliquant sur <strong>Create New...</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/CreateAppService.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Si notre application est unique, nous pouvons enlever la date qui a été ajoutée à la fin du nom.
+    Nous pouvons faire la même chose pour le plan d'hébergement. Pour changer le nom, il faudra
+    cliquer sur <strong>New...</strong> et choisir les paramètres appropriés tels qu'indiqués
+    ci-dessous.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/HostingPlan.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Une fois la date enlevée, nous devrions obtenir quelque chose de semblable à
+    l'image ci-dessous. Nous pouvons maintenant cliquer sur <strong>Create</strong>.
+    Cela pourrait prendre un peu de temps.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/CreateAppServiceFinal.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant que l'App Service est créé, nous poursuivons en cliquant sur
+    <strong>Next</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/AppServiceIsCreated.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Parmi les dernières questions à répondre, il faut choisir entre
+    <strong>Publish</strong> et <strong>CI/CD</strong>. Nous allons choisir
+    <strong>Publish</strong> pour l'instant, mais plus tard, il y aura des
+    avantages à opter pour CI/CD. Nous terminons toute la préparation de la publication
+    en cliquant sur <strong>Finish</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/PublishFinal.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Voilà, tous nos paramètres pour la publication sont entrés. À chaque fois que nous allons
+    faire une publication, tous ces paramètres seront envoyés à Azure. Maintenant, il
+    ne nous reste qu'à cliquer sur le bouton <strong>Publish</strong>. Un site
+    web sera créé et fonctionnel.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/PublishScreen.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Ne sois pas surpris de recevoir un message d'erreur. Cela est normal. Il nous
+    reste quelques paramètres à ajouter au niveau d'Azure. Tu te souviens
+    d'avoir caché la <strong>ConnectionString</strong> dans un fichier
+    nommé <strong>secrets.json</strong>. Maintenant, il faut qu'Azure soit également
+    informé de la <strong>ConnectionString</strong>. Pour ce faire, il faut
+    aller dans Azure et chercher <strong>Environment Variables</strong> sous <strong>Settings</strong>. Il faut ajouter un
+    <strong>ConnectionString</strong> -> <strong>DefaultConnection</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/EnvironmentVariables.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Voici le paramètre de <strong>DefaultConnection</strong>. Il faut appuyer
+    sur <strong>Apply</strong>, puis encore sur <strong>Apply</strong>,
+    et ensuite sur <strong>Confirm</strong>. Cela permettra à Azure de trouver
+    la <strong>ConnectionString</strong>, et notre application devrait fonctionner
+    correctement.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/AddConnectionStringInAzure.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Voilà qui est fait, notre première application (Boulette) dont le code est
+    sur GitHub, et dont l'application web est disponible sur Azure, est créée. Tout ceci sans
+    écrire une seule ligne de code. Si tout est correct avec la base de données,
+    l'application devrait fonctionner
+    correctement et accepter l'enregistrement d'utilisateurs.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/BouletteRunning.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Si tout fonctionne correctement, nous devrions pouvoir nous enregistrer.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/Register.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Pourquoi ça ne fonctionne toujours pas ?
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/RegisterNotWorking.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Tu te souviens que pour avoir accès à la base de données
+    à partir de SSMS ou VS 2022, nous avons dû donner notre IP.
+    Maintenant, notre application BouletteBlazorWebApp a sa propre IP et, pour
+    que cette application puisse accéder à la base de données, il faut que
+    l'IP de l'application soit ajoutée à la liste des IP autorisées. Comment
+    trouver l'IP de l'application BouletteBlazorWebApp ? L'IP est visible
+    sur la page de l'application dans Azure. Voici une image de
+    ce à quoi cela pourrait ressembler. Sur cette page, tu verras
+    <strong>Networking</strong>, et dessous il y aura
+    <strong>Virtual IP address</strong>. Cette IP est celle que tu dois
+    ajouter à la liste des IP autorisées dans la base de données.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/BouletteBlazorWebAppInAzure.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Il faut aller à BouletteDB, la base de données, et ajouter l'IP de
+    BouletteBlazorWebApp à la liste des IP autorisées. Pour ce faire, il
+    faut cliquer sur <strong>Set server firewall</strong> et ajouter
+    l'IP de BouletteBlazorWebApp.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/BouletteServerNetworking.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Voici à quoi pourraient ressembler les entrées pour une nouvelle
+    <strong>Firewall Rule</strong>. Il faut appuyer sur <strong>OK</strong>
+    puis sur <strong>Save</strong>. Cela donnera accès à la base de données
+    BouletteDB à partir de l'application BouletteBlazorWebApp.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/AddAFirewallRule.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Essaie de t'enregistrer à nouveau. Cela devrait maintenant fonctionner.
+    Nous allons maintenant vérifier ce qui a été sauvegardé
+    dans la base de données en utilisant VS 2022. Cela est aussi
+    possible avec SSMS. Pour arriver à l'image ci-dessous, il faut
+    être dans VS 2022 et mettre <strong>SQL Server Object Explorer</strong>
+    en avant-plan. View -> SQL Server Object Explorer. Il faut maintenant
+    se connecter à la base de données. Voir la configuration de la base de données Azure dans l'application
+    <strong>Pascal Training</strong>. En effectuant un clic droit sur la table
+    <strong>dbo.AspNetUsers</strong> et en choisissant <strong>View Data</strong>,
+    nous pouvons voir les données qui ont été sauvegardées dans la base de données.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/createblazorwebapp/BouletteDBAspNetUsersVS2022.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Fin
+    <br /><br /><br /><br />
+</p>

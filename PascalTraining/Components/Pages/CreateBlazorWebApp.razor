@@ -1,0 +1,23 @@
+﻿@page "/createblazorwebapp"
+
+@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+@inject IStringLocalizer<SharedResource> Localizer
+
+<PageTitle>@Localizer["CreateBlazorWebApp"]</PageTitle>
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr-CA")
+{
+    <CreateBlazorWebApp_fr />
+}
+else
+{
+    <CreateBlazorWebApp_en />
+}

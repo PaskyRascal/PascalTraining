@@ -125,4 +125,12 @@
     <value>Azure Database Setup</value>
     <comment>Azure Database Setup</comment>
   </data>
+  <data name="CreateBlazorWebApp" xml:space="preserve">
+    <value>Create Blazor Web App</value>
+    <comment>Create Blazor Web App</comment>
+  </data>
+  <data name="InstallationVS2022PageTitle" xml:space="preserve">
+    <value>Installation VS 2022</value>
+    <comment>Installation VS 2022</comment>
+  </data>
 </root>
