@@ -2,7 +2,7 @@
 
 #### NOTE : Afin de ne pas perdre cette fenêtre lorsque tu cliqueras sur un lien, tu peux appuyer sur Ctrl avant de cliquer. Je pensais qu'en mettant target="_blank" au tag <a>, cela aurait suffi... mais non.
 
-### Voici le GitHub [(https://github.com/CharlesNathalie/)](https://github.com/CharlesNathalie/){:target="_blank"} <a href="https://github.com/CharlesNathalie/" target="_blank">https://github.com/CharlesNathalie/</a> où se trouveront plusieurs petits projets qui te guideront dans diverses tâches liées à la production de différents types d'applications (Backend et Frontend).
+### Voici le GitHub <a href="https://github.com/CharlesNathalie/" target="_blank">https://github.com/CharlesNathalie/</a> où se trouveront plusieurs petits projets qui te guideront dans diverses tâches liées à la production de différents types d'applications (Backend et Frontend).
 
 ### Le premier projet est PascalTraining, qui est tout simplement une application Blazor Web App, combinant une application web avec Frontend et un serveur Backend.
 
