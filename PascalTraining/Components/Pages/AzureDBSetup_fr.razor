@@ -5,9 +5,9 @@
 
 @rendermode InteractiveServer
 
-<PageTitle>Mise en place d'une base de données Azure</PageTitle>
+<PageTitle>Création d'une base de données Azure</PageTitle>
 
-<p class="h2 text-center">Mise en place d'une base de données Azure</p>
+<p class="h2 text-center">Création d'une base de données Azure</p>
 <p>&nbsp;</p>
 <p class="h4">
     Cette page décrit toutes les étapes nécessaires pour créer
@@ -284,157 +284,6 @@
         <img src="/images/azuredbsetup/DBViewInVS.png" />
     </div>
 </div>
-<p>&nbsp;</p>
-<p class="h4">
-    À ce stade, il est possible de lire la base de données à partir de SSMS et de Visual Studio. 
-    Comment fait-on pour mettre en place toutes les tables nécessaires pour un bon fonctionnement de 
-    l'authentification (Login, Register, Change Password, etc.) ? Il faut environ 7 tables que Microsoft 
-    va nous aider à mettre en place.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/ShowAspNetTablesInSSMS.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    Une manière est de créer un projet <strong>Blazor Web App</strong>. Pour ce faire, il faut démarrer Visual Studio 2022. 
-    Une manière rapide est d'appuyer sur le bouton Windows et de commencer à écrire <strong>Visual Studio...</strong>.
-    Vous devriez voir l'application <strong>Visual Studio 2022</strong>. Une fois dans Visual Studio 2022, vous verrez un écran
-    comme ci-dessous.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/VS2022StartUpWindow.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    Cliquez sur <strong>Create a new project</strong>. Une autre fenêtre va s'ouvrir avec plusieurs choix de 
-    projets. Dans la fenêtre de recherche, vous pouvez commencer à écrire <strong>Blazor Web</strong>. 
-    Cela vous montrera les projets Blazor. En cliquant sur <strong>Next</strong>, une autre fenêtre vous 
-    demandera des paramètres plus spécifiques au projet.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/CreateBlazorWebApp.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    C'est ici que la magie va opérer pour mettre en place les tables appropriées dans la base de données. 
-    Ici, le nom et l'emplacement où vous sauvegardez votre projet ne sont pas importants puisque ce n'est 
-    qu'un projet temporaire. Un projet qui sera seulement utilisé pour la création des tables
-    d'authentification dans la base de données. Cliquez sur <strong>Next</strong>.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/ConfigureNewVSProject.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    Cette fenêtre et ses paramètres sont importants puisqu'ils seront déterminants pour
-    la création de toutes les pages web et la configuration de l'authentification. Il est important d'utiliser
-    <strong>Individual User Accounts</strong> pour l'authentification. Cliquez sur <strong>Create</strong>.
-    En cliquant sur Create, un projet <strong>Blazor Web App</strong> est créé avec tout le nécessaire 
-    en ce qui concerne l'authentification.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/DetailInSettingUpBlazorWebApp.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    Voici quelques fichiers que Microsoft produit pour nous automatiquement. Cela comprend pratiquement 
-    tout ce dont nous avons besoin pour l'authentification, y compris l'authentification à deux facteurs. 
-    Mais ce n'est pas pour cela que nous avons créé le projet. Ce projet contient le nécessaire pour l'ajout des
-    7 tables commençant par <strong>AspNet</strong> dans la base de données.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/BlazorWebAppAutoFiles.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    Maintenant, il faut changer le fichier appsettings.json. Nous allons ouvrir le fichier appsettings.json
-    afin de changer le DefaultConnection par la chaîne de connexion de la base de données que nous avons créée
-    sur Azure. Dans le nouveau texte de DefaultConnection, vous verrez {your_password} sur la ligne de 
-    DefaultConnection. Il faut remplacer cela par votre mot de passe que vous avez mis pour avoir accès 
-    à la base de données. N'oubliez pas d'enlever les crochets aussi.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/ConnectionString.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    On y arrive. Une fois tout cela mis en place, nous pouvons maintenant exécuter les commandes. 
-    Maintenant, il faut ouvrir votre nouveau projet si ce n'est pas déjà fait. Il faut ouvrir
-    la fenêtre <strong>Package Manager Console</strong> en passant par le menu Tools->NuGet Package Manager
-    et puis cliquez sur Package Manager Console. Dans cette nouvelle fenêtre ouverte, il faudra écrire 2 commandes :
-    Add-Migration MigrationName et Update-Database. 
-</p>
-<p>&nbsp;</p>
-<p>
-    Voici la commande
-</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/MigrationCommand.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    La commande devrait donner quelque chose comme ci-dessous.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/MigrationCommandAfter.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    Maintenant la commande Update-Database.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/UpdateDatabase.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    Qui devrait donner quelque chose comme ci-dessous.
-</p>
-<p>&nbsp;</p>
-<div class="card border-3">
-    <div class="card-body">
-        <img src="/images/azuredbsetup/UpdateDatabaseDone.png" />
-    </div>
-</div>
-<p>&nbsp;</p>
-<p class="h4">
-    On a maintenant toutes les tables nécessaires pour avoir l'authentification dans nos applications futures.
-    Pour voir les nouvelles tables, tu peux utiliser SSMS ou VS et ouvrir la base de données.
-</p>
-<p>&nbsp;</p>
-<p class="h4">
-    Si tu ne veux pas garder la base de données dans Azure, il est possible d'effacer tous les services 
-    que nous n'utilisons pas. Pour effacer la base de données, il suffit d'aller sur Azure et de cliquer
-    sur la base de données. Il y aura un bouton Delete en haut.
-</p>
 <p>&nbsp;</p>
 <p class="h4">
     Fin

@@ -119,18 +119,35 @@
   </resheader>
   <data name="HomePageTitle" xml:space="preserve">
     <value>Home Page</value>
-    <comment>Home Page</comment>
   </data>
   <data name="AzureDBSetupPageTitle" xml:space="preserve">
     <value>Azure Database Setup</value>
-    <comment>Azure Database Setup</comment>
   </data>
-  <data name="CreateBlazorWebApp" xml:space="preserve">
-    <value>Create Blazor Web App</value>
-    <comment>Create Blazor Web App</comment>
+  <data name="BlazorWebApp" xml:space="preserve">
+    <value>Blazor Web App</value>
   </data>
   <data name="InstallationVS2022PageTitle" xml:space="preserve">
     <value>Installation VS 2022</value>
-    <comment>Installation VS 2022</comment>
+  </data>
+  <data name="LocalizePageTitle" xml:space="preserve">
+    <value>Localize</value>
+  </data>
+  <data name="AzureDBAuthSetupPageTitle" xml:space="preserve">
+    <value>Azure Database Authentication Setup</value>
+  </data>
+  <data name="Readme" xml:space="preserve">
+    <value>Readme.md</value>
+  </data>
+  <data name="InstallationVS2022" xml:space="preserve">
+    <value>Installation VS 2022</value>
+  </data>
+  <data name="AzureDatabaseSetup" xml:space="preserve">
+    <value>Azure DB Setup</value>
+  </data>
+  <data name="AzureDatabaseAuthenticationSetup" xml:space="preserve">
+    <value>Azure DB Auth. Setup</value>
+  </data>
+  <data name="LocalizeAnApp" xml:space="preserve">
+    <value>Localize an App</value>
   </data>
 </root>

@@ -1,0 +1,124 @@
+﻿@page "/localize_fr"
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+
+@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+<PageTitle>Localiser une application ou un site web</PageTitle>
+
+<p class="h2 text-center">Localiser une application ou un site web</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Avant de commencer, nous pouvons enlever le répertoire <strong>Migrations</strong>
+    se trouvant sous le répertoire <strong>Data</strong>.
+    Pour ce faire tu peux cliquer sur le répertoire Migrations et appuyer sur
+    <strong>Delete</strong> et puis répondre <strong>OK</strong> à "delete permanantly".
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Cette page décrit les étapes nécessaires pour localiser un application ou un
+    site web.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    La localisation est le processus de traduction d'une application ou d'un site
+    web dans plusieurs langues. La localisation est un processus complexe qui
+    nécessite une planification minutieuse et une exécution précise.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Chat GTP 4o lui donne.
+    <br /><br />
+    Localiser une application ou un site web signifie adapter son contenu,
+    son interface utilisateur, et ses fonctionnalités pour qu'ils soient
+    adaptés à un marché ou à une culture spécifique. Cela inclut souvent
+    la traduction du texte dans la langue locale, l'adaptation des formats
+    de date, d'heure, de devise, et même l'ajustement des images ou des
+    couleurs pour correspondre aux attentes culturelles et aux préférences
+    locales.
+    <br /><br />
+    La localisation va au-delà de la simple traduction. Elle vise à rendre
+    une application ou un site web pleinement fonctionnel et culturellement
+    pertinent pour les utilisateurs dans une région spécifique, afin
+    d'améliorer leur expérience et de rendre le produit plus accessible
+    et efficace dans différents marchés.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Ici nous allons seulement s'occuper de la traduction et la capacité de
+    changer de langue de l'application ou du site web sans avoir à
+    redémarer l'application.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Parmi les premières choses à faire est de créer un répertoire de
+    <strong>Ressources</strong> et un répertoire de
+    <strong>Models</strong> qui vont être utilisés en symbiose.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Right button sur le nom du projet et choisi <strong>Add</strong>
+    dans le menu et ensuite <strong>New Folder</strong>. Après il
+    faut écrire <strong>Resources</strong> et appuyer sur <strong>Enter</strong>.
+    On fait la même chose pour créer le répertoire <strong>Models</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/localize/ProjectName.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant il faut créer les fichiers de ressources pour les langues
+    que tu veux supporter. Pour ce faire, il faut right button sur le
+    nouveau répertoire Resources et va au dessus de <strong>Add</strong>
+    et choisi <strong>New Item</strong>. Après il faut choisir <strong>Resource File</strong>
+    et écrire <strong>SharedResource</strong> dans <strong>Name:</strong>
+    et appuyer sur <strong>Add</strong>. Il faut refaire la même chose pour créer
+    un fichier <strong>SharedResource.fr.resx</strong> pour la langue française et
+    un fichier <strong>SharedResource.en.resx</strong> pour la langue anglaise.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Et maintenant, nous allons un fichier (un model) pour représenter
+    les documents de SharedResource. Pour ce faire, il faut right button
+    sur le répertoire Models et va au dessus de <strong>Add</strong> et
+    choisi <strong>New Item</strong>. Après il faut choisir <strong>Class</strong>
+    et écrire <strong>SharedResource</strong> dans <strong>Name:</strong> et
+    appuyer sur <strong>Add</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/localize/AddSharedResource.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Nous allons maintenant ajouter un peu de code dans la filière
+    <strong>Program.cs</strong>. Pour ce faire, il faut ouvrir le fichier
+    <strong>Program.cs</strong> et ajouter le code suivant:
+    <code>
+        <pre>
+        // Add localization services
+        builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+        // Set the default culture
+        var defaultCulture = new CultureInfo("fr");
+        CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
+        </pre>
+    </code>
+    <strong>Voir image ci-dessous</strong>
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/localize/ProgramFile.png" />
+    </div>
+</div>
+<p>&nbsp;</p>

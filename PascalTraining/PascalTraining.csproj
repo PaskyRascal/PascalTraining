@@ -7,28 +7,37 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\images\NewFolder1\**" />
-    <Content Remove="wwwroot\images\NewFolder1\**" />
-    <EmbeddedResource Remove="wwwroot\images\NewFolder1\**" />
-    <None Remove="wwwroot\images\NewFolder1\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PascalTraining.Client\PascalTraining.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.8" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.8" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\SharedResource.en-CA.resx">
+    <EmbeddedResource Update="Resources\SharedResource - Copy.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>SharedResource - Copy.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\SharedResource.fr-CA.resx">
+    <EmbeddedResource Update="Resources\SharedResource.fr.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\SharedResource.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\localize\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\SharedResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedResource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

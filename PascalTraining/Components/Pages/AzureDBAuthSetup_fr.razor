@@ -1,0 +1,255 @@
+﻿@page "/azuredbauthsetup_fr"
+
+@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+<PageTitle>Création des tables pour authentication pour une base de données Azure</PageTitle>
+
+<p class="h2 text-center">Création des tables pour authentication pour une base de données Azure</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Comment fait-on pour mettre en place toutes les tables nécessaires pour un bon fonctionnement de
+    l'authentification (Login, Register, Change Password, etc.) ? Il faut environ 7 tables que Microsoft
+    va nous aider à mettre en place.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/ShowAspNetTablesInSSMS.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Une manière est de créer un projet <strong>ASP.NET Core Empty</strong>. Pour ce faire, il faut démarrer Visual Studio 2022.
+    Une manière rapide est d'appuyer sur le bouton Windows et de commencer à écrire <strong>Visual Studio...</strong>.
+    Vous devriez voir l'application <strong>Visual Studio 2022</strong>. Une fois dans Visual Studio 2022, vous verrez un écran
+    comme ci-dessous.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/VS2022StartUpWindow.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Choisir le "project template" <strong>ASP.NET Core Empty</strong>. Cliquez sur <strong>Create a new project</strong>. Une autre fenêtre va s'ouvrir avec plusieurs choix de
+    projets. Dans la fenêtre de recherche, vous pouvez commencer à écrire <strong>Blazor Web</strong>.
+    Cela vous montrera les projets Blazor. En cliquant sur <strong>Next</strong>, une autre fenêtre vous
+    demandera des paramètres plus spécifiques au projet.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/CreateASPNETCoreEmpty.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    C'est ici que la magie va opérer pour mettre en place les tables appropriées dans la base de données.
+    Ici, le nom et l'emplacement où vous sauvegardez votre projet ne sont pas importants puisque ce n'est
+    qu'un projet temporaire. Un projet qui sera seulement utilisé pour la création des tables
+    d'authentification dans la base de données. Cliquez sur <strong>Next</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/ConfigureNewVSProject.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Cette fenêtre et ses paramètres sont importants puisqu'ils seront déterminants pour
+    la création de toutes les pages web et la configuration de l'authentification.
+    Cliquez sur <strong>Create</strong>.
+    En cliquant sur Create, un projet <strong>ASP.NET Core Empty</strong> est créé à
+    laquelle nous allons ajouter un peu de code dans la filière Project.cs et le
+    projet même WebApp.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/DetailInSettingUpASPNETCoreEmpty.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant, il faut changer les propriétés du project <strong>WebApp</strong>.
+    Nous allons double cliqué sur le projet <strong>WebApp</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/WebAppContent.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Nous allons remplacer ces paramètres par le code suivant et puis sauvgarder le document.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    <code>
+        <pre>
+            @codeStr1
+        </pre>
+    </code>
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Nous allons maintenant ouvrir <strong>Program.cs</strong>.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/ProgramFile.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Nous allons remplacer ce code par le code suivant et puis sauvgarder le document.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    <code>
+        <pre>
+            @codeStr2
+        </pre>
+    </code>
+</p>
+<p>&nbsp;</p>
+<p>
+    Voici la commande
+</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/MigrationCommand.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    La commande devrait donner quelque chose comme ci-dessous.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/MigrationCommandAfter.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Maintenant la commande Update-Database.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/UpdateDatabase.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Qui devrait donner quelque chose comme ci-dessous.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/UpdateDatabaseDone.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    On a maintenant toutes les tables nécessaires pour avoir l'authentification dans nos applications futures.
+    Pour voir les nouvelles tables, tu peux utiliser SSMS ou VS et ouvrir la base de données. Nous pouvons
+    effacer la table de migration en la choisisant et appuyant sur delete.
+</p>
+<p>&nbsp;</p>
+<div class="card border-3">
+    <div class="card-body">
+        <img src="/images/azuredbauthsetup/All7TablesCreated.png" />
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    Si tu ne veux pas garder la base de données dans Azure, il est possible d'effacer tous les services
+    que nous n'utilisons pas. Pour effacer la base de données, il suffit d'aller sur Azure et de cliquer
+    sur la base de données. Il y aura un bouton Delete en haut.
+</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Fin
+    <br /><br /><br /><br />
+</p>
+@code {
+    private const string codeStr1 = "<Project Sdk=\"Microsoft.NET.Sdk.Web\">\r\n"
+    + "\r\n"
+    + "  <PropertyGroup>\r\n"
+    + "    <TargetFramework>net8.0</TargetFramework>\r\n"
+    + "    <Nullable>enable</Nullable>\r\n"
+    + "    <ImplicitUsings>enable</ImplicitUsings>\r\n"
+    + "  </PropertyGroup>\r\n"
+    + "\r\n"
+    + "  <ItemGroup>\r\n"
+    + "    <PackageReference Include=\"Microsoft.AspNetCore.Identity.EntityFrameworkCore\" Version=\"8.0.8\" />\r\n"
+    + "    <PackageReference Include=\"Microsoft.EntityFrameworkCore.Design\" Version=\"8.0.8\" />\r\n"
+    + "    <PackageReference Include=\"Microsoft.EntityFrameworkCore.SqlServer\" Version=\"8.0.8\" />\r\n"
+    + "  </ItemGroup>\r\n"
+    + "\r\n"
+    + "</Project>\r\n";
+
+    private const string codeStr2 = "using Microsoft.AspNetCore.Identity;\r\n"
+    + "using Microsoft.AspNetCore.Identity.EntityFrameworkCore;\r\n"
+    + "using Microsoft.EntityFrameworkCore;\r\n"
+    + "\r\n"
+    + "namespace WebApp;\r\n"
+    + "\r\n"
+    + "// une fois que ce code est copié pour remplacé le code de Program.cs,\r\n"
+    + "// il est possible d'utiliser le menu Tools -> NuGet Package Manager -> Package Manager Console\r\n"
+    + "// puis de taper la commande\r\n"
+    + "\r\n"
+    + "// dotnet ef migrations add InitialCreate\r\n"
+    + "\r\n"
+    + "// pour créer la migration\r\n"
+    + "// puis de taper la commande\r\n"
+    + "\r\n"
+    + "// dotnet ef database update\r\n"
+    + "\r\n"
+    + "// pour créer la base de données\r\n"
+    + "\r\n"
+    + "// \r\n"
+    + "// tu peux aussi regarder la vidéo suivante pour plus d'informations: https://www.youtube.com/watch?v=sZnu-TyaGNk\r\n"
+    + "\r\n"
+    + "public class Program\r\n"
+    + "{\r\n"
+    + "    public static void Main(string[] args)\r\n"
+    + "    {\r\n"
+    + "        string password = \"[password]\";\r\n"
+    + "        var builder = WebApplication.CreateBuilder(args);\r\n"
+    + "\r\n"
+    + "        string connStr =$\"Server=tcp:patate.database.windows.net,1433;Initial Catalog=PatateDB;Persist Security Info=False;User ID=patate_user;\"\r\n"
+    + " + \"Password={password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;\";\r\n"
+    + "        builder.Services.AddDbContext<ApplicationDbContext>(options =>\r\n"
+    + "            options.UseSqlServer(connStr));\r\n"
+    + "\r\n"
+    + "        builder.Services.AddIdentityCore<MyUser>()\r\n"
+    + "            .AddEntityFrameworkStores<ApplicationDbContext>();\r\n"
+    + "\r\n"
+    + "        var app = builder.Build();\r\n"
+    + "\r\n"
+    + "        app.MapGet(\"/\", () => $\"Hello World!\");\r\n"
+    + "\r\n"
+    + "        app.Run();\r\n"
+    + "    }\r\n"
+    + "}\r\n"
+    + "\r\n"
+    + "class MyUser : IdentityUser { }\r\n"
+    + "\r\n"
+    + "class ApplicationDbContext : IdentityDbContext<MyUser>\r\n"
+    + "{\r\n"
+    + "    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)\r\n"
+    + "        : base(options)\r\n"
+    + "    {\r\n"
+    + "    }\r\n"
+    + "}\r\n";
+}

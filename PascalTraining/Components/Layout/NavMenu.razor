@@ -11,8 +11,8 @@
         <div>
             <a class="navbar-brand" href="">Pascal Training</a>
             <br />
-            <button class="btn btn-primary btn-sm" @onclick='() => SetLanguage("fr", "CA")'>fr</button>
-            <button class="btn btn-primary btn-sm" @onclick='() => SetLanguage("en", "CA")'>en</button>
+            <button class="btn btn-primary btn-sm" @onclick='() => SetLanguage("fr")'>fr</button>
+            <button class="btn btn-primary btn-sm" @onclick='() => SetLanguage("en")'>en</button>
             <br />
         </div>
     </div>
@@ -24,22 +24,32 @@
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Readme.md
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> @Localizer["Readme"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="installationvs2022">
-                Installation VS 2022
+                @Localizer["InstallationVS2022"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="azuredbsetup">
-                Azure Database Setup
+                @Localizer["AzureDatabaseSetup"]
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="azuredbauthsetup">
+                @Localizer["AzureDatabaseAuthenticationSetup"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="createblazorwebapp">
-                Create Blazor Web App
+                @Localizer["BlazorWebApp"]
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="localize">
+                @Localizer["LocalizeAnApp"]
             </NavLink>
         </div>
     </nav>
@@ -48,9 +58,9 @@
 
 
 @code {
-    private void SetLanguage(string culture, string region)
+    private void SetLanguage(string culture)
     {
-        var defaultCulture = new CultureInfo($"{culture}-{region}");
+        var defaultCulture = new CultureInfo($"{culture}");
         CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
         CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
         Navigation.NavigateTo(Navigation.Uri, forceLoad: true); // Reload the current page

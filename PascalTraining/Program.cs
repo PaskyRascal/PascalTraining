@@ -20,7 +20,7 @@ namespace PascalTraining
             var app = builder.Build();
 
             // Set the default culture
-            var defaultCulture = new CultureInfo("fr-CA");
+            var defaultCulture = new CultureInfo("fr");
             CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
             CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
 

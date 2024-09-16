@@ -18,7 +18,7 @@ namespace PascalTraining.Client
             await builder.Build().RunAsync();
 
             // Set the default culture
-            var defaultCulture = new CultureInfo("en-CA");
+            var defaultCulture = new CultureInfo("en");
             CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
             CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
 
