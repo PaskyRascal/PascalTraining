@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalTraining", "PascalTra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalTraining.Client", "PascalTraining.Client\PascalTraining.Client.csproj", "{4F46AFEA-7A14-431F-8E58-D8C7FB24FEE2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YouTubeVideo", "YouTubeVideo", "{4F52348F-60ED-4976-A38E-95D8ADF81733}"
-	ProjectSection(SolutionItems) = preProject
-		..\YouTubeVideo\Presentation1.mp4 = ..\YouTubeVideo\Presentation1.mp4
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
