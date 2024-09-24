@@ -117,22 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HomePageTitle" xml:space="preserve">
+  <data name="Home" xml:space="preserve">
     <value>Home Page</value>
   </data>
-  <data name="AzureDBSetupPageTitle" xml:space="preserve">
+  <data name="AzureDBSetup" xml:space="preserve">
     <value>Azure Database Setup</value>
   </data>
   <data name="BlazorWebApp" xml:space="preserve">
     <value>Blazor Web App</value>
   </data>
-  <data name="InstallationVS2022PageTitle" xml:space="preserve">
-    <value>Installation VS 2022</value>
-  </data>
   <data name="LocalizePageTitle" xml:space="preserve">
     <value>Localize</value>
   </data>
-  <data name="AzureDBAuthSetupPageTitle" xml:space="preserve">
+  <data name="AzureDBAuthSetup" xml:space="preserve">
     <value>Azure Database Authentication Setup</value>
   </data>
   <data name="Readme" xml:space="preserve">
@@ -149,5 +146,8 @@
   </data>
   <data name="LocalizeAnApp" xml:space="preserve">
     <value>Localize an App</value>
+  </data>
+  <data name="TypescriptFrontEnd" xml:space="preserve">
+    <value>Typescript Front End</value>
   </data>
 </root>

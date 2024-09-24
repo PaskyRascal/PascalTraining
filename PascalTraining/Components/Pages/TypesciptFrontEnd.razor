@@ -1,4 +1,4 @@
-﻿@page "/localize"
+﻿@page "/typescriptfrontend"
 
 @using Microsoft.Extensions.Localization
 @using System.Globalization;
@@ -7,7 +7,7 @@
 
 @inject IStringLocalizer<SharedResource> Localizer
 
-<PageTitle>@Localizer["Localize"]</PageTitle>
+<PageTitle>@Localizer["TypescriptFrontEnd"]</PageTitle>
 
 @code {
     private string currentCulture = CultureInfo.CurrentCulture.Name;
@@ -15,9 +15,9 @@
 
 @if (currentCulture == "fr")
 {
-    <Localize_fr />
+    <TypescriptFrontEnd_fr />
 }
 else
 {
-    <Localize_en />
+    <TypescriptFrontEnd_en />
 }

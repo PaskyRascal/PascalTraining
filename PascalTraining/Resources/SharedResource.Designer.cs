@@ -81,18 +81,18 @@ namespace PascalTraining.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Azure Database Authentication Setup.
         /// </summary>
-        public static string AzureDBAuthSetupPageTitle {
+        public static string AzureDBAuthSetup {
             get {
-                return ResourceManager.GetString("AzureDBAuthSetupPageTitle", resourceCulture);
+                return ResourceManager.GetString("AzureDBAuthSetup", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Azure Database Setup.
         /// </summary>
-        public static string AzureDBSetupPageTitle {
+        public static string AzureDBSetup {
             get {
-                return ResourceManager.GetString("AzureDBSetupPageTitle", resourceCulture);
+                return ResourceManager.GetString("AzureDBSetup", resourceCulture);
             }
         }
         
@@ -108,9 +108,9 @@ namespace PascalTraining.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Home Page.
         /// </summary>
-        public static string HomePageTitle {
+        public static string Home {
             get {
-                return ResourceManager.GetString("HomePageTitle", resourceCulture);
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         
@@ -120,15 +120,6 @@ namespace PascalTraining.Resources {
         public static string InstallationVS2022 {
             get {
                 return ResourceManager.GetString("InstallationVS2022", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Installation VS 2022.
-        /// </summary>
-        public static string InstallationVS2022PageTitle {
-            get {
-                return ResourceManager.GetString("InstallationVS2022PageTitle", resourceCulture);
             }
         }
         
@@ -156,6 +147,15 @@ namespace PascalTraining.Resources {
         public static string Readme {
             get {
                 return ResourceManager.GetString("Readme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Typescript Front End.
+        /// </summary>
+        public static string TypescriptFrontEnd {
+            get {
+                return ResourceManager.GetString("TypescriptFrontEnd", resourceCulture);
             }
         }
     }
