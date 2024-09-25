@@ -150,4 +150,7 @@
   <data name="TypescriptFrontEnd" xml:space="preserve">
     <value>Typescript Front End</value>
   </data>
+  <data name="Vocabulary" xml:space="preserve">
+    <value>Vocabulary</value>
+  </data>
 </root>

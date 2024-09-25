@@ -1,0 +1,854 @@
+﻿@page "/vocabulary_fr"
+
+@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+<PageTitle>Vocabulary</PageTitle>
+
+<p class="h2 text-center">Vocabulary</p>
+<p>&nbsp;</p>
+<p class="h4">
+    Voici un peu de vocabulaire pour vous aider à comprendre les termes utilisés dans ce tutoriel.
+</p>
+<p>&nbsp;</p>
+<div class="container mt-5">
+    <h1 class="text-primary text-center mb-4">Vocabulaire de Programmation C#</h1>
+
+    <div class="accordion" id="vocabulaireAccordion">
+
+        <!-- Types de données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    1. Types de données (Data Types)
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#vocabulaireAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>int</code> : Nombre entier</li>
+                        <li class="list-group-item"><code>float</code> : Nombre à virgule flottante (précision simple)</li>
+                        <li class="list-group-item"><code>double</code> : Nombre à virgule flottante (précision double)</li>
+                        <li class="list-group-item"><code>bool</code> : Valeur booléenne (<code>true</code> ou <code>false</code>)</li>
+                        <li class="list-group-item"><code>string</code> : Chaîne de caractères</li>
+                        <li class="list-group-item"><code>char</code> : Caractère unique</li>
+                        <li class="list-group-item"><code>decimal</code> : Nombre à virgule flottante de haute précision</li>
+                        <li class="list-group-item"><code>var</code> : Inférence de type</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Structures de contrôle -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Structures de contrôle (Control Structures)
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#vocabulaireAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>if</code>, <code>else if</code>, <code>else</code> : Conditions</li>
+                        <li class="list-group-item"><code>switch</code>, <code>case</code> : Structure conditionnelle</li>
+                        <li class="list-group-item"><code>for</code>, <code>foreach</code> : Boucles pour itérer sur des collections</li>
+                        <li class="list-group-item"><code>while</code>, <code>do-while</code> : Boucles</li>
+                        <li class="list-group-item"><code>break</code> : Interruption d'une boucle ou d'un <code>switch</code></li>
+                        <li class="list-group-item"><code>continue</code> : Passer à l'itération suivante</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classes et Objets -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Classes et Objets (Classes and Objects)
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#vocabulaireAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>class</code> : Déclaration d'une classe</li>
+                        <li class="list-group-item"><code>object</code> : Instance d'une classe</li>
+                        <li class="list-group-item"><code>constructor</code> : Méthode spéciale appelée lors de la création d'un objet</li>
+                        <li class="list-group-item"><code>this</code> : Référence à l'instance actuelle</li>
+                        <li class="list-group-item"><code>new</code> : Instancier un objet</li>
+                        <li class="list-group-item"><code>static</code> : Membre partagé</li>
+                        <li class="list-group-item"><code>abstract</code> : Classe ou méthode abstraite</li>
+                        <li class="list-group-item"><code>interface</code> : Déclaration d'une interface</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Méthodes et Fonctions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Méthodes et Fonctions (Methods and Functions)
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#vocabulaireAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>void</code> : Méthode sans retour</li>
+                        <li class="list-group-item"><code>return</code> : Retourner une valeur</li>
+                        <li class="list-group-item"><code>public</code>, <code>private</code>, <code>protected</code>, <code>internal</code> : Modificateurs d'accès</li>
+                        <li class="list-group-item"><code>params</code> : Paramètres variables</li>
+                        <li class="list-group-item"><code>async</code> / <code>await</code> : Asynchrone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collections et Tableaux -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Collections et Tableaux (Collections and Arrays)
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#vocabulaireAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>Array[]</code> : Tableau</li>
+                        <li class="list-group-item"><code>List&lt;T&gt;</code> : Liste générique</li>
+                        <li class="list-group-item"><code>Dictionary&lt;TKey, TValue&gt;</code> : Collection de paires clé-valeur</li>
+                        <li class="list-group-item"><code>Queue&lt;T&gt;</code> : File d'attente</li>
+                        <li class="list-group-item"><code>Stack&lt;T&gt;</code> : Pile</li>
+                        <li class="list-group-item"><code>IEnumerable&lt;T&gt;</code> : Interface pour énumérables</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exceptions et Gestion des erreurs -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    6. Exceptions et Gestion des erreurs (Exceptions and Error Handling)
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#vocabulaireAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>try</code>, <code>catch</code>, <code>finally</code> : Gestion des exceptions</li>
+                        <li class="list-group-item"><code>throw</code> : Lever une exception</li>
+                        <li class="list-group-item"><code>Exception</code> : Classe de base</li>
+                        <li class="list-group-item"><code>NullReferenceException</code> : Exception de référence nulle</li>
+                        <li class="list-group-item"><code>ArgumentNullException</code> : Argument nul</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire du Développement de Site Web</h1>
+
+    <div class="accordion" id="webDevVocabAccordion">
+        <!-- Section HTML -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="htmlHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#htmlSection" aria-expanded="false" aria-controls="htmlSection">
+                    HTML (HyperText Markup Language)
+                </button>
+            </h2>
+            <div id="htmlSection" class="accordion-collapse collapse show" aria-labelledby="htmlHeading" data-bs-parent="#webDevVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>&lt;html&gt;</code> : Élément racine d'un document HTML</li>
+                        <li class="list-group-item"><code>&lt;head&gt;</code> : Métadonnées du document</li>
+                        <li class="list-group-item"><code>&lt;body&gt;</code> : Contenu visible de la page</li>
+                        <li class="list-group-item"><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> : Titres de niveaux</li>
+                        <li class="list-group-item"><code>&lt;p&gt;</code> : Paragraphe</li>
+                        <li class="list-group-item"><code>&lt;a&gt;</code> : Lien hypertexte</li>
+                        <li class="list-group-item"><code>&lt;img&gt;</code> : Image</li>
+                        <li class="list-group-item"><code>&lt;div&gt;</code> : Division de contenu</li>
+                        <li class="list-group-item"><code>&lt;form&gt;</code> : Formulaire</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section CSS -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="cssHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cssSection" aria-expanded="false" aria-controls="cssSection">
+                    CSS (Cascading Style Sheets)
+                </button>
+            </h2>
+            <div id="cssSection" class="accordion-collapse collapse" aria-labelledby="cssHeading" data-bs-parent="#webDevVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>color</code> : Couleur du texte</li>
+                        <li class="list-group-item"><code>background-color</code> : Couleur de fond</li>
+                        <li class="list-group-item"><code>padding</code> : Espacement interne</li>
+                        <li class="list-group-item"><code>margin</code> : Espacement externe</li>
+                        <li class="list-group-item"><code>border</code> : Bordure d'un élément</li>
+                        <li class="list-group-item"><code>display</code> : Contrôle de l'affichage (<code>block</code>, <code>inline</code>, <code>flex</code>)</li>
+                        <li class="list-group-item"><code>position</code> : Positionnement d'un élément (<code>static</code>, <code>absolute</code>, <code>relative</code>)</li>
+                        <li class="list-group-item"><code>media queries</code> : Adaptation des styles selon la taille de l'écran</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section JavaScript -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="jsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#jsSection" aria-expanded="false" aria-controls="jsSection">
+                    JavaScript (JS)
+                </button>
+            </h2>
+            <div id="jsSection" class="accordion-collapse collapse" aria-labelledby="jsHeading" data-bs-parent="#webDevVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><code>let</code>, <code>const</code>, <code>var</code> : Déclaration de variables</li>
+                        <li class="list-group-item"><code>function</code> : Définition de fonction</li>
+                        <li class="list-group-item"><code>DOM</code> : Document Object Model, pour manipuler le HTML</li>
+                        <li class="list-group-item"><code>addEventListener</code> : Gestion des événements</li>
+                        <li class="list-group-item"><code>fetch</code> : Requête HTTP pour récupérer des données</li>
+                        <li class="list-group-item"><code>localStorage</code>, <code>sessionStorage</code> : Stockage local dans le navigateur</li>
+                        <li class="list-group-item"><code>JSON</code> : Format de données JavaScript Object Notation</li>
+                        <li class="list-group-item"><code>promise</code>, <code>async/await</code> : Gestion asynchrone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Frameworks JavaScript -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="frameworksHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#frameworksSection" aria-expanded="false" aria-controls="frameworksSection">
+                    Frameworks et Bibliothèques JavaScript
+                </button>
+            </h2>
+            <div id="frameworksSection" class="accordion-collapse collapse" aria-labelledby="frameworksHeading" data-bs-parent="#webDevVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>jQuery</strong> : Simplifie la manipulation du DOM et les requêtes AJAX</li>
+                        <li class="list-group-item"><strong>React.js</strong> : Bibliothèque pour créer des interfaces utilisateur</li>
+                        <li class="list-group-item"><strong>Vue.js</strong> : Framework pour créer des interfaces utilisateur réactives</li>
+                        <li class="list-group-item"><strong>Angular</strong> : Framework complet pour les applications web complexes</li>
+                        <li class="list-group-item"><strong>Node.js</strong> : Exécute du JavaScript côté serveur</li>
+                        <li class="list-group-item"><strong>Express.js</strong> : Framework minimal pour des applications Node.js</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Base de Données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="dbHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dbSection" aria-expanded="false" aria-controls="dbSection">
+                    Bases de Données (Back-end)
+                </button>
+            </h2>
+            <div id="dbSection" class="accordion-collapse collapse" aria-labelledby="dbHeading" data-bs-parent="#webDevVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>SQL</strong> : Langage pour interagir avec des bases de données relationnelles</li>
+                        <li class="list-group-item"><strong>NoSQL</strong> : Bases de données non relationnelles (par ex. MongoDB)</li>
+                        <li class="list-group-item"><strong>CRUD</strong> : Create, Read, Update, Delete (opérations basiques)</li>
+                        <li class="list-group-item"><strong>ORM</strong> : Object-Relational Mapping pour interagir avec des bases via des objets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Hébergement -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="hostingHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hostingSection" aria-expanded="false" aria-controls="hostingSection">
+                    Hébergement et Déploiement
+                </button>
+            </h2>
+            <div id="hostingSection" class="accordion-collapse collapse" aria-labelledby="hostingHeading" data-bs-parent="#webDevVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>FTP</strong> : Protocole de transfert de fichiers</li>
+                        <li class="list-group-item"><strong>CDN</strong> : Content Delivery Network pour distribuer du contenu rapidement</li>
+                        <li class="list-group-item"><strong>SSL/TLS</strong> : Sécurisation des communications sur le web</li>
+                        <li class="list-group-item"><strong>Hosting Providers</strong> : AWS, Azure, Heroku, Netlify</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire de Serveur Web (Backend)</h1>
+
+    <div class="accordion" id="backendVocabAccordion">
+        <!-- Section Serveur -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="serverHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#serverSection" aria-expanded="false" aria-controls="serverSection">
+                    Serveurs Web
+                </button>
+            </h2>
+            <div id="serverSection" class="accordion-collapse collapse show" aria-labelledby="serverHeading" data-bs-parent="#backendVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Apache</strong> : Serveur web open source, très utilisé pour héberger des sites web.</li>
+                        <li class="list-group-item"><strong>Nginx</strong> : Serveur web performant utilisé pour gérer de grandes quantités de trafic.</li>
+                        <li class="list-group-item"><strong>IIS</strong> (Internet Information Services) : Serveur web de Microsoft.</li>
+                        <li class="list-group-item"><strong>Reverse Proxy</strong> : Serveur qui redirige les requêtes vers d'autres serveurs backend.</li>
+                        <li class="list-group-item"><strong>Load Balancer</strong> : Outil distribuant les requêtes entre plusieurs serveurs pour équilibrer la charge.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section API -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="apiHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#apiSection" aria-expanded="false" aria-controls="apiSection">
+                    API (Application Programming Interface)
+                </button>
+            </h2>
+            <div id="apiSection" class="accordion-collapse collapse" aria-labelledby="apiHeading" data-bs-parent="#backendVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>REST</strong> : Style d'architecture d'API utilisant les méthodes HTTP (GET, POST, PUT, DELETE).</li>
+                        <li class="list-group-item"><strong>SOAP</strong> : Protocole plus structuré pour échanger des données via des services web.</li>
+                        <li class="list-group-item"><strong>GraphQL</strong> : Langage de requête pour interroger des APIs, permettant de demander des données précises.</li>
+                        <li class="list-group-item"><strong>JSON</strong> : Format d'échange de données utilisé pour les API REST.</li>
+                        <li class="list-group-item"><strong>XML</strong> : Format de données structuré souvent utilisé avec SOAP.</li>
+                        <li class="list-group-item"><strong>OAuth</strong> : Protocole d'authentification utilisé pour sécuriser les API.</li>
+                        <li class="list-group-item"><strong>JWT</strong> (JSON Web Token) : Standard pour créer des jetons d'accès sécurisés pour les API.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Bases de Données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="dbHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dbSection" aria-expanded="false" aria-controls="dbSection">
+                    Bases de Données
+                </button>
+            </h2>
+            <div id="dbSection" class="accordion-collapse collapse" aria-labelledby="dbHeading" data-bs-parent="#backendVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>SQL</strong> : Langage pour interagir avec des bases de données relationnelles (MySQL, PostgreSQL, SQL Server).</li>
+                        <li class="list-group-item"><strong>NoSQL</strong> : Type de base de données non relationnelle (MongoDB, Cassandra, Redis).</li>
+                        <li class="list-group-item"><strong>ORM</strong> (Object-Relational Mapping) : Outil pour manipuler les données en base via des objets (ex : Entity Framework, Hibernate).</li>
+                        <li class="list-group-item"><strong>CRUD</strong> : Acronyme pour Create, Read, Update, Delete, les opérations basiques sur une base de données.</li>
+                        <li class="list-group-item"><strong>ACID</strong> : Propriétés des transactions en bases relationnelles (Atomicité, Cohérence, Isolation, Durabilité).</li>
+                        <li class="list-group-item"><strong>Sharding</strong> : Technique de partitionnement des données pour améliorer la performance d'une base.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Authentification et Sécurité -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="securityHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securitySection" aria-expanded="false" aria-controls="securitySection">
+                    Authentification et Sécurité
+                </button>
+            </h2>
+            <div id="securitySection" class="accordion-collapse collapse" aria-labelledby="securityHeading" data-bs-parent="#backendVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>HTTPS</strong> : Protocole sécurisé pour la communication entre le client et le serveur web.</li>
+                        <li class="list-group-item"><strong>SSL/TLS</strong> : Protocole de cryptage utilisé pour sécuriser les communications HTTP.</li>
+                        <li class="list-group-item"><strong>OAuth</strong> : Protocole pour l'autorisation d'accès à des ressources sécurisées.</li>
+                        <li class="list-group-item"><strong>JWT</strong> : Jetons pour sécuriser l'accès aux API et l'authentification.</li>
+                        <li class="list-group-item"><strong>Basic Auth</strong> : Méthode d'authentification utilisant des identifiants de base (nom d'utilisateur/mot de passe).</li>
+                        <li class="list-group-item"><strong>CSRF</strong> : Cross-Site Request Forgery, attaque de type injection de requêtes.</li>
+                        <li class="list-group-item"><strong>XSS</strong> : Cross-Site Scripting, attaque visant à injecter du code malveillant dans une page web.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section DevOps et Déploiement -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="devOpsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devOpsSection" aria-expanded="false" aria-controls="devOpsSection">
+                    DevOps et Déploiement
+                </button>
+            </h2>
+            <div id="devOpsSection" class="accordion-collapse collapse" aria-labelledby="devOpsHeading" data-bs-parent="#backendVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>CI/CD</strong> (Continuous Integration/Continuous Deployment) : Automatisation des processus de build et de déploiement.</li>
+                        <li class="list-group-item"><strong>Docker</strong> : Conteneurisation des applications pour un déploiement standardisé.</li>
+                        <li class="list-group-item"><strong>Kubernetes</strong> : Orchestration de conteneurs pour gérer le déploiement et la mise à l'échelle.</li>
+                        <li class="list-group-item"><strong>Ansible</strong> : Outil d'automatisation pour gérer l'infrastructure.</li>
+                        <li class="list-group-item"><strong>Terraform</strong> : Outil d'infrastructure as code pour créer et gérer l'infrastructure cloud.</li>
+                        <li class="list-group-item"><strong>Load Balancer</strong> : Distribution du trafic entre plusieurs serveurs pour équilibrer la charge.</li>
+                        <li class="list-group-item"><strong>Monitoring</strong> : Surveillance des applications et des serveurs pour détecter les anomalies (ex : Prometheus, Grafana).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire Microsoft : Controllers, Testing, Models, Enums, Resources</h1>
+
+    <div class="accordion" id="microsoftVocabAccordion">
+        <!-- Section Controllers -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="controllersHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#controllersSection" aria-expanded="false" aria-controls="controllersSection">
+                    Controllers
+                </button>
+            </h2>
+            <div id="controllersSection" class="accordion-collapse collapse show" aria-labelledby="controllersHeading" data-bs-parent="#microsoftVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Controller</strong> : Composant qui gère les requêtes HTTP et renvoie les réponses. Utilisé dans ASP.NET MVC.</li>
+                        <li class="list-group-item"><strong>ActionResult</strong> : Type de retour d'une méthode d'action dans un controller, qui peut représenter divers résultats (vue, JSON, redirection).</li>
+                        <li class="list-group-item"><strong>ApiController</strong> : Utilisé pour définir des contrôleurs d'API dans ASP.NET Core.</li>
+                        <li class="list-group-item"><strong>Route</strong> : Définition du chemin de la requête HTTP à associer à un controller/action.</li>
+                        <li class="list-group-item"><strong>HttpGet, HttpPost, HttpPut, HttpDelete</strong> : Attributs pour spécifier le type de requête HTTP auquel une action doit répondre.</li>
+                        <li class="list-group-item"><strong>Model Binding</strong> : Processus d'association des données de la requête HTTP aux paramètres d'une action.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Testing -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="testingHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testingSection" aria-expanded="false" aria-controls="testingSection">
+                    Testing
+                </button>
+            </h2>
+            <div id="testingSection" class="accordion-collapse collapse" aria-labelledby="testingHeading" data-bs-parent="#microsoftVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Unit Test</strong> : Test de la plus petite unité fonctionnelle du code, généralement une méthode ou une classe.</li>
+                        <li class="list-group-item"><strong>Integration Test</strong> : Test qui vérifie l'intégration entre plusieurs composants ou services.</li>
+                        <li class="list-group-item"><strong>MSTest</strong> : Framework de tests pour les applications .NET.</li>
+                        <li class="list-group-item"><strong>xUnit</strong> : Framework de tests populaire pour .NET, utilisé pour les tests unitaires.</li>
+                        <li class="list-group-item"><strong>Mocking</strong> : Technique de simulation d'objets ou de services dans les tests unitaires.</li>
+                        <li class="list-group-item"><strong>Arrange-Act-Assert (AAA)</strong> : Patron de test standard pour structurer les tests (préparer, exécuter, vérifier).</li>
+                        <li class="list-group-item"><strong>TestFixture</strong> : Classe contenant des tests dans un framework de test.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Models -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="modelsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modelsSection" aria-expanded="false" aria-controls="modelsSection">
+                    Models
+                </button>
+            </h2>
+            <div id="modelsSection" class="accordion-collapse collapse" aria-labelledby="modelsHeading" data-bs-parent="#microsoftVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Model</strong> : Classe représentant les données ou les objets métiers dans une application.</li>
+                        <li class="list-group-item"><strong>ViewModel</strong> : Objet qui regroupe les données nécessaires pour être affichées dans une vue.</li>
+                        <li class="list-group-item"><strong>Data Annotations</strong> : Attributs utilisés pour valider les données dans les modèles (ex: <code>[Required]</code>, <code>[StringLength]</code>).</li>
+                        <li class="list-group-item"><strong>Entity Framework</strong> : ORM (Object-Relational Mapping) pour interagir avec une base de données en utilisant des modèles.</li>
+                        <li class="list-group-item"><strong>Scaffold</strong> : Technique de génération automatique de code pour les modèles, vues et contrôleurs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Enums -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="enumsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#enumsSection" aria-expanded="false" aria-controls="enumsSection">
+                    Enums (Enumerations)
+                </button>
+            </h2>
+            <div id="enumsSection" class="accordion-collapse collapse" aria-labelledby="enumsHeading" data-bs-parent="#microsoftVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Enum</strong> : Type spécial qui définit un ensemble de constantes nommées. Exemple : <code>public enum Days { Sunday, Monday, ... }</code></li>
+                        <li class="list-group-item"><strong>Flags Attribute</strong> : Attribut qui permet à un enum d'être traité comme un ensemble de bits (valeurs combinées).</li>
+                        <li class="list-group-item"><strong>Enum.Parse()</strong> : Méthode permettant de convertir une chaîne en valeur d'énumération.</li>
+                        <li class="list-group-item"><strong>Enum.GetValues()</strong> : Méthode pour obtenir toutes les valeurs possibles d'un enum.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Resources -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="resourcesHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#resourcesSection" aria-expanded="false" aria-controls="resourcesSection">
+                    Resources
+                </button>
+            </h2>
+            <div id="resourcesSection" class="accordion-collapse collapse" aria-labelledby="resourcesHeading" data-bs-parent="#microsoftVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Resource File (.resx)</strong> : Fichier XML utilisé pour stocker des chaînes de texte, images et autres objets pour la localisation.</li>
+                        <li class="list-group-item"><strong>Globalization</strong> : Concept d'internationalisation et de localisation d'une application pour différents marchés ou langues.</li>
+                        <li class="list-group-item"><strong>Localization</strong> : Adaptation d'une application aux spécificités culturelles d'une région ou d'un pays.</li>
+                        <li class="list-group-item"><strong>ResourceManager</strong> : Classe utilisée pour charger les ressources d'un fichier .resx.</li>
+                        <li class="list-group-item"><strong>Satellite Assemblies</strong> : Assemblies contenant des ressources pour une culture spécifique.</li>
+                        <li class="list-group-item"><strong>CultureInfo</strong> : Classe utilisée pour définir des informations culturelles, telles que les formats de date, monnaie, et langues.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire Entity Framework Core</h1>
+
+    <div class="accordion" id="efCoreVocabAccordion">
+        <!-- Section DbContext -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="dbContextHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dbContextSection" aria-expanded="false" aria-controls="dbContextSection">
+                    DbContext
+                </button>
+            </h2>
+            <div id="dbContextSection" class="accordion-collapse collapse show" aria-labelledby="dbContextHeading" data-bs-parent="#efCoreVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>DbContext</strong> : Classe centrale qui gère les requêtes et les modifications à la base de données.</li>
+                        <li class="list-group-item"><strong>DbSet&lt;T&gt;</strong> : Représente une collection d'entités d'un type particulier dans le contexte.</li>
+                        <li class="list-group-item"><strong>OnModelCreating</strong> : Méthode dans laquelle les configurations du modèle de données sont définies (mappage entre les entités et la base de données).</li>
+                        <li class="list-group-item"><strong>SaveChanges</strong> : Méthode pour enregistrer les modifications faites aux entités dans la base de données.</li>
+                        <li class="list-group-item"><strong>ChangeTracker</strong> : Suit les modifications des entités gérées par le DbContext.</li>
+                        <li class="list-group-item"><strong>Lazy Loading</strong> : Chargement différé des données, les relations ne sont récupérées que lorsqu'elles sont accédées.</li>
+                        <li class="list-group-item"><strong>Explicit Loading</strong> : Chargement explicite des données liées via des méthodes comme <code>Load()</code>.</li>
+                        <li class="list-group-item"><strong>Query Tracking</strong> : Contrôle si les entités récupérées sont suivies pour détecter les modifications.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Migrations -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="migrationsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#migrationsSection" aria-expanded="false" aria-controls="migrationsSection">
+                    Migrations
+                </button>
+            </h2>
+            <div id="migrationsSection" class="accordion-collapse collapse" aria-labelledby="migrationsHeading" data-bs-parent="#efCoreVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Migration</strong> : Classe qui représente une modification de la structure de la base de données.</li>
+                        <li class="list-group-item"><strong>Add-Migration</strong> : Commande pour générer une nouvelle migration basée sur les modifications apportées au modèle.</li>
+                        <li class="list-group-item"><strong>Update-Database</strong> : Commande pour appliquer les migrations à la base de données.</li>
+                        <li class="list-group-item"><strong>Down</strong> : Méthode d'une migration qui défait les modifications appliquées.</li>
+                        <li class="list-group-item"><strong>Up</strong> : Méthode d'une migration qui définit les modifications à appliquer à la base de données.</li>
+                        <li class="list-group-item"><strong>Rollback</strong> : Revenir à une migration antérieure en annulant les migrations appliquées après celle-ci.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Entities -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="entitiesHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entitiesSection" aria-expanded="false" aria-controls="entitiesSection">
+                    Entities
+                </button>
+            </h2>
+            <div id="entitiesSection" class="accordion-collapse collapse" aria-labelledby="entitiesHeading" data-bs-parent="#efCoreVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Entity</strong> : Classe C# qui représente une table dans la base de données.</li>
+                        <li class="list-group-item"><strong>Primary Key</strong> : Propriété ou ensemble de propriétés identifiant de manière unique une entité.</li>
+                        <li class="list-group-item"><strong>Foreign Key</strong> : Clé étrangère qui établit une relation entre deux entités.</li>
+                        <li class="list-group-item"><strong>Navigation Property</strong> : Propriété utilisée pour accéder aux entités liées (relations entre tables).</li>
+                        <li class="list-group-item"><strong>Data Annotations</strong> : Attributs utilisés pour configurer le comportement des propriétés d'entité (ex : <code>[Key]</code>, <code>[Required]</code>, <code>[MaxLength]</code>).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section LINQ et Requêtes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="linqHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqSection" aria-expanded="false" aria-controls="linqSection">
+                    LINQ et Requêtes
+                </button>
+            </h2>
+            <div id="linqSection" class="accordion-collapse collapse" aria-labelledby="linqHeading" data-bs-parent="#efCoreVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>LINQ</strong> : Language Integrated Query, permet d'écrire des requêtes pour interroger des collections d'entités.</li>
+                        <li class="list-group-item"><strong>Where</strong> : Méthode pour filtrer les entités selon une condition.</li>
+                        <li class="list-group-item"><strong>Include</strong> : Méthode pour charger les relations associées à une entité.</li>
+                        <li class="list-group-item"><strong>FirstOrDefault</strong> : Méthode qui renvoie la première entité correspondant à une condition ou une valeur par défaut.</li>
+                        <li class="list-group-item"><strong>ToList</strong> : Méthode pour exécuter une requête et convertir le résultat en liste.</li>
+                        <li class="list-group-item"><strong>AsNoTracking</strong> : Exécute une requête sans suivre les entités récupérées dans le ChangeTracker.</li>
+                        <li class="list-group-item"><strong>GroupBy</strong> : Méthode pour regrouper les résultats selon une clé.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Configurations Avancées -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="advancedConfigHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedConfigSection" aria-expanded="false" aria-controls="advancedConfigSection">
+                    Configurations Avancées
+                </button>
+            </h2>
+            <div id="advancedConfigSection" class="accordion-collapse collapse" aria-labelledby="advancedConfigHeading" data-bs-parent="#efCoreVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Fluent API</strong> : API permettant de configurer les relations entre les entités et les propriétés sans utiliser les annotations de données.</li>
+                        <li class="list-group-item"><strong>HasKey</strong> : Utilisé pour définir la clé primaire d'une entité.</li>
+                        <li class="list-group-item"><strong>HasOne</strong> : Utilisé pour configurer une relation un-à-un ou un-à-plusieurs entre les entités.</li>
+                        <li class="list-group-item"><strong>HasMany</strong> : Utilisé pour configurer une relation plusieurs-à-un ou plusieurs-à-plusieurs entre les entités.</li>
+                        <li class="list-group-item"><strong>ToTable</strong> : Méthode utilisée pour spécifier le nom de la table correspondant à une entité.</li>
+                        <li class="list-group-item">
+                            <strong>Seed Data</strong> : Ensemble de données initiales insérées
+
+                            automatiquement dans la base de données lors de la migration.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire LINQ (Language Integrated Query)</h1>
+
+    <div class="accordion" id="linqVocabAccordion">
+        <!-- Section LINQ Overview -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="linqOverviewHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#linqOverviewSection" aria-expanded="false" aria-controls="linqOverviewSection">
+                    Aperçu de LINQ
+                </button>
+            </h2>
+            <div id="linqOverviewSection" class="accordion-collapse collapse show" aria-labelledby="linqOverviewHeading" data-bs-parent="#linqVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>LINQ</strong> : Un ensemble de fonctionnalités de .NET pour interroger et manipuler des collections de données de manière déclarative.</li>
+                        <li class="list-group-item"><strong>LINQ to Objects</strong> : Utilisation de LINQ pour interroger des collections en mémoire, comme des listes, tableaux, etc.</li>
+                        <li class="list-group-item"><strong>LINQ to SQL</strong> : Utilisation de LINQ pour interroger des bases de données SQL via des objets C#.</li>
+                        <li class="list-group-item"><strong>LINQ to XML</strong> : Permet de manipuler et interroger des documents XML en utilisant LINQ.</li>
+                        <li class="list-group-item"><strong>LINQ to Entities</strong> : Utilisé pour interroger des bases de données via Entity Framework.</li>
+                        <li class="list-group-item"><strong>Deferred Execution</strong> : L'exécution des requêtes LINQ est différée jusqu'à ce que les données soient réellement demandées.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Méthodes de requêtes LINQ -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="linqMethodsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqMethodsSection" aria-expanded="false" aria-controls="linqMethodsSection">
+                    Méthodes de Requête LINQ
+                </button>
+            </h2>
+            <div id="linqMethodsSection" class="accordion-collapse collapse" aria-labelledby="linqMethodsHeading" data-bs-parent="#linqVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Where</strong> : Filtre les éléments d'une collection en fonction d'une condition. <code>ex: collection.Where(x => x.Age > 18)</code></li>
+                        <li class="list-group-item"><strong>Select</strong> : Projette les éléments d'une collection dans une nouvelle forme. <code>ex: collection.Select(x => x.Name)</code></li>
+                        <li class="list-group-item"><strong>OrderBy / OrderByDescending</strong> : Trie les éléments d'une collection par ordre croissant ou décroissant. <code>ex: collection.OrderBy(x => x.Age)</code></li>
+                        <li class="list-group-item"><strong>GroupBy</strong> : Regroupe les éléments d'une collection par clé. <code>ex: collection.GroupBy(x => x.Category)</code></li>
+                        <li class="list-group-item"><strong>Join</strong> : Jointure entre deux collections en fonction d'une clé commune. <code>ex: collection1.Join(collection2, x => x.Id, y => y.Id)</code></li>
+                        <li class="list-group-item"><strong>First / FirstOrDefault</strong> : Retourne le premier élément d'une collection, ou une valeur par défaut si aucun élément n'est trouvé. <code>ex: collection.First(x => x.Name == "John")</code></li>
+                        <li class="list-group-item"><strong>Single / SingleOrDefault</strong> : Retourne un élément unique ou une exception si plusieurs éléments correspondent. <code>ex: collection.Single(x => x.Id == 1)</code></li>
+                        <li class="list-group-item"><strong>Count</strong> : Retourne le nombre d'éléments d'une collection. <code>ex: collection.Count()</code></li>
+                        <li class="list-group-item"><strong>Sum</strong> : Retourne la somme des valeurs numériques d'une collection. <code>ex: collection.Sum(x => x.Price)</code></li>
+                        <li class="list-group-item"><strong>Average</strong> : Retourne la moyenne des valeurs numériques d'une collection. <code>ex: collection.Average(x => x.Score)</code></li>
+                        <li class="list-group-item"><strong>Min / Max</strong> : Retourne la valeur minimale ou maximale d'une collection. <code>ex: collection.Max(x => x.Price)</code></li>
+                        <li class="list-group-item"><strong>Distinct</strong> : Supprime les doublons d'une collection. <code>ex: collection.Distinct()</code></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Syntaxe de requête LINQ -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="linqSyntaxHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqSyntaxSection" aria-expanded="false" aria-controls="linqSyntaxSection">
+                    Syntaxe de Requête LINQ
+                </button>
+            </h2>
+            <div id="linqSyntaxSection" class="accordion-collapse collapse" aria-labelledby="linqSyntaxHeading" data-bs-parent="#linqVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Query Syntax</strong> : Style de requête qui ressemble aux requêtes SQL. <code>from x in collection where x.Age > 18 select x;</code></li>
+                        <li class="list-group-item"><strong>Method Syntax</strong> : Style de requête utilisant des méthodes de chaîne (enchaînement de méthodes). <code>collection.Where(x => x.Age > 18).Select(x => x.Name);</code></li>
+                        <li class="list-group-item"><strong>Let</strong> : Mot-clé utilisé dans les requêtes pour stocker des résultats intermédiaires. <code>let total = x.Quantity * x.Price</code></li>
+                        <li class="list-group-item"><strong>Into</strong> : Permet de continuer une requête après un groupement ou une jointure. <code>group x by x.Category into g</code></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Performances et Optimisation -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="linqPerformanceHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqPerformanceSection" aria-expanded="false" aria-controls="linqPerformanceSection">
+                    Performances et Optimisation
+                </button>
+            </h2>
+            <div id="linqPerformanceSection" class="accordion-collapse collapse" aria-labelledby="linqPerformanceHeading" data-bs-parent="#linqVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Deferred Execution</strong> : Requêtes LINQ qui ne sont pas exécutées immédiatement mais lorsqu'elles sont itérées.</li>
+                        <li class="list-group-item"><strong>Immediate Execution</strong> : Requêtes qui sont exécutées immédiatement via des méthodes comme <code>ToList()</code> ou <code>Count()</code>.</li>
+                        <li class="list-group-item"><strong>AsNoTracking</strong> : Utilisé avec Entity Framework pour améliorer les performances en désactivant le suivi des entités.</li>
+                        <li class="list-group-item"><strong>Projection</strong> : Technique pour sélectionner uniquement les données nécessaires pour améliorer les performances.</li>
+                        <li class="list-group-item"><strong>Optimize Joins</strong> : Assurez-vous d'utiliser <code>Join</code> avec les relations appropriées pour éviter des requêtes SQL inefficaces.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Outils et Extensions LINQ -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="linqToolsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqToolsSection" aria-expanded="false" aria-controls="linqToolsSection">
+                    Outils et Extensions LINQ
+                </button>
+            </h2>
+            <div id="linqToolsSection" class="accordion-collapse collapse" aria-labelledby="linqToolsHeading" data-bs-parent="#linqVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>LINQPad</strong> : Outil pour tester et interagir avec les requêtes LINQ.</li>
+                        <li class="list-group-item"><strong>ReSharper</strong> : Outil de productivité qui améliore la prise en charge des requêtes LINQ dans Visual Studio.</li>
+                        <li class="list-group-item"><strong>Dynamic LINQ</strong> : Permet de créer des requêtes LINQ à partir de chaînes, souvent utilisé dans les applications dynamiques.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire GitHub</h1>
+
+    <div class="accordion" id="gitHubVocabAccordion">
+        <!-- Section GitHub Basics -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="gitHubBasicsHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gitHubBasicsSection" aria-expanded="false" aria-controls="gitHubBasicsSection">
+                    Concepts de Base de GitHub
+                </button>
+            </h2>
+            <div id="gitHubBasicsSection" class="accordion-collapse collapse show" aria-labelledby="gitHubBasicsHeading" data-bs-parent="#gitHubVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Repository (Repo)</strong> : Espace ou projet où votre code et historique sont stockés sur GitHub.</li>
+                        <li class="list-group-item"><strong>Branch</strong> : Version alternative d'un dépôt où vous pouvez développer de nouvelles fonctionnalités indépendamment de la branche principale.</li>
+                        <li class="list-group-item"><strong>Commit</strong> : Modification ou ensemble de modifications enregistrées dans un dépôt.</li>
+                        <li class="list-group-item"><strong>Clone</strong> : Copier un dépôt distant sur votre machine locale.</li>
+                        <li class="list-group-item"><strong>Fork</strong> : Copier un projet depuis un dépôt GitHub sur votre propre compte, vous permettant de modifier le code sans affecter l'original.</li>
+                        <li class="list-group-item"><strong>Pull Request (PR)</strong> : Demande d'intégration de vos modifications dans la branche principale ou dans un autre projet.</li>
+                        <li class="list-group-item"><strong>Merge</strong> : Fusionner une branche dans une autre (généralement dans la branche principale).</li>
+                        <li class="list-group-item"><strong>Git</strong> : Système de gestion de version distribué utilisé par GitHub pour suivre les changements dans le code.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Gestion de Projet -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="projectManagementHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#projectManagementSection" aria-expanded="false" aria-controls="projectManagementSection">
+                    Gestion de Projet sur GitHub
+                </button>
+            </h2>
+            <div id="projectManagementSection" class="accordion-collapse collapse" aria-labelledby="projectManagementHeading" data-bs-parent="#gitHubVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Issue</strong> : Ticket créé pour signaler un bogue, demander une fonctionnalité ou poser une question.</li>
+                        <li class="list-group-item"><strong>Milestone</strong> : Série d'issues ou de pull requests liées à une fonctionnalité ou une version spécifique.</li>
+                        <li class="list-group-item"><strong>Labels</strong> : Étiquettes qui permettent de catégoriser les issues et les pull requests.</li>
+                        <li class="list-group-item"><strong>Projects</strong> : Outils de gestion de projet intégrés qui vous permettent d'organiser les tâches sous forme de tableaux Kanban.</li>
+                        <li class="list-group-item"><strong>Assignees</strong> : Personnes assignées à une issue ou une pull request pour être responsables de sa résolution.</li>
+                        <li class="list-group-item"><strong>Mentions</strong> : Utiliser &#64; suivi du nom d'un utilisateur pour notifier directement cette personne dans une issue ou un commentaire.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Collaboration -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="collaborationHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collaborationSection" aria-expanded="false" aria-controls="collaborationSection">
+                    Collaboration sur GitHub
+                </button>
+            </h2>
+            <div id="collaborationSection" class="accordion-collapse collapse" aria-labelledby="collaborationHeading" data-bs-parent="#gitHubVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Collaborators</strong> : Utilisateurs ayant accès à un dépôt pour contribuer directement au code.</li>
+                        <li class="list-group-item"><strong>Contributor</strong> : Personne ayant soumis une pull request ou contribué à un projet open-source.</li>
+                        <li class="list-group-item"><strong>Code Review</strong> : Processus d'examen du code soumis dans une pull request avant de fusionner les modifications.</li>
+                        <li class="list-group-item"><strong>Blame</strong> : Fonction GitHub pour voir qui a effectué une modification spécifique dans un fichier.</li>
+                        <li class="list-group-item"><strong>Actions GitHub</strong> : Plateforme d'intégration continue et de livraison continue (CI/CD) qui automatise les flux de travail à partir de votre dépôt GitHub.</li>
+                        <li class="list-group-item"><strong>Wiki</strong> : Documentation collaborative pour un projet, stockée directement dans un dépôt.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Sécurité et Gestion de Version -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="securityVersioningHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securityVersioningSection" aria-expanded="false" aria-controls="securityVersioningSection">
+                    Sécurité et Gestion de Version
+                </button>
+            </h2>
+            <div id="securityVersioningSection" class="accordion-collapse collapse" aria-labelledby="securityVersioningHeading" data-bs-parent="#gitHubVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>SSH Key</strong> : Clé de sécurité utilisée pour accéder à votre compte GitHub et effectuer des opérations sécurisées.</li>
+                        <li class="list-group-item"><strong>Access Token</strong> : Jeton d'accès permettant de faire des requêtes à l'API GitHub de manière sécurisée.</li>
+                        <li class="list-group-item"><strong>Version Tag</strong> : Balise utilisée pour marquer une version spécifique du code dans un dépôt.</li>
+                        <li class="list-group-item"><strong>Release</strong> : Publication d'une version stable d'un projet avec des fichiers binaires, des notes de version, et des tags.</li>
+                        <li class="list-group-item"><strong>Dependency Graph</strong> : Outil qui affiche les dépendances et avertit si des vulnérabilités sont détectées.</li>
+                        <li class="list-group-item"><strong>Branch Protection</strong> : Fonctionnalité de GitHub pour protéger une branche contre les modifications non autorisées (ex: besoin de revue avant un merge).</li>
+                        <li class="list-group-item"><strong>GitHub Pages</strong> : Fonctionnalité de GitHub qui permet d'héberger des pages web statiques directement depuis un dépôt.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Utilisation Avancée -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="advancedUsageHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedUsageSection" aria-expanded="false" aria-controls="advancedUsageSection">
+                    Utilisation Avancée
+                </button>
+            </h2>
+            <div id="advancedUsageSection" class="accordion-collapse collapse" aria-labelledby="advancedUsageHeading" data-bs-parent="#gitHubVocabAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Webhooks</strong> : Points de connexion permettant de recevoir des notifications en temps réel lorsqu'un événement se produit dans un dépôt GitHub.</li>
+                        <li class="list-group-item"><strong>API GitHub</strong> : Interface permettant d'automatiser et d'interagir avec les fonctionnalités de GitHub via des requêtes HTTP.</li>
+                        <li class="list-group-item"><strong>Actions Secrets</strong> : Variables d'environnement sécurisées utilisées dans les workflows GitHub Actions pour protéger les informations sensibles.</li>
+                        <li class="list-group-item"><strong>Squash Merge</strong> : Fusionner une branche en un seul commit afin de maintenir un historique Git propre.</li>
+                        <li class="list-group-item"><strong>Rebase</strong> : Rejouer les commits d'une branche sur une autre, créant un historique linéaire.</li>
+                        <li class="list-group-item"><strong>GitHub CLI</strong> : Interface en ligne de commande permettant d'interagir avec GitHub directement depuis un terminal.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+<p class="h4">
+    <br /><br /><br /><br />Fin
+</p>

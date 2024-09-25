@@ -158,5 +158,14 @@ namespace PascalTraining.Resources {
                 return ResourceManager.GetString("TypescriptFrontEnd", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vocabulary.
+        /// </summary>
+        public static string Vocabulary {
+            get {
+                return ResourceManager.GetString("Vocabulary", resourceCulture);
+            }
+        }
     }
 }

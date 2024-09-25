@@ -1,0 +1,23 @@
+﻿@page "/vocabulary"
+
+@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+@inject IStringLocalizer<SharedResource> Localizer
+
+<PageTitle>@Localizer["Vocabulary"]</PageTitle>
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <Vocabulary_fr />
+}
+else
+{
+    <Vocabulary_en />
+}
