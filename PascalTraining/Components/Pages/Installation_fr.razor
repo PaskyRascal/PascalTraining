@@ -1,0 +1,210 @@
+﻿@page "/installation_fr"
+
+@using Microsoft.Extensions.Localization
+@using System.Globalization;
+
+@rendermode InteractiveServer
+
+<PageTitle>Installation d'outil</PageTitle>
+
+<p class="h2 text-center">Installation d'outils</p>
+<p>&nbsp;</p>
+
+<div class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVS2022" aria-expanded="false" aria-controls="collapseVS2022">
+                Installation de Visual Studio 2022
+            </button>
+        </h2>
+        <div id="collapseVS2022" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <p class="h4">
+                    This page describes the steps needed to install Visual Studio 2022 Community, as well as the tools you will need to install.
+                    To install VS 2022, you can click on the Microsoft download link
+                    <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">
+                        https://visualstudio.microsoft.com/downloads/
+                    </a>. Click on <strong>Free Download</strong> under Community to start the download and installation.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/VS2022Installation.png" alt="Installation of Visual Studio 2022" />
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <p class="h4">
+                    Once the installation is complete, you will need to install some tools that will be useful. To do this, press the Windows button and start typing "Install".
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/VSInstallation.png" alt="VS Installation Tools" />
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <p class="h4">
+                    The VS Installer application is where you can install the necessary tools for developing your applications. Click on the <strong>Modify</strong> button to install the required tools.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/VSInstaller.png" alt="Modify tools in VS Installer" />
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <p class="h4">
+                    Here are the tools I have installed. If you select the same, at a minimum, you should be able to reproduce all the applications we will be discussing. Once these options are selected, click on <strong>Install while downloading</strong> at the bottom of the page.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/VSToolsInstalled.png" alt="Installed Tools in Visual Studio" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVSCode" aria-expanded="false" aria-controls="collapseVSCode">
+                Installation de Visual Studio Code
+            </button>
+        </h2>
+        <div id="collapseVSCode" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <p class="h4">
+                    This page describes the steps necessary to install Visual Studio Code.
+                    <br />
+                    To install Visual Studio Code, you can click on the Microsoft download link:
+                    <a href="https://code.visualstudio.com/download" target="_blank">
+                        https://code.visualstudio.com/download
+                    </a>.
+                    <br />
+                    Click on the icon corresponding to your operating system and accept all default settings.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/VSCodeInstallation.png" alt="Installation of VS Code" />
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <p class="h4">
+                    The VS Code installer application looks like the image below.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/VSCodeInstalled.png" alt="VS Code Installed Application" />
+                    </div>
+                </div>
+                <p class="h4">
+                    A multitude of extensions can be added to develop a wide variety of project types.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/VSCodeAppExtentions.png" alt="Extensions in VS Code" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSSMS" aria-expanded="false" aria-controls="collapseSSMS">
+                Installation de Node.js
+            </button>
+        </h2>
+        <div id="collapseSSMS" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <p class="h4">
+                    Install Node.js (free) by following this link:
+                    <a href="https://nodejs.org/en/download/prebuilt-installer/" target="_blank">
+                        https://nodejs.org/en/download/prebuilt-installer/
+                    </a>.
+                    <br />
+                    Click the "Download Node.js" button. Just follow the instructions and accept all default options.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/NodeJSInstallation.png" alt="Node.js Installation" />
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <p class="h4">
+                    To check if Node.js was installed correctly, you can verify the version installed on your machine.
+                    Open VS Code and press Ctrl + ` (control + tick) to open the terminal.
+                    <br />
+                    Type "node -v" to display the installed Node.js version.
+                    <br />
+                    Type "npm -v" to display the installed Node Package Manager (npm) version.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/NodeJSAndNPMVersions.png" alt="Checking Node.js and npm versions" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<div class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNodeJS" aria-expanded="false" aria-controls="collapseNodeJS">
+                Installation de Microsoft SQL Server Management Studio (SSMS)
+            </button>
+        </h2>
+        <div id="collapseNodeJS" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <p class="h4">
+                    Install Microsoft SQL Server Management Studio (SSMS) (free and optional).
+                    <br />
+                    <a href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16" target="_blank">
+                        https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
+                    </a>.
+                    <br />
+                    Scroll down the page, and you will see "Download SSMS". The download link is right below.
+                    <br />
+                    Click on <strong>Download SQL Server Management Studio (SSMS)</strong> to start the download and installation.
+                </p>
+                <p>&nbsp;</p>
+                <p class="h4">
+                    Once the installation is complete, you will be able to use SSMS to manage your SQL Server databases.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/SSMSInstallation.png" alt="SSMS Installation" />
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <p class="h4">
+                    Here is the SSMS interface once installed. You can connect to a SQL Server instance and start managing your databases.
+                </p>
+                <p>&nbsp;</p>
+                <div class="card border-3">
+                    <div class="card-body">
+                        <img src="/images/installation/SSMSInterface.png" alt="SSMS Interface" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>&nbsp;</p>
+<p class="h4">
+    End
+    <br /><br /><br /><br />
+</p>

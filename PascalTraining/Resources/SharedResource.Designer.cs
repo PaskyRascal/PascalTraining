@@ -115,15 +115,6 @@ namespace PascalTraining.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Installation VS 2022.
-        /// </summary>
-        public static string InstallationVS2022 {
-            get {
-                return ResourceManager.GetString("InstallationVS2022", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Localize an App.
         /// </summary>
         public static string LocalizeAnApp {
@@ -147,6 +138,15 @@ namespace PascalTraining.Resources {
         public static string Readme {
             get {
                 return ResourceManager.GetString("Readme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools installation.
+        /// </summary>
+        public static string ToolsInstallation {
+            get {
+                return ResourceManager.GetString("ToolsInstallation", resourceCulture);
             }
         }
         

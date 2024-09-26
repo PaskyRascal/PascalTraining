@@ -135,8 +135,8 @@
   <data name="Readme" xml:space="preserve">
     <value>Me lire</value>
   </data>
-  <data name="InstallationVS2022" xml:space="preserve">
-    <value>Installation de VS 2022</value>
+  <data name="ToolsInstallation" xml:space="preserve">
+    <value>Installation d'outils</value>
   </data>
   <data name="AzureDatabaseSetup" xml:space="preserve">
     <value>Créer une BD Azure</value>
