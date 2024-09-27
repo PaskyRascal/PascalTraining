@@ -133,11 +133,11 @@
         <!-- CSS Section -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cssSection" aria-expanded="false" aria-controls="cssSection">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cssSection2" aria-expanded="false" aria-controls="cssSection2">
                     CSS (Cascading Style Sheets)
                 </button>
             </h2>
-            <div id="cssSection" class="accordion-collapse collapse">
+            <div id="cssSection2" class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
@@ -326,7 +326,7 @@ console.log(jsonObject.name); // Displays "Alice"
                             <pre>
                             <code>
 function fetchData() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) =&gt; {
         setTimeout(() => resolve("Data retrieved"), 2000);
     });
 }
@@ -374,52 +374,52 @@ $(document).ready(function() {
                         <li class="list-group-item">
                             <strong>React.js</strong> : Library for building user interfaces. Used to create reusable components and manage application state. Example:
                             <pre>
-                            <code>
+                                <code>
 import React, { useState } from 'react';
 
 function App() {
     const [count, setCount] = useState(0);
 
     return (
-                            <div>
-                            <p>You clicked {count} times</p>
-                            <button onClick={() => setCount(count + 1)}>
+        &lt;div&gt;
+            &lt;p&gt;You clicked {count} times&lt;/p&gt;
+            &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
                 Click here
-            </button>
-        </div>
+            &lt;/button&gt;
+        &lt/div&gt;
     );
 }
 
 export default App;
-                            </code>
+                                </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
                             <strong>Vue.js</strong> : Framework for building reactive user interfaces. Used to build interactive web applications. Example:
                             <pre>
-                            <code>
-                            <template>
-                            <div id="app">
-                            <p>{{ message }}</p>
-                            <button @click="reverseMessage">Reverse Message</button>
-                          </div>
-                        </template>
+                                <code>
+&lt;template&gt;
+    &lt;div id="app"&gt;
+    &lt;p&gt;{{ message }}&lt;/p&gt;
+    &lt;button &#64;click="reverseMessage"&gt;Reverse Message&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
 
-                            <script>
-                                export default {
-                                    data() {
-                                        return {
-                                            message: 'Hello Vue!'
-                                        }
-                                    },
-                                    methods: {
-                                        reverseMessage() {
-                                            this.message = this.message.split('').reverse().join('')
-                                        }
-                                    }
-                                }
-</script>
-                            </code>
+&lt;script&gt;
+    export default {
+        data() {
+            return {
+                message: 'Hello Vue!'
+            }
+        },
+        methods: {
+            reverseMessage() {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    }
+&lt;/script&gt;
+                                </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
@@ -1804,7 +1804,7 @@ let promise = new Promise((resolve, reject) => {
                         <li class="list-group-item">
                             <strong>then()</strong> : Method called when the promise is resolved. For example:
                             <pre>
-                            <code>
+                                <code>
 promise.then(result => {
     // Code to execute when the promise is resolved
 });
@@ -1824,7 +1824,7 @@ promise.catch(error => {
                         <li class="list-group-item">
                             <strong>async</strong> : Keyword that allows writing asynchronous functions in JavaScript. For example:
                             <pre>
-                            <code>
+                                <code>
 async function myFunction() {
     // Asynchronous code
 }
@@ -1834,7 +1834,7 @@ async function myFunction() {
                         <li class="list-group-item">
                             <strong>await</strong> : Keyword used to wait for the resolution of a promise inside an <code>async</code> function. For example:
                             <pre>
-                            <code>
+                                <code>
 async function myFunction() {
     let result = await promise;
     // Code to execute after the promise is resolved
@@ -1845,7 +1845,7 @@ async function myFunction() {
                         <li class="list-group-item">
                             <strong>setTimeout()</strong> : Function that executes code after a specified delay. For example:
                             <pre>
-                            <code>
+                                <code>
 setTimeout(() => {
     // Code to execute after the delay
 }, delayInMilliseconds);
@@ -3882,7 +3882,7 @@ spec:
                             <code>
 - name: Install and start Apache
     hosts: webservers
-   
+
 
  become: yes
     tasks:
@@ -4694,7 +4694,7 @@ var headers = response.Headers;
                         <li class="list-group-item">
                             <strong>OPTIONS</strong>: Asks the server to return the allowed HTTP methods for a given resource. The <code>OPTIONS</code> method is used to query the server about the supported HTTP methods for a specific resource. It is often used to check server capabilities before making an actual request. Example usage:
                             <pre>
-                           
+
 
  <code>
 // Example of using the OPTIONS method with HttpClient in C#
@@ -5706,7 +5706,7 @@ public class MyAsyncExceptionTests
 // Example of using Fluent Assertions with xUnit
 public class MyFluentAssertionsTests
 {
-   
+
 
  [Fact]
     public void TestWithFluentAssertions()
@@ -8445,9 +8445,7 @@ az cdn profile create --name myCdnProfile --resource-group myResourceGroup --sku
         <!-- Section Development and AI -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#
-
-devAISection" aria-expanded="false" aria-controls="devAISection">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devAISection" aria-expanded="false" aria-controls="devAISection">
                     Development and AI on Azure
                 </button>
             </h2>
