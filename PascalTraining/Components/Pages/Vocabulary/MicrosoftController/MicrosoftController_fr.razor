@@ -1,0 +1,564 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire Microsoft : Controllers, Testing, Models, Enums, Resources</h1>
+
+    <div class="accordion">
+        <!-- Section Controllers -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#controllersSection" aria-expanded="false" aria-controls="controllersSection">
+                    Controllers
+                </button>
+            </h2>
+            <div id="controllersSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Controller</strong> : Composant qui gère les requêtes HTTP et renvoie les réponses. Utilisé dans ASP.NET MVC et ASP.NET Core. Les contrôleurs contiennent des actions qui sont appelées en réponse à des requêtes HTTP. Exemple de contrôleur :
+                            <pre>
+                            <code>
+public class HomeController : Controller
+{
+    public IActionResult Index()
+    {
+        return View();
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ActionResult</strong> : Type de retour d'une méthode d'action dans un controller, qui peut représenter divers résultats (vue, JSON, redirection). Il permet de retourner différents types de réponses HTTP en fonction des besoins de l'application. Exemple d'utilisation d'ActionResult :
+                            <pre>
+                            <code>
+public IActionResult GetUser(int id)
+{
+    var user = _userService.GetUserById(id);
+    if (user == null)
+    {
+        return NotFound();
+    }
+    return Ok(user);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ApiController</strong> : Utilisé pour définir des contrôleurs d'API dans ASP.NET Core. Il simplifie la création de services RESTful en fournissant des fonctionnalités comme la validation automatique des modèles et la gestion des erreurs. Exemple de contrôleur d'API :
+                            <pre>
+                            <code>
+[ApiController]
+[Route("api/[controller]")]
+public class UsersController : ControllerBase
+{
+    [HttpGet("{id}")]
+    public IActionResult GetUser(int id)
+    {
+        var user = _userService.GetUserById(id);
+        if (user == null)
+        {
+            return NotFound();
+        }
+        return Ok(user);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Route</strong> : Définition du chemin de la requête HTTP à associer à un controller/action. Les routes peuvent être définies de manière conventionnelle ou via des attributs pour spécifier comment les URL sont mappées aux actions des contrôleurs. Exemple de route avec attribut :
+                            <pre>
+                            <code>
+[Route("api/[controller]")]
+public class ProductsController : ControllerBase
+{
+    [HttpGet("{id}")]
+    public IActionResult GetProduct(int id)
+    {
+        var product = _productService.GetProductById(id);
+        if (product == null)
+        {
+            return NotFound();
+        }
+        return Ok(product);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HttpGet, HttpPost, HttpPut, HttpDelete</strong> : Attributs pour spécifier le type de requête HTTP auquel une action doit répondre. <code>HttpGet</code> est utilisé pour les requêtes de lecture, <code>HttpPost</code> pour les créations, <code>HttpPut</code> pour les mises à jour, et <code>HttpDelete</code> pour les suppressions. Exemple d'utilisation des attributs HTTP :
+                            <pre>
+                            <code>
+[HttpGet("{id}")]
+public IActionResult GetItem(int id)
+{
+    var item = _itemService.GetItemById(id);
+    if (item == null)
+    {
+        return NotFound();
+    }
+    return Ok(item);
+}
+
+[HttpPost]
+public IActionResult CreateItem([FromBody] Item item)
+{
+    if (!ModelState.IsValid)
+    {
+        return BadRequest(ModelState);
+    }
+    _itemService.AddItem(item);
+    return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item);
+}
+
+[HttpPut("{id}")]
+public IActionResult UpdateItem(int id, [FromBody] Item item)
+{
+    if (id != item.Id || !ModelState.IsValid)
+    {
+        return BadRequest();
+    }
+    _itemService.UpdateItem(item);
+    return NoContent();
+}
+
+[HttpDelete("{id}")]
+public IActionResult DeleteItem(int id)
+{
+    var item = _itemService.GetItemById(id);
+    if (item == null)
+    {
+        return NotFound();
+    }
+    _itemService.DeleteItem(id);
+    return NoContent();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Model Binding</strong> : Processus d'association des données de la requête HTTP aux paramètres d'une action. Il permet de convertir automatiquement les données de la requête (comme les formulaires ou les JSON) en objets C# utilisables dans les actions des contrôleurs. Exemple de model binding :
+                            <pre>
+                            <code>
+public IActionResult CreateUser([FromBody] User user)
+{
+    if (!ModelState.IsValid)
+    {
+        return BadRequest(ModelState);
+    }
+    _userService.AddUser(user);
+    return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Testing -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testingSection" aria-expanded="false" aria-controls="testingSection">
+                    Testing
+                </button>
+            </h2>
+            <div id="testingSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Unit Test</strong> : Test de la plus petite unité fonctionnelle du code, généralement une méthode ou une classe. Les tests unitaires sont utilisés pour vérifier que chaque unité de code fonctionne comme prévu de manière isolée. Exemple de test unitaire avec xUnit :
+                            <pre>
+                            <code>
+public class CalculatorTests
+{
+    [Fact]
+    public void Add_ReturnsSum()
+    {
+        // Arrange
+        var calculator = new Calculator();
+
+        // Act
+        var result = calculator.Add(2, 3);
+
+        // Assert
+        Assert.Equal(5, result);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Integration Test</strong> : Test qui vérifie l'intégration entre plusieurs composants ou services. Les tests d'intégration s'assurent que les différents modules de l'application fonctionnent ensemble correctement. Exemple de test d'intégration avec xUnit et ASP.NET Core :
+                            <pre>
+                            <code>
+public class UsersControllerTests : IClassFixture&lt;WebApplicationFactory&lt;Startup&gt;&gt;
+{
+    private readonly HttpClient _client;
+
+    public UsersControllerTests(WebApplicationFactory&lt;Startup&gt; factory)
+    {
+        _client = factory.CreateClient();
+    }
+
+    [Fact]
+    public async Task GetUser_ReturnsUser()
+    {
+        // Act
+        var response = await _client.GetAsync("/api/users/1");
+
+        // Assert
+        response.EnsureSuccessStatusCode();
+        var user = await response.Content.ReadAsAsync&lt;User&gt;();
+        Assert.Equal(1, user.Id);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>MSTest</strong> : Framework de tests pour les applications .NET. MSTest est l'un des frameworks de test intégrés dans Visual Studio, permettant d'écrire et d'exécuter des tests unitaires et d'intégration. Exemple de test unitaire avec MSTest :
+                            <pre>
+                            <code>
+[TestClass]
+public class CalculatorTests
+{
+    [TestMethod]
+    public void Add_ReturnsSum()
+    {
+        // Arrange
+        var calculator = new Calculator();
+
+        // Act
+        var result = calculator.Add(2, 3);
+
+        // Assert
+        Assert.AreEqual(5, result);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>xUnit</strong> : Framework de tests populaire pour .NET, utilisé pour les tests unitaires. xUnit est connu pour sa simplicité et sa flexibilité, et il est souvent utilisé dans les projets open-source et professionnels. Exemple de test unitaire avec xUnit :
+                            <pre>
+                            <code>
+public class CalculatorTests
+{
+    [Fact]
+    public void Add_ReturnsSum()
+    {
+        // Arrange
+        var calculator = new Calculator();
+
+        // Act
+        var result = calculator.Add(2, 3);
+
+        // Assert
+        Assert.Equal(5, result);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Mocking</strong> : Technique de simulation d'objets ou de services dans les tests unitaires. Le mocking permet de créer des objets factices qui imitent le comportement des objets réels, facilitant ainsi le test des composants en isolation. Exemple de mocking avec Moq :
+                            <pre>
+                            <code>
+var mockRepository = new Mock&lt;IUserRepository&gt;();
+mockRepository.Setup(repo => repo.GetUserById(1)).Returns(new User { Id = 1, Name = "Alice" });
+
+var userService = new UserService(mockRepository.Object);
+var user = userService.GetUserById(1);
+
+Assert.Equal("Alice", user.Name);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Arrange-Act-Assert (AAA)</strong> : Patron de test standard pour structurer les tests (préparer, exécuter, vérifier). <strong>Arrange</strong> : Préparer les conditions initiales et les objets nécessaires. <strong>Act</strong> : Exécuter l'action ou la méthode à tester. <strong>Assert</strong> : Vérifier que le résultat obtenu correspond au résultat attendu. Exemple de test structuré en AAA :
+                            <pre>
+                            <code>
+public class CalculatorTests
+{
+    [Fact]
+    public void Add_ReturnsSum()
+    {
+        // Arrange
+        var calculator = new Calculator();
+
+        // Act
+        var result = calculator.Add(2, 3);
+
+        // Assert
+        Assert.Equal(5, result);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>TestFixture</strong> : Classe contenant des tests dans un framework de test. Une TestFixture regroupe plusieurs tests qui partagent une configuration commune, facilitant ainsi l'organisation et l'exécution des tests. Exemple de TestFixture avec NUnit :
+                            <pre>
+                            <code>
+[TestFixture]
+public class CalculatorTests
+{
+    private Calculator _calculator;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _calculator = new Calculator();
+    }
+
+    [Test]
+    public void Add_ReturnsSum()
+    {
+        var result = _calculator.Add(2, 3);
+        Assert.AreEqual(5, result);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Models -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modelsSection" aria-expanded="false" aria-controls="modelsSection">
+                    Models
+                </button>
+            </h2>
+            <div id="modelsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Model</strong> : Classe représentant les données ou les objets métiers dans une application. Les modèles sont utilisés pour transférer des données entre les différentes couches de l'application, comme la couche de présentation et la couche de données. Exemple de modèle :
+                            <pre>
+                            <code>
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ViewModel</strong> : Objet qui regroupe les données nécessaires pour être affichées dans une vue. Le ViewModel est utilisé pour préparer et formater les données avant de les envoyer à la vue, facilitant ainsi la liaison des données et la logique de présentation. Exemple de ViewModel :
+                            <pre>
+                            <code>
+public class UserViewModel
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string DisplayName => $"{Name} ({Email})";
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Data Annotations</strong> : Attributs utilisés pour valider les données dans les modèles. Par exemple, <code>[Required]</code> assure qu'une propriété n'est pas nulle, <code>[StringLength]</code> définit la longueur maximale d'une chaîne, et <code>[Range]</code> spécifie une plage de valeurs acceptables. Ces annotations aident à garantir l'intégrité des données avant qu'elles ne soient enregistrées dans la base de données. Exemple d'annotations de données :
+                            <pre>
+                            <code>
+public class User
+{
+    [Required]
+    public string Name { get; set; }
+
+    [Required, EmailAddress]
+    public string Email { get; set; }
+
+    [Range(18, 99)]
+    public int Age { get; set; }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Entity Framework</strong> : ORM (Object-Relational Mapping) pour interagir avec une base de données en utilisant des modèles. Entity Framework permet de travailler avec des bases de données en utilisant des objets C# plutôt que des requêtes SQL, facilitant ainsi le développement et la maintenance des applications. Exemple d'utilisation d'Entity Framework :
+                            <pre>
+                            <code>
+public class ApplicationDbContext : DbContext
+{
+    public DbSet&lt;User&gt; Users { get; set; }
+}
+
+public class UserService
+{
+    private readonly ApplicationDbContext _context;
+
+    public UserService(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task&lt;List&lt;User&gt;&gt; GetUsersAsync()
+    {
+        return await _context.Users.ToListAsync();
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Scaffold</strong> : Technique de génération automatique de code pour les modèles, vues et contrôleurs. Le scaffolding permet de créer rapidement des opérations CRUD (Create, Read, Update, Delete) en générant le code nécessaire pour interagir avec la base de données et afficher les données dans l'interface utilisateur. Exemple de commande de scaffolding :
+                            <pre><code>dotnet ef dbcontext scaffold "Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;" Microsoft.EntityFrameworkCore.SqlServer -o Models</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Enums -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#enumsSection" aria-expanded="false" aria-controls="enumsSection">
+                    Enums (Enumerations)
+                </button>
+            </h2>
+            <div id="enumsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Enum</strong> : Type spécial qui définit un ensemble de constantes nommées. Les énumérations sont utilisées pour représenter un ensemble de valeurs possibles pour une variable. Exemple :
+                            <pre>
+                            <code>
+public enum Days
+{
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+}
+                                </code>
+                            </pre>
+                            Cela permet de rendre le code plus lisible et de réduire les erreurs en limitant les valeurs possibles.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Flags Attribute</strong> : Attribut qui permet à un enum d'être traité comme un ensemble de bits (valeurs combinées). Cet attribut est utilisé pour créer des énumérations qui peuvent être combinées avec des opérations bit à bit. Exemple :
+                            <pre>
+                            <code>
+[Flags]
+public enum FileAccess
+{
+    Read = 1,
+    Write = 2,
+    Execute = 4
+}
+                                </code>
+                            </pre>
+                            Cela permet de combiner les valeurs comme <code>FileAccess.Read | FileAccess.Write</code>.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Enum.Parse()</strong> : Méthode permettant de convertir une chaîne en valeur d'énumération. Cette méthode est utile pour convertir des valeurs de chaîne en types d'énumération. Exemple :
+                            <pre><code>Days day = (Days)Enum.Parse(typeof(Days), "Sunday");</code></pre>
+                            Cela permet de convertir la chaîne "Sunday" en la valeur d'énumération correspondante.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Enum.GetValues()</strong> : Méthode pour obtenir toutes les valeurs possibles d'un enum. Cette méthode retourne un tableau de toutes les valeurs définies dans une énumération. Exemple :
+                            <pre><code>Days[] days = (Days[])Enum.GetValues(typeof(Days));</code></pre>
+                            Cela permet de parcourir toutes les valeurs possibles de l'énumération <code>Days</code>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Resources -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#resourcesSection" aria-expanded="false" aria-controls="resourcesSection">
+                    Resources
+                </button>
+            </h2>
+            <div id="resourcesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Resource File (.resx)</strong> : Fichier XML utilisé pour stocker des chaînes de texte, images et autres objets pour la localisation. Les fichiers .resx permettent de séparer les ressources de l'application du code, facilitant ainsi la traduction et la gestion des ressources. Exemple :
+                            <pre>
+                            <code>
+// strings.fr.resx
+&lt;root&gt;
+    &lt;data name="Hello" xml:space="preserve"&gt;
+    &lt;value&gt;Bonjour&lt;/value&gt;
+    &lt;/data&gt;
+&lt;/root&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Globalization</strong> : Concept d'internationalisation et de localisation d'une application pour différents marchés ou langues. La globalisation implique la conception et le développement d'une application de manière à ce qu'elle puisse être facilement adaptée à différentes cultures et langues sans nécessiter de modifications majeures du code. Exemple :
+                            <pre>
+                            <code>
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddLocalization(options => options.ResourcesPath = "Resources");
+    services.Configure&lt;RequestLocalizationOptions&gt;(options =>
+    {
+        var supportedCultures = new[] { "en-US", "fr-FR" };
+        options.SetDefaultCulture(supportedCultures[0])
+                .AddSupportedCultures(supportedCultures)
+                .AddSupportedUICultures(supportedCultures);
+    });
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Localization</strong> : Adaptation d'une application aux spécificités culturelles d'une région ou d'un pays. La localisation inclut la traduction des chaînes de texte, l'adaptation des formats de date et de monnaie, et la gestion des particularités culturelles. Exemple :
+                            <pre>
+                            <code>
+&#64;inject IStringLocalizer&lt;Vocabulary_fr&gt; Localizer
+
+&lt;p&gt;&#64;Localizer["Hello"]&lt;/p&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ResourceManager</strong> : Classe utilisée pour charger les ressources d'un fichier .resx. Le <code>ResourceManager</code> permet de récupérer les chaînes de texte et autres ressources localisées en fonction de la culture actuelle de l'application. Exemple :
+                            <pre>
+                            <code>
+var resourceManager = new ResourceManager("MyApp.Resources.strings", typeof(Program).Assembly);
+string hello = resourceManager.GetString("Hello", new CultureInfo("fr-FR"));
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Satellite Assemblies</strong> : Assemblies contenant des ressources pour une culture spécifique. Les assemblies satellites sont utilisés pour déployer les ressources localisées séparément du code principal de l'application, permettant ainsi de gérer les traductions et les mises à jour des ressources de manière indépendante. Exemple :
+                            <pre>
+                            <code>
+// Structure des fichiers
+// MyApp.dll
+// fr-FR/MyApp.resources.dll
+// en-US/MyApp.resources.dll
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CultureInfo</strong> : Classe utilisée pour définir des informations culturelles, telles que les formats de date, monnaie, et langues. La classe <code>CultureInfo</code> permet de spécifier la culture actuelle de l'application et d'accéder aux informations culturelles associées. Exemple :
+                            <pre>
+                            <code>
+CultureInfo.CurrentCulture = new CultureInfo("fr-FR");
+CultureInfo.CurrentUICulture = new CultureInfo("fr-FR");
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

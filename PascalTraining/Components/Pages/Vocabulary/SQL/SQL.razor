@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/sql"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <SQL_fr />
+}
+else
+{
+    <SQL_en />
+}

@@ -1,0 +1,355 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire LINQ (Language Integrated Query)</h1>
+
+    <div class="accordion">
+        <!-- Section LINQ Overview -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#linqOverviewSection" aria-expanded="false" aria-controls="linqOverviewSection">
+                    Aperçu de LINQ
+                </button>
+            </h2>
+            <div id="linqOverviewSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>LINQ</strong> : Un ensemble de fonctionnalités de .NET pour interroger et manipuler des collections de données de manière déclarative. LINQ (Language Integrated Query) permet d'écrire des requêtes directement dans le code C# en utilisant une syntaxe similaire à SQL. Exemple :
+                            <pre>
+                            <code>
+var query = from p in products
+where p.Price > 100
+select p;
+                                </code>
+                            </pre>
+                            Cela sélectionne les produits dont le prix est supérieur à 100.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>LINQ to Objects</strong> : Utilisation de LINQ pour interroger des collections en mémoire, comme des listes, tableaux, etc. Cela permet de manipuler des données en mémoire de manière déclarative. Exemple :
+                            <pre>
+                            <code>
+List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5 };
+var evenNumbers = from n in numbers
+                    where n % 2 == 0
+                    select n;
+                                </code>
+                            </pre>
+                            Cela sélectionne les nombres pairs de la liste.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>LINQ to SQL</strong> : Utilisation de LINQ pour interroger des bases de données SQL via des objets C#. LINQ to SQL permet de mapper des classes C# à des tables de base de données et d'écrire des requêtes en utilisant LINQ. Exemple :
+                            <pre>
+                            <code>
+DataContext db = new DataContext("connectionString");
+var query = from c in db.GetTable&lt;Customer&gt;()
+            where c.City == "Paris"
+            select c;
+                                </code>
+                            </pre>
+                            Cela sélectionne les clients dont la ville est "Paris".
+                        </li>
+                        <li class="list-group-item">
+                            <strong>LINQ to XML</strong> : Permet de manipuler et interroger des documents XML en utilisant LINQ. LINQ to XML offre une API fluide pour travailler avec des documents XML. Exemple :
+                            <pre>
+                            <code>
+XDocument doc = XDocument.Load("data.xml");
+var query = from e in doc.Descendants("Employee")
+            where (int)e.Element("Age") > 30
+            select e;
+                                </code>
+                            </pre>
+                            Cela sélectionne les employés dont l'âge est supérieur à 30.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>LINQ to Entities</strong> : Utilisé pour interroger des bases de données via Entity Framework. LINQ to Entities permet d'écrire des requêtes LINQ pour interagir avec des entités mappées à des tables de base de données. Exemple :
+                            <pre>
+                            <code>
+var query = from o in context.Orders
+where o.OrderDate &gt; DateTime.Now.AddDays(-30)
+select o;
+                                </code>
+                            </pre>
+                            Cela sélectionne les commandes passées au cours des 30 derniers jours.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Deferred Execution</strong> : L'exécution des requêtes LINQ est différée jusqu'à ce que les données soient réellement demandées. Cela signifie que la requête n'est pas exécutée au moment de sa définition, mais au moment où les données sont itérées. Exemple :
+                            <pre>
+                            <code>
+var query = from p in products
+where p.Price > 100
+select p;
+
+// La requête est exécutée ici, lorsque les données sont demandées
+foreach (var product in query)
+{
+    Console.WriteLine(product.Name);
+}
+                                </code>
+                            </pre>
+                            Cela permet d'optimiser les performances en retardant l'exécution jusqu'à ce que les données soient nécessaires.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Méthodes de requêtes LINQ -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqMethodsSection" aria-expanded="false" aria-controls="linqMethodsSection">
+                    Méthodes de Requête LINQ
+                </button>
+            </h2>
+            <div id="linqMethodsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Where</strong> : Filtre les éléments d'une collection en fonction d'une condition. Cette méthode retourne uniquement les éléments qui satisfont la condition spécifiée. Exemple :
+                            <pre><code>var adults = collection.Where(x => x.Age > 18);</code></pre>
+                            Cela sélectionne les éléments dont l'âge est supérieur à 18.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Select</strong> : Projette les éléments d'une collection dans une nouvelle forme. Cette méthode permet de transformer chaque élément d'une collection en un nouveau type. Exemple :
+                            <pre><code>var names = collection.Select(x => x.Name);</code></pre>
+                            Cela sélectionne les noms des éléments de la collection.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>OrderBy / OrderByDescending</strong> : Trie les éléments d'une collection par ordre croissant ou décroissant. <code>OrderBy</code> trie par ordre croissant, tandis que <code>OrderByDescending</code> trie par ordre décroissant. Exemple :
+                            <pre>
+                            <code>
+var sortedByAge = collection.OrderBy(x => x.Age);
+var sortedByAgeDesc = collection.OrderByDescending(x => x.Age);
+                                </code>
+                            </pre>
+                            Cela trie les éléments par âge en ordre croissant et décroissant respectivement.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>GroupBy</strong> : Regroupe les éléments d'une collection par clé. Cette méthode permet de créer des groupes d'éléments partageant une même valeur de clé. Exemple :
+                            <pre><code>var groupedByCategory = collection.GroupBy(x => x.Category);</code></pre>
+                            Cela regroupe les éléments par catégorie.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Join</strong> : Jointure entre deux collections en fonction d'une clé commune. Cette méthode permet de combiner des éléments de deux collections différentes en fonction d'une clé partagée. Exemple :
+                            <pre><code>var joined = collection1.Join(collection2, x => x.Id, y => y.Id, (x, y) => new { x.Name, y.Description });</code></pre>
+                            Cela joint les deux collections sur la clé <code>Id</code> et crée une nouvelle collection avec les propriétés <code>Name</code> et <code>Description</code>.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>First / FirstOrDefault</strong> : Retourne le premier élément d'une collection, ou une valeur par défaut si aucun élément n'est trouvé. <code>First</code> lève une exception si aucun élément n'est trouvé, tandis que <code>FirstOrDefault</code> retourne <code>null</code> ou la valeur par défaut du type. Exemple :
+                            <pre>
+                            <code>
+var firstJohn = collection.First(x => x.Name == "John");
+var firstOrDefaultJohn = collection.FirstOrDefault(x => x.Name == "John");
+                                </code>
+                            </pre>
+                            Cela retourne le premier élément nommé "John" ou <code>null</code> si aucun n'est trouvé.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Single / SingleOrDefault</strong> : Retourne un élément unique ou une exception si plusieurs éléments correspondent. <code>Single</code> lève une exception si aucun ou plusieurs éléments sont trouvés, tandis que <code>SingleOrDefault</code> retourne <code>null</code> ou la valeur par défaut du type si aucun élément n'est trouvé. Exemple :
+                            <pre>
+                            <code>
+var singleItem = collection.Single(x => x.Id == 1);
+var singleOrDefaultItem = collection.SingleOrDefault(x => x.Id == 1);
+                                </code>
+                            </pre>
+                            Cela retourne l'élément unique avec l'Id 1 ou <code>null</code> si aucun n'est trouvé.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Count</strong> : Retourne le nombre d'éléments d'une collection. Cette méthode compte le nombre total d'éléments dans la collection. Exemple :
+                            <pre><code>var count = collection.Count();</code></pre>
+                            Cela retourne le nombre total d'éléments dans la collection.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sum</strong> : Retourne la somme des valeurs numériques d'une collection. Cette méthode additionne les valeurs d'une propriété numérique de chaque élément de la collection. Exemple :
+                            <pre><code>var totalPrice = collection.Sum(x => x.Price);</code></pre>
+                            Cela retourne la somme des prix des éléments de la collection.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Average</strong> : Retourne la moyenne des valeurs numériques d'une collection. Cette méthode calcule la moyenne des valeurs d'une propriété numérique de chaque élément de la collection. Exemple :
+                            <pre><code>var averageScore = collection.Average(x => x.Score);</code></pre>
+                            Cela retourne la moyenne des scores des éléments de la collection.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Min / Max</strong> : Retourne la valeur minimale ou maximale d'une collection. <code>Min</code> retourne la plus petite valeur, tandis que <code>Max</code> retourne la plus grande valeur d'une propriété numérique. Exemple :
+                            <pre><code>var minPrice = collection.Min(x => x.Price);
+                        var maxPrice = collection.Max(x => x.Price);</code></pre>
+                            Cela retourne le prix minimum et maximum des éléments de la collection.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Distinct</strong> : Supprime les doublons d'une collection. Cette méthode retourne une nouvelle collection contenant uniquement des éléments uniques. Exemple :
+                            <pre><code>var distinctItems = collection.Distinct();</code></pre>
+                            Cela retourne une collection sans doublons.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Syntaxe de requête LINQ -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqSyntaxSection" aria-expanded="false" aria-controls="linqSyntaxSection">
+                    Syntaxe de Requête LINQ
+                </button>
+            </h2>
+            <div id="linqSyntaxSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Query Syntax</strong> : Style de requête qui ressemble aux requêtes SQL. Utilisé pour écrire des requêtes de manière déclarative, similaire à SQL. La syntaxe de requête est souvent plus lisible pour ceux qui sont familiers avec SQL. Exemple :
+                            <pre>
+                            <code>
+var adults = from x in collection
+where x.Age > 18
+select x;
+                                </code>
+                            </pre>
+                            Cela sélectionne tous les éléments de la collection où l'âge est supérieur à 18.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Method Syntax</strong> : Style de requête utilisant des méthodes de chaîne (enchaînement de méthodes). Utilisé pour écrire des requêtes en utilisant des méthodes d'extension LINQ. La syntaxe de méthode est souvent plus concise et expressive. Exemple :
+                            <pre>
+                            <code>
+var names = collection.Where(x => x.Age > 18)
+.Select(x => x.Name);
+                                </code>
+                            </pre>
+                            Cela filtre les éléments où l'âge est supérieur à 18 et sélectionne les noms des éléments.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Let</strong> : Mot-clé utilisé dans les requêtes pour stocker des résultats intermédiaires. Utilisé pour créer des variables temporaires dans une requête LINQ, ce qui peut simplifier les requêtes complexes et améliorer la lisibilité. Exemple :
+                            <pre>
+                            <code>
+var query = from x in collection
+let total = x.Quantity * x.Price
+where total > 100
+select new { x.Name, Total = total };
+                                </code>
+                            </pre>
+                            Cela calcule le total pour chaque élément en multipliant la quantité par le prix, puis sélectionne les éléments où le total est supérieur à 100.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Into</strong> : Permet de continuer une requête après un groupement ou une jointure. Utilisé pour créer une nouvelle portée pour les résultats groupés ou joints, ce qui permet de continuer à manipuler les résultats. Exemple :
+                            <pre>
+                            <code>
+var grouped = from x in collection
+group x by x.Category into g
+select new { Category = g.Key, Items = g.ToList() };
+                                </code>
+                                </pre>
+                            Cela regroupe les éléments par catégorie et permet de continuer la requête avec le groupe <code>g</code>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Performances et Optimisation -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqPerformanceSection" aria-expanded="false" aria-controls="linqPerformanceSection">
+                    Performances et Optimisation
+                </button>
+            </h2>
+            <div id="linqPerformanceSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Deferred Execution</strong> : Requêtes LINQ qui ne sont pas exécutées immédiatement mais lorsqu'elles sont itérées. Cela permet d'optimiser les performances en retardant l'exécution jusqu'à ce que les résultats soient réellement nécessaires. Par exemple, une requête LINQ ne sera exécutée que lorsque vous itérez sur les résultats avec une boucle <code>foreach</code> ou que vous appelez une méthode comme <code>ToList()</code>. Exemple :
+                            <pre>
+                            <code>
+var query = collection.Where(x => x.Age > 18);
+// La requête est exécutée ici, lorsque les données sont demandées
+foreach (var item in query)
+{
+    Console.WriteLine(item.Name);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Immediate Execution</strong> : Requêtes qui sont exécutées immédiatement via des méthodes comme <code>ToList()</code> ou <code>Count()</code>. Ces méthodes forcent l'exécution de la requête et retournent les résultats immédiatement. Exemple :
+                            <pre><code>var result = collection.ToList();</code></pre>
+                            Cela exécute la requête et stocke les résultats dans une liste.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>AsNoTracking</strong> : Utilisé avec Entity Framework pour améliorer les performances en désactivant le suivi des entités. Lorsque vous utilisez <code>AsNoTracking()</code>, les entités récupérées ne sont pas suivies par le <code>ChangeTracker</code>, ce qui réduit la surcharge de mémoire et améliore les performances des requêtes en lecture seule. Exemple :
+                            <pre><code>var customers = context.Customers.AsNoTracking().ToList();</code></pre>
+                            Cela récupère les clients sans suivi des modifications.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Projection</strong> : Technique pour sélectionner uniquement les données nécessaires pour améliorer les performances. En utilisant des projections, vous pouvez réduire la quantité de données transférées et traitées. Exemple :
+                            <pre><code>var names = collection.Select(x => x.Name).ToList();</code></pre>
+                            Cela sélectionne uniquement les noms des éléments, réduisant ainsi la charge de données.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Optimize Joins</strong> : Assurez-vous d'utiliser <code>Join</code> avec les relations appropriées pour éviter des requêtes SQL inefficaces. L'optimisation des jointures permet de réduire le nombre de requêtes et d'améliorer les performances globales. Exemple :
+                            <pre>
+                            <code>
+var result = from a in context.TableA
+join b in context.TableB on a.Id equals b.AId
+select new { a, b };
+                                </code>
+                            </pre>
+                            Cela effectue une jointure efficace entre deux tables.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Outils et Extensions LINQ -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqToolsSection" aria-expanded="false" aria-controls="linqToolsSection">
+                    Outils et Extensions LINQ
+                </button>
+            </h2>
+            <div id="linqToolsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>LINQPad</strong> : Outil pour tester et interagir avec les requêtes LINQ. LINQPad permet d'exécuter des requêtes LINQ, de visualiser les résultats et de déboguer les requêtes. Il prend en charge LINQ to SQL, LINQ to Entities, LINQ to XML, et bien plus encore. C'est un outil indispensable pour les développeurs travaillant avec LINQ. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Écrire et exécuter une requête LINQ dans LINQPad
+var query = from p in Products
+            where p.Price > 100
+            select p;
+query.Dump(); // Dump() est une méthode spécifique à LINQPad pour afficher les résultats
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ReSharper</strong> : Outil de productivité qui améliore la prise en charge des requêtes LINQ dans Visual Studio. ReSharper offre des fonctionnalités avancées de refactoring, de navigation et d'analyse de code, ce qui facilite l'écriture et l'optimisation des requêtes LINQ. Il propose également des suggestions pour améliorer les performances et la lisibilité du code. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// ReSharper peut suggérer des améliorations pour les requêtes LINQ
+var query = collection.Where(x => x.Age > 18).Select(x => x.Name);
+// ReSharper peut suggérer de combiner les méthodes pour améliorer la lisibilité
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Dynamic LINQ</strong> : Permet de créer des requêtes LINQ à partir de chaînes, souvent utilisé dans les applications dynamiques. Dynamic LINQ est utile lorsque les requêtes doivent être construites de manière dynamique à l'exécution, par exemple, en fonction des entrées utilisateur. Il permet de générer des requêtes complexes sans avoir à écrire de code LINQ statique. Exemple d'utilisation :
+                            <pre>
+                            <code>
+using System.Linq.Dynamic.Core;
+
+var query = collection.AsQueryable().Where("Age > 18").Select("Name");
+                                </code>
+                            </pre>
+                            Cela permet de créer des requêtes LINQ dynamiques à partir de chaînes.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://learn.microsoft.com/en-us/dotnet/csharp/linq/" target="_blank">LINQ documentation</a>
+            </h5>
+        </div>
+    </div>
+</div>

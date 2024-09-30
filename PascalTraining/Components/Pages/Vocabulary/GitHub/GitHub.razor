@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/github"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <GitHub_fr />
+}
+else
+{
+    <GitHub_en />
+}

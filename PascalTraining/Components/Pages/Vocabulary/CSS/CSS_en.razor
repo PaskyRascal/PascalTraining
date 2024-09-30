@@ -1,0 +1,380 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">CSS Vocabulary</h1>
+
+    <div class="accordion">
+        <!-- Selectors Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#selectorsSection" aria-expanded="false" aria-controls="selectorsSection">
+                    CSS Selectors
+                </button>
+            </h2>
+            <div id="selectorsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Universal Selector (*)</strong>: A selector that targets all elements on a page. It is used to apply general styles to all elements without exception. For example:
+                            <pre>
+                            <code>
+* {
+    margin: 0;
+    padding: 0;
+}
+                            </code>
+                            </pre>
+                            This resets the margins and padding of all elements.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Type Selector (p, h1, div, etc.)</strong>: Targets all elements of a certain type. For example:
+                            <pre>
+                            <code>
+p {
+    color: blue;
+}
+                            </code>
+                            </pre>
+                            This targets all paragraphs and sets their color to blue. Another example:
+                            <pre>
+                            <code>
+h1 {
+    font-size: 2em;
+}
+                            </code>
+                            </pre>
+                            This targets all level 1 headers and sets their font size to 2em.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Class Selector (.classname)</strong>: Targets all elements with a specific class. For example:
+                            <pre>
+                            <code>
+.menu {
+    background-color: #f0f0f0;
+}
+                            </code>
+                            </pre>
+                            This targets all elements with the "menu" class and sets their background color to #f0f0f0.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ID Selector (#idname)</strong>: Targets an element with a unique identifier. For example:
+                            <pre>
+                            <code>
+#header {
+    text-align: center;
+}
+                            </code>
+                            </pre>
+                            This targets the element with the "header" ID and centers its text.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Descendant Selector (parent child)</strong>: Targets the child elements of a specific parent element. For example:
+                            <pre>
+                            <code>
+div p {
+    margin-bottom: 10px;
+}
+                            </code>
+                            </pre>
+                            This targets all paragraphs inside divs and sets a bottom margin of 10 pixels.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Attribute Selector ([attribute=value])</strong>: Targets elements with a specific attribute. For example:
+                            <pre>
+                            <code>
+[type="text"] {
+    border: 1px solid #ccc;
+}
+                            </code>
+                            </pre>
+                            This targets all text fields and sets a solid 1-pixel border with color #ccc.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Properties Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#textPropertiesSection" aria-expanded="false" aria-controls="textPropertiesSection">
+                    Text Properties
+                </button>
+            </h2>
+            <div id="textPropertiesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>color</strong>: Defines the color of the text. It can be specified using color names (e.g., <code>red</code>), hexadecimal values (e.g., <code>#ff0000</code>), RGB values (e.g., <code>rgb(255, 0, 0)</code>), or HSL values (e.g., <code>hsl(0, 100%, 50%)</code>). For example:
+                            <pre><code>color: blue;</code></pre>
+                            This sets the text color to blue.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>font-size</strong>: Defines the font size. It can be specified in pixels (e.g., <code>16px</code>), em (e.g., <code>1em</code>), rem (e.g., <code>1rem</code>), percentages (e.g., <code>100%</code>), or points (e.g., <code>12pt</code>). For example:
+                            <pre><code>font-size: 20px;</code></pre>
+                            This sets the font size to 20 pixels.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>font-weight</strong>: Defines the weight (boldness) of the font. Common values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <code>lighter</code>, or numerical values ranging from 100 to 900. For example:
+                            <pre><code>font-weight: bold;</code></pre>
+                            This makes the text bold.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>text-align</strong>: Defines the alignment of the text. Common values include <code>left</code>, <code>center</code>, <code>right</code>, and <code>justify</code>. For example:
+                            <pre><code>text-align: center;</code></pre>
+                            This centers the text horizontally.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>line-height</strong>: Defines the spacing between lines of text. It can be specified using relative units (e.g., <code>1.5</code>), pixels (e.g., <code>24px</code>), or percentages (e.g., <code>150%</code>). For example:
+                            <pre><code>line-height: 1.5;</code></pre>
+                            This sets a line spacing of 1.5 times the font size.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>text-transform</strong>: Controls the capitalization of text. Common values include <code>uppercase</code> (all uppercase), <code>lowercase</code> (all lowercase), <code>capitalize</code> (first letter capitalized), and <code>none</code> (no transformation). For example:
+                            <pre><code>text-transform: uppercase;</code></pre>
+                            This converts all text to uppercase.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box Model Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#boxModelSection" aria-expanded="false" aria-controls="boxModelSection">
+                    Box Model
+                </button>
+            </h2>
+            <div id="boxModelSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>width / height</strong>: Defines the width and height of an element. The value can be specified in absolute units (like pixels, points) or relative units (like percentages, em, rem). For example:
+                            <pre><code>width: 100px;</code></pre>
+                            This sets the width to 100 pixels. Another example:
+                            <pre><code>height: 50%;</code></pre>
+                            This sets the height to 50% of the parent element's height.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>padding</strong>: Defines the inner space between the content and the border of an element. The values can be specified individually for each side (top, right, bottom, left) or in shorthand. For example:
+                            <pre><code>padding: 10px 20px;</code></pre>
+                            This sets 10 pixels of padding on the top and bottom, and 20 pixels on the right and left. Another example:
+                            <pre>
+                            <code>
+padding-top: 5px;
+padding-right: 15px;
+padding-bottom: 5px;
+padding-left: 15px;
+                            </code>
+                            </pre>
+                            This sets specific padding values for each side.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>margin</strong>: Defines the outer space around an element. Like padding, the values can be specified for each side individually or in shorthand. For example:
+                            <pre><code>margin: 15px 30px;</code></pre>
+                            This sets 15 pixels of margin on the top and bottom, and 30 pixels on the right and left. Another example:
+                            <pre>
+                            <code>
+margin-top: 
+
+10px;
+margin-right: 20px;
+margin-bottom: 10px;
+margin-left: 20px;
+                            </code>
+                            </pre>
+                            This sets specific margin values for each side.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>border</strong>: Defines the border of an element, including its thickness, style, and color. For example:
+                            <pre><code>border: 1px solid black;</code></pre>
+                            This sets a black, solid border with a thickness of 1 pixel. Another example:
+                            <pre>
+                            <code>
+border-width: 2px;
+border-style: dashed;
+border-color: red;
+                            </code>
+                            </pre>
+                            This sets a red, dashed border with a thickness of 2 pixels.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>box-sizing</strong>: Defines how the width and height of an element are calculated. For example:
+                            <pre><code>box-sizing: border-box;</code></pre>
+                            This ensures that the width and height include the padding and border. Another example:
+                            <pre><code>box-sizing: content-box;</code></pre>
+                            This includes only the content in the width and height calculations.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layout and Positioning Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layoutPositioningSection" aria-expanded="false" aria-controls="layoutPositioningSection">
+                    Layout and Positioning
+                </button>
+            </h2>
+            <div id="layoutPositioningSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>display</strong>: Controls how an element is displayed. For example:
+                            <pre><code>display: block;</code></pre>
+                            This makes the element take up the entire available width. Other examples:
+                            <pre><code>display: inline;</code></pre>
+                            This makes the element take up only the necessary space.
+                            <pre><code>display: flex;</code></pre>
+                            This allows for flexible layout.
+                            <pre><code>display: grid;</code></pre>
+                            This enables grid layout.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>position</strong>: Defines the positioning type of an element. For example:
+                            <pre><code>position: static;</code></pre>
+                            This is the default positioning. Other examples:
+                            <pre><code>position: relative;</code></pre>
+                            This allows positioning relative to the element's normal position.
+                            <pre><code>position: absolute;</code></pre>
+                            This positions the element relative to its closest positioned ancestor.
+                            <pre><code>position: fixed;</code></pre>
+                            This positions the element relative to the browser window.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>top / right / bottom / left</strong>: Defines an element's position relative to its positioning container. For example:
+                            <pre>
+                            <code>
+position: absolute;
+top: 10px;
+left: 20px;
+                            </code>
+                            </pre>
+                            This moves the element 10 pixels down and 20 pixels to the right from its container.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>float</strong>: Used to align an element to the left or right within its container. For example:
+                            <pre><code>float: left;</code></pre>
+                            This aligns the element to the left and allows text to wrap around it.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>flexbox</strong>: A layout model that allows elements to be aligned in a flexible container. For example:
+                            <pre>
+                            <code>
+display: flex;
+justify-content: center;
+align-items: center;
+                            </code>
+                            </pre>
+                            This centers the elements both horizontally and vertically within the container.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>grid</strong>: A grid system for layout, allowing elements to be placed in rows and columns. For example:
+                            <pre>
+                            <code>
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: auto;
+                            </code>
+                            </pre>
+                            This creates a grid with three equally-sized columns and automatically-sized rows.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animation and Transition Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#animationSection" aria-expanded="false" aria-controls="animationSection">
+                    Animation and Transition
+                </button>
+            </h2>
+            <div id="animationSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>transition</strong>: Defines how CSS property changes are animated (e.g., duration and type of transition). For example:
+                            <pre>
+                            <code>
+transition: all 0.3s ease;
+                            </code>
+                            </pre>
+                            This means that all property changes will be animated over 0.3 seconds with an <code>ease</code> transition curve.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>animation</strong>: Allows defining animations using keyframes. For example:
+                            <pre>
+                            <code>
+animation: slide 2s infinite;
+                            </code>
+                            </pre>
+                            This means that the animation named <code>slide</code> will last 2 seconds and repeat indefinitely.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>keyframes</strong>: Defines the steps of the animation with key points where style changes occur. For example:
+                            <pre>
+                            <code>
+&#64keyframes slide {
+    from { left: 0; }
+    to { left: 100px; }
+}
+                            </code>
+                            </pre>
+                            This defines an animation where an element moves from 0 to 100 pixels to the right.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>transform</strong>: Applies transformations to an element such as rotation, scaling, or translation. For example:
+                            <pre>
+                            <code>
+transform: rotate(45deg);
+                            </code>
+                            </pre>
+                            This rotates the element by 45 degrees. Another example:
+                            <pre>
+                            <code>
+transform: scale(1.5);
+                            </code>
+                            </pre>
+                            This scales the element by 1.5 times its original size.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>transition-delay</strong>: Defines the delay before the transition starts. For example:
+                            <pre>
+                            <code>
+transition-delay: 0.5s;
+                            </code>
+                            </pre>
+                            This means that the transition will start 0.5 seconds after the property change is triggered.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>transition-timing-function</strong>: Controls the pacing of the animation over time (e.g., <code>ease</code>, <code>linear</code>). For example:
+                            <pre>
+                            <code>
+transition-timing-function: ease;
+                            </code>
+                            </pre>
+                            This starts slowly, speeds up, and then slows down again. Another example:
+                            <pre>
+                            <code>
+transition-timing-function: linear;
+                            </code>
+                            </pre>
+                            This maintains a constant speed throughout the transition.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/css" target="_blank">W3 CSS --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+</div>

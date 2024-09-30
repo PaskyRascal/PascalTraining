@@ -1,0 +1,652 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire Web API</h1>
+
+    <div class="accordion">
+        <!-- Section Concepts de Base -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#basicConceptsSection" aria-expanded="false" aria-controls="basicConceptsSection">
+                    Concepts de Base
+                </button>
+            </h2>
+            <div id="basicConceptsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>API</strong> : Interface de programmation d'application permettant à deux systèmes logiciels de communiquer entre eux. Une API (Application Programming Interface) définit un ensemble de règles et de conventions pour l'interaction entre des composants logiciels. Les API sont utilisées pour permettre l'intégration de services et de fonctionnalités entre différentes applications. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'appel à une API REST en utilisant HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/data");
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Endpoint</strong> : URL ou URI d'une ressource spécifique dans une API. Un endpoint est une adresse unique où une API peut être accédée par des requêtes HTTP. Chaque endpoint correspond à une fonction ou une ressource spécifique de l'API. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'appel à un endpoint spécifique d'une API REST
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/users/1");
+var user = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>REST (Representational State Transfer)</strong> : Style architectural basé sur des ressources accessibles via des méthodes HTTP standard (GET, POST, PUT, DELETE). REST est un style d'architecture pour les services web qui utilise les méthodes HTTP pour effectuer des opérations sur les ressources identifiées par des URI. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de méthodes HTTP dans une API REST
+var client = new HttpClient();
+
+// GET - Récupérer une ressource
+var getResponse = await client.GetAsync("https://api.example.com/items");
+
+// POST - Créer une nouvelle ressource
+var newItem = new StringContent("{\"name\":\"NewItem\"}", Encoding.UTF8, "application/json");
+var postResponse = await client.PostAsync("https://api.example.com/items", newItem);
+
+// PUT - Mettre à jour une ressource existante
+var updatedItem = new StringContent("{\"name\":\"UpdatedItem\"}", Encoding.UTF8, "application/json");
+var putResponse = await client.PutAsync("https://api.example.com/items/1", updatedItem);
+
+// DELETE - Supprimer une ressource
+var deleteResponse = await client.DeleteAsync("https://api.example.com/items/1");
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HTTP</strong> : Protocole utilisé par les API Web pour la communication entre client et serveur. HTTP (HyperText Transfer Protocol) est le protocole de communication standard pour les échanges de données sur le web. Il définit des méthodes comme GET, POST, PUT, DELETE pour interagir avec les ressources. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de HttpClient pour effectuer une requête HTTP GET
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/data");
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Stateless</strong> : Principe selon lequel chaque requête envoyée à une API doit contenir toute l'information nécessaire pour être traitée sans conserver d'état entre les requêtes. Les API REST sont conçues pour être stateless, ce qui signifie que le serveur ne conserve aucune information sur l'état des clients entre les requêtes. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de requête stateless à une API REST
+var client = new HttpClient();
+var request = new HttpRequestMessage(HttpMethod.Get, "https://api.example.com/data");
+request.Headers.Add("Authorization", "Bearer token");
+var response = await client.SendAsync(request);
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Méthodes HTTP -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#httpMethodsSection" aria-expanded="false" aria-controls="httpMethodsSection">
+                    Méthodes HTTP
+                </button>
+            </h2>
+            <div id="httpMethodsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>GET</strong> : Utilisé pour récupérer des données ou des ressources depuis un serveur. La méthode <code>GET</code> est l'une des méthodes HTTP les plus couramment utilisées pour demander des données à un serveur. Elle est utilisée pour récupérer des informations sans modifier l'état du serveur. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de la méthode GET avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/data");
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>POST</strong> : Utilisé pour envoyer des données au serveur et créer une nouvelle ressource. La méthode <code>POST</code> est utilisée pour soumettre des données au serveur, souvent pour créer une nouvelle ressource. Les données sont généralement envoyées dans le corps de la requête. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de la méthode POST avec HttpClient en C#
+var client = new HttpClient();
+var content = new StringContent("{\"name\":\"NewItem\"}", Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.example.com/items", content);
+var result = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>PUT</strong> : Utilisé pour mettre à jour une ressource existante sur le serveur. La méthode <code>PUT</code> est utilisée pour mettre à jour une ressource existante en envoyant les données mises à jour dans le corps de la requête. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de la méthode PUT avec HttpClient en C#
+var client = new HttpClient();
+var content = new StringContent("{\"name\":\"UpdatedItem\"}", Encoding.UTF8, "application/json");
+var response = await client.PutAsync("https://api.example.com/items/1", content);
+var result = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>DELETE</strong> : Utilisé pour supprimer une ressource existante sur le serveur. La méthode <code>DELETE</code> est utilisée pour supprimer une ressource spécifiée par l'URI. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de la méthode DELETE avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.DeleteAsync("https://api.example.com/items/1");
+var result = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>PATCH</strong> : Utilisé pour appliquer des modifications partielles à une ressource. La méthode <code>PATCH</code> est utilisée pour appliquer des modifications partielles à une ressource existante. Contrairement à <code>PUT</code>, <code>PATCH</code> ne nécessite pas de fournir une représentation complète de la ressource. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de la méthode PATCH avec HttpClient en C#
+var client = new HttpClient();
+var content = new StringContent("{\"name\":\"PartiallyUpdatedItem\"}", Encoding.UTF8, "application/json");
+var response = await client.PatchAsync("https://api.example.com/items/1", content);
+var result = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HEAD</strong> : Similaire à GET, mais ne renvoie que les en-têtes HTTP sans le corps de la réponse. La méthode <code>HEAD</code> est utilisée pour obtenir les en-têtes de réponse d'une ressource sans récupérer le corps de la réponse. Elle est souvent utilisée pour vérifier l'existence d'une ressource ou pour obtenir des métadonnées. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de la méthode HEAD avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.SendAsync(new HttpRequestMessage(HttpMethod.Head, "https://api.example.com/data"));
+var headers = response.Headers;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>OPTIONS</strong> : Demande au serveur de renvoyer les méthodes HTTP autorisées pour une ressource donnée. La méthode <code>OPTIONS</code> est utilisée pour interroger le serveur sur les méthodes HTTP prises en charge pour une ressource spécifique. Elle est souvent utilisée pour vérifier les capacités du serveur avant de faire une requête réelle. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de la méthode OPTIONS avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.SendAsync(new HttpRequestMessage(HttpMethod.Options, "https://api.example.com/data"));
+var allowedMethods = response.Content.Headers.Allow;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Codes de Réponse HTTP -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#httpStatusCodesSection" aria-expanded="false" aria-controls="httpStatusCodesSection">
+                    Codes de Réponse HTTP
+                </button>
+            </h2>
+            <div id="httpStatusCodesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>200 OK</strong> : La requête a réussi, et la réponse contient les données demandées. Ce code de statut HTTP indique que la requête a été traitée avec succès par le serveur et que les informations demandées sont renvoyées dans le corps de la réponse. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 200 OK avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/data");
+if (response.StatusCode == HttpStatusCode.OK)
+{
+    var data = await response.Content.ReadAsStringAsync();
+    Console.WriteLine("Données reçues : " + data);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>201 Created</strong> : La ressource a été créée avec succès après un POST. Ce code de statut HTTP indique que la requête POST a été traitée avec succès et qu'une nouvelle ressource a été créée. L'URI de la nouvelle ressource est généralement renvoyée dans l'en-tête Location de la réponse. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 201 Created avec HttpClient en C#
+var client = new HttpClient();
+var content = new StringContent("{\"name\":\"NewItem\"}", Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.example.com/items", content);
+if (response.StatusCode == HttpStatusCode.Created)
+{
+    var location = response.Headers.Location;
+    Console.WriteLine("Nouvelle ressource créée à : " + location);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>204 No Content</strong> : La requête a réussi, mais il n'y a pas de contenu à renvoyer (utilisé après une mise à jour ou suppression). Ce code de statut HTTP indique que la requête a été traitée avec succès, mais que le serveur ne renvoie aucun contenu dans la réponse. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 204 No Content avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.DeleteAsync("https://api.example.com/items/1");
+if (response.StatusCode == HttpStatusCode.NoContent)
+{
+    Console.WriteLine("Ressource supprimée avec succès.");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>400 Bad Request</strong> : La requête est mal formulée ou contient des erreurs de syntaxe. Ce code de statut HTTP indique que le serveur ne peut pas traiter la requête en raison d'une erreur du client, telle qu'une syntaxe incorrecte ou des paramètres invalides. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 400 Bad Request avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/invalid-request");
+if (response.StatusCode == HttpStatusCode.BadRequest)
+{
+    var error = await response.Content.ReadAsStringAsync();
+    Console.WriteLine("Erreur de requête : " + error);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>401 Unauthorized</strong> : La requête nécessite une authentification utilisateur ou un jeton d'accès valide. Ce code de statut HTTP indique que l'authentification est requise pour accéder à la ressource demandée. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 401 Unauthorized avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/protected-resource");
+if (response.StatusCode == HttpStatusCode.Unauthorized)
+{
+    Console.WriteLine("Authentification requise pour accéder à cette ressource.");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>403 Forbidden</strong> : La requête est légale, mais le serveur refuse d'exécuter l'action. Ce code de statut HTTP indique que le serveur comprend la requête, mais refuse de l'exécuter. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 403 Forbidden avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/forbidden-resource");
+if (response.StatusCode == HttpStatusCode.Forbidden)
+{
+    Console.WriteLine("Accès refusé à cette ressource.");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>404 Not Found</strong> : La ressource demandée n'a pas été trouvée sur le serveur. Ce code de statut HTTP indique que le serveur ne trouve pas la ressource demandée. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 404 Not Found avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/nonexistent-resource");
+if (response.StatusCode == HttpStatusCode.NotFound)
+{
+    Console.WriteLine("Ressource non trouvée.");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>500 Internal Server Error</strong> : Erreur générique lorsqu'une défaillance côté serveur empêche le traitement de la requête. Ce code de statut HTTP indique qu'une erreur interne du serveur a empêché le traitement de la requête. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de gestion d'une réponse 500 Internal Server Error avec HttpClient en C#
+var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/server-error");
+if (response.StatusCode == HttpStatusCode.InternalServerError)
+{
+    Console.WriteLine("Erreur interne du serveur.");
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Authentification et Autorisation -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#authSection" aria-expanded="false" aria-controls="authSection">
+                    Authentification et Autorisation
+                </button>
+            </h2>
+            <div id="authSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>API Key</strong> : Clé secrète générée pour permettre l'accès à une API. Transmise dans l'en-tête ou dans la requête pour authentifier l'utilisateur. Les API Keys sont souvent utilisées pour suivre et contrôler l'utilisation de l'API, ainsi que pour authentifier les requêtes. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation d'une API Key avec HttpClient en C#
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("x-api-key", "votre_api_key");
+var response = await client.GetAsync("https://api.example.com/data");
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>OAuth</strong> : Protocole standard pour autoriser des applications tierces à accéder à une API en utilisant des jetons d'accès sécurisés. OAuth permet aux utilisateurs de donner à des applications tierces un accès limité à leurs ressources sans partager leurs identifiants. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation d'OAuth pour obtenir un jeton d'accès
+var client = new HttpClient();
+var tokenResponse = await client.PostAsync("https://auth.example.com/token", new FormUrlEncodedContent(new[]
+{
+    new KeyValuePair&lt;string, string&gt;("grant_type", "client_credentials"),
+    new KeyValuePair&lt;string, string&gt;("client_id", "votre_client_id"),
+    new KeyValuePair&lt;string, string&gt;("client_secret", "votre_client_secret")
+}));
+var token = await tokenResponse.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Bearer Token</strong> : Type de jeton d'authentification transmis dans l'en-tête HTTP <code>Authorization</code>. Les Bearer Tokens sont souvent utilisés avec OAuth pour accéder aux ressources protégées. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation d'un Bearer Token avec HttpClient en C#
+var client = new HttpClient();
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "votre_bearer_token");
+var response = await client.GetAsync("https://api.example.com/protected-resource");
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>JWT (JSON Web Token)</strong> : Jeton encodé qui transporte les informations de session entre le client et le serveur pour authentifier les utilisateurs. Les JWT sont souvent utilisés pour l'authentification et l'autorisation dans les applications web. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de génération et d'utilisation d'un JWT en C#
+var tokenHandler = new JwtSecurityTokenHandler();
+var key = Encoding.ASCII.GetBytes("votre_cle_secrete");
+var tokenDescriptor = new SecurityTokenDescriptor
+{
+    Subject = new ClaimsIdentity(new[] { new Claim("id", "user_id") }),
+    Expires = DateTime.UtcNow.AddHours(1),
+    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+};
+var token = tokenHandler.CreateToken(tokenDescriptor);
+var jwtToken = tokenHandler.WriteToken(token);
+
+// Utilisation du JWT avec HttpClient
+var client = new HttpClient();
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+var response = await client.GetAsync("https://api.example.com/protected-resource");
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Basic Auth</strong> : Méthode d'authentification où le client envoie un nom d'utilisateur et un mot de passe encodés en Base64 dans l'en-tête HTTP. Basic Auth est simple à implémenter mais moins sécurisé que d'autres méthodes d'authentification. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'utilisation de Basic Auth avec HttpClient en C#
+var client = new HttpClient();
+var byteArray = Encoding.ASCII.GetBytes("username:password");
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+var response = await client.GetAsync("https://api.example.com/protected-resource");
+var data = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Formats de Données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dataFormatsSection" aria-expanded="false" aria-controls="dataFormatsSection">
+                    Formats de Données
+                </button>
+            </h2>
+            <div id="dataFormatsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>JSON (JavaScript Object Notation)</strong> : Format de données léger et lisible utilisé pour échanger des données entre le client et le serveur. JSON est souvent utilisé dans les API web pour envoyer et recevoir des données structurées. Il est facile à lire et à écrire pour les humains, et facile à analyser et à générer pour les machines. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de sérialisation et désérialisation JSON en C#
+using System.Text.Json;
+
+// Sérialisation d'un objet en JSON
+var person = new { Name = "John", Age = 30 };
+string jsonString = JsonSerializer.Serialize(person);
+
+// Désérialisation d'une chaîne JSON en objet
+var deserializedPerson = JsonSerializer.Deserialize&lt;Person&gt;(jsonString);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>XML (Extensible Markup Language)</strong> : Format de données extensible utilisé pour structurer et transporter des informations. Il est souvent utilisé comme alternative à JSON. XML est plus verbeux que JSON, mais il est également plus flexible et peut être utilisé pour représenter des données hiérarchiques complexes. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de sérialisation et désérialisation XML en C#
+using System.Xml.Serialization;
+using System.IO;
+
+// Sérialisation d'un objet en XML
+var person = new Person { Name = "John", Age = 30 };
+var serializer = new XmlSerializer(typeof(Person));
+using (var writer = new StringWriter())
+{
+    serializer.Serialize(writer, person);
+    string xmlString = writer.ToString();
+}
+
+// Désérialisation d'une chaîne XML en objet
+using (var reader = new StringReader(xmlString))
+{
+    var deserializedPerson = (Person)serializer.Deserialize(reader);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Form Data</strong> : Format utilisé pour envoyer des données dans le corps d'une requête POST via des formulaires HTML. Les données de formulaire sont encodées en tant que paires clé-valeur et peuvent inclure des fichiers. Ce format est couramment utilisé pour soumettre des formulaires web. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'envoi de données de formulaire avec HttpClient en C#
+var client = new HttpClient();
+var formData = new MultipartFormDataContent();
+formData.Add(new StringContent("John"), "name");
+formData.Add(new StringContent("30"), "age");
+var response = await client.PostAsync("https://api.example.com/submit", formData);
+var responseString = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Multipart</strong> : Format de données utilisé pour envoyer des fichiers et des données binaires dans une requête HTTP. Le format multipart est souvent utilisé pour les téléchargements de fichiers, car il permet d'envoyer plusieurs parties de données dans une seule requête. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'envoi de données multipart avec HttpClient en C#
+var client = new HttpClient();
+var multipartContent = new MultipartFormDataContent();
+multipartContent.Add(new ByteArrayContent(fileBytes), "file", "filename.txt");
+var response = await client.PostAsync("https://api.example.com/upload", multipartContent);
+var responseString = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>URLEncoded</strong> : Format dans lequel les données sont encodées dans l'URL d'une requête HTTP (souvent utilisé dans les requêtes GET et POST simples). Les données sont encodées en paires clé-valeur et séparées par des esperluettes (&). Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'envoi de données URL-encoded avec HttpClient en C#
+var client = new HttpClient();
+var content = new FormUrlEncodedContent(new[]
+{
+    new KeyValuePair&lt;string, string&gt;("name", "John"),
+    new KeyValuePair&lt;string, string&gt;("age", "30")
+});
+var response = await client.PostAsync("https://api.example.com/submit", content);
+var responseString = await response.Content.ReadAsStringAsync();
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Sécurité des API -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securitySection" aria-expanded="false" aria-controls="securitySection">
+                    Sécurité des API
+                </button>
+            </h2>
+            <div id="securitySection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>CORS (Cross-Origin Resource Sharing)</strong> : Mécanisme de sécurité qui permet ou restreint les requêtes HTTP entre des domaines différents (cross-origin). CORS est utilisé pour contrôler quelles ressources peuvent être demandées par des scripts exécutés dans le navigateur sur un domaine différent. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de configuration CORS dans un projet ASP.NET Core
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddCors(options =>
+    {
+        options.AddPolicy("AllowSpecificOrigin",
+            builder => builder.WithOrigins("https://example.com")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod());
+    });
+}
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseCors("AllowSpecificOrigin");
+    app.UseMvc();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SSL/TLS</strong> : Protocoles utilisés pour sécuriser la communication entre le client et le serveur via HTTPS. SSL (Secure Sockets Layer) et TLS (Transport Layer Security) chiffrent les données échangées pour garantir la confidentialité et l'intégrité des informations. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de configuration HTTPS dans un projet ASP.NET Core
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup&lt;Startup&gt;()
+                            .UseUrls("https://localhost:5001");
+            });
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Rate Limiting</strong> : Stratégie qui limite le nombre de requêtes qu'un client peut faire à une API dans un laps de temps donné, pour prévenir les abus. Le rate limiting est souvent utilisé pour protéger les API contre les attaques par déni de service (DoS) et pour garantir une répartition équitable des ressources. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de configuration de rate limiting avec ASP.NET Core
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddRateLimiter(options =>
+    {
+        options.GlobalLimiter = RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: "global",
+            factory: partition => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 100,
+                Window = TimeSpan.FromMinutes(1)
+            });
+    });
+}
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseRateLimiter();
+    app.UseMvc();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>IP Whitelisting</strong> : Restriction de l'accès à une API uniquement à une liste spécifique d'adresses IP. L'IP whitelisting est utilisé pour renforcer la sécurité en limitant l'accès aux ressources sensibles uniquement aux adresses IP approuvées. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de configuration d'IP whitelisting dans un projet ASP.NET Core
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.Use(async (context, next) =>
+    {
+        var allowedIps = new[] { "192.168.1.1", "192.168.1.2" };
+        var remoteIp = context.Connection.RemoteIpAddress?.ToString();
+
+        if (!allowedIps.Contains(remoteIp))
+        {
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            await context.Response.WriteAsync("Forbidden");
+            return;
+        }
+
+        await next();
+    });
+
+    app.UseMvc();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HMAC (Hash-Based Message Authentication Code)</strong> : Méthode d'authentification et d'intégrité des messages via un hash cryptographique et une clé secrète. HMAC est utilisé pour vérifier l'intégrité et l'authenticité des messages échangés entre le client et le serveur. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de génération d'un HMAC en C#
+using System.Security.Cryptography;
+using System.Text;
+
+public string GenerateHmac(string message, string secretKey)
+{
+    var key = Encoding.UTF8.GetBytes(secretKey);
+    using (var hmac = new HMACSHA256(key))
+    {
+        var messageBytes = Encoding.UTF8.GetBytes(message);
+        var hash = hmac.ComputeHash(messageBytes);
+        return Convert.ToBase64String(hash);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-8.0" target="_blank">Web API documentation</a>
+            </h5>
+        </div>
+    </div>
+</div>

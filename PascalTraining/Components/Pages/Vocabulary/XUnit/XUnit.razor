@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/xunit"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <XUnit_fr />
+}
+else
+{
+    <XUnit_en />
+}

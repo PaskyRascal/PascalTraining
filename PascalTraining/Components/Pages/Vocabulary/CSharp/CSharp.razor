@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/vocabulary/csharp"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <CSharp_fr />
+}
+else
+{
+    <CSharp_en />
+}

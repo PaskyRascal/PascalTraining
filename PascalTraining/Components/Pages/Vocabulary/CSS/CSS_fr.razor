@@ -1,0 +1,378 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire CSS</h1>
+
+    <div class="accordion">
+        <!-- Section Sélecteurs -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#selectorsSection" aria-expanded="false" aria-controls="selectorsSection">
+                    Sélecteurs CSS
+                </button>
+            </h2>
+            <div id="selectorsSection" class="accordion-collapse collapse ">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Sélecteur universel (*)</strong> : Sélecteur qui cible tous les éléments d'une page. Utilisé pour appliquer des styles généraux à tous les éléments sans exception. Par exemple :
+                            <pre>
+                            <code>
+* {
+    margin: 0;
+    padding: 0;
+}
+                                </code>
+                            </pre>
+                            Cela réinitialise les marges et les espacements internes de tous les éléments.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sélecteur de type (p, h1, div, etc.)</strong> : Cible tous les éléments d'un certain type. Par exemple :
+                            <pre>
+                            <code>
+p {
+    color: blue;
+}
+                                </code>
+                            </pre>
+                            Cela cible tous les paragraphes et définit leur couleur en bleu. Un autre exemple :
+                            <pre>
+                            <code>
+h1 {
+    font-size: 2em;
+}
+                                </code>
+                            </pre>
+                            Cela cible tous les titres de niveau 1 et définit leur taille de police à 2em.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sélecteur de classe (.classname)</strong> : Cible tous les éléments ayant une classe spécifique. Par exemple :
+                            <pre>
+                            <code>
+.menu {
+    background-color: #f0f0f0;
+}
+                                </code>
+                            </pre>
+                            Cela cible tous les éléments avec la classe "menu" et définit leur couleur de fond à #f0f0f0.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sélecteur d'ID (#idname)</strong> : Cible un élément ayant un identifiant unique. Par exemple :
+                            <pre>
+                            <code>
+#header {
+    text-align: center;
+}
+                                </code>
+                            </pre>
+                            Cela cible l'élément avec l'ID "header" et centre son texte.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sélecteur descendant (parent child)</strong> : Cible les éléments enfants d'un élément parent spécifique. Par exemple :
+                            <pre>
+                            <code>
+div p {
+    margin-bottom: 10px;
+}
+                                </code>
+                            </pre>
+                            Cela cible tous les paragraphes à l'intérieur des div et définit une marge inférieure de 10 pixels.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sélecteur d'attribut ([attribute=value])</strong> : Cible les éléments ayant un attribut spécifique. Par exemple :
+                            <pre>
+                            <code>
+[type="text"] {
+    border: 1px solid #ccc;
+}
+                                </code>
+                            </pre>
+                            Cela cible tous les champs de texte et définit une bordure de 1 pixel solide et de couleur #ccc.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Propriétés de Texte -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#textPropertiesSection" aria-expanded="false" aria-controls="textPropertiesSection">
+                    Propriétés de Texte
+                </button>
+            </h2>
+            <div id="textPropertiesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>color</strong> : Définit la couleur du texte. Peut être spécifiée en utilisant des noms de couleur (ex: <code>red</code>), des valeurs hexadécimales (ex: <code>#ff0000</code>), des valeurs RGB (ex: <code>rgb(255, 0, 0)</code>), ou des valeurs HSL (ex: <code>hsl(0, 100%, 50%)</code>). Par exemple :
+                            <pre><code>color: blue;</code></pre>
+                            Cela définit la couleur du texte en bleu.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>font-size</strong> : Définit la taille de la police. Peut être spécifiée en pixels (ex: <code>16px</code>), en em (ex: <code>1em</code>), en rem (ex: <code>1rem</code>), en pourcentages (ex: <code>100%</code>), ou en points (ex: <code>12pt</code>). Par exemple :
+                            <pre><code>font-size: 20px;</code></pre>
+                            Cela définit la taille de la police à 20 pixels.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>font-weight</strong> : Définit la graisse de la police. Les valeurs courantes incluent <code>normal</code>, <code>bold</code>, <code>bolder</code>, <code>lighter</code>, ou des valeurs numériques allant de 100 à 900. Par exemple :
+                            <pre><code>font-weight: bold;</code></pre>
+                            Cela rend le texte en gras.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>text-align</strong> : Définit l'alignement du texte. Les valeurs courantes incluent <code>left</code> (gauche), <code>center</code> (centré), <code>right</code> (droite), et <code>justify</code> (justifié). Par exemple :
+                            <pre><code>text-align: center;</code></pre>
+                            Cela centre le texte horizontalement.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>line-height</strong> : Définit l'espacement entre les lignes de texte. Peut être spécifiée en unités relatives (ex: <code>1.5</code>), en pixels (ex: <code>24px</code>), ou en pourcentages (ex: <code>150%</code>). Par exemple :
+                            <pre><code>line-height: 1.5;</code></pre>
+                            Cela définit un espacement de 1.5 fois la taille de la police entre les lignes.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>text-transform</strong> : Contrôle la capitalisation du texte. Les valeurs courantes incluent <code>uppercase</code> (majuscule), <code>lowercase</code> (minuscule), <code>capitalize</code> (première lettre en majuscule), et <code>none</code> (aucune transformation). Par exemple :
+                            <pre><code>text-transform: uppercase;</code></pre>
+                            Cela transforme tout le texte en majuscules.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Modèle de Boîte -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#boxModelSection" aria-expanded="false" aria-controls="boxModelSection">
+                    Modèle de Boîte (Box Model)
+                </button>
+            </h2>
+            <div id="boxModelSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>width / height</strong> : Définit la largeur et la hauteur d'un élément. La valeur peut être spécifiée en unités absolues (comme pixels, points) ou relatives (comme pourcentages, em, rem). Par exemple :
+                            <pre><code>width: 100px;</code></pre>
+                            Cela définit une largeur de 100 pixels. Un autre exemple :
+                            <pre><code>height: 50%;</code></pre>
+                            Cela définit une hauteur de 50% de la hauteur de l'élément parent.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>padding</strong> : Définit l'espace intérieur entre le contenu et la bordure d'un élément. Les valeurs peuvent être spécifiées pour chaque côté individuellement (haut, droite, bas, gauche) ou de manière abrégée. Par exemple :
+                            <pre><code>padding: 10px 20px;</code></pre>
+                            Cela définit un espacement de 10 pixels en haut et en bas, et 20 pixels à droite et à gauche. Un autre exemple :
+                            <pre>
+                            <code>
+padding-top: 5px;
+padding-right: 15px;
+padding-bottom: 5px;
+padding-left: 15px;
+                                </code>
+                            </pre>
+                            Cela définit des espacements spécifiques pour chaque côté.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>margin</strong> : Définit l'espace extérieur autour d'un élément. Comme pour le padding, les valeurs peuvent être spécifiées pour chaque côté individuellement ou de manière abrégée. Par exemple :
+                            <pre><code>margin: 15px 30px;</code></pre>
+                            Cela définit un espacement de 15 pixels en haut et en bas, et 30 pixels à droite et à gauche. Un autre exemple :
+                            <pre>
+                            <code>
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 10px;
+margin-left: 20px;
+                                </code>
+                            </pre>
+                            Cela définit des espacements spécifiques pour chaque côté.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>border</strong> : Définit la bordure d'un élément, incluant son épaisseur, son style et sa couleur. Par exemple :
+                            <pre><code>border: 1px solid black;</code></pre>
+                            Cela définit une bordure noire, pleine et d'une épaisseur de 1 pixel. Un autre exemple :
+                            <pre>
+                            <code>
+border-width: 2px;
+border-style: dashed;
+border-color: red;
+                                </code>
+                            </pre>
+                            Cela définit une bordure rouge, en pointillés et d'une épaisseur de 2 pixels.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>box-sizing</strong> : Définit la manière dont la largeur et la hauteur d'un élément sont calculées. Par exemple :
+                            <pre><code>box-sizing: border-box;</code></pre>
+                            Cela assure que la largeur et la hauteur incluent le padding et la bordure. Un autre exemple :
+                            <pre><code>box-sizing: content-box;</code></pre>
+                            Cela inclut uniquement le contenu dans la largeur et la hauteur.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Mise en Page et Positionnement -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#layoutPositioningSection" aria-expanded="false" aria-controls="layoutPositioningSection">
+                    Mise en Page et Positionnement
+                </button>
+            </h2>
+            <div id="layoutPositioningSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>display</strong> : Contrôle la manière dont un élément est affiché. Par exemple :
+                            <pre><code>display: block;</code></pre>
+                            Cela fait que l'élément occupe toute la largeur disponible. Autres exemples :
+                            <pre><code>display: inline;</code></pre>
+                            Cela fait que l'élément occupe seulement l'espace nécessaire.
+                            <pre><code>display: flex;</code></pre>
+                            Cela permet une mise en page flexible.
+                            <pre><code>display: grid;</code></pre>
+                            Cela permet une mise en page en grille.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>position</strong> : Définit le type de positionnement d'un élément. Par exemple :
+                            <pre><code>position: static;</code></pre>
+                            C'est le positionnement par défaut. Autres exemples :
+                            <pre><code>position: relative;</code></pre>
+                            Cela permet de positionner l'élément par rapport à sa position normale.
+                            <pre><code>position: absolute;</code></pre>
+                            Cela positionne l'élément par rapport à son conteneur le plus proche positionné.
+                            <pre><code>position: fixed;</code></pre>
+                            Cela positionne l'élément par rapport à la fenêtre du navigateur.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>top / right / bottom / left</strong> : Définit la position d'un élément par rapport à son conteneur de positionnement. Par exemple :
+                            <pre>
+                            <code>
+position: absolute;
+top: 10px;
+left: 20px;
+                                </code>
+                            </pre>
+                            Cela déplace l'élément de 10 pixels vers le bas et de 20 pixels vers la droite par rapport à son conteneur.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>float</strong> : Utilisé pour aligner un élément à gauche ou à droite dans son conteneur. Par exemple :
+                            <pre><code>float: left;</code></pre>
+                            Cela aligne l'élément à gauche et permet d'enrouler le texte autour de lui.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>flexbox</strong> : Modèle de mise en page qui permet d'aligner des éléments dans un conteneur flexible. Par exemple :
+                            <pre>
+                            <code>
+display: flex;
+justify-content: center;
+align-items: center;
+                                </code>
+                            </pre>
+                            Cela centre les éléments horizontalement et verticalement dans le conteneur.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>grid</strong> : Système de grille pour la mise en page, permettant de placer des éléments dans des lignes et colonnes. Par exemple :
+                            <pre>
+                            <code>
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: auto;
+                                </code>
+                            </pre>
+                            Cela crée une grille avec trois colonnes de largeur égale et des lignes de hauteur automatique.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Animation et Transition -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#animationSection" aria-expanded="false" aria-controls="animationSection">
+                    Animation et Transition
+                </button>
+            </h2>
+            <div id="animationSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>transition</strong> : Définit la manière dont les changements de propriétés CSS sont animés (ex: durée et type de transition). Par exemple :
+                            <pre>
+                            <code>
+transition: all 0.3s ease;
+                                </code>
+                            </pre>
+                            Cela signifie que tous les changements de propriétés seront animés sur une durée de 0.3 secondes avec une courbe de transition <code>ease</code>.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>animation</strong> : Permet de définir des animations en utilisant des images clés (keyframes). Par exemple :
+                            <pre>
+                            <code>
+animation: slide 2s infinite;
+                                </code>
+                            </pre>
+                            Cela signifie que l'animation nommée <code>slide</code> durera 2 secondes et se répétera indéfiniment.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>keyframes</strong> : Définit les étapes de l'animation avec des points clés où des changements de style se produisent. Par exemple :
+                            <pre>
+                            <code>
+&#64keyframes slide {
+    from { left: 0; }
+    to { left: 100px; }
+}
+                                </code>
+                            </pre>
+                            Cela définit une animation où un élément se déplace de 0 à 100 pixels vers la droite.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>transform</strong> : Applique des transformations à un élément comme la rotation, le redimensionnement, ou la translation. Par exemple :
+                            <pre>
+                            <code>
+transform: rotate(45deg);
+                                </code>
+                            </pre>
+                            Cela fait pivoter l'élément de 45 degrés. Un autre exemple :
+                            <pre>
+                            <code>
+transform: scale(1.5);
+                                </code>
+                            </pre>
+                            Cela agrandit l'élément de 1.5 fois sa taille originale.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>transition-delay</strong> : Définit le délai avant que la transition ne commence. Par exemple :
+                            <pre>
+                            <code>
+transition-delay: 0.5s;
+                                </code>
+                            </pre>
+                            Cela signifie que la transition commencera 0.5 secondes après le déclenchement du changement de propriété.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>transition-timing-function</strong> : Contrôle le comportement de l'animation dans le temps (ex: <code>ease</code>, <code>linear</code>). Par exemple :
+                            <pre>
+                            <code>
+transition-timing-function: ease;
+                                </code>
+                            </pre>
+                            Cela commence lentement, accélère, puis ralentit à nouveau. Un autre exemple :
+                            <pre>
+                            <code>
+transition-timing-function: linear;
+                                </code>
+                            </pre>
+                            Cela maintient une vitesse constante tout au long de la transition.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/css" target="_blank">W3 CSS --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+</div>

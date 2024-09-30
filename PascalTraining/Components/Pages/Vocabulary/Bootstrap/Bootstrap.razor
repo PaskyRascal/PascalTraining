@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/bootstrap"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <Bootstrap_fr />
+}
+else
+{
+    <Bootstrap_en />
+}

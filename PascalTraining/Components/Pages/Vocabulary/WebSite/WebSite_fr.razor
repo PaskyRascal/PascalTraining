@@ -1,0 +1,593 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire du Développement de Site Web</h1>
+
+    <div class="accordion">
+        <!-- Section HTML -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#htmlSection"
+                        aria-expanded="false" aria-controls="htmlSection">
+                    HTML (HyperText Markup Language)
+                </button>
+            </h2>
+            <div id="htmlSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>&lt;html&gt;</strong> : Élément racine d'un document HTML (contient tous les autres éléments HTML). Il encapsule tout le contenu HTML de la page et doit contenir deux éléments principaux : <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>. Exemple :
+                            <pre>
+                            <code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Titre de la page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Contenu de la page&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;head&gt;</strong> : Métadonnées du document (contient des informations comme le titre, les liens vers les feuilles de style, les scripts, etc.). Les métadonnées incluent des informations comme le jeu de caractères, les auteurs du document, et les instructions pour les moteurs de recherche. Exemple :
+                            <pre>
+                            <code>
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Titre de la page&lt;/title&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;body&gt;</strong> : Contenu visible de la page (contient tous les éléments visibles par l'utilisateur, comme les paragraphes, les images, les liens, etc.). C'est dans cet élément que vous placez les balises HTML qui définissent la structure et le contenu de la page. Exemple :
+                            <pre>
+                            <code>
+&lt;body&gt;
+&lt;h1&gt;Bienvenue&lt;/h1&gt;
+&lt;p&gt;Ceci est un paragraphe de texte.&lt;/p&gt;
+&lt;img src="image.jpg" alt="Description de l'image"&gt;
+&lt;/body&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;h1&gt; à &lt;h6&gt;</strong> : Titres de niveaux (utilisés pour définir des titres, <code>&lt;h1&gt;</code> étant le plus important et <code>&lt;h6&gt;</code> le moins important). Les titres sont utilisés pour structurer le contenu et améliorer la lisibilité. Exemple :
+                            <pre>
+                            <code>
+&lt;h1&gt;Titre Principal&lt;/h1&gt;
+&lt;h2&gt;Sous-titre&lt;/h2&gt;
+&lt;h3&gt;Sous-sous-titre&lt;/h3&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;p&gt;</strong> : Paragraphe (utilisé pour définir un bloc de texte). Chaque paragraphe est automatiquement séparé par un espace vertical, ce qui améliore la lisibilité du texte. Exemple :
+                            <pre>
+                            <code>
+&lt;p&gt;Ceci est un paragraphe de texte.&lt;/p&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;a&gt;</strong> : Lien hypertexte (utilisé pour créer des liens vers d'autres pages ou ressources). L'attribut <code>href</code> définit l'URL de destination. Exemple :
+                            <pre>
+                            <code>
+&lt;a href="https://example.com"&gt;Visitez Example&lt;/a&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;img&gt;</strong> : Image (utilisé pour afficher des images sur la page, nécessite l'attribut <code>src</code> pour spécifier la source de l'image). L'attribut <code>alt</code> fournit une description alternative pour les lecteurs d'écran et les cas où l'image ne peut pas être affichée. Exemple :
+                            <pre>
+                            <code>
+&lt;img src="image.jpg" alt="Description de l'image"&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;div&gt;</strong> : Division de contenu (utilisé pour regrouper des éléments et appliquer des styles ou des scripts). Il est souvent utilisé avec des classes ou des identifiants pour appliquer des styles CSS ou des scripts JavaScript. Exemple :
+                            <pre>
+                            <code>
+&lt;div class="container"&gt;
+&lt;h2&gt;Titre de la section&lt;/h2&gt;
+&lt;p&gt;Contenu de la section.&lt;/p&gt;
+&lt;/div&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;form&gt;</strong> : Formulaire (utilisé pour collecter des données auprès des utilisateurs, contient des éléments comme des champs de texte, des boutons, etc.). Les formulaires sont utilisés pour envoyer des données à un serveur pour traitement. Exemple :
+                            <pre>
+                            <code>
+&lt;form action="/submit" method="post"&gt;
+&lt;label for="name"&gt;Nom:&lt;/label&gt;
+&lt;input type="text" id="name" name="name"&gt;
+&lt;input type="submit" value="Envoyer"&gt;
+&lt;/form&gt;
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section CSS -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cssSection" aria-expanded="false" aria-controls="cssSection">
+                    CSS (Cascading Style Sheets)
+                </button>
+            </h2>
+            <div id="cssSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>color</strong> : Couleur du texte (définit la couleur du texte d'un élément, peut être spécifiée en nom de couleur, code hexadécimal, RGB, etc.). Utilisé pour styliser le texte et améliorer la lisibilité ou l'esthétique. Exemple :
+                            <pre>
+                            <code>
+p {
+    color: red; /* Utilise le nom de couleur */
+    color: #ff0000; /* Utilise le code hexadécimal */
+    color: rgb(255, 0, 0); /* Utilise le code RGB */
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>background-color</strong> : Couleur de fond (définit la couleur de fond d'un élément, peut être spécifiée en nom de couleur, code hexadécimal, RGB, etc.). Utilisé pour mettre en évidence des sections ou des éléments spécifiques. Exemple :
+                            <pre>
+                            <code>
+div {
+    background-color: blue; /* Utilise le nom de couleur */
+    background-color: #0000ff; /* Utilise le code hexadécimal */
+    background-color: rgb(0, 0, 255); /* Utilise le code RGB */
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>padding</strong> : Espacement interne (espace entre le contenu d'un élément et ses bordures, peut être spécifié en pixels, pourcentages, etc.). Utilisé pour créer de l'espace autour du contenu à l'intérieur d'un élément. Exemple :
+                            <pre>
+                            <code>
+div {
+    padding: 10px; /* Espacement de 10 pixels */
+    padding: 5%; /* Espacement de 5% de la largeur de l'élément */
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>margin</strong> : Espacement externe (espace autour d'un élément, séparant l'élément de ses voisins, peut être spécifié en pixels, pourcentages, etc.). Utilisé pour créer de l'espace autour des éléments. Exemple :
+                            <pre>
+                            <code>
+div {
+    margin: 20px; /* Espacement de 20 pixels */
+    margin: 10%; /* Espacement de 10% de la largeur de l'élément */
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>border</strong> : Bordure d'un élément (définit la bordure autour d'un élément, peut inclure la largeur, le style et la couleur). Utilisé pour encadrer des éléments et les distinguer visuellement. Exemple :
+                            <pre>
+                            <code>
+div {
+    border: 2px solid black; /* Bordure de 2 pixels, style solide, couleur noire */
+    border: 1px dashed red; /* Bordure de 1 pixel, style en pointillés, couleur rouge */
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>display</strong> : Contrôle de l'affichage (définit comment un élément est affiché, valeurs courantes : <code>block</code> pour un bloc, <code>inline</code> pour un élément en ligne, <code>flex</code> pour un conteneur flexible). Utilisé pour gérer la disposition des éléments. Exemple :
+                            <pre>
+                            <code>
+div {
+    display: block; /* Affiche l'élément comme un bloc */
+    display: inline; /* Affiche l'élément en ligne */
+    display: flex; /* Utilise le modèle de boîte flexible */
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>position</strong> : Positionnement d'un élément (définit comment un élément est positionné dans le document, valeurs courantes : <code>static</code> pour le positionnement normal, <code>absolute</code> pour un positionnement absolu, <code>relative</code> pour un positionnement relatif à sa position normale). Utilisé pour contrôler la position des éléments sur la page. Exemple :
+                            <pre>
+                            <code>
+div {
+    position: static; /* Positionnement normal */
+    position: absolute; /* Positionnement absolu */
+    position: relative; /* Positionnement relatif */
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>media queries</strong> : Adaptation des styles selon la taille de l'écran (permet d'appliquer des styles CSS spécifiques en fonction des caractéristiques du dispositif, comme la largeur de l'écran, la résolution, etc.). Utilisé pour créer des designs réactifs. Exemple :
+                            <pre>
+                            <code>
+&#64;media (max-width: 600px) {
+body {
+    background-color: lightblue;
+}
+                              }
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section JavaScript -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#jsSection" aria-expanded="false" aria-controls="jsSection">
+                    JavaScript (JS)
+                </button>
+            </h2>
+            <div id="jsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>let</strong>, <strong>const</strong>, <strong>var</strong> : Déclaration de variables. Utilisé pour déclarer des variables en JavaScript avec des portées différentes. Exemple :
+                            <pre>
+                            <code>
+let x = 10; // Portée de bloc
+const y = 20; // Portée de bloc, valeur constante
+var z = 30; // Portée de fonction
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>function</strong> : Définition de fonction. Utilisé pour déclarer des fonctions en JavaScript. Exemple :
+                            <pre>
+                            <code>
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet("Alice")); // Affiche "Hello, Alice!"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>DOM</strong> : Document Object Model, pour manipuler le HTML. Utilisé pour accéder et manipuler les éléments HTML via JavaScript. Exemple :
+                            <pre>
+                            <code>
+document.getElementById("myElement").innerHTML = "Nouveau contenu";
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>addEventListener</strong> : Gestion des événements. Utilisé pour attacher des gestionnaires d'événements aux éléments HTML. Exemple :
+                            <pre>
+                            <code>
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Bouton cliqué!");
+});
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>fetch</strong> : Requête HTTP pour récupérer des données. Utilisé pour effectuer des requêtes HTTP et récupérer des données de manière asynchrone. Exemple :
+                            <pre>
+                            <code>
+fetch("https://api.example.com/data")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error("Erreur:", error));
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>localStorage</strong>, <strong>sessionStorage</strong> : Stockage local dans le navigateur. Utilisé pour stocker des données côté client. Exemple :
+                            <pre>
+                            <code>
+localStorage.setItem("key", "value");
+let value = localStorage.getItem("key");
+sessionStorage.setItem("sessionKey", "sessionValue");
+let sessionValue = sessionStorage.getItem("sessionKey");
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>JSON</strong> : Format de données JavaScript Object Notation. Utilisé pour échanger des données entre un client et un serveur. Exemple :
+                            <pre>
+                            <code>
+let jsonString = '{"name": "Alice", "age": 25}';
+let jsonObject = JSON.parse(jsonString);
+console.log(jsonObject.name); // Affiche "Alice"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>promise</strong>, <strong>async/await</strong> : Gestion asynchrone. Utilisé pour gérer des opérations asynchrones en JavaScript. Exemple :
+                            <pre>
+                            <code>
+function fetchData() {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; resolve("Données récupérées"), 2000);
+    });
+}
+
+async function getData() {
+    try {
+        let data = await fetchData();
+        console.log(data); // Affiche "Données récupérées" après 2 secondes
+    } catch (error) {
+        console.error("Erreur:", error);
+    }
+}
+
+getData();
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Frameworks JavaScript -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#frameworksSection" aria-expanded="false" aria-controls="frameworksSection">
+                    Frameworks et Bibliothèques JavaScript
+                </button>
+            </h2>
+            <div id="frameworksSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>jQuery</strong> : Simplifie la manipulation du DOM et les requêtes AJAX. Utilisé pour écrire moins de code JavaScript pour des tâches courantes. Exemple :
+                            <pre>
+                            <code>
+$(document).ready(function() {
+    $("#myButton").click(function() {
+        alert("Bouton cliqué!");
+    });
+});
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>React.js</strong> : Bibliothèque pour créer des interfaces utilisateur. Utilisé pour construire des composants réutilisables et gérer l'état de l'application. Exemple :
+                            <pre>
+                            <code>
+import React, { useState } from 'react';
+
+function App() {
+    const [count, setCount] = useState(0);
+
+    return (
+                            &lt;div&gt;
+                            &lt;p&gt;Vous avez cliqué {count} fois&lt;/p&gt;
+                            &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+                Cliquez ici
+            &lt;/button&gt;
+        &lt;/div&gt;
+    );
+}
+
+export default App;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Vue.js</strong> : Framework pour créer des interfaces utilisateur réactives. Utilisé pour construire des applications web interactives. Exemple :
+                            <pre>
+                            <code>
+&lt;template&gt;
+    &lt;div id="app"&gt;
+    &lt;p&gt;{{ message }}&lt;/p&gt;
+    &lt;button &#64;click="reverseMessage"&gt;Inverser le message&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    export default {
+        data() {
+            return {
+                message: 'Bonjour Vue!'
+            }
+        },
+        methods: {
+            reverseMessage() {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    }
+&lt;/script&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Angular</strong> : Framework complet pour les applications web complexes. Utilisé pour construire des applications web robustes et maintenables. Exemple :
+                            <pre>
+                            <code>
+import { Component } from '&#64;angular/core';
+
+&#64;Component({
+    selector: 'app-root',
+    template: `
+    &lt:h1&gt;{{ title }}&lt;/&lt:h1&gt;
+                            <button (click)="changeTitle()">Changer le titre</button>
+    `
+})
+export class AppComponent {
+    title = 'Bienvenue sur Angular';
+
+    changeTitle() {
+    this.title = 'Titre changé!';
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Node.js</strong> : Exécute du JavaScript côté serveur. Utilisé pour construire des applications serveur rapides et évolutives. Exemple :
+                            <pre>
+                            <code>
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World\n');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+    console.log('Serveur en cours d\'exécution sur http://127.0.0.1:3000/');
+});
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Express.js</strong> : Framework minimal pour des applications Node.js. Utilisé pour construire des applications web et des API. Exemple :
+                            <pre>
+                            <code>
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+console.log('Serveur en cours d\'exécution sur http://localhost:3000/');
+});
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Base de Données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dbSection" aria-expanded="false" aria-controls="dbSection">
+                    Bases de Données (Back-end)
+                </button>
+            </h2>
+            <div id="dbSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>SQL</strong> : Langage pour interagir avec des bases de données relationnelles. Utilisé pour effectuer des requêtes sur des bases de données structurées. Exemple :
+                            <pre>
+                            <code>
+SELECT * FROM utilisateurs WHERE age > 30;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>NoSQL</strong> : Bases de données non relationnelles (par ex. MongoDB). Utilisé pour stocker des données non structurées ou semi-structurées. Exemple :
+                            <pre>
+                            <code>
+db.utilisateurs.insert({ nom: "Alice", age: 25 });
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CRUD</strong> : Create, Read, Update, Delete (opérations basiques). Utilisé pour les opérations de base sur les données. Exemple :
+                            <pre>
+                            <code>
+// Create
+INSERT INTO utilisateurs (nom, age) VALUES ('Alice', 25);
+
+// Read
+SELECT * FROM utilisateurs;
+
+// Update
+UPDATE utilisateurs SET age = 26 WHERE nom = 'Alice';
+
+// Delete
+DELETE FROM utilisateurs WHERE nom = 'Alice';
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ORM</strong> : Object-Relational Mapping pour interagir avec des bases via des objets. Utilisé pour simplifier les interactions avec les bases de données en utilisant des objets. Exemple :
+                            <pre>
+                            <code>
+class Utilisateur {
+    constructor(nom, age) {
+        this.nom = nom;
+        this.age = age;
+    }
+}
+
+let utilisateur = new Utilisateur('Alice', 25);
+utilisateur.save(); // Sauvegarde l'utilisateur dans la base de données
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Hébergement -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hostingSection" aria-expanded="false" aria-controls="hostingSection">
+                    Hébergement et Déploiement
+                </button>
+            </h2>
+            <div id="hostingSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>FTP</strong> : Protocole de transfert de fichiers. Utilisé pour transférer des fichiers entre un client et un serveur sur un réseau. FTP est souvent utilisé pour télécharger des fichiers sur un serveur web ou pour récupérer des fichiers depuis un serveur. Exemple :
+                            <pre>
+                            <code>
+ftp&gt; open ftp.example.com
+ftp&gt; login
+ftp&gt; put localfile.txt remotefile.txt
+ftp&gt; get remotefile.txt localfile.txt
+ftp&gt; bye
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CDN</strong> : Content Delivery Network. Réseau de serveurs distribués géographiquement qui travaillent ensemble pour fournir rapidement du contenu Internet aux utilisateurs. Les CDNs sont utilisés pour améliorer les temps de chargement des sites web et réduire la latence. Exemple :
+                            <pre>
+                            <code>
+&lt;script src="https://cdn.example.com/library.js"&gt;&lt;/script&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SSL/TLS</strong> : Protocoles de sécurisation des communications sur le web. SSL (Secure Sockets Layer) et TLS (Transport Layer Security) chiffrent les données échangées entre un client et un serveur, garantissant la confidentialité et l'intégrité des données. Exemple :
+                            <pre>
+                            <code>
+https://www.example.com
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Hosting Providers</strong> : Fournisseurs de services d'hébergement. Entreprises qui offrent des services pour héberger des sites web, des applications et des bases de données. Exemples : AWS (Amazon Web Services), Azure (Microsoft), Heroku, Netlify. Exemple :
+                            <pre>
+                            <code>
+# Déploiement sur Heroku
+$ git init
+$ heroku create
+$ git add .
+$ git commit -m "Initial commit"
+$ git push heroku master
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

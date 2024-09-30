@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/css"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <CSS_fr />
+}
+else
+{
+    <CSS_en />
+}

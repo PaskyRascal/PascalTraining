@@ -1,0 +1,435 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">HTML Vocabulary</h1>
+
+    <div class="accordion">
+        <!-- Section Basic Structure Elements -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#htmlBasicsSection" aria-expanded="false" aria-controls="htmlBasicsSection">
+                    Basic Structure Elements
+                </button>
+            </h2>
+            <div id="htmlBasicsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>&lt;html&gt;</strong> : Root element that encapsulates all the HTML content of the page. It must contain two main elements: <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>. The <code>&lt;html&gt;</code> element defines the beginning and the end of an HTML document. For example:
+                            <pre>
+                            <code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Page content&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;head&gt;</strong> : Contains metadata, links to CSS files, <code>&lt;meta&gt;</code> tags, and the page title <code>&lt;title&gt;</code>. Metadata includes information such as the character set, document authors, and search engine instructions. CSS files linked in the <code>&lt;head&gt;</code> define the page's style. For example:
+                            <pre>
+                            <code>
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;body&gt;</strong> : Contains all the visible content of a web page (text, images, videos, etc.). This element holds the HTML tags that define the structure and content of the page, such as paragraphs, headings, lists, images, and links. For example:
+                            <pre>
+                            <code>
+&lt;body&gt;
+&lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;img src="image.jpg" alt="Image description"&gt;
+&lt;/body&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;h1&gt; to &lt;h6&gt;</strong> : Heading tags, with <code>&lt;h1&gt;</code> being the most important and <code>&lt;h6&gt;</code> the least. Headings are used to structure content and improve readability. They also play an important role in SEO by helping search engines understand the page's hierarchy and content. For example:
+                            <pre>
+                            <code>
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Subtitle&lt;/h2&gt;
+&lt;h3&gt;Sub-subtitle&lt;/h3&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;p&gt;</strong> : Element used to create paragraphs of text. Each paragraph is automatically separated by vertical space, improving text readability. Paragraphs are used to structure textual content into logical blocks. For example:
+                            <pre><code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;div&gt;</strong> : Generic container element used to group other elements into blocks. It is often used with classes or IDs to apply CSS styles or JavaScript scripts. <code>&lt;div&gt;</code> elements are essential for layout and content organization. For example:
+                            <pre>
+                            <code>
+&lt;div class="container"&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;p&gt;Section content.&lt;/p&gt;
+&lt;/div&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;span&gt;</strong> : Generic inline container element used to group parts of text or inline elements. Unlike <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> does not introduce a line break. It is often used to apply styles or scripts to a specific part of text without affecting the overall layout. For example:
+                            <pre><code>&lt;p&gt;Text with a &lt;span style="color: red;"&gt;red word&lt;/span&gt;.&lt;/p&gt;</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Links and Images -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linksImagesSection" aria-expanded="false" aria-controls="linksImagesSection">
+                    Links and Images
+                </button>
+            </h2>
+            <div id="linksImagesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>&lt;a&gt;</strong> : Tag used to create hyperlinks. The <code>href</code> attribute defines the destination URL. You can also use attributes like <code>target</code> to open the link in a new tab (<code>_blank</code>) and <code>rel</code> to define the relationship between the current document and the linked document (e.g., <code>noopener</code> for security reasons). For example:
+                            <pre><code>&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;Visit Example&lt;/a&gt;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;img&gt;</strong> : Element to insert images. The <code>src</code> attribute specifies the image source, and <code>alt</code> provides an alternative description for screen readers and cases where the image cannot be displayed. You can also use attributes like <code>width</code> and <code>height</code> to set the image dimensions, and <code>loading="lazy"</code> to defer the loading of off-screen images. For example:
+                            <pre><code>&lt;img src="image.jpg" alt="Image description" width="600" height="400" loading="lazy" /&gt;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;figure&gt;</strong> : Element used to group elements like an image with a caption. It is often used to improve the semantics and accessibility of visual content. The <code>&lt;figure&gt;</code> element can contain images, charts, diagrams, or any other visual content, along with their associated caption. For example:
+                            <pre>
+                            <code>
+&lt;figure&gt;
+&lt;img src="diagram.png" alt="Explanatory diagram" /&gt;
+&lt;figcaption&gt;Diagram showing the process steps.&lt;/figcaption&gt;
+&lt;/figure&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;figcaption&gt;</strong> : Caption associated with a <code>&lt;figure&gt;</code> element. It provides a description or explanation of the visual content within the <code>&lt;figure&gt;</code>. The <code>&lt;figcaption&gt;</code> tag should be placed directly after the visual element or at the end of the <code>&lt;figure&gt;</code> element. For example:
+                            <pre>
+                            <code>
+&lt;figure&gt;
+&lt;img src="photo.jpg" alt="Landscape photo" /&gt;
+&lt;figcaption&gt;A beautiful view of the mountain at sunrise.&lt;/figcaption&gt;
+&lt;/figure&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;nav&gt;</strong> : Semantic element for defining navigation sections, containing links to other parts of the site or external pages. It improves accessibility by allowing screen readers and search engines to understand the site’s navigation structure. The <code>&lt;nav&gt;</code> element is generally used for main navigation menus, sidebar navigation, and footer links. For example:
+                            <pre>
+                            <code>
+&lt;nav&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href
+
+="/home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;                    
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Lists and Tables -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#listsTablesSection" aria-expanded="false" aria-controls="listsTablesSection">
+                    Lists and Tables
+                </button>
+            </h2>
+            <div id="listsTablesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>&lt;ul&gt;</strong> : Unordered list with bullet points. List items are created with <code>&lt;li&gt;</code>. Used to group elements without a particular order. For example:
+                            <pre>
+                            <code>
+&lt;ul&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;ol&gt;</strong> : Ordered list with numbers or letters for each item. Used to group elements in a specific order. For example:
+                            <pre>
+                            <code>
+&lt;ol&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;li&gt;</strong> : List item element used within <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>. Represents an individual item in a list. For example:
+                            <pre>
+                            <code>
+&lt;ul&gt;
+&lt;li&gt;Unordered list item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Ordered list item&lt;/li&gt;
+&lt;/ol&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;table&gt;</strong> : Element used to create tables. It is used with <code>&lt;tr&gt;</code> (row), <code>&lt;td&gt;</code> (cell), and <code>&lt;th&gt;</code> (table header). It allows structuring data in rows and columns. For example:
+                            <pre>
+                            <code>
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Header 1&lt;/th&gt;
+&lt;th&gt;Header 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Data 1&lt;/td&gt;
+&lt;td&gt;Data 2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;thead&gt;</strong> : Element used to group column headers in a table. Generally placed at the beginning of the table to define the column titles. For example:
+                            <pre>
+                            <code>
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Title 1&lt;/th&gt;
+&lt;th&gt;Title 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;tbody&gt;</strong> : Section used to group the table’s content inside the <code>&lt;table&gt;</code>. Contains the table’s data rows, separated from the headers. For example:
+                            <pre>
+                            <code>
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Data 1&lt;/td&gt;
+&lt;td&gt;Data 2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Forms -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#formsSection" aria-expanded="false" aria-controls="formsSection">
+                    Forms
+                </button>
+            </h2>
+            <div id="formsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>&lt;form&gt;</strong> : Element used to group user input fields and send data to a server. It can contain various form elements such as text fields, buttons, checkboxes, etc. The <code>action</code> attribute specifies the URL where the form data should be sent, and the <code>method</code> attribute specifies the HTTP method (GET or POST) used to send the data. For example:
+                            <pre>
+                            <code>
+&lt;form action="/submit" method="post"&gt;
+&lt;input type="text" name="username" placeholder="Username" /&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;input&gt;</strong> : Data input element, used to create different types of fields like text boxes, checkboxes, or radio buttons. The <code>type</code> attribute specifies the type of field (e.g., <code>text</code> for a text box, <code>checkbox</code> for a checkbox, <code>radio</code> for a radio button, etc.). Other attributes like <code>name</code>, <code>value</code>, and <code>placeholder</code> can be used to define additional properties. For example:
+                            <pre><code>&lt;input type="text" name="email" placeholder="Email address" /&gt;</code></pre>
+                            Another example for a checkbox:
+                            <pre><code>&lt;input type="checkbox" name="subscribe" value="yes" /&gt; Subscribe to newsletter</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;label&gt;</strong> : Label for a form element, often used with the <code>for</code> attribute, which refers to the ID of a form field. It improves accessibility by visually and functionally associating the label with the corresponding form field. For example:
+                            <pre>
+                            <code>
+&lt;label for="username"&gt;Username&lt;/label&gt;
+&lt;input type="text" id="username" name="username" /&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;select&gt;</strong> : Element used to create a drop-down menu with multiple choices. Used with <code>&lt;option&gt;</code> tags to define the available options. The <code>name</code> attribute is used to identify the drop-down menu when the form is submitted, and the <code>multiple</code> attribute can be added to allow multiple selections. For example:
+                            <pre>
+                            <code>
+&lt;select name="country"&gt;
+&lt;option value="fr"&gt;France&lt;/option&gt;
+&lt;option value="us"&gt;United States&lt;/option&gt;
+&lt;/select&gt;
+                                </code>
+                            </pre>
+                            Another example for multiple selections:
+                            <pre>
+                            <code>
+&lt;select name="fruits" multiple&gt;
+&lt;option value="apple"&gt;Apple&lt;/option&gt;
+&lt;option value="banana"&gt;Banana&lt;/option&gt;
+&lt;/select&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;textarea&gt;</strong> : Multi-line text area for larger text input. Unlike <code>&lt;input&gt;</code> with <code>type="text"</code>, <code>&lt;textarea&gt;</code> allows users to enter text on multiple lines. The <code>rows</code> and <code>cols</code> attributes can be used to define the size of the text area. For example:
+                            <pre><code>&lt;textarea name="message" rows="4" cols="50"&gt;Your message here...&lt;/textarea&gt;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;button&gt;</strong> : Element used to create interactive buttons. The <code>type</code> attribute can be used to specify the button type (e.g., <code>submit</code> to submit a form, <code>reset</code> to reset form fields, or <code>button</code> for a button with no default behavior). The content between the <code>&lt;button&gt;</code> and <code>&lt;/button&gt;</code> tags is displayed as the button label. For example:
+                            <pre><code>&lt;button type="submit"&gt;Submit&lt;/button&gt;</code></pre>
+                            Another example for a reset button:
+                            <pre><code>&lt;button type="reset"&gt;Reset&lt;/button&gt;</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Semantic Elements -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#semanticSection" aria-expanded="false" aria-controls="semanticSection">
+                    Semantic Elements
+                </button>
+            </h2>
+            <div id="semanticSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>&lt;header&gt;</strong> : Header section for introductory information or navigation links. Typically used to group elements like the logo, site title, and navigation menus. It is placed at the top of the page or a section. For example:
+                            <pre>
+                            <code>
+&lt;header&gt;
+&lt;h1&gt;Site Title&lt;/h1&gt;
+&lt;nav&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/header&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;footer&gt;</strong> : Footer section containing footer information, credits, or additional links. Often used to display contact information, legal notices, links to privacy policies, and credits. It is placed at the bottom of the page or a section. For example:
+                            <pre>
+                            <code>
+&lt;footer&gt;
+&lt;p&gt;© 2023 My Website&lt;/p&gt;
+&lt;nav&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#"&gt;Legal Notice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/footer&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;article&gt;</strong> : Standalone content that can be distributed independently, such as a blog post or journal entry. Used to encapsulate content that has complete meaning on its own and can be reused or syndicated. For example:
+                            <pre>
+                            <code>
+&lt;article&gt;
+&lt;h2&gt;Article Title&lt;/h2&gt;
+&lt;p&gt;Article content...&lt;/p&gt;
+&lt;/article&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;section&gt;</strong> : Thematic section of a page that groups related elements. Used to divide content into logical sections, each section usually having a title. It helps structure the document semantically. For example:
+                            <pre>
+                            <code>
+&lt;section&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;p&gt;Section content...&lt;/p&gt;
+&lt;/section&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;aside&gt;</strong> : Secondary or complementary content, such as sidebars or quotes. Used for information that is tangential to the main content, like advertisements, related links, or quotes. Often placed beside the main content. For example:
+                            <pre>
+                            <code>
+&lt;aside&gt;
+&lt;h2&gt;Related Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/aside&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;main&gt;</strong> : The main section of a document that contains the dominant content. Used to encapsulate the main content of the page, distinct from headers, footers, and sidebars. There should be only one <code>&lt;main&gt;</code> element per document. For example:
+                            <pre>
+                            <code>
+&lt;main&gt;
+&lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+&lt;p&gt;Main content of the page...&lt;/p&gt;
+&lt;/main&gt;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/html" target="_blank">W3 HTML --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="/vocabulary/htmlmore" target="_blank">More ...</a>
+            </h5>
+        </div>
+    </div>
+</div>

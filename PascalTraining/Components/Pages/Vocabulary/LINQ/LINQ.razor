@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/linq"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <LINQ_fr />
+}
+else
+{
+    <LINQ_en />
+}

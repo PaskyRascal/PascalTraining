@@ -1,0 +1,480 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire Blazor Web App - Program.cs avec Entity Framework Core</h1>
+
+    <div class="accordion">
+        <!-- Section Initialisation de l'Application -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#appInitializationSection" aria-expanded="false" aria-controls="appInitializationSection">
+                    Initialisation de l'Application
+                </button>
+            </h2>
+            <div id="appInitializationSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>WebApplication.CreateBuilder()</strong> : Méthode utilisée pour créer un <code>WebApplicationBuilder</code> qui configure les services, l'hébergement et l'infrastructure de l'application. Cette méthode initialise un nouveau constructeur d'application web avec les paramètres par défaut, permettant de configurer les services et le pipeline de requêtes. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de création d'un WebApplicationBuilder en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRazorComponents();
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>builder.Services</strong> : Propriété qui permet de configurer les services utilisés par l'application (ex: injection de dépendances, authentification). Cette propriété expose un <code>IServiceCollection</code> permettant d'ajouter des services au conteneur d'injection de dépendances. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de configuration des services en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRazorComponents();
+builder.Services.AddAuthentication();
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>AddRazorComponents()</strong> : Permet d'ajouter le support des composants Blazor dans une application. Cette méthode configure les services nécessaires pour utiliser les composants Razor dans une application Blazor. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout de support pour les composants Razor en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRazorComponents();
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>AddServerSideBlazor()</strong> : Ajoute le support pour Blazor côté serveur dans une application. Cette méthode configure les services nécessaires pour exécuter des composants Blazor sur le serveur et les rendre interactifs via SignalR. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout de support pour Blazor Server en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddServerSideBlazor();
+var app = builder.Build();
+app.MapBlazorHub();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>builder.Build()</strong> : Construit une instance de <code>WebApplication</code> qui sera exécutée. Cette méthode compile la configuration de l'application et prépare le pipeline de requêtes pour le traitement des requêtes HTTP. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de construction d'une instance de WebApplication en C#
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Configuration des Services -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#servicesConfigurationSection" aria-expanded="false" aria-controls="servicesConfigurationSection">
+                    Configuration des Services (avec Entity Framework Core)
+                </button>
+            </h2>
+            <div id="servicesConfigurationSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>builder.Services.AddSingleton()</strong> : Ajoute un service en tant que singleton. Le même objet sera partagé entre toutes les requêtes. Cette méthode est utilisée pour enregistrer un service avec une durée de vie unique, ce qui signifie qu'une seule instance du service sera créée et utilisée tout au long de la durée de vie de l'application. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout d'un service singleton en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton&lt;IMyService, MyService&gt;();
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>builder.Services.AddTransient()</strong> : Ajoute un service en tant que transient, créant une nouvelle instance pour chaque requête. Cette méthode est utilisée pour enregistrer un service avec une durée de vie transitoire, ce qui signifie qu'une nouvelle instance du service sera créée chaque fois qu'il est demandé. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout d'un service transient en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddTransient&lt;IMyService, MyService&gt;();
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>builder.Services.AddScoped()</strong> : Ajoute un service avec une durée de vie "scoped", une instance par session utilisateur. Cette méthode est utilisée pour enregistrer un service avec une durée de vie limitée à la portée d'une requête ou d'une session, ce qui signifie qu'une nouvelle instance du service sera créée pour chaque session utilisateur. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout d'un service scoped en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped&lt;IMyService, MyService&gt;();
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>builder.Services.AddHttpClient()</strong> : Permet d'enregistrer et de configurer un service HTTP client pour les requêtes HTTP externes. Cette méthode est utilisée pour configurer des instances de <code>HttpClient</code> avec des paramètres spécifiques, comme les en-têtes par défaut, les délais d'attente, et les gestionnaires de messages. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout d'un service HttpClient en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient&lt;IMyService, MyService&gt;(client =>
+{
+    client.BaseAddress = new Uri("https://api.example.com/");
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>builder.Services.AddAuthorizationCore()</strong> : Ajoute les services d'autorisation dans une application Blazor, généralement utilisés pour gérer l'accès à certaines pages ou composants. Cette méthode est utilisée pour configurer les services d'autorisation de base nécessaires pour contrôler l'accès aux ressources en fonction des rôles ou des revendications des utilisateurs. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout des services d'autorisation en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAuthorizationCore();
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>builder.Services.AddDbContext&lt;TContext&gt;()</strong> : Ajoute et configure un service de contexte de base de données Entity Framework Core. Cette méthode est utilisée pour enregistrer un contexte de base de données avec des options spécifiques, comme le fournisseur de base de données et la chaîne de connexion. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple d'ajout d'un contexte de base de données en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext&lt;MyDbContext&gt;(options =>
+    options.UseSqlServer("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;"));
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>UseSqlServer()</strong> : Configure l'utilisation de SQL Server comme fournisseur de base de données pour Entity Framework Core. Cette méthode est utilisée pour spécifier que SQL Server sera utilisé comme base de données pour le contexte Entity Framework Core. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de configuration de SQL Server en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext&lt;MyDbContext&gt;(options =>
+    options.UseSqlServer("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;"));
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>UseSqlite()</strong> : Configure SQLite comme fournisseur de base de données dans une application légère. Cette méthode est utilisée pour spécifier que SQLite sera utilisé comme base de données pour le contexte Entity Framework Core. Exemple d'utilisation :
+                            <pre>
+                            <code>
+// Exemple de configuration de SQLite en C#
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext&lt;MyDbContext&gt;(options =>
+    options.UseSqlite("Data Source=mydatabase.db"));
+var app = builder.Build();
+app.Run();
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Gestion des Endpoints -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#endpointsManagementSection" aria-expanded="false" aria-controls="endpointsManagementSection">
+                    Gestion des Endpoints
+                </button>
+            </h2>
+            <div id="endpointsManagementSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>app.MapBlazorHub()</strong> : Configure les routes pour la communication en temps réel via SignalR pour les composants Blazor. Cela permet aux composants Blazor de communiquer avec le serveur en utilisant SignalR, ce qui est essentiel pour les applications Blazor Server. Exemple :
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.MapFallbackToPage()</strong> : Définit une page par défaut (fallback) si aucune route ne correspond à la requête entrante. Cela est utile pour gérer les erreurs 404 et rediriger les utilisateurs vers une page spécifique. Exemple :
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.MapControllers()</strong> : Active le routage pour les contrôleurs MVC ou API dans une application Blazor Server. Cela permet de définir des routes pour les actions des contrôleurs. Exemple :
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.UseRouting();
+app.MapControllers();
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseRouting()</strong> : Active le routage dans l'application pour la gestion des requêtes entrantes. Cela est nécessaire pour utiliser les middlewares de routage et définir les routes de l'application. Exemple :
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.UseRouting();
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseEndpoints()</strong> : Utilisé pour configurer manuellement les points de terminaison des routes dans l'application. Cela permet de définir les routes et les points de terminaison pour les requêtes HTTP. Exemple :
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapBlazorHub();
+    endpoints.MapFallbackToPage("/_Host");
+    endpoints.MapControllers();
+});
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Middleware et Pipeline HTTP -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#middlewareSection" aria-expanded="false" aria-controls="middlewareSection">
+                    Middleware et Pipeline HTTP
+                </button>
+            </h2>
+            <div id="middlewareSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>app.UseMiddleware&lt;T&gt;()</strong> : Ajoute un middleware personnalisé au pipeline HTTP de l'application. Les middlewares sont des composants qui gèrent les requêtes et les réponses HTTP. Exemple :
+                            <pre>
+                            <code>
+public class CustomMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public CustomMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // Logique du middleware
+        await context.Response.WriteAsync("Middleware personnalisé exécuté.");
+        await _next(context);
+    }
+}
+
+// Dans la méthode Configure de Startup.cs
+app.UseMiddleware&lt;CustomMiddleware&gt;();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseAuthentication()</strong> : Active l'authentification dans l'application pour vérifier l'identité des utilisateurs. Cela est essentiel pour sécuriser les applications et restreindre l'accès aux ressources. Exemple :
+                            <pre>
+                            <code>
+// Dans la méthode Configure de Startup.cs
+app.UseAuthentication();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseAuthorization()</strong> : Active l'autorisation, qui permet de contrôler l'accès aux ressources en fonction de l'authentification de l'utilisateur. Cela fonctionne en conjonction avec l'authentification pour appliquer des règles d'accès. Exemple :
+                            <pre>
+                            <code>
+// Dans la méthode Configure de Startup.cs
+app.UseAuthorization();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseStaticFiles()</strong> : Permet la gestion des fichiers statiques (HTML, CSS, JS) dans l'application. Cela est nécessaire pour servir des fichiers statiques aux clients. Exemple :
+                            <pre>
+                            <code>
+// Dans la méthode Configure de Startup.cs
+app.UseStaticFiles();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseHttpsRedirection()</strong> : Redirige automatiquement toutes les requêtes HTTP vers HTTPS pour sécuriser les communications. Cela est important pour garantir que toutes les données échangées entre le client et le serveur sont chiffrées. Exemple :
+                            <pre>
+                            <code>
+// Dans la méthode Configure de Startup.cs
+app.UseHttpsRedirection();
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Migration de la Base de Données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dbMigrationSection" aria-expanded="false" aria-controls="dbMigrationSection">
+                    Migration de la Base de Données (Entity Framework Core)
+                </button>
+            </h2>
+            <div id="dbMigrationSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Database.EnsureCreated()</strong> : Vérifie si la base de données est créée et la crée si elle n'existe pas, mais n'applique pas de migrations. Cela est utile pour les scénarios de développement ou de test où vous souhaitez rapidement initialiser une base de données. Exemple :
+                            <pre>
+                            <code>
+using (var context = new MyDbContext())
+{
+    context.Database.EnsureCreated();
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Database.Migrate()</strong> : Applique toutes les migrations en attente pour s'assurer que la base de données est à jour par rapport au modèle Entity Framework. Cela est essentiel pour maintenir la synchronisation entre le modèle de données et la base de données. Exemple :
+                            <pre>
+                            <code>
+using (var context = new MyDbContext())
+{
+    context.Database.Migrate();
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>dotnet ef migrations add &lt;NomMigration&gt;</strong> : Commande CLI utilisée pour ajouter une migration à l'application qui décrit les modifications de la structure de la base de données. Cela génère un fichier de migration qui peut être appliqué à la base de données. Exemple :
+                            <pre>
+                            <code>
+dotnet ef migrations add InitialCreate
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>dotnet ef database update</strong> : Commande CLI qui applique les migrations à la base de données. Cela met à jour la base de données pour qu'elle corresponde au modèle de données actuel. Exemple :
+                            <pre>
+                            <code>
+dotnet ef database update
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Exécution de l'Application -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#runAppSection" aria-expanded="false" aria-controls="runAppSection">
+                    Exécution de l'Application
+                </button>
+            </h2>
+            <div id="runAppSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>app.Run()</strong> : Méthode utilisée pour démarrer l'application Web Blazor après la configuration de tous les services, middleware et endpoints. Cette méthode bloque le thread d'appel et commence à écouter les requêtes HTTP. Exemple :
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapBlazorHub();
+    endpoints.MapFallbackToPage("/_Host");
+});
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Environment</strong> : Variable utilisée pour définir l'environnement dans lequel l'application s'exécute (par exemple, Développement, Production). Cela permet de configurer l'application différemment selon l'environnement. Exemple :
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0" target="_blank">Blazor Web App documentation</a>
+            </h5>
+        </div>
+    </div>
+</div>

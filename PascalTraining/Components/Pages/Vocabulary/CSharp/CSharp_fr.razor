@@ -1,0 +1,582 @@
+﻿<div class="container mt-5">
+    <h1 class="text-primary text-center mb-4">Vocabulaire de Programmation C#</h1>
+
+    <div class="accordion">
+
+        <!-- Types de données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    1. Types de données (Data Types)
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>int</code> : Nombre entier (32 bits, plage de -2,147,483,648 à 2,147,483,647. Utilisé pour représenter des nombres entiers. Exemple :
+                            <pre><code>int age = 30;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>float</code> : Nombre à virgule flottante (précision simple, 32 bits, environ 7 chiffres significatifs. Utilisé pour représenter des nombres à virgule flottante avec une précision simple. Exemple :
+                            <pre><code>float temperature = 36.6f;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>double</code> : Nombre à virgule flottante (précision double, 64 bits, environ 15-16 chiffres significatifs. Utilisé pour représenter des nombres à virgule flottante avec une précision double. Exemple :
+                            <pre><code>double distance = 12345.6789;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>bool</code> : Valeur booléenne (<code>true</code> ou <code>false</code>, 1 bit. Utilisé pour représenter des valeurs booléennes. Exemple :
+                            <pre><code>bool isActive = true;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>string</code> : Chaîne de caractères (séquence de caractères Unicode, taille variable. Utilisé pour représenter des séquences de caractères. Exemple :
+                            <pre><code>string name = "Alice";</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>char</code> : Caractère unique (16 bits, représente un caractère Unicode. Utilisé pour représenter un seul caractère. Exemple :
+                            <pre><code>char initial = 'A';</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>decimal</code> : Nombre à virgule flottante de haute précision (128 bits, utilisé principalement pour les calculs financiers, environ 28-29 chiffres significatifs. Utilisé pour représenter des nombres à virgule flottante avec une haute précision, souvent utilisé dans les calculs financiers. Exemple :
+                            <pre><code>decimal price = 19.99m;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>var</code> : Inférence de type (le compilateur déduit le type de la variable à partir de l'expression assignée. Utilisé pour déclarer des variables sans spécifier explicitement leur type, le compilateur déduit le type à partir de l'expression assignée. Exemple :
+                            <pre><code>var count = 10; // Le type de 'count' est déduit comme étant 'int'</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Structures de contrôle -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Structures de contrôle (Control Structures)
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>if</code>, <code>else if</code>, <code>else</code> : Conditions (permettent d'exécuter du code en fonction de la véracité d'une expression booléenne. Exemple :
+                            <pre>
+                            <code>
+int number = 10;
+if (number &gt; 0)
+{
+    Console.WriteLine("Positive number");
+}
+else if (number &lt; 0)
+{
+    Console.WriteLine("Negative number");
+}
+else
+{
+    Console.WriteLine("Zero");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>switch</code>, <code>case</code> : Structure conditionnelle (permet de choisir parmi plusieurs blocs de code à exécuter en fonction de la valeur d'une expression. Exemple :
+                            <pre>
+                            <code>
+int day = 3;
+switch (day)
+{
+    case 1:
+        Console.WriteLine("Monday");
+        break;
+    case 2:
+        Console.WriteLine("Tuesday");
+        break;
+    case 3:
+        Console.WriteLine("Wednesday");
+        break;
+    default:
+        Console.WriteLine("Another day");
+        break;
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>for</code>, <code>foreach</code> : Boucles pour itérer sur des collections (<code>for</code> utilise un compteur, <code>foreach</code> itère directement sur les éléments d'une collection. Exemple :
+                            <pre>
+                            <code>
+// Boucle for
+for (int i = 0; i &lt; 5; i++)
+{
+    Console.WriteLine(i);
+}
+
+// Boucle foreach
+int[] numbers = { 1, 2, 3, 4, 5 };
+foreach (int number in numbers)
+{
+    Console.WriteLine(number);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>while</code>, <code>do-while</code> : Boucles (<code>while</code> continue tant qu'une condition est vraie, <code>do-while</code> exécute au moins une fois avant de vérifier la condition. Exemple :
+                            <pre>
+                            <code>
+// Boucle while
+int i = 0;
+while (i &lt; 5)
+{
+    Console.WriteLine(i);
+    i++;
+}
+
+// Boucle do-while
+int j = 0;
+do
+{
+    Console.WriteLine(j);
+    j++;
+} while (j &lt; 5);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>break</code> : Interruption d'une boucle ou d'un <code>switch</code> (arrête l'exécution de la boucle ou du <code>switch</code> en cours. Exemple :
+                            <pre>
+                            <code>
+for (int i = 0; i &lt; 10; i++)
+{
+    if (i == 5)
+    {
+        break; // Interrompt la boucle lorsque i est égal à 5
+    }
+    Console.WriteLine(i);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>continue</code> : Passer à l'itération suivante (saute le reste du code dans l'itération courante et passe à l'itération suivante de la boucle. Exemple :
+                            <pre>
+                            <code>
+for (int i = 0; i &lt; 10; i++)
+{
+    if (i % 2 == 0)
+    {
+        continue; // Passe à l'itération suivante si i est pair
+    }
+    Console.WriteLine(i);
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classes et Objets -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Classes et Objets (Classes and Objects)
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>class</code> : Déclaration d'une classe (modèle définissant les propriétés et les méthodes d'un objet. Exemple :
+                            <pre>
+                            <code>
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>object</code> : Instance d'une classe (représentation concrète d'une classe en mémoire. Exemple :
+                            <pre>
+                            <code>
+Person person = new Person();
+person.Name = "Alice";
+person.Age = 30;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>constructor</code> : Méthode spéciale appelée lors de la création d'un objet (initialise les propriétés de l'objet. Exemple :
+                            <pre>
+                            <code>
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    // Constructeur
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>this</code> : Référence à l'instance actuelle (utilisée pour accéder aux membres de l'instance courante. Exemple :
+                            <pre>
+                            <code>
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Person(string name, int age)
+    {
+        this.Name = name;
+        this.Age = age;
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>new</code> : Instancier un objet (crée une nouvelle instance d'une classe. Exemple :
+                            <pre>
+                            <code>
+Person person = new Person("Alice", 30);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>static</code> : Membre partagé (appartient à la classe plutôt qu'à une instance spécifique. Exemple :
+                            <pre>
+                            <code>
+public class MathUtilities
+{
+public static int Add(int a, int b)
+    {
+    return a + b;
+    }
+}
+
+// Utilisation
+int sum = MathUtilities.Add(5, 3);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>abstract</code> : Classe ou méthode abstraite (ne peut pas être instanciée directement, doit être héritée et implémentée. Exemple :
+                            <pre>
+                            <code>
+public abstract class Animal
+{
+    public abstract void MakeSound();
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Woof");
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>interface</code> : Déclaration d'une interface (définit un contrat que les classes implémentant l'interface doivent respecter. Exemple :
+                            <pre>
+                            <code>
+public interface IMovable
+{
+    void Move();
+}
+
+public class Car : IMovable
+{
+    public void Move()
+    {
+        Console.WriteLine("The car is moving");
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Méthodes et Fonctions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Méthodes et Fonctions (Methods and Functions)
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>void</code> : Méthode sans retour (ne renvoie aucune valeur, utilisée pour les actions qui ne nécessitent pas de résultat. Exemple :
+                            <pre>
+                            <code>
+public void DisplayMessage()
+{
+    Console.WriteLine("Hello, World!");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>return</code> : Retourner une valeur (met fin à l'exécution d'une méthode et renvoie une valeur à l'appelant. Exemple :
+                            <pre>
+                            <code>
+public int Add(int a, int b)
+{
+    return a + b;
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>public</code>, <code>private</code>, <code>protected</code>, <code>internal</code> : Modificateurs d'accès (définissent la visibilité et l'accessibilité des membres d'une classe. Exemple :
+                            <pre>
+                            <code>
+public class MyClass
+{
+    public int PublicProperty { get; set; } // Accessible partout
+    private int PrivateProperty { get; set; } // Accessible uniquement dans cette classe
+    protected int ProtectedProperty { get; set; } // Accessible dans cette classe et les classes dérivées
+    internal int InternalProperty { get; set; } // Accessible dans le même assembly
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>params</code> : Paramètres variables (permet de passer un nombre variable d'arguments à une méthode. Exemple :
+                            <pre>
+                            <code>
+public void PrintNumbers(params int[] numbers)
+{
+    foreach (int number in numbers)
+    {
+        Console.WriteLine(number);
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>async</code> / <code>await</code> : Asynchrone (permet d'exécuter des opérations de manière asynchrone, sans bloquer le thread principal. Exemple :
+                            <pre>
+                            <code>
+public async Task&lt;int&gt; GetDataAsync()
+{
+    await Task.Delay(1000); // Simule une opération asynchrone
+    return 42;
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collections et Tableaux -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Collections et Tableaux (Collections and Arrays)
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>Array[]</code> : Tableau (collection d'éléments de même type, taille fixe, accès rapide par index. Exemple :
+                            <pre>
+                            <code>
+int[] numbers = new int[5]; // Déclare un tableau de 5 entiers
+numbers[0] = 1; // Assigne la valeur 1 au premier élément
+int firstNumber = numbers[0]; // Accède au premier élément
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>List&lt;T&gt;</code> : Liste générique (collection d'éléments de même type, taille dynamique, accès par index. Exemple :
+                            <pre>
+                            <code>
+List&lt;int&gt; numbers = new List&lt;int&gt;(); // Déclare une liste d'entiers
+numbers.Add(1); // Ajoute un élément à la liste
+int firstNumber = numbers[0]; // Accède au premier élément
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Dictionary&lt;TKey, TValue&gt;</code> : Collection de paires clé-valeur (permet de stocker des éléments associés à une clé unique, accès rapide par clé. Exemple :
+                            <pre>
+                            <code>
+Dictionary&lt;string, int&gt; ages = new Dictionary&lt;string, int&gt;(); // Déclare un dictionnaire avec des chaînes comme clés et des entiers comme valeurs
+ages["Alice"] = 30; // Assigne la valeur 30 à la clé "Alice"
+int aliceAge = ages["Alice"]; // Accède à la valeur associée à la clé "Alice"
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Queue&lt;T&gt;</code> : File d'attente (collection FIFO - First In, First Out, éléments ajoutés à la fin et retirés du début. Exemple :
+                            <pre>
+                            <code>
+Queue&lt;int&gt; queue = new Queue&lt;int&gt;(); // Déclare une file d'attente d'entiers
+queue.Enqueue(1); // Ajoute un élément à la fin de la file
+int firstInQueue = queue.Dequeue(); // Retire et retourne l'élément au début de la file
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Stack&lt;T&gt;</code> : Pile (collection LIFO - Last In, First Out, éléments ajoutés et retirés du sommet. Exemple :
+                            <pre>
+                            <code>
+Stack&lt;int&gt; stack = new Stack&lt;int&gt;(); // Déclare une pile d'entiers
+stack.Push(1); // Ajoute un élément au sommet de la pile
+int topOfStack = stack.Pop(); // Retire et retourne l'élément au sommet de la pile
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>IEnumerable&lt;T&gt;</code> : Interface pour énumérables (permet l'itération sur une collection, utilisée avec <code>foreach</code>. Exemple :
+                            <pre>
+                            <code>
+IEnumerable&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3 }; // Déclare une collection énumérable d'entiers
+foreach (int number in numbers)
+{
+    Console.WriteLine(number); // Itère sur chaque élément de la collection
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exceptions et Gestion des erreurs -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    6. Exceptions et Gestion des erreurs (Exceptions and Error Handling)
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>try</code>, <code>catch</code>, <code>finally</code> : Gestion des exceptions (permet de gérer les erreurs de manière contrôlée, <code>try</code> encapsule le code susceptible de générer une exception, <code>catch</code> capture et traite l'exception, <code>finally</code> exécute du code après le bloc <code>try</code> et <code>catch</code>, qu'une exception ait été levée ou non. Exemple :
+                            <pre>
+                            <code>
+try
+{
+    // Code susceptible de générer une exception
+}
+catch (Exception ex)
+{
+    // Code pour gérer l'exception
+}
+finally
+{
+    // Code qui s'exécute toujours, qu'une exception ait été levée ou non
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>throw</code> : Lever une exception (utilisé pour générer une exception manuellement. Exemple :
+                            <pre>
+                            <code>
+if (someCondition)
+{
+    throw new InvalidOperationException("Message d'erreur");
+}   
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Exception</code> : Classe de base (classe de base pour toutes les exceptions en C#, fournit des informations sur l'erreur, comme le message d'erreur et la pile d'appels. Exemple :
+                            <pre>
+                            <code>
+try
+{
+    // Code susceptible de générer une exception
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message); // Affiche le message d'erreur
+    Console.WriteLine(ex.StackTrace); // Affiche la pile d'appels
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>NullReferenceException</code> : Exception de référence nulle (levée lorsqu'une tentative est faite pour accéder à un objet via une référence nulle. Exemple :
+                            <pre>
+                            <code>
+object obj = null;
+try
+{
+    int length = obj.ToString().Length; // Lève une NullReferenceException
+}
+catch (NullReferenceException ex)
+{
+    Console.WriteLine("Une référence nulle a été rencontrée.");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>ArgumentNullException</code> : Argument nul (levée lorsqu'un argument passé à une méthode est <code>null</code> alors qu'il ne devrait pas l'être. Exemple :
+                            <pre>
+                            <code>
+void SomeMethod(string param)
+{
+    if (param == null)
+    {
+        throw new ArgumentNullException(nameof(param), "Le paramètre ne peut pas être nul");
+    }
+    // Autre code
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/cs" target="_blank">W3 C# --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank">C# documentation</a>
+            </h5>
+        </div>
+    </div>
+</div>

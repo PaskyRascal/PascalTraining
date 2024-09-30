@@ -1,0 +1,497 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire de Serveur Web (Backend)</h1>
+
+    <div class="accordion">
+        <!-- Section Serveur -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#serverSection" aria-expanded="false" aria-controls="serverSection">
+                    Serveurs Web
+                </button>
+            </h2>
+            <div id="serverSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Apache</strong> : Serveur web open source, très utilisé pour héberger des sites web. Il est connu pour sa flexibilité et sa large adoption. Exemple de configuration :
+                            <pre>
+                            <code>
+&lt;VirtualHost *:80&gt;
+ServerAdmin webmaster@dummy-host.example.com
+DocumentRoot "/www/docs/dummy-host.example.com"
+ServerName dummy-host.example.com
+ErrorLog "logs/dummy-host.example.com-error_log"
+CustomLog "logs/dummy-host.example.com-access_log" common
+&lt;/VirtualHost&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Nginx</strong> : Serveur web performant utilisé pour gérer de grandes quantités de trafic. Il est souvent utilisé comme reverse proxy et load balancer. Exemple de configuration :
+                            <pre>
+                            <code>
+server {
+listen 80;
+server_name example.com;
+location / {
+    proxy_pass http://localhost:8080;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>IIS</strong> (Internet Information Services) : Serveur web de Microsoft. Il est intégré à Windows Server et offre une gestion facile des sites web et des applications. Exemple de configuration :
+                            <pre>
+                            <code>
+&lt;configuration&gt;
+    &lt;system.webServer&gt;
+        &lt;handlers&gt;
+            &lt;add name="iisnode" path="app.js" verb="*" modules="iisnode" /&gt;
+        &lt;/handlers&gt;
+        &lt;rewrite&gt;
+            &lt;rules&gt;
+                &lt;rule name="DynamicContent" patternSyntax="ECMAScript" stopProcessing="true"&gt;
+                    &lt;match url=".*" /&gt;
+                    &lt;conditions&gt;
+                        &lt;add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" /&gt;
+                    &lt;/conditions&gt;
+                    &lt;action type="Rewrite" url="app.js" /&gt;
+                &lt;/rule&gt;
+            &lt;/rules&gt;
+        &lt;/rewrite&gt;
+    &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Reverse Proxy</strong> : Serveur qui redirige les requêtes vers d'autres serveurs backend. Utilisé pour améliorer la sécurité, la performance et la distribution de la charge. Exemple avec Nginx :
+                            <pre>
+                            <code>
+server {
+    listen 80;
+    server_name example.com;
+    location / {
+        proxy_pass http://backend_server;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Load Balancer</strong> : Outil distribuant les requêtes entre plusieurs serveurs pour équilibrer la charge. Utilisé pour améliorer la disponibilité et la performance des applications. Exemple avec Nginx :
+                            <pre>
+                            <code>
+upstream backend {
+    server backend1.example.com;
+    server backend2.example.com;
+}
+server {
+    listen 80;
+    server_name example.com;
+    location / {
+        proxy_pass http://backend;
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section API -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#apiSection" aria-expanded="false" aria-controls="apiSection">
+                    API (Application Programming Interface)
+                </button>
+            </h2>
+            <div id="apiSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>REST</strong> : Style d'architecture d'API utilisant les méthodes HTTP (GET, POST, PUT, DELETE). Utilisé pour créer des services web légers et évolutifs. Exemple de requête GET :
+                            <pre>
+                            <code>
+GET /api/users/1 HTTP/1.1
+Host: example.com
+Accept: application/json
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SOAP</strong> : Protocole plus structuré pour échanger des données via des services web. Utilisé pour des communications plus formelles et sécurisées. Exemple de requête SOAP :
+                            <pre>
+                            <code>
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://example.com/webservices"&gt;
+    &lt;soapenv:Header/&gt;
+    &lt;soapenv:Body&gt;
+        &lt;web:GetUser&gt;
+            &lt;web:UserId&gt;1&lt;/web:UserId&gt;
+        &lt;/web:GetUser&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>GraphQL</strong> : Langage de requête pour interroger des APIs, permettant de demander des données précises. Utilisé pour optimiser les requêtes et réduire la surcharge de données. Exemple de requête GraphQL :
+                            <pre>
+                            <code>
+{
+    user(id: "1") {
+    name
+    email
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>JSON</strong> : Format d'échange de données utilisé pour les API REST. Utilisé pour sa simplicité et sa compatibilité avec de nombreux langages. Exemple de données JSON :
+                            <pre>
+                            <code>
+{
+    "name": "Alice",
+    "age": 30,
+    "email": "alice@example.com"
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>XML</strong> : Format de données structuré souvent utilisé avec SOAP. Utilisé pour sa capacité à représenter des données hiérarchiques. Exemple de données XML :
+                            <pre>
+                            <code>
+&lt;user&gt;
+    &lt;name&gt;Alice&lt;/name&gt;
+    &lt;age&gt;30&lt;/age&gt;
+    &lt;email&gt;alice@example.com&lt;/email&gt;
+&lt;/user&gt;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>OAuth</strong> : Protocole d'authentification utilisé pour sécuriser les API. Utilisé pour permettre à des applications tierces d'accéder aux ressources d'un utilisateur sans partager ses identifiants. Exemple de flux OAuth :
+                            <pre>
+                            <code>
+1. L'utilisateur se connecte et autorise l'application.
+2. L'application reçoit un code d'autorisation.
+3. L'application échange le code contre un jeton d'accès.
+4. L'application utilise le jeton d'accès pour accéder aux ressources protégées.
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>JWT</strong> (JSON Web Token) : Standard pour créer des jetons d'accès sécurisés pour les API. Utilisé pour transmettre des informations de manière sécurisée entre les parties. Exemple de JWT :
+                            <pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Bases de Données -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dbSection" aria-expanded="false" aria-controls="dbSection">
+                    Bases de Données
+                </button>
+            </h2>
+            <div id="dbSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>SQL</strong> : Langage pour interagir avec des bases de données relationnelles (MySQL, PostgreSQL, SQL Server). Utilisé pour gérer et manipuler les données dans des bases de données structurées. Exemple de requête SQL :
+                            <pre><code>SELECT * FROM Users WHERE Age &gt; 30;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>NoSQL</strong> : Type de base de données non relationnelle (MongoDB, Cassandra, Redis). Utilisé pour des données non structurées ou semi-structurées, souvent pour des applications nécessitant une grande scalabilité. Exemple de document MongoDB :
+                            <pre>
+                            <code>
+{
+    "name": "Alice",
+    "age": 30,
+    "email": "alice@example.com"
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ORM</strong> (Object-Relational Mapping) : Outil pour manipuler les données en base via des objets (ex : Entity Framework, Hibernate). Utilisé pour simplifier les interactions avec la base de données en mappant les tables à des classes. Exemple avec Entity Framework :
+                            <pre>
+                            <code>
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+using (var context = new MyDbContext())
+{
+    var users = context.Users.Where(u => u.Age &gt; 30).ToList();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CRUD</strong> : Acronyme pour Create, Read, Update, Delete, les opérations basiques sur une base de données. Utilisé pour définir les opérations fondamentales de manipulation des données. Exemple de requêtes CRUD :
+                            <pre>
+                            <code>
+// Create
+INSERT INTO Users (Name, Age) VALUES ('Alice', 30);
+
+// Read
+SELECT * FROM Users WHERE Id = 1;
+
+// Update
+UPDATE Users SET Age = 31 WHERE Id = 1;
+
+// Delete
+DELETE FROM Users WHERE Id = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ACID</strong> : Propriétés des transactions en bases relationnelles (Atomicité, Cohérence, Isolation, Durabilité). Utilisé pour garantir la fiabilité des transactions dans une base de données. Exemple :
+                            <pre>
+                            <code>
+// Atomicité : Toutes les opérations d'une transaction sont exécutées ou aucune ne l'est.
+// Cohérence : La base de données passe d'un état valide à un autre état valide.
+// Isolation : Les transactions concurrentes n'interfèrent pas entre elles.
+// Durabilité : Les résultats d'une transaction sont permanents même en cas de panne.
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sharding</strong> : Technique de partitionnement des données pour améliorer la performance d'une base. Utilisé pour distribuer les données sur plusieurs serveurs pour équilibrer la charge et améliorer la scalabilité. Exemple :
+                            <pre>
+                            <code>
+// Sharding horizontal : Les lignes d'une table sont réparties sur plusieurs bases de données.
+// Sharding vertical : Les colonnes d'une table sont réparties sur plusieurs bases de données.
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Authentification et Sécurité -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securitySection" aria-expanded="false" aria-controls="securitySection">
+                    Authentification et Sécurité
+                </button>
+            </h2>
+            <div id="securitySection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>HTTPS</strong> : Protocole sécurisé pour la communication entre le client et le serveur web. Utilisé pour protéger les données échangées contre les interceptions et les attaques. Exemple d'URL HTTPS :
+                            <pre><code>https://example.com</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SSL/TLS</strong> : Protocole de cryptage utilisé pour sécuriser les communications HTTP. Utilisé pour établir une connexion sécurisée entre le client et le serveur. Exemple de configuration Nginx pour SSL/TLS :
+                            <pre>
+                            <code>
+server {
+    listen 443 ssl;
+    server_name example.com;
+    ssl_certificate /etc/ssl/certs/example.com.crt;
+    ssl_certificate_key /etc/ssl/private/example.com.key;
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>OAuth</strong> : Protocole pour l'autorisation d'accès à des ressources sécurisées. Utilisé pour permettre à des applications tierces d'accéder aux ressources d'un utilisateur sans partager ses identifiants. Exemple de flux OAuth :
+                            <pre>
+                            <code>
+1. L'utilisateur se connecte et autorise l'application.
+2. L'application reçoit un code d'autorisation.
+3. L'application échange le code contre un jeton d'accès.
+4. L'application utilise le jeton d'accès pour accéder aux ressources protégées.
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>JWT</strong> : Jetons pour sécuriser l'accès aux API et l'authentification. Utilisé pour transmettre des informations de manière sécurisée entre les parties. Exemple de JWT :
+                            <pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Basic Auth</strong> : Méthode d'authentification utilisant des identifiants de base (nom d'utilisateur/mot de passe). Utilisé pour des scénarios simples où la sécurité n'est pas une préoccupation majeure. Exemple d'en-tête HTTP Basic Auth :
+                            <pre><code>Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CSRF</strong> : Cross-Site Request Forgery, attaque de type injection de requêtes. Utilisé pour tromper un utilisateur authentifié en lui faisant exécuter des actions non désirées. Exemple de protection CSRF en ASP.NET :
+                            <pre><code>&#64Html.AntiForgeryToken()</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>XSS</strong> : Cross-Site Scripting, attaque visant à injecter du code malveillant dans une page web. Utilisé pour voler des informations sensibles ou manipuler le contenu de la page. Exemple de protection XSS en ASP.NET :
+                            <pre><code>&#64Html.Encode(userInput)</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section DevOps et Déploiement -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devOpsSection" aria-expanded="false" aria-controls="devOpsSection">
+                    DevOps et Déploiement
+                </button>
+            </h2>
+            <div id="devOpsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>CI/CD</strong> (Continuous Integration/Continuous Deployment) : Automatisation des processus de build et de déploiement. Utilisé pour améliorer la qualité du code et accélérer les cycles de développement. Exemple d'outil CI/CD : Jenkins, GitHub Actions.
+                            <pre>
+                            <code>
+// Exemple de pipeline CI/CD avec GitHub Actions
+name: CI/CD Pipeline
+
+on: [push]
+
+jobs:
+    build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+        dotnet-version: '5.0.x'
+    - name: Build with dotnet
+        run: dotnet build --configuration Release
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Docker</strong> : Conteneurisation des applications pour un déploiement standardisé. Utilisé pour isoler les applications et leurs dépendances dans des conteneurs légers. Exemple de fichier Dockerfile :
+                            <pre>
+                            <code>
+# Utilise une image de base .NET
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
+COPY . /app
+WORKDIR /app
+EXPOSE 80
+ENTRYPOINT ["dotnet", "MyApp.dll"]
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Kubernetes</strong> : Orchestration de conteneurs pour gérer le déploiement et la mise à l'échelle. Utilisé pour automatiser le déploiement, la gestion et la mise à l'échelle des applications conteneurisées. Exemple de fichier de déploiement Kubernetes :
+                            <pre>
+                            <code>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: myapp-deployment
+spec:
+    replicas: 3
+    selector:
+    matchLabels:
+        app: myapp
+    template:
+    metadata:
+        labels:
+        app: myapp
+    spec:
+        containers:
+        - name: myapp
+        image: myapp:latest
+        ports:
+        - containerPort: 80
+                                    </code>
+                                </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Ansible</strong> : Outil d'automatisation pour gérer l'infrastructure. Utilisé pour automatiser les tâches de configuration, de gestion et de déploiement des serveurs. Exemple de playbook Ansible :
+                            <pre>
+                            <code>
+- name: Installer et démarrer Apache
+    hosts: webservers
+    become: yes
+    tasks:
+    - name: Installer Apache
+        apt:
+        name: apache2
+        state: present
+    - name: Démarrer Apache
+        service:
+        name: apache2
+        state: started
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Terraform</strong> : Outil d'infrastructure as code pour créer et gérer l'infrastructure cloud. Utilisé pour définir et provisionner l'infrastructure de manière déclarative. Exemple de configuration Terraform :
+                            <pre>
+                            <code>
+provider "aws" {
+    region = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+    ami           = "ami-0c55b159cbfafe1f0"
+    instance_type = "t2.micro"
+
+    tags = {
+    Name = "example-instance"
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Load Balancer</strong> : Distribution du trafic entre plusieurs serveurs pour équilibrer la charge. Utilisé pour améliorer la disponibilité et la performance des applications. Exemple de configuration Nginx pour un load balancer :
+                            <pre>
+                            <code>
+http {
+    upstream myapp {
+        server app1.example.com;
+        server app2.example.com;
+    }
+
+    server {
+        listen 80;
+        location / {
+            proxy_pass http://myapp;
+        }
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Monitoring</strong> : Surveillance des applications et des serveurs pour détecter les anomalies (ex : Prometheus, Grafana). Utilisé pour assurer la disponibilité et la performance des systèmes. Exemple de configuration Prometheus :
+                            <pre>
+                            <code>
+global:
+    scrape_interval: 15s
+
+scrape_configs:
+    - job_name: 'prometheus'
+    static_configs:
+        - targets: ['localhost:9090']
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

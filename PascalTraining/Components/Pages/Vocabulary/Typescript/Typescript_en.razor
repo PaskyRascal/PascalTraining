@@ -1,0 +1,412 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">TypeScript Vocabulary</h1>
+
+    <div class="accordion">
+        <!-- Section Typing -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#typesSection" aria-expanded="false" aria-controls="typesSection">
+                    Typing in TypeScript
+                </button>
+            </h2>
+            <div id="typesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>any</strong>: A type that allows a variable to contain any value. Used when the type of the variable is unknown beforehand. Example:
+                            <pre>
+                            <code>
+let value: any = "Hello";
+value = 42; // Type can be changed
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>string</strong>: A type used for strings. Example:
+                            <pre><code>let name: string = "Alice";</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>number</strong>: A type used for numbers. Can represent integers and floating-point numbers. Example:
+                            <pre><code>let age: number = 30;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>boolean</strong>: A type used to represent boolean values (<code>true</code> or <code>false</code>). Example:
+                            <pre><code>let isActive: boolean = true;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>void</strong>: A type used for functions that do not return a value. Example:
+                            <pre>
+                            <code>
+function logMessage(message: string): void {
+    console.log(message);
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>null / undefined</strong>: Types representing an absence of value. <code>null</code> is used to indicate an intentionally missing value, while <code>undefined</code> means a variable has not been initialized. Example:
+                            <pre>
+                            <code>
+let value: null = null;
+let notInitialized: undefined = undefined;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>array</strong>: A typed array, defined for example with <code>number[]</code> or <code>Array&lt;number&gt;</code>. Used to store a collection of elements of the same type. Example:
+                            <pre><code>let numbers: number[] = [1, 2, 3, 4, 5];</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>tuple</strong>: A fixed-length array where each element can have a different type. Used to represent a set of values of different types. Example:
+                            <pre><code>let person: [string, number] = ["Alice", 30];</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>enum</strong>: An enumeration that allows defining a set of named values. Used to represent a set of constant values. Example:
+                            <pre>
+                            <code>
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+let color: Color = Color.Green;
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Functions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#functionsSection" aria-expanded="false" aria-controls="functionsSection">
+                    Functions in TypeScript
+                </button>
+            </h2>
+            <div id="functionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>parameter types</strong>: You can specify the type of function parameters to ensure the arguments passed are of the expected type. Example:
+                            <pre>
+                            <code>
+function greet(name: string): void {
+    console.log("Hello, " + name);
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>return type</strong>: You can specify the return type of a function to indicate what type of value the function returns. Example:
+                            <pre>
+                            <code>
+function sum(a: number, b: number): number {
+    return a + b;
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>optional parameters</strong>: Use a question mark (<code>?</code>) to indicate that a parameter is optional. If the parameter is not provided, it will be <code>undefined</code>. Example:
+                            <pre>
+                            <code>
+function log(message?: string): void {
+    if (message) {
+        console.log(message);
+    } else {
+        console.log("No message provided");
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>default parameters</strong>: Allows you to define a default value for a parameter. If no argument is passed for that parameter, the default value will be used. Example:
+                            <pre>
+                            <code>
+function increment(n: number = 1): number {
+    return n + 1;
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>rest parameters</strong>: Use <code>...</code> to represent a variable number of arguments. Rest parameters are grouped into an array. Example:
+                            <pre>
+                            <code>
+function sum(...numbers: number[]): number {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Interfaces and Types -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#interfacesSection" aria-expanded="false" aria-controls="interfacesSection">
+                    Interfaces and Types
+                </button>
+            </h2>
+            <div id="interfacesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>interface</strong>: Declares a structure that objects or classes must adhere to. Used to define a contract that objects must respect. Example:
+                            <pre>
+                            <code>
+interface Person {
+    name: string;
+    age: number;
+}
+let alice: Person = { name: "Alice", age: 30 };
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>type alias</strong>: Allows you to create a name for an existing type. Used to simplify complex types or give meaningful names to types. Example:
+                            <pre>
+                            <code>
+type ID = string | number;
+let userId: ID = "12345"; // Can be a string or number
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>readonly</strong>: A property or parameter that cannot be changed after initialization. Used to create immutable properties. Example:
+                            <pre>
+                            <code>
+interface Person {
+    readonly id: number;
+    name: string;
+}
+let alice: Person = { id: 1, name: "Alice" };
+// alice.id = 2; // Error: id is read-only
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>optional properties</strong>: Optional properties in an interface. Used to indicate that a property may or may not be present. Example:
+                            <pre>
+                            <code>
+interface Person {
+    name: string;
+    age?: number; // Optional property
+}
+let alice: Person = { name: "Alice" }; // age is optional
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>index signatures</strong>: Allows defining dynamic types for object keys. Used to represent objects with dynamic keys. Example:
+                            <pre>
+                            <code>
+interface StringArray {
+    [index: number]: string;
+}
+let myArray: StringArray = ["Alice", "Bob"];
+let firstElement: string = myArray[0]; // Accesses the first element
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Classes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#classesSection" aria-expanded="false" aria-controls="classesSection">
+                    Classes in TypeScript
+                </button>
+            </h2>
+            <div id="classesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>class</strong>: Declares a class with properties and methods. Used to create objects with defined properties and behaviors. Example:
+                            <pre>
+                            <code>
+class Person {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    greet() {
+        console.log("Hello, " + this.name);
+    }
+}
+let alice = new Person("Alice");
+alice.greet(); // Displays "Hello, Alice"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>constructor</strong>: A special method used to create an instance of a class. Initializes the object's properties. Example:
+                            <pre>
+                            <code>
+class Person {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>public / private / protected</strong>: Access modifiers for class members. <code>public</code> is accessible everywhere, <code>private</code> is only accessible within the class, and <code>protected</code> is accessible within the class and its subclasses. Example:
+                            <pre>
+                            <code>
+class Person {
+    public name: string;
+    private age: number;
+    protected address: string;
+    constructor(name: string, age: number, address: string) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>readonly</strong>: Properties that cannot be modified after initialization. Used to create immutable properties. Example:
+                            <pre>
+                            <code>
+class Person {
+    readonly id: number;
+    name: string;
+    constructor(id: number, name: string) {
+        this.id = id;
+        this.name = name;
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>static</strong>: Defines class members that are shared across all instances of the class. Used for properties or methods that belong to the class itself rather than a specific instance. Example:
+                            <pre>
+                            <code>
+class Counter {
+    static count: number = 0;
+    static increment() {
+        Counter.count++;
+    }
+}
+Counter.increment();
+console.log(Counter.count); // Displays 1
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>extends</strong>: Used to inherit from another class. Allows a class to derive from another class and reuse its properties and methods. Example:
+                            <pre>
+                            <code>
+class Employee extends Person {
+    constructor(name: string, age: number, address: string, public jobTitle: string) {
+        super(name, age, address);
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>super</strong>: Allows calling the constructor or methods of a parent class from a child class. Used to access the parent class's members. Example:
+                            <pre>
+                            <code>
+class Employee extends Person {
+    constructor(name: string, age: number, address: string, public jobTitle: string) {
+        super(name, age, address);
+    }
+    displayJobTitle() {
+        console.log(this.jobTitle);
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Generics -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genericsSection" aria-expanded="false" aria-controls="genericsSection">
+                    Generics in TypeScript
+                </button>
+            </h2>
+            <div id="genericsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>generics</strong>: Allows creating functions or classes that can work with multiple types. Used to write reusable and type-safe code. Example:
+                            <pre>
+                            <code>
+function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}
+let output1 = identity&lt;string&gt;("Hello"); // Uses 'string' as the type
+let output2 = identity&lt;number&gt;(42); // Uses 'number' as the type
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>generic constraints</strong>: Restricts the types used with generics. Used to impose constraints on generic types to ensure they possess certain properties or methods. Example:
+                            <pre>
+                            <code>
+function logLength&lt;T extends { length: number }&gt;(arg: T): void {
+    console.log(arg.length);
+}
+logLength("Hello"); // Works because 'string' has a 'length' property
+logLength([1, 2, 3]); // Works because 'array' has a 'length' property
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>generics in classes</strong>: Using generics in classes to make methods and properties more flexible. Used to create reusable and type-safe classes. Example:
+                            <pre>
+                            <code>
+class GenericNumber&lt;T&gt; {
+    zeroValue: T;
+    add: (x: T, y: T) =&gt; T;
+}
+let myGenericNumber = new GenericNumber&lt;number&gt;();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = (x, y) => x + y;
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/typescript" target="_blank">W3 Typescript --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.typescriptlang.org/docs/handbook/intro.html" target="_blank">Typescript documentation</a>
+            </h5>
+        </div>
+    </div>
+</div>

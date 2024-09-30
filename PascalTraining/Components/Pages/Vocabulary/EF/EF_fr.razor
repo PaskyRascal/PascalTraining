@@ -1,0 +1,450 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire Entity Framework Core</h1>
+
+    <div class="accordion">
+        <!-- Section DbContext -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dbContextSection" aria-expanded="false" aria-controls="dbContextSection">
+                    DbContext
+                </button>
+            </h2>
+            <div id="dbContextSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>DbContext</strong> : Classe centrale qui gère les requêtes et les modifications à la base de données. Le <code>DbContext</code> est responsable de la gestion de la connexion à la base de données, du suivi des modifications apportées aux entités, et de la coordination des opérations de sauvegarde et de récupération des données. Exemple :
+                            <pre>
+                            <code>
+public class ApplicationDbContext : DbContext
+{
+    public DbSet&lt;Product&gt; Products { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("YourConnectionString");
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>DbSet&lt;T&gt;</strong> : Représente une collection d'entités d'un type particulier dans le contexte. Un <code>DbSet</code> permet de créer, lire, mettre à jour et supprimer des entités de la base de données. Exemple :
+                            <pre>
+                            <code>
+public class ApplicationDbContext : DbContext
+{
+    public DbSet&lt;Customer&gt; Customers { get; set; }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>OnModelCreating</strong> : Méthode dans laquelle les configurations du modèle de données sont définies (mappage entre les entités et la base de données). Cette méthode est utilisée pour configurer les relations, les contraintes et les conventions de nommage des tables et des colonnes. Exemple :
+                            <pre>
+                            <code>
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity&lt;Product&gt;().HasKey(p => p.ProductId);
+    modelBuilder.Entity&lt;Product&gt;().Property(p => p.Name).IsRequired().HasMaxLength(100);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SaveChanges</strong> : Méthode pour enregistrer les modifications faites aux entités dans la base de données. Cette méthode envoie toutes les modifications suivies par le <code>DbContext</code> à la base de données. Exemple :
+                            <pre>
+                            <code>
+using (var context = new ApplicationDbContext())
+{
+    var product = new Product { Name = "New Product" };
+    context.Products.Add(product);
+    context.SaveChanges();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ChangeTracker</strong> : Suit les modifications des entités gérées par le DbContext. Le <code>ChangeTracker</code> permet de détecter les changements apportés aux entités et de déterminer quelles opérations doivent être effectuées lors de l'appel à <code>SaveChanges</code>. Exemple :
+                            <pre>
+                            <code>
+using (var context = new ApplicationDbContext())
+{
+    var product = context.Products.First();
+    product.Name = "Updated Product";
+    var entries = context.ChangeTracker.Entries();
+    foreach (var entry in entries)
+    {
+        Console.WriteLine($"{entry.Entity.GetType().Name} - {entry.State}");
+    }
+    context.SaveChanges();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Lazy Loading</strong> : Chargement différé des données, les relations ne sont récupérées que lorsqu'elles sont accédées. Cela permet d'optimiser les performances en ne chargeant pas toutes les données liées immédiatement. Exemple :
+                            <pre>
+                            <code>
+public class Customer
+{
+    public int CustomerId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection&lt;Order&gt; Orders { get; set; } // Lazy loading enabled
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Explicit Loading</strong> : Chargement explicite des données liées via des méthodes comme <code>Load()</code>. Utilisé lorsque le lazy loading est désactivé ou pour un contrôle plus précis sur le moment où les données sont chargées. Exemple :
+                            <pre>
+                            <code>
+using (var context = new ApplicationDbContext())
+{
+    var customer = context.Customers.First();
+    context.Entry(customer).Collection(c => c.Orders).Load();
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Query Tracking</strong> : Contrôle si les entités récupérées sont suivies pour détecter les modifications. Par défaut, les entités récupérées sont suivies, mais cela peut être désactivé pour améliorer les performances en utilisant <code>AsNoTracking()</code>. Exemple :
+                            <pre>
+                            <code>
+using (var context = new ApplicationDbContext())
+{
+    var customers = context.Customers.AsNoTracking().ToList();
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Migrations -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#migrationsSection" aria-expanded="false" aria-controls="migrationsSection">
+                    Migrations
+                </button>
+            </h2>
+            <div id="migrationsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Migration</strong> : Classe qui représente une modification de la structure de la base de données. Une migration contient des instructions pour créer, modifier ou supprimer des tables et des colonnes. Elle permet de synchroniser le modèle de données avec la base de données. Exemple :
+                            <pre>
+                            <code>
+public partial class AddProductTable : Migration
+{
+    protected override void Up(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.CreateTable(
+            name: "Products",
+            columns: table => new
+            {
+                Id = table.Column&lt;int&gt;(nullable: false)
+                    .Annotation("SqlServer:Identity", "1, 1"),
+                Name = table.Column&lt;string&gt;(nullable: true)
+            },
+            constraints: table =>
+            {
+                table.PrimaryKey("PK_Products", x => x.Id);
+            });
+    }
+
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.DropTable(name: "Products");
+    }
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Add-Migration</strong> : Commande pour générer une nouvelle migration basée sur les modifications apportées au modèle. Cette commande crée un fichier de migration contenant les instructions nécessaires pour appliquer les changements à la base de données. Exemple :
+                            <pre><code>dotnet ef migrations add AddProductTable</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Update-Database</strong> : Commande pour appliquer les migrations à la base de données. Elle exécute les instructions contenues dans les fichiers de migration pour mettre à jour la structure de la base de données. Exemple :
+                            <pre><code>dotnet ef database update</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Down</strong> : Méthode d'une migration qui défait les modifications appliquées. Cette méthode est utilisée pour annuler les changements apportés par la méthode <code>Up</code>. Exemple :
+                            <pre>
+                            <code>
+protected override void Down(MigrationBuilder migrationBuilder)
+{
+    migrationBuilder.DropTable(name: "Products");
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Up</strong> : Méthode d'une migration qui définit les modifications à appliquer à la base de données. Cette méthode contient les instructions pour créer, modifier ou supprimer des éléments de la base de données. Exemple :
+                            <pre>
+                            <code>
+protected override void Up(MigrationBuilder migrationBuilder)
+{
+    migrationBuilder.CreateTable(
+        name: "Products",
+        columns: table => new
+        {
+            Id = table.Column&lt;int&gt;(nullable: false)
+                .Annotation("SqlServer:Identity", "1, 1"),
+            Name = table.Column&lt;string&gt;(nullable: true)
+        },
+        constraints: table =>
+        {
+            table.PrimaryKey("PK_Products", x => x.Id);
+        });
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Rollback</strong> : Revenir à une migration antérieure en annulant les migrations appliquées après celle-ci. Cette opération utilise les méthodes <code>Down</code> des migrations pour annuler les changements. Exemple :
+                            <pre><code>dotnet ef database update PreviousMigration</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Entities -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entitiesSection" aria-expanded="false" aria-controls="entitiesSection">
+                    Entities
+                </button>
+            </h2>
+            <div id="entitiesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Entity</strong> : Classe C# qui représente une table dans la base de données. Une entité contient des propriétés qui correspondent aux colonnes de la table. Exemple :
+                            <pre>
+                            <code>
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+                                </code>
+                            </pre>
+                            Cela représente une table "Product" avec des colonnes "Id" et "Name".
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Primary Key</strong> : Propriété ou ensemble de propriétés identifiant de manière unique une entité. La clé primaire est utilisée pour garantir l'unicité de chaque enregistrement dans la table. Exemple :
+                            <pre>
+                            <code>
+public class Product
+{
+    [Key]
+    public int Id { get; set; }
+}
+                                </code>
+                            </pre>
+                            Cela définit "Id" comme clé primaire.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Foreign Key</strong> : Clé étrangère qui établit une relation entre deux entités. Elle permet de lier une entité à une autre en utilisant une clé primaire d'une autre table. Exemple :
+                            <pre>
+                            <code>
+public class Order
+{
+    public int Id { get; set; }
+    public int ProductId { get; set; }
+
+    [ForeignKey("ProductId")]
+    public Product Product { get; set; }
+}
+                                </code>
+                            </pre>
+                            Cela définit "ProductId" comme clé étrangère reliant "Order" à "Product".
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Navigation Property</strong> : Propriété utilisée pour accéder aux entités liées (relations entre tables). Les propriétés de navigation permettent de naviguer entre les entités liées. Exemple :
+                            <pre>
+                            <code>
+public class Order
+{
+    public int Id { get; set; }
+    public int ProductId { get; set; }
+    public Product Product { get; set; }
+}
+                                </code>
+                            </pre>
+                            Cela permet d'accéder à l'entité "Product" depuis "Order".
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Data Annotations</strong> : Attributs utilisés pour configurer le comportement des propriétés d'entité. Les annotations de données permettent de définir des contraintes et des règles de validation. Exemple :
+                            <pre>
+                            <code>
+public class Product
+{
+    [Key]
+    public int Id { get; set; }
+
+    [Required]
+    [MaxLength(100)]
+    public string Name { get; set; }
+}
+                                </code>
+                            </pre>
+                            Cela utilise les annotations <code>[Key]</code>, <code>[Required]</code>, et <code>[MaxLength(100)]</code> pour configurer les propriétés de l'entité "Product".
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section LINQ et Requêtes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqSection" aria-expanded="false" aria-controls="linqSection">
+                    LINQ et Requêtes
+                </button>
+            </h2>
+            <div id="linqSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>LINQ</strong> : Language Integrated Query, permet d'écrire des requêtes pour interroger des collections d'entités. LINQ offre une syntaxe cohérente pour interroger des données provenant de différentes sources (collections en mémoire, bases de données, XML, etc.). Exemple :
+                            <pre>
+                            <code>
+var query = from p in products
+where p.Price > 100
+select p;
+                                </code>
+                            </pre>
+                            Cela sélectionne les produits dont le prix est supérieur à 100.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Where</strong> : Méthode pour filtrer les entités selon une condition. Elle permet de sélectionner uniquement les éléments qui satisfont une condition spécifiée. Exemple :
+                            <pre><code>var expensiveProducts = products.Where(p =&gt; p.Price &gt; 100);</code></pre>
+                            Cela obtient les produits dont le prix est supérieur à 100.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Include</strong> : Méthode pour charger les relations associées à une entité. Utilisée avec Entity Framework pour inclure des données liées dans les résultats de la requête. Exemple :
+                            <pre><code>var orders = context.Orders.Include(o =&gt; o.Customer).ToList();</code></pre>
+                            Cela charge les commandes avec les informations des clients associés.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>FirstOrDefault</strong> : Méthode qui renvoie la première entité correspondant à une condition ou une valeur par défaut si aucune entité ne correspond. Elle est utilisée pour obtenir un seul élément d'une collection. Exemple :
+                            <pre><code>var firstProduct = products.FirstOrDefault(p =&gt; p.Name == "Laptop");</code></pre>
+                            Cela obtient le premier produit nommé "Laptop" ou <code>null</code> s'il n'existe pas.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ToList</strong> : Méthode pour exécuter une requête et convertir le résultat en liste. Elle force l'exécution immédiate de la requête et retourne les résultats sous forme de liste. Exemple :
+                            <pre><code>var productList = products.Where(p =&gt; p.Price &gt; 100).ToList();</code></pre>
+                            Cela obtient une liste de produits dont le prix est supérieur à 100.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>AsNoTracking</strong> : Exécute une requête sans suivre les entités récupérées dans le ChangeTracker. Utilisée pour améliorer les performances lorsque le suivi des modifications n'est pas nécessaire. Exemple :
+                            <pre><code>var customers = context.Customers.AsNoTracking().ToList();</code></pre>
+                            Cela récupère les clients sans suivi des modifications.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>GroupBy</strong> : Méthode pour regrouper les résultats selon une clé. Elle permet de créer des groupes d'éléments partageant une même valeur de clé. Exemple :
+                            <pre><code>var productsByCategory = products.GroupBy(p =&gt; p.Category);</code></pre>
+                            Cela regroupe les produits par catégorie.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Configurations Avancées -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedConfigSection" aria-expanded="false" aria-controls="advancedConfigSection">
+                    Configurations Avancées
+                </button>
+            </h2>
+            <div id="advancedConfigSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Fluent API</strong> : API permettant de configurer les relations entre les entités et les propriétés sans utiliser les annotations de données. Elle offre une syntaxe fluide et expressive pour configurer le modèle de données dans la méthode <code>OnModelCreating</code> du <code>DbContext</code>. Exemple :
+                            <pre>
+                            <code>
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity&lt;Product&gt;()
+        .HasKey(p =&gt; p.Id);
+
+    modelBuilder.Entity&lt;Product&gt;()
+        .Property(p =&gt; p.Name)
+        .IsRequired()
+        .HasMaxLength(100);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HasKey</strong> : Utilisé pour définir la clé primaire d'une entité. Cette méthode spécifie quelle propriété ou quelles propriétés constituent la clé primaire. Exemple :
+                            <pre>
+                            <code>
+modelBuilder.Entity&lt;Product&gt;()
+.HasKey(p =&gt; p.Id);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HasOne</strong> : Utilisé pour configurer une relation un-à-un ou un-à-plusieurs entre les entités. Cette méthode spécifie qu'une entité a une relation avec une autre entité. Exemple :
+                            <pre>
+                            <code>
+modelBuilder.Entity&lt;Order&gt;()
+.HasOne(o =&gt; o.Customer)
+.WithMany(c =&gt; c.Orders)
+.HasForeignKey(o =&gt; o.CustomerId);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HasMany</strong> : Utilisé pour configurer une relation plusieurs-à-un ou plusieurs-à-plusieurs entre les entités. Cette méthode spécifie qu'une entité a plusieurs relations avec une autre entité. Exemple :
+                            <pre>
+                            <code>
+modelBuilder.Entity&lt;Customer&gt;()
+.HasMany(c =&gt; c.Orders)
+.WithOne(o =&gt; o.Customer)
+.HasForeignKey(o =&gt; o.CustomerId);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ToTable</strong> : Méthode utilisée pour spécifier le nom de la table correspondant à une entité. Cela permet de mapper une entité à une table spécifique dans la base de données. Exemple :
+                            <pre>
+                            <code>
+modelBuilder.Entity&lt;Product&gt;()
+.ToTable("Products");
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Seed Data</strong> : Ensemble de données initiales insérées automatiquement dans la base de données lors de la migration. Utilisé pour pré-remplir la base de données avec des données de test ou des valeurs par défaut. Exemple :
+                            <pre>
+                            <code>
+modelBuilder.Entity&lt;Product&gt;().HasData(
+new Product { Id = 1, Name = "Laptop" },
+new Product { Id = 2, Name = "Smartphone" });
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://learn.microsoft.com/en-us/ef/core/" target="_blank">Entity Framwork Core documentation</a>
+            </h5>
+        </div>
+    </div>
+</div>

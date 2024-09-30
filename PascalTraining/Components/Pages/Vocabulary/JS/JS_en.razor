@@ -1,0 +1,476 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">JavaScript Vocabulary</h1>
+
+    <div class="accordion">
+        <!-- Section Variables and Data Types -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#variablesSection" aria-expanded="false" aria-controls="variablesSection">
+                    Variables and Data Types
+                </button>
+            </h2>
+            <div id="variablesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>var</strong> : Declares a global or function-scoped variable. The scope of the variable is the entire function, even if it is declared inside a block. For example:
+                            <pre>
+                            <code>
+function example() {
+    if (true) {
+        var x = 10;
+    }
+    console.log(x); // 10, because var is function-scoped
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>let</strong> : Declares a block-scoped variable. Used to avoid hoisting, meaning the variable is only accessible in the block where it is declared. For example:
+                            <pre>
+                            <code>
+function example() {
+    if (true) {
+        let y = 20;
+        console.log(y); // 20
+    }
+    console.log(y); // Error, y is not defined
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>const</strong> : Declares a constant, a variable whose value cannot be reassigned. The scope is also limited to the block where it is declared. For example:
+                            <pre>
+                            <code>
+function example() {
+    const z = 30;
+    console.log(z); // 30
+    z = 40; // Error, z cannot be reassigned
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>String</strong> : Data type used to represent text. Strings can be created using single or double quotes. For example:
+                            <pre>
+                            <code>
+let text = "Hello";
+let anotherText = 'Hi';
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Number</strong> : Data type for representing numbers, both integers and floating-point. For example:
+                            <pre>
+                            <code>
+let integer = 42;
+let float = 3.14;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Boolean</strong> : Logical data type that can be <code>true</code> or <code>false</code>. Used for conditions and comparisons. For example:
+                            <pre>
+                            <code>
+let isTrue = true;
+let isFalse = false;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Array</strong> : Collection of elements that can be of any type. Elements are accessed by their index. For example:
+                            <pre>
+                            <code>
+let array = [1, 2, 3];
+console.log(array[0]); // 1
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Object</strong> : Collection of key-value pairs, where each key is a string and each value can be of any type. For example:
+                            <pre>
+                            <code>
+let person = { name: "Alice", age: 25 };
+console.log(person.name); // Alice
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>null</strong> : Special value representing the absence of value. Used to indicate that a variable has no assigned value. For example:
+                            <pre>
+                            <code>
+let a = null;
+console.log(a); // null
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>undefined</strong> : Represents a variable that has been declared but not yet assigned a value. For example:
+                            <pre>
+                            <code>
+let b;
+console.log(b); // undefined
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Functions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#functionsSection" aria-expanded="false" aria-controls="functionsSection">
+                    Functions
+                </button>
+            </h2>
+            <div id="functionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>function</strong> : Declares a function that can be called later. For example:
+                            <pre>
+                            <code>
+function myFunction() {
+    // Function code
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>return</strong> : Statement that ends a function and returns a value. For example:
+                            <pre>
+                            <code>
+function add(a, b) {
+    return a + b;
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>arrow function</strong> : Concise syntax for defining anonymous functions. For example:
+                            <pre>
+                            <code>
+const add = (a, b) => a + b;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>callback</strong> : Function passed as an argument to another function and executed after an operation. For example:
+                            <pre>
+                            <code>
+function asyncProcess(callback) {
+    setTimeout(() => {
+        // Asynchronous operation completed
+        callback();
+    }, 1000);
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>closure</strong> : Function that has access to its external context variables even after the function has been executed. For example:
+                            <pre>
+                            <code>
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+    return count;
+    };
+}
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>async / await</strong> : Keywords for handling asynchronous operations in JavaScript. For example:
+                            <pre>
+                            <code>
+async function fetchData() {
+    let response = await fetch('https://api.example.com/data');
+    let data = await response.json();
+    console.log(data);
+}
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Loops and Conditions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#loopsConditionsSection" aria-expanded="false" aria-controls="loopsConditionsSection">
+                    Loops and Conditions
+                </button>
+            </h2>
+            <div id="loopsConditionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>if / else</strong> : Executes a block of code if a condition is true, and another block if it is false. For example:
+                            <pre>
+                            <code>
+if (condition) {
+    // Code to execute if condition is true
+} else {
+    // Code to execute if condition is false
+}
+                        </code>
+                        </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>switch</strong> : Evaluates an expression and executes a block of code corresponding to the value of the expression. For example:
+                            <pre>
+                            <code>
+switch (expression) {
+    case value1:
+        // Code to execute if expression equals value1
+    break;
+    case value2:
+        // Code to execute if expression equals value2
+    break;
+    default:
+        // Code to execute if none of the values match
+}
+                        </code>
+                        </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>for</strong> : Loop that runs a defined number of times. For example:
+                            <pre>
+                            <code>
+for (int i = 0; i &lt; n; i++) {
+    // Code to execute n times
+}
+                        </code>
+                        </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>while</strong> : Loop that runs as long
+
+                            as a condition is true. For example:
+                            <pre>
+                            <code>
+while (condition) {
+    // Code to execute as long as the condition is true
+}
+                        </code>
+                        </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>forEach</strong> : Method that executes a function for each element in an array. For example:
+                            <pre>
+                            <code>
+array.forEach(element => {
+    // Code to execute for each element
+});
+                        </code>
+                        </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>map</strong> : Method that creates a new array by calling a function on each element of the original array. For example:
+                            <pre>
+                            <code>
+let newArray = array.map(element => {
+    // Transform each element
+    return newElement;
+});
+                        </code>
+                        </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section DOM Manipulation -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#domSection" aria-expanded="false" aria-controls="domSection">
+                    DOM Manipulation
+                </button>
+            </h2>
+            <div id="domSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>document.getElementById()</strong> : Retrieves an HTML element by its ID. For example:
+                            <pre>
+                            <code>
+let element = document.getElementById("myId");
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>document.querySelector()</strong> : Selects the first element that matches a given CSS selector. For example:
+                            <pre>
+                            <code>
+let element = document.querySelector(".myClass");
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>innerHTML</strong> : Property that sets or retrieves the HTML content of an element. For example:
+                            <pre>
+                            <code>
+element.innerHTML = "New content";
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>addEventListener()</strong> : Attaches an event listener to an element. For example:
+                            <pre>
+                            <code>
+element.addEventListener("click", function() {
+    // Code to execute on click
+});
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>removeEventListener()</strong> : Removes an event listener from an element. For example:
+                            <pre>
+                            <code>
+element.removeEventListener("click", myFunction);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>createElement()</strong> : Creates a new HTML element. For example:
+                            <pre>
+                            <code>
+let newElement = document.createElement("div");
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>appendChild()</strong> : Adds a child element to a parent element. For example:
+                            <pre>
+                            <code>
+parentElement.appendChild(newElement);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>removeChild()</strong> : Removes a child element from a parent element. For example:
+                            <pre>
+                            <code>
+parentElement.removeChild(childElement);
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Asynchronous and Promises -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#asyncPromisesSection" aria-expanded="false" aria-controls="asyncPromisesSection">
+                    Asynchronous and Promises
+                </button>
+            </h2>
+            <div id="asyncPromisesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Promise</strong> : Object representing an asynchronous operation and its future results. For example:
+                            <pre>
+                            <code>
+let promise = new Promise((resolve, reject) => {
+    // Asynchronous operation
+    if (success) {
+        resolve(result);
+    } 
+    else {
+        reject(error);
+    }
+});
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>then()</strong> : Method called when the promise is resolved. For example:
+                            <pre>
+                            <code>
+promise.then(result => {
+    // Code to execute when the promise is resolved
+});
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>catch()</strong> : Method called when the promise is rejected or an error occurred. For example:
+                            <pre>
+                            <code>
+promise.catch(error => {
+    // Code to execute when the promise is rejected
+});
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>async</strong> : Keyword that allows writing asynchronous functions in JavaScript. For example:
+                            <pre>
+                            <code>
+async function myFunction() {
+    // Asynchronous code
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>await</strong> : Keyword used to wait for the resolution of a promise inside an <code>async</code> function. For example:
+                            <pre>
+                            <code>
+async function myFunction() {
+    let result = await promise;
+    // Code to execute after the promise is resolved
+}
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>setTimeout()</strong> : Function that executes code after a specified delay. For example:
+                            <pre>
+                            <code>
+setTimeout(() => {
+    // Code to execute after the delay
+}, delayInMilliseconds);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>setInterval()</strong> : Function that executes code at regular intervals. For example:
+                            <pre>
+                            <code>
+setInterval(() => {
+    // Code to execute at each interval
+}, intervalInMilliseconds);
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/js" target="_blank">W3 JS --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+</div>

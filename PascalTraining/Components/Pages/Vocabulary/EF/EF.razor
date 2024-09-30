@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/ef"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <EF_fr />
+}
+else
+{
+    <EF_en />
+}

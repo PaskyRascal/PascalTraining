@@ -167,5 +167,14 @@ namespace PascalTraining.Resources {
                 return ResourceManager.GetString("Vocabulary", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web Site.
+        /// </summary>
+        public static string WebSite {
+            get {
+                return ResourceManager.GetString("WebSite", resourceCulture);
+            }
+        }
     }
 }

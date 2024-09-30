@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/webapi"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <WebAPI_fr />
+}
+else
+{
+    <WebAPI_en />
+}

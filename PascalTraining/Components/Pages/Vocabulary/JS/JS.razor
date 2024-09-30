@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/js"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <JS_fr />
+}
+else
+{
+    <JS_en />
+}

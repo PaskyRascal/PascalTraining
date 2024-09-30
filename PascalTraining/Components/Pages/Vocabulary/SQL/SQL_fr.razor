@@ -1,0 +1,531 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Vocabulaire SQL</h1>
+
+    <div class="accordion">
+        <!-- Section Requêtes de Base -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#basicQueriesSection" aria-expanded="false" aria-controls="basicQueriesSection">
+                    Requêtes de Base
+                </button>
+            </h2>
+            <div id="basicQueriesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>SELECT</strong> : Extrait des données d'une ou plusieurs tables. La clause SELECT est utilisée pour spécifier les colonnes que vous souhaitez récupérer dans une requête SQL. Elle peut être utilisée avec d'autres clauses comme WHERE, ORDER BY, et GROUP BY pour affiner les résultats. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Sélection de toutes les colonnes d'une table
+SELECT * FROM Employees;
+
+-- Sélection de colonnes spécifiques
+SELECT FirstName, LastName FROM Employees;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>FROM</strong> : Spécifie la ou les tables à partir desquelles les données seront extraites. La clause FROM est utilisée pour indiquer la source des données dans une requête SQL. Elle peut inclure des jointures pour combiner des données de plusieurs tables. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Sélection de données à partir d'une table
+SELECT * FROM Employees;
+
+-- Sélection de données à partir de plusieurs tables avec une jointure
+SELECT Employees.FirstName, Departments.DepartmentName
+FROM Employees
+JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>WHERE</strong> : Filtre les résultats d'une requête en fonction d'une condition. La clause WHERE est utilisée pour spécifier des critères qui doivent être remplis pour que les enregistrements soient inclus dans les résultats de la requête. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Sélection de données avec une condition
+SELECT * FROM Employees WHERE Age > 30;
+
+-- Utilisation de plusieurs conditions
+SELECT * FROM Employees WHERE Age > 30 AND DepartmentID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>INSERT INTO</strong> : Ajoute de nouvelles données dans une table. La clause INSERT INTO est utilisée pour insérer de nouveaux enregistrements dans une table. Vous pouvez spécifier les colonnes et les valeurs à insérer. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Insertion d'un nouvel enregistrement
+INSERT INTO Employees (FirstName, LastName, Age, DepartmentID)
+VALUES ('John', 'Doe', 28, 1);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>UPDATE</strong> : Modifie des enregistrements existants dans une table. La clause UPDATE est utilisée pour mettre à jour les valeurs des colonnes dans les enregistrements existants. Elle est souvent utilisée avec la clause WHERE pour spécifier les enregistrements à mettre à jour. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Mise à jour d'un enregistrement
+UPDATE Employees
+SET Age = 29
+WHERE EmployeeID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>DELETE</strong> : Supprime des enregistrements dans une table. La clause DELETE est utilisée pour supprimer des enregistrements d'une table. Elle est souvent utilisée avec la clause WHERE pour spécifier les enregistrements à supprimer. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Suppression d'un enregistrement
+DELETE FROM Employees
+WHERE EmployeeID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ORDER BY</strong> : Trie les résultats d'une requête selon une ou plusieurs colonnes. La clause ORDER BY est utilisée pour trier les résultats d'une requête SQL par ordre croissant (ASC) ou décroissant (DESC). Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Tri des résultats par ordre croissant
+SELECT * FROM Employees
+ORDER BY LastName ASC;
+
+-- Tri des résultats par ordre décroissant
+SELECT * FROM Employees
+ORDER BY LastName DESC;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>GROUP BY</strong> : Regroupe les résultats selon une ou plusieurs colonnes pour appliquer des fonctions d'agrégation. La clause GROUP BY est utilisée pour regrouper les enregistrements ayant des valeurs identiques dans des colonnes spécifiées. Elle est souvent utilisée avec des fonctions d'agrégation comme COUNT, SUM, AVG, etc. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Regroupement des résultats et comptage des employés par département
+SELECT DepartmentID, COUNT(*) as EmployeeCount
+FROM Employees
+GROUP BY DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HAVING</strong> : Filtre les résultats d'un regroupement de données après l'utilisation de GROUP BY. La clause HAVING est utilisée pour spécifier des conditions sur les groupes créés par la clause GROUP BY. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Filtrage des départements ayant plus de 5 employés
+SELECT DepartmentID, COUNT(*) as EmployeeCount
+FROM Employees
+GROUP BY DepartmentID
+HAVING COUNT(*) > 5;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Fonctions d'Agrégation -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aggregationFunctionsSection" aria-expanded="false" aria-controls="aggregationFunctionsSection">
+                    Fonctions d'Agrégation
+                </button>
+            </h2>
+            <div id="aggregationFunctionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>COUNT()</strong> : Compte le nombre d'enregistrements. La fonction <code>COUNT()</code> est utilisée pour retourner le nombre total de lignes dans une table ou le nombre de valeurs non nulles dans une colonne spécifique. Elle est souvent utilisée dans les requêtes SQL pour obtenir des statistiques sur les données. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Compter le nombre total d'employés
+SELECT COUNT(*) FROM Employees;
+
+-- Compter le nombre d'employés dans un département spécifique
+SELECT COUNT(*) FROM Employees WHERE DepartmentID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SUM()</strong> : Calcule la somme des valeurs d'une colonne numérique. La fonction <code>SUM()</code> est utilisée pour additionner toutes les valeurs d'une colonne numérique dans une table. Elle est utile pour obtenir des totaux, comme le total des ventes ou le total des salaires. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Calculer le total des salaires des employés
+SELECT SUM(Salary) FROM Employees;
+
+-- Calculer le total des ventes pour un produit spécifique
+SELECT SUM(SalesAmount) FROM Sales WHERE ProductID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>AVG()</strong> : Calcule la moyenne des valeurs d'une colonne numérique. La fonction <code>AVG()</code> est utilisée pour calculer la moyenne des valeurs d'une colonne numérique dans une table. Elle est souvent utilisée pour obtenir des statistiques moyennes, comme la moyenne des salaires ou la moyenne des notes. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Calculer la moyenne des salaires des employés
+SELECT AVG(Salary) FROM Employees;
+
+-- Calculer la moyenne des notes des étudiants
+SELECT AVG(Grade) FROM Students;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>MIN()</strong> : Renvoie la plus petite valeur d'une colonne. La fonction <code>MIN()</code> est utilisée pour trouver la valeur minimale dans une colonne spécifique. Elle est utile pour obtenir des valeurs minimales, comme le salaire le plus bas ou la date la plus ancienne. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Trouver le salaire le plus bas des employés
+SELECT MIN(Salary) FROM Employees;
+
+-- Trouver la date la plus ancienne dans les enregistrements de ventes
+SELECT MIN(SaleDate) FROM Sales;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>MAX()</strong> : Renvoie la plus grande valeur d'une colonne. La fonction <code>MAX()</code> est utilisée pour trouver la valeur maximale dans une colonne spécifique. Elle est utile pour obtenir des valeurs maximales, comme le salaire le plus élevé ou la date la plus récente. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Trouver le salaire le plus élevé des employés
+SELECT MAX(Salary) FROM Employees;
+
+-- Trouver la date la plus récente dans les enregistrements de ventes
+SELECT MAX(SaleDate) FROM Sales;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Jointures (JOINs) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#joinsSection" aria-expanded="false" aria-controls="joinsSection">
+                    Jointures (JOINs)
+                </button>
+            </h2>
+            <div id="joinsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>INNER JOIN</strong> : Combine des lignes de deux tables lorsqu'il y a une correspondance entre les colonnes des deux tables. La clause <code>INNER JOIN</code> est utilisée pour retourner les enregistrements qui ont des valeurs correspondantes dans les deux tables. Elle est couramment utilisée pour relier des tables sur une clé étrangère. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de INNER JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+INNER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>LEFT JOIN</strong> : Retourne toutes les lignes de la table de gauche, et les lignes correspondantes de la table de droite. Si aucune correspondance n'est trouvée, les valeurs de la table de droite sont NULL. La clause <code>LEFT JOIN</code> est utilisée pour inclure toutes les lignes de la table de gauche, même si elles n'ont pas de correspondance dans la table de droite. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de LEFT JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+LEFT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>RIGHT JOIN</strong> : Retourne toutes les lignes de la table de droite, et les lignes correspondantes de la table de gauche. Si aucune correspondance n'est trouvée, les valeurs de la table de gauche sont NULL. La clause <code>RIGHT JOIN</code> est utilisée pour inclure toutes les lignes de la table de droite, même si elles n'ont pas de correspondance dans la table de gauche. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de RIGHT JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+RIGHT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>FULL OUTER JOIN</strong> : Retourne toutes les lignes lorsqu'il y a une correspondance dans l'une ou l'autre des tables. Les valeurs non correspondantes sont remplies avec NULL. La clause <code>FULL OUTER JOIN</code> est utilisée pour inclure toutes les lignes des deux tables, même si elles n'ont pas de correspondance dans l'autre table. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de FULL OUTER JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+FULL OUTER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CROSS JOIN</strong> : Produit cartésien des deux tables, ce qui signifie qu'il retourne toutes les combinaisons possibles entre les lignes des deux tables. La clause <code>CROSS JOIN</code> est utilisée pour retourner le produit cartésien des deux tables, ce qui peut entraîner un grand nombre de lignes si les tables sont grandes. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de CROSS JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+CROSS JOIN Departments;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Contraintes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#constraintsSection" aria-expanded="false" aria-controls="constraintsSection">
+                    Contraintes
+                </button>
+            </h2>
+            <div id="constraintsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>PRIMARY KEY</strong> : Identifie de manière unique chaque enregistrement dans une table. Une table ne peut avoir qu'une seule clé primaire. La clé primaire est utilisée pour garantir l'unicité des enregistrements et pour établir des relations entre les tables. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Définir une clé primaire sur la colonne 'ID' de la table 'Employees'
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>FOREIGN KEY</strong> : Empêche des actions qui détruiraient des liens entre tables. C'est une clé dans une table qui fait référence à la clé primaire d'une autre table. Les clés étrangères sont utilisées pour maintenir l'intégrité référentielle entre les tables. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Définir une clé étrangère sur la colonne 'DepartmentID' de la table 'Employees' qui référence la colonne 'ID' de la table 'Departments'
+CREATE TABLE Departments (
+    ID INT PRIMARY KEY,
+    DepartmentName NVARCHAR(100)
+);
+
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(ID)
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>NOT NULL</strong> : Empêche un champ d'accepter des valeurs NULL. La contrainte <code>NOT NULL</code> est utilisée pour garantir qu'une colonne ne peut pas avoir de valeur NULL, ce qui signifie que chaque enregistrement doit avoir une valeur pour cette colonne. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Définir la colonne 'Name' comme NOT NULL dans la table 'Employees'
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>UNIQUE</strong> : Garantit que toutes les valeurs d'une colonne sont uniques. La contrainte <code>UNIQUE</code> est utilisée pour s'assurer qu'aucune valeur dupliquée n'est insérée dans une colonne spécifique. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Définir la colonne 'Email' comme UNIQUE dans la table 'Employees'
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Email NVARCHAR(100) UNIQUE,
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CHECK</strong> : Définit une condition qui doit être vraie pour toutes les valeurs d'une colonne. La contrainte <code>CHECK</code> est utilisée pour imposer une condition sur les valeurs d'une colonne, garantissant que seules les valeurs qui satisfont cette condition sont autorisées. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Définir une contrainte CHECK sur la colonne 'Age' pour s'assurer que les valeurs sont supérieures ou égales à 18
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Age INT CHECK (Age >= 18),
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>DEFAULT</strong> : Définit une valeur par défaut pour une colonne si aucune valeur n'est spécifiée. La contrainte <code>DEFAULT</code> est utilisée pour attribuer une valeur par défaut à une colonne lorsque aucune valeur n'est fournie lors de l'insertion d'un enregistrement. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Définir une valeur par défaut pour la colonne 'HireDate' dans la table 'Employees'
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    HireDate DATE DEFAULT GETDATE(),
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Fonctions Avancées -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedFunctionsSection" aria-expanded="false" aria-controls="advancedFunctionsSection">
+                    Fonctions Avancées
+                </button>
+            </h2>
+            <div id="advancedFunctionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>COALESCE()</strong> : Retourne la première valeur non NULL parmi une liste d'arguments. La fonction <code>COALESCE()</code> est utilisée pour gérer les valeurs NULL en retournant la première valeur non NULL trouvée dans une liste d'expressions. Elle est souvent utilisée pour fournir des valeurs par défaut. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de COALESCE pour retourner la première valeur non NULL
+SELECT COALESCE(NULL, 'Valeur par défaut', 'Autre valeur') AS Result;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CASE</strong> : Permet d'effectuer des instructions conditionnelles dans les requêtes SQL. La clause <code>CASE</code> est utilisée pour ajouter une logique conditionnelle dans les requêtes SQL, permettant de retourner des valeurs différentes en fonction des conditions spécifiées. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de CASE pour retourner des valeurs conditionnelles
+SELECT Name,
+        CASE
+            WHEN Age &lt; 18 THEN 'Mineur'
+            WHEN Age &gt;= 18 THEN 'Adulte'
+            ELSE 'Inconnu'
+        END AS Statut
+FROM Employees;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CAST()</strong> : Convertit une expression d'un type de donnée à un autre. La fonction <code>CAST()</code> est utilisée pour convertir une expression d'un type de donnée à un autre, ce qui est utile pour les opérations nécessitant des types de données spécifiques. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de CAST pour convertir un entier en chaîne de caractères
+SELECT CAST(123 AS NVARCHAR(10)) AS StringValue;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>EXISTS</strong> : Vérifie si un sous-ensemble de données existe et retourne TRUE ou FALSE. La clause <code>EXISTS</code> est utilisée pour vérifier l'existence de lignes dans un sous-ensemble de données, souvent dans des sous-requêtes, et retourne TRUE si le sous-ensemble contient des lignes. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de EXISTS pour vérifier l'existence de lignes
+SELECT Name
+FROM Employees
+WHERE EXISTS (SELECT 1 FROM Departments WHERE Departments.ID = Employees.DepartmentID);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SUBSTRING()</strong> : Extrait une portion d'une chaîne de caractères. La fonction <code>SUBSTRING()</code> est utilisée pour extraire une sous-chaîne d'une chaîne de caractères, en spécifiant la position de départ et la longueur de la sous-chaîne. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de SUBSTRING pour extraire une sous-chaîne
+SELECT SUBSTRING('Hello, World!', 1, 5) AS SubStringValue;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ROUND()</strong> : Arrondit une valeur numérique à un nombre de décimales spécifié. La fonction <code>ROUND()</code> est utilisée pour arrondir une valeur numérique à un nombre spécifié de décimales, ce qui est utile pour les calculs financiers et autres opérations nécessitant une précision spécifique. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de ROUND pour arrondir une valeur numérique
+SELECT ROUND(123.4567, 2) AS RoundedValue;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Gestion des Transactions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#transactionsSection" aria-expanded="false" aria-controls="transactionsSection">
+                    Gestion des Transactions
+                </button>
+            </h2>
+            <div id="transactionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>BEGIN TRANSACTION</strong> : Démarre une nouvelle transaction. La commande <code>BEGIN TRANSACTION</code> est utilisée pour indiquer le début d'une transaction explicite. Une transaction permet de regrouper plusieurs opérations SQL en une seule unité de travail, garantissant que toutes les opérations sont exécutées avec succès ou qu'aucune d'entre elles n'est appliquée en cas d'échec. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de BEGIN TRANSACTION
+BEGIN TRANSACTION;
+-- Opérations SQL
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>COMMIT</strong> : Valide les modifications effectuées dans une transaction et les rend permanentes. La commande <code>COMMIT</code> est utilisée pour valider toutes les opérations effectuées dans la transaction en cours, rendant les modifications permanentes dans la base de données. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de COMMIT
+BEGIN TRANSACTION;
+-- Opérations SQL
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+-- Valider les modifications
+COMMIT;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ROLLBACK</strong> : Annule toutes les modifications effectuées dans la transaction en cours. La commande <code>ROLLBACK</code> est utilisée pour annuler toutes les opérations effectuées dans la transaction en cours, restaurant la base de données à son état initial avant le début de la transaction. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de ROLLBACK
+BEGIN TRANSACTION;
+-- Opérations SQL
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+-- Annuler les modifications en cas d'erreur
+ROLLBACK;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SAVEPOINT</strong> : Définit un point de sauvegarde dans une transaction qui peut être utilisé pour effectuer un rollback partiel. La commande <code>SAVEPOINT</code> est utilisée pour créer un point de sauvegarde à l'intérieur d'une transaction, permettant de revenir à cet état spécifique sans annuler toute la transaction. Exemple d'utilisation :
+                            <pre>
+                            <code>
+-- Exemple d'utilisation de SAVEPOINT
+BEGIN TRANSACTION;
+-- Opérations SQL
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+SAVEPOINT BeforeCredit;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+-- Annuler les modifications jusqu'au point de sauvegarde
+ROLLBACK TO SAVEPOINT BeforeCredit;
+-- Valider les modifications restantes
+COMMIT;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/sql" target="_blank">W3 SQL --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+</div>

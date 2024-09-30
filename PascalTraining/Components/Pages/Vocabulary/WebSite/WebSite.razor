@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/website"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <WebSite_fr />
+}
+else
+{
+    <WebSite_en />
+}

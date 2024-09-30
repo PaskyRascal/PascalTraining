@@ -1,0 +1,533 @@
+﻿<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">SQL Vocabulary</h1>
+
+    <div class="accordion">
+        <!-- Section Basic Queries -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#basicQueriesSection" aria-expanded="false" aria-controls="basicQueriesSection">
+                    Basic Queries
+                </button>
+            </h2>
+            <div id="basicQueriesSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>SELECT</strong>: Extracts data from one or more tables. The SELECT clause is used to specify the columns you want to retrieve in an SQL query. It can be used with other clauses like WHERE, ORDER BY, and GROUP BY to refine the results. Usage example:
+                            <pre>
+                            <code>
+-- Select all columns from a table
+SELECT * FROM Employees;
+
+-- Select specific columns
+SELECT FirstName, LastName FROM Employees;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>FROM</strong>: Specifies the table(s) from which data will be retrieved. The FROM clause is used to indicate the source of the data in an SQL query. It can include joins to combine data from multiple tables. Usage example:
+                            <pre>
+                            <code>
+-- Select data from a table
+SELECT * FROM Employees;
+
+-- Select data from multiple tables using a join
+SELECT Employees.FirstName, Departments.DepartmentName
+FROM Employees
+JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>WHERE</strong>: Filters the results of a query based on a condition. The WHERE clause is used to specify criteria that must be met for records to be included in the query results. Usage example:
+                            <pre>
+                            <code>
+-- Select data with a condition
+SELECT * FROM Employees WHERE Age > 30;
+
+-- Using multiple conditions
+SELECT * FROM Employees WHERE Age > 30 AND DepartmentID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>INSERT INTO</strong>: Adds new data to a table. The INSERT INTO clause is used to insert new records into a table. You can specify the columns and values to insert. Usage example:
+                            <pre>
+                            <code>
+-- Insert a new record
+INSERT INTO Employees (FirstName, LastName, Age, DepartmentID)
+VALUES ('John', 'Doe', 28, 1);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>UPDATE</strong>: Modifies existing records in a table. The UPDATE clause is used to update the values of columns in existing records. It is often used with the WHERE clause to specify which records to update. Usage example:
+                            <pre>
+                            <code>
+-- Update a record
+UPDATE Employees
+SET Age = 29
+WHERE EmployeeID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>DELETE</strong>: Deletes records in a table. The DELETE clause is used to remove records from a table. It is often used with the WHERE clause to specify which records to delete. Usage example:
+                            <pre>
+                            <code>
+-- Delete a record
+DELETE FROM Employees
+WHERE EmployeeID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ORDER BY</strong>: Sorts the results of a query by one or more columns. The ORDER BY clause is used to sort the results of an SQL query in ascending (ASC) or descending (DESC) order. Usage example:
+                            <pre>
+                            <code>
+-- Sort results in ascending order
+SELECT * FROM Employees
+ORDER BY LastName ASC;
+
+-- Sort results in descending order
+SELECT * FROM Employees
+ORDER BY LastName DESC;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>GROUP BY</strong>: Groups results by one or more columns to apply aggregate functions. The GROUP BY clause is used to group records with identical values in specified columns. It is often used with aggregate functions like COUNT, SUM, AVG, etc. Usage example:
+                            <pre>
+                            <code>
+-- Group results and count employees by department
+SELECT DepartmentID, COUNT(*) as EmployeeCount
+FROM Employees
+GROUP BY DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>HAVING</strong>: Filters grouped data after using GROUP BY. The HAVING clause is used to specify conditions on the groups created by the GROUP BY clause. Usage example:
+                            <pre>
+                            <code>
+-- Filter departments with more than 5 employees
+SELECT DepartmentID, COUNT(*) as EmployeeCount
+FROM Employees
+GROUP BY DepartmentID
+HAVING COUNT(*) > 5;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Aggregation Functions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aggregationFunctionsSection" aria-expanded="false" aria-controls="aggregationFunctionsSection">
+                    Aggregation Functions
+                </button>
+            </h2>
+            <div id="aggregationFunctionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>COUNT()</strong>: Counts the number of records. The <code>COUNT()</code> function is used to return the total number of rows in a table or the number of non-null values in a specific column. It is often used in SQL queries to get statistics about the data. Usage example:
+                            <pre>
+                            <code>
+-- Count the total number of employees
+SELECT COUNT(*) FROM Employees;
+
+-- Count the number of employees in a specific department
+SELECT COUNT(*) FROM Employees WHERE DepartmentID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SUM()</strong>: Calculates the sum of values in a numeric column. The <code>SUM()</code> function is used to add up all the values in a numeric column in a table. It is useful for obtaining totals, such as the total sales or total salaries. Usage example:
+                            <pre>
+                            <code>
+-- Calculate the total salaries of employees
+SELECT SUM(Salary) FROM Employees;
+
+-- Calculate the total sales for a specific product
+SELECT SUM(SalesAmount) FROM Sales WHERE ProductID = 1;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>AVG()</strong>: Calculates the average of values in a numeric column. The <code>AVG()</code> function is used to calculate the average of the values in a numeric column in a table. It is often used to get average statistics, such as average salary or average grades. Usage example:
+                            <pre>
+                            <code>
+-- Calculate the average salary of employees
+SELECT AVG(Salary) FROM Employees;
+
+-- Calculate the average grades of students
+SELECT AVG(Grade) FROM Students;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>MIN()</strong>: Returns the smallest value in a column. The <code>MIN()</code> function is used to find the minimum value in a specific column. It is useful for getting minimum values, such as the lowest salary or the earliest date. Usage example:
+                            <pre>
+                            <code>
+-- Find the lowest salary of employees
+SELECT MIN(Salary) FROM Employees;
+
+-- Find the earliest date in sales records
+SELECT MIN(SaleDate) FROM Sales;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>MAX()</strong>: Returns the largest value in a column. The <code>MAX()</code> function is used to find the maximum value in a specific column. It is useful for getting maximum values, such as the highest salary or the latest date. Usage example:
+                            <pre>
+                            <code>
+-- Find the highest salary of employees
+SELECT MAX(Salary) FROM Employees;
+
+-- Find the latest date in sales records
+SELECT MAX(SaleDate) FROM Sales;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Joins -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#joinsSection" aria-expanded="false" aria-controls="joinsSection">
+                    Joins (JOINs)
+                </button>
+            </h2>
+            <div id="joinsSection" class="accordion-collapse collapse">
+                <div class="accordion-body
+
+">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>INNER JOIN</strong>: Combines rows from two tables when there is a match between columns of both tables. The <code>INNER JOIN</code> clause is used to return records that have matching values in both tables. It is commonly used to link tables on a foreign key. Usage example:
+                            <pre>
+                            <code>
+-- Example of INNER JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+INNER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>LEFT JOIN</strong>: Returns all rows from the left table, and the matching rows from the right table. If no match is found, the right table's values are NULL. The <code>LEFT JOIN</code> clause is used to include all rows from the left table, even if they do not have a match in the right table. Usage example:
+                            <pre>
+                            <code>
+-- Example of LEFT JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+LEFT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>RIGHT JOIN</strong>: Returns all rows from the right table, and the matching rows from the left table. If no match is found, the left table's values are NULL. The <code>RIGHT JOIN</code> clause is used to include all rows from the right table, even if they do not have a match in the left table. Usage example:
+                            <pre>
+                            <code>
+-- Example of RIGHT JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+RIGHT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>FULL OUTER JOIN</strong>: Returns all rows when there is a match in either of the tables. Non-matching values are filled with NULL. The <code>FULL OUTER JOIN</code> clause is used to include all rows from both tables, even if they do not have a match in the other table. Usage example:
+                            <pre>
+                            <code>
+-- Example of FULL OUTER JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+FULL OUTER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CROSS JOIN</strong>: Cartesian product of both tables, meaning it returns all possible combinations between the rows of the two tables. The <code>CROSS JOIN</code> clause is used to return the Cartesian product of both tables, which can result in a large number of rows if the tables are large. Usage example:
+                            <pre>
+                            <code>
+-- Example of CROSS JOIN
+SELECT Employees.Name, Departments.DepartmentName
+FROM Employees
+CROSS JOIN Departments;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Constraints -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#constraintsSection" aria-expanded="false" aria-controls="constraintsSection">
+                    Constraints
+                </button>
+            </h2>
+            <div id="constraintsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>PRIMARY KEY</strong>: Uniquely identifies each record in a table. A table can only have one primary key. The primary key is used to guarantee the uniqueness of records and to establish relationships between tables. Usage example:
+                            <pre>
+                            <code>
+-- Define a primary key on the 'ID' column of the 'Employees' table
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>FOREIGN KEY</strong>: Prevents actions that would destroy links between tables. It is a key in one table that refers to the primary key of another table. Foreign keys are used to maintain referential integrity between tables. Usage example:
+                            <pre>
+                            <code>
+-- Define a foreign key on the 'DepartmentID' column of the 'Employees' table referencing the 'ID' column of the 'Departments' table
+CREATE TABLE Departments (
+    ID INT PRIMARY KEY,
+    DepartmentName NVARCHAR(100)
+);
+
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(ID)
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>NOT NULL</strong>: Prevents a field from accepting NULL values. The <code>NOT NULL</code> constraint is used to ensure that a column cannot have a NULL value, meaning each record must have a value for this column. Usage example:
+                            <pre>
+                            <code>
+-- Define the 'Name' column as NOT NULL in the 'Employees' table
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>UNIQUE</strong>: Ensures that all values in a column are unique. The <code>UNIQUE</code> constraint is used to ensure that no duplicate values are inserted in a specific column. Usage example:
+                            <pre>
+                            <code>
+-- Define the 'Email' column as UNIQUE in the 'Employees' table
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Email NVARCHAR(100) UNIQUE,
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CHECK</strong>: Defines a condition that must be true for all values in a column. The <code>CHECK</code> constraint is used to enforce a condition on column values, ensuring that only values that meet this condition are allowed. Usage example:
+                            <pre>
+                            <code>
+-- Define a CHECK constraint on the 'Age' column to ensure values are greater than or equal to 18
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Age INT CHECK (Age >= 18),
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>DEFAULT</strong>: Sets a default value for a column if no value is specified. The <code>DEFAULT</code> constraint is used to assign a default value to a column when no value is provided during record insertion. Usage example:
+                            <pre>
+                            <code>
+-- Set a default value for the 'HireDate' column in the 'Employees' table
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    HireDate DATE DEFAULT GETDATE(),
+    DepartmentID INT
+);
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Advanced Functions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedFunctionsSection" aria-expanded="false" aria-controls="advancedFunctionsSection">
+                    Advanced Functions
+                </button>
+            </h2>
+            <div id="advancedFunctionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>COALESCE()</strong>: Returns the first non-NULL value from a list of arguments. The <code>COALESCE()</code> function is used to handle NULL values by returning the first non-NULL value found in a list of expressions. It is often used to provide default values. Usage example:
+                            <pre>
+                            <code>
+-- Example of COALESCE to return the first non-NULL value
+SELECT COALESCE(NULL, 'Default value', 'Other value') AS Result;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CASE</strong>: Allows conditional statements in SQL queries. The <code>CASE</code> clause is used to add conditional logic in SQL queries, allowing different values to be returned based on specified conditions. Usage example:
+                            <pre>
+                            <code>
+-- Example of CASE to return conditional values
+SELECT Name,
+        CASE
+            WHEN Age &lt; 18 THEN 'Minor'
+            WHEN Age &gt;= 18 THEN 'Adult'
+            ELSE 'Unknown'
+        END AS Status
+FROM Employees;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>CAST()</strong>: Converts an expression from one data type to another. The <code>CAST()</code> function is used to convert an expression from one data type to another, which is useful for operations that require specific data types. Usage example:
+                            <pre>
+                            <code>
+-- Example of CAST to convert an integer to a string
+SELECT CAST(123 AS NVARCHAR(10)) AS StringValue;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>EXISTS</strong>: Checks if a subset of data exists and returns TRUE or FALSE. The <code>EXISTS</code> clause is used to check for the existence of rows in a subset of data, often in subqueries, and returns TRUE if the subset contains rows. Usage example:
+                            <pre>
+                            <code>
+-- Example of EXISTS to check for the existence of rows
+SELECT Name
+FROM Employees
+WHERE EXISTS (SELECT 1 FROM Departments WHERE Departments.ID = Employees.DepartmentID);
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SUBSTRING()</strong>: Extracts a portion of a string. The <code>SUBSTRING()</code> function is used to extract a substring from a string, specifying the starting position and the length of the substring. Usage example:
+                            <pre>
+                            <code>
+-- Example of SUBSTRING to extract a substring
+SELECT SUBSTRING('Hello, World!', 1, 5) AS SubStringValue;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ROUND()</strong>: Rounds a numeric value to a specified number of decimal places. The <code>ROUND()</code> function is used to round a numeric value to a specified number of decimal places, which is useful for financial calculations and other operations requiring specific precision. Usage example:
+                            <pre>
+                            <code>
+-- Example of ROUND to round a numeric value
+SELECT ROUND(123.4567, 2) AS RoundedValue;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Transaction Management -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#transactionsSection" aria-expanded="false" aria-controls="transactionsSection">
+                    Transaction Management
+                </button>
+            </h2>
+            <div id="transactionsSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>BEGIN TRANSACTION</strong>: Starts a new transaction. The <code>BEGIN TRANSACTION</code> command is used to indicate the start of an explicit transaction. A transaction allows multiple SQL operations to be grouped into a single unit of work, ensuring that all operations are successfully completed or none of them are applied in case of failure. Usage example:
+                            <pre>
+                            <code>
+-- Example of BEGIN TRANSACTION
+BEGIN TRANSACTION;
+-- SQL operations
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>COMMIT</strong>: Commits the changes made in a transaction and makes them permanent. The <code>COMMIT</code> command is used to commit all the operations performed in the current transaction, making the changes permanent in the database. Usage example:
+                            <pre>
+                            <code>
+-- Example of COMMIT
+BEGIN TRANSACTION;
+-- SQL operations
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+-- Commit the changes
+COMMIT;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>ROLLBACK</strong>: Rolls back all changes made in the current transaction. The <code>ROLLBACK</code> command is used to undo all the operations performed in the current transaction, restoring the database to its state before the transaction began. Usage example:
+                            <pre>
+                            <code>
+-- Example of ROLLBACK
+BEGIN TRANSACTION;
+-- SQL operations
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+-- Rollback the changes in case of error
+ROLLBACK;
+                                </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SAVEPOINT</strong>: Sets a savepoint within a transaction that can be used for a partial rollback. The <code>SAVEPOINT</code> command is used to create a savepoint within a transaction, allowing you to roll back to that specific state without undoing the entire transaction. Usage example:
+                            <pre>
+                            <code>
+-- Example of SAVEPOINT
+BEGIN TRANSACTION;
+-- SQL operations
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+SAVEPOINT BeforeCredit;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+-- Rollback changes to the savepoint
+ROLLBACK TO SAVEPOINT BeforeCredit;
+-- Commit the remaining changes
+COMMIT;
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/sql" target="_blank">W3 SQL --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+</div>

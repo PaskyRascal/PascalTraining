@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/azure"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <Azure_fr />
+}
+else
+{
+    <Azure_en />
+}

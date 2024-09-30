@@ -1,0 +1,586 @@
+﻿<div class="container mt-5">
+    <h1 class="text-primary text-center mb-4">C# Programming Vocabulary</h1>
+
+    <div class="accordion">
+
+        <!-- Data Types -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    1. Data Types
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>int</code>: Integer (32 bits, range from -2,147,483,648 to 2,147,483,647). Used to represent whole numbers. Example:
+                            <pre><code>int age = 30;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>float</code>: Floating-point number (single precision, 32 bits, approximately 7 significant digits). Used to represent floating-point numbers with single precision. Example:
+                            <pre><code>float temperature = 36.6f;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>double</code>: Floating-point number (double precision, 64 bits, approximately 15-16 significant digits). Used to represent floating-point numbers with double precision. Example:
+                            <pre><code>double distance = 12345.6789;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>bool</code>: Boolean value (<code>true</code> or <code>false</code>, 1 bit). Used to represent boolean values. Example:
+                            <pre><code>bool isActive = true;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>string</code>: String (sequence of Unicode characters, variable length). Used to represent sequences of characters. Example:
+                            <pre><code>string name = "Alice";</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>char</code>: Single character (16 bits, represents a Unicode character). Used to represent a single character. Example:
+                            <pre><code>char initial = 'A';</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>decimal</code>: High-precision floating-point number (128 bits, mainly used for financial calculations, approximately 28-29 significant digits). Example:
+                            <pre><code>decimal price = 19.99m;</code></pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>var</code>: Type inference (the compiler deduces the variable type from the assigned expression). Example:
+                            <pre><code>var count = 10; // 'count' is inferred as 'int'</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Structures -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Control Structures
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>if</code>, <code>else if</code>, <code>else</code>: Conditional statements (execute code based on the truth value of a boolean expression). Example:
+                            <pre>
+                            <code>
+int number = 10;
+if (number > 0)
+{
+    Console.WriteLine("Positive number");
+}
+else if (number &lt; 0)
+{
+    Console.WriteLine("Negative number");
+}
+else
+{
+    Console.WriteLine("Zero");
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>switch</code>, <code>case</code>: Conditional structure (selects a block of code to execute based on the value of an expression). Example:
+                            <pre>
+                            <code>
+int day = 3;
+switch (day)
+{
+    case 1:
+        Console.WriteLine("Monday");
+        break;
+    case 2:
+        Console.WriteLine("Tuesday");
+        break;
+    case 3:
+        Console.WriteLine("Wednesday");
+        break;
+    default:
+        Console.WriteLine("Another day");
+        break;
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>for</code>, <code>foreach</code>: Loops for iterating over collections (<code>for</code> uses a counter, <code>foreach</code> iterates directly over elements in a collection). Example:
+                            <pre>
+                            <code>
+// For loop
+for (int i = 0; i &lt; 5; i++)
+{
+    Console.WriteLine(i);
+}
+
+// Foreach loop
+int[] numbers = { 1, 2, 3, 4, 5 };
+foreach (int number in numbers)
+{
+    Console.WriteLine(number);
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>while</code>, <code>do-while</code>: Loops (<code>while</code> continues as long as a condition is true, <code>do-while</code> executes at least once before checking the condition). Example:
+                            <pre>
+                            <code>
+// While loop
+int i = 0;
+while (i &lt; 5)
+{
+    Console.WriteLine(i);
+    i++;
+}
+
+// Do-while loop
+int j = 0;
+do
+{
+    Console.WriteLine(j);
+    j++;
+} while (j &lt; 5);
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>break</code>: Exits a loop or <code>switch</code> (stops execution of the current loop or <code>switch</code>). Example:
+                            <pre>
+                            <code>
+for (int i = 0; i &lt; 10; i++)
+{
+    if (i == 5)
+    {
+        break; // Stops the loop when i is 5
+    }
+    Console.WriteLine(i);
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>continue</code>: Skip to the next iteration (skips the remaining code in the current iteration and proceeds to the next iteration). Example:
+                            <pre>
+                            <code>
+for (int i = 0; i &lt; 10; i++)
+{
+    if (i % 2 == 0)
+    {
+        continue; // Skip the iteration if i is even
+    }
+    Console.WriteLine(i);
+}
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classes and Objects -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Classes and Objects
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>class</code>: Declares a class (a blueprint defining the properties and methods of an object). Example:
+                            <pre>
+                            <code>
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>object</code>: Instance of a class (a concrete representation of a class in memory). Example:
+                            <pre>
+                            <code>
+Person person = new Person();
+person.Name = "Alice";
+person.Age = 30;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>constructor</code>: Special method called when creating an object (initializes object properties). Example:
+                            <pre>
+                            <code>
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    // Constructor
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>this</code>: Reference to the current instance (used to access members of the current instance). Example:
+                            <pre>
+                            <code>
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public
+
+ Person(string name, int age)
+    {
+        this.Name = name;
+        this.Age = age;
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>new</code>: Instantiate an object (creates a new instance of a class). Example:
+                            <pre>
+                            <code>
+Person person = new Person("Alice", 30);
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>static</code>: Shared member (belongs to the class rather than to a specific instance). Example:
+                            <pre>
+                            <code>
+public class MathUtilities
+{
+public static int Add(int a, int b)
+    {
+    return a + b;
+    }
+}
+
+// Usage
+int sum = MathUtilities.Add(5, 3);
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>abstract</code>: Abstract class or method (cannot be instantiated directly, must be inherited and implemented). Example:
+                            <pre>
+                            <code>
+public abstract class Animal
+{
+    public abstract void MakeSound();
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Woof");
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>interface</code>: Declares an interface (defines a contract that implementing classes must follow). Example:
+                            <pre>
+                            <code>
+public interface IMovable
+{
+    void Move();
+}
+
+public class Car : IMovable
+{
+    public void Move()
+    {
+        Console.WriteLine("The car is moving");
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methods and Functions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Methods and Functions
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>void</code>: Method with no return value (used for actions that don’t need a result). Example:
+                            <pre>
+                            <code>
+public void DisplayMessage()
+{
+    Console.WriteLine("Hello, World!");
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>return</code>: Return a value (ends the method’s execution and returns a value to the caller). Example:
+                            <pre>
+                            <code>
+public int Add(int a, int b)
+{
+    return a + b;
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>public</code>, <code>private</code>, <code>protected</code>, <code>internal</code>: Access modifiers (define the visibility and accessibility of class members). Example:
+                            <pre>
+                            <code>
+public class MyClass
+{
+    public int PublicProperty { get; set; } // Accessible everywhere
+    private int PrivateProperty { get; set; } // Accessible only in this class
+    protected int ProtectedProperty { get; set; } // Accessible in this class and derived classes
+    internal int InternalProperty { get; set; } // Accessible within the same assembly
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>params</code>: Variable parameters (allows passing a variable number of arguments to a method). Example:
+                            <pre>
+                            <code>
+public void PrintNumbers(params int[] numbers)
+{
+    foreach (int number in numbers)
+    {
+        Console.WriteLine(number);
+    }
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>async</code> / <code>await</code>: Asynchronous (allows executing operations asynchronously without blocking the main thread). Example:
+                            <pre>
+                            <code>
+public async Task&lt;int&gt; GetDataAsync()
+{
+    await Task.Delay(1000); // Simulates an asynchronous operation
+    return 42;
+}
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collections and Arrays -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Collections and Arrays
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>Array[]</code>: Array (collection of elements of the same type, fixed size, fast access by index). Example:
+                            <pre>
+                            <code>
+int[] numbers = new int[5]; // Declares an array of 5 integers
+numbers[0] = 1; // Assigns the value 1 to the first element
+int firstNumber = numbers[0]; // Accesses the first element
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>List&lt;T&gt;</code>: Generic list (collection of elements of the same type, dynamic size, access by index). Example:
+                            <pre>
+                            <code>
+List&lt;int&gt; numbers = new List&lt;int&gt;(); // Declares a list of integers
+numbers.Add(1); // Adds an element to the list
+int firstNumber = numbers[0]; // Accesses the first element
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Dictionary&lt;TKey, TValue&gt;</code>: Key-value pair collection (allows storing elements associated with a unique key, fast access by key). Example:
+                            <pre>
+                            <code>
+Dictionary&lt;string, int&gt; ages = new Dictionary&lt;string, int&gt;(); // Declares a dictionary with strings as keys and integers as values
+ages["Alice"] = 30; // Assigns the value 30 to the key "Alice"
+int aliceAge = ages["Alice"]; // Accesses the value associated with the key "Alice"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Queue&lt;T&gt;</code>: Queue (FIFO - First In, First Out, elements are added at the end and removed from the beginning). Example:
+                            <pre>
+                            <code>
+Queue&lt;int&gt; queue = new Queue&lt;int&gt;(); // Declares a queue of integers
+queue.Enqueue(1); // Adds an element to the end of the queue
+int firstInQueue = queue.Dequeue(); // Removes and returns the element at the front of the queue
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Stack&lt;T&gt;</code>: Stack (LIFO - Last In, First Out, elements are added and removed from the top). Example:
+                            <pre>
+                            <code>
+Stack&lt;int&gt; stack = new Stack&lt;int&gt;(); // Declares a stack of integers
+stack.Push(1); // Adds an element to the top of the stack
+int topOfStack = stack.Pop(); // Removes and returns the element at the top of the stack
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>IEnumerable&lt;T&gt;</code>: Interface for enumerables (allows iteration over a collection, used with <code>foreach</code>). Example:
+                            <pre>
+                            <code>
+IEnumerable&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3 }; // Declares an enumerable collection of integers
+foreach (int number in numbers)
+{
+    Console.WriteLine(number); // Iterates over each element in the collection
+}
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exceptions and Error Handling -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    6. Exceptions and Error Handling
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <code>try</code>, <code>catch</code>, <code>finally</code>: Exception handling (allows controlled error handling, <code>try</code> encapsulates code that might throw an exception
+
+                            , <code>catch</code> catches and handles the exception, and <code>finally</code> executes code after the <code>try</code> and <code>catch</code>, whether an exception was thrown or not). Example:
+                            <pre>
+                            <code>
+try
+{
+    // Code that might throw an exception
+}
+catch (Exception ex)
+{
+    // Code to handle the exception
+}
+finally
+{
+    // Code that always runs, whether an exception was thrown or not
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>throw</code>: Throw an exception (used to manually raise an exception). Example:
+                            <pre>
+                            <code>
+if (someCondition)
+{
+    throw new InvalidOperationException("Error message");
+}   
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>Exception</code>: Base class (base class for all exceptions in C#, provides error information such as the error message and stack trace). Example:
+                            <pre>
+                            <code>
+try
+{
+    // Code that might throw an exception
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message); // Displays the error message
+    Console.WriteLine(ex.StackTrace); // Displays the stack trace
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>NullReferenceException</code>: Null reference exception (thrown when attempting to access an object through a null reference). Example:
+                            <pre>
+                            <code>
+object obj = null;
+try
+{
+    int length = obj.ToString().Length; // Throws a NullReferenceException
+}
+catch (NullReferenceException ex)
+{
+    Console.WriteLine("A null reference was encountered.");
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <code>ArgumentNullException</code>: Null argument (thrown when a method argument is <code>null</code> when it should not be). Example:
+                            <pre>
+                            <code>
+void SomeMethod(string param)
+{
+    if (param == null)
+    {
+        throw new ArgumentNullException(nameof(param), "The parameter cannot be null");
+    }
+    // Other code
+}
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://www.w3schools.com/cs" target="_blank">W3 C# --- Tutorial</a>
+            </h5>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank">C# documentation</a>
+            </h5>
+        </div>
+    </div>
+</div>

@@ -153,4 +153,7 @@
   <data name="Vocabulary" xml:space="preserve">
     <value>Vocabulaire</value>
   </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>Site web</value>
+  </data>
 </root>

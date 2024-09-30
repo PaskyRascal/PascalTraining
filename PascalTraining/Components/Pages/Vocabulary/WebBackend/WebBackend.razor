@@ -1,0 +1,16 @@
+﻿@page "/vocabulary/webbackend"
+
+@rendermode InteractiveServer
+
+@code {
+    private string currentCulture = CultureInfo.CurrentCulture.Name;
+}
+
+@if (currentCulture == "fr")
+{
+    <WebBackend_fr />
+}
+else
+{
+    <WebBackend_en />
+}
