@@ -1,19 +1,32 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">GitHub Vocabulary</h1>
+    <h1 class="text-center text-primary mb-4">
+        GitHub Vocabulary
+    </h1>
 
     <div class="accordion">
         <!-- Section GitHub Basics -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gitHubBasicsSection" aria-expanded="false" aria-controls="gitHubBasicsSection">
+                <button class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#gitHubBasicsSection"
+                        aria-expanded="false"
+                        aria-controls="gitHubBasicsSection">
                     GitHub Basic Concepts
                 </button>
             </h2>
-            <div id="gitHubBasicsSection" class="accordion-collapse collapse">
+            <div id="gitHubBasicsSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Repository (Repo)</strong>: A space or project where your code and history are stored on GitHub. A repository contains all the files of your project along with their revision history. It allows you to collaborate with other developers and track code changes. Example:
+                            <strong>Repository (Repo)</strong>:
+                            A space or project where your code and history are
+                            stored on GitHub. A repository contains all the
+                            files of your project along with their revision
+                            history. It allows you to collaborate with other
+                            developers and track code changes. Example:
                             <pre>
                             <code>
 // Creating a new repository on GitHub
@@ -21,72 +34,102 @@ git init my-repo
 cd my-repo
 git remote add origin https://github.com/username/my-repo.git
 git push -u origin main
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Branch</strong>: An alternative version of a repository where you can develop new features independently from the main branch. Branches allow you to work on different features or bug fixes without affecting the stable code in the main branch. Example:
+                            <strong>Branch</strong>:
+                            An alternative version of a repository where you
+                            can develop new features independently from the
+                            main branch. Branches allow you to work on different
+                            features or bug fixes without affecting the stable
+                            code in the main branch. Example:
                             <pre>
                             <code>
 // Creating and switching to a new branch
 git checkout -b new-feature
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Commit</strong>: A change or set of changes recorded in a repository. A commit captures the current state of the files in the repository and logs a message describing the changes. Example:
+                            <strong>Commit</strong>:
+                            A change or set of changes recorded in a repository.
+                            A commit captures the current state of the files in
+                            the repository and logs a message describing the
+                            changes. Example:
                             <pre>
                             <code>
 // Adding files to the commit and saving changes
 git add .
 git commit -m "Added new feature"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Clone</strong>: Copy a remote repository to your local machine. Cloning a repository allows you to work on a local copy of the project and synchronize changes with the remote repository. Example:
+                            <strong>Clone</strong>:
+                            Copy a remote repository to your local machine.
+                            Cloning a repository allows you to work on a local
+                            copy of the project and synchronize changes with the
+                            remote repository. Example:
                             <pre>
                             <code>
 // Cloning a GitHub repository
 git clone https://github.com/username/repo.git
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Fork</strong>: Copy a project from a GitHub repository to your own account, allowing you to modify the code without affecting the original. A fork is often used to contribute to open-source projects. Example:
+                            <strong>Fork</strong>:
+                            Copy a project from a GitHub repository to your own
+                            account, allowing you to modify the code without
+                            affecting the original. A fork is often used to
+                            contribute to open-source projects. Example:
                             <pre>
                             <code>
 // Forking a repository on GitHub via the web interface
 // Click the "Fork" button on the repository page
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Pull Request (PR)</strong>: A request to merge your changes into the main branch or another project. A pull request allows you to propose changes, discuss their relevance, and review them before merging. Example:
+                            <strong>Pull Request (PR)</strong>:
+                            A request to merge your changes into the main branch
+                            or another project. A pull request allows you to
+                            propose changes, discuss their relevance, and review
+                            them before merging. Example:
                             <pre>
                             <code>
 // Creating a pull request on GitHub via the web interface
 // Go to the repository page and click "New pull request"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Merge</strong>: Combine one branch into another (usually the main branch). Merging integrates the changes from one branch into another, combining their commit histories. Example:
+                            <strong>Merge</strong>:
+                            Combine one branch into another (usually the main
+                            branch). Merging integrates the changes from one
+                            branch into another, combining their commit
+                            histories. Example:
                             <pre>
                             <code>
 // Merging a branch into the main branch
 git checkout main
 git merge new-feature
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Git</strong>: A distributed version control system used by GitHub to track changes in code. Git allows managing the history of changes, collaborating with other developers, and handling different versions of the code. Example:
+                            <strong>Git</strong>:
+                            A distributed version control system used by GitHub
+                            to track changes in code. Git allows managing the
+                            history of changes, collaborating with other
+                            developers, and handling different versions of the
+                            code. Example:
                             <pre>
                             <code>
 // Initializing a new Git repository
 git init
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -97,65 +140,101 @@ git init
         <!-- Section Project Management -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#projectManagementSection" aria-expanded="false" aria-controls="projectManagementSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#projectManagementSection"
+                        aria-expanded="false"
+                        aria-controls="projectManagementSection">
                     Project Management on GitHub
                 </button>
             </h2>
-            <div id="projectManagementSection" class="accordion-collapse collapse">
+            <div id="projectManagementSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Issue</strong>: A ticket created to report a bug, request a feature, or ask a question. Issues allow tracking problems and improvements in a project. They can be commented on, labeled, assigned to developers, and linked to pull requests for better task management. Example:
+                            <strong>Issue</strong>:
+                            A ticket created to report a bug, request a feature,
+                            or ask a question. Issues allow tracking problems
+                            and improvements in a project. They can be commented
+                            on, labeled, assigned to developers, and linked to
+                            pull requests for better task management. Example:
                             <pre>
                             <code>
 // Creating an issue on GitHub via the web interface
 // Go to the repository page and click "Issues" then "New issue"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Milestone</strong>: A set of issues or pull requests related to a specific feature or version. Milestones help organize and plan work by grouping related tasks. They allow tracking progress toward specific goals and managing project versions. Example:
+                            <strong>Milestone</strong>:
+                            A set of issues or pull requests related to a
+                            specific feature or version. Milestones help
+                            organize and plan work by grouping related tasks.
+                            They allow tracking progress toward specific goals
+                            and managing project versions. Example:
                             <pre>
                             <code>
 // Creating a milestone on GitHub via the web interface
 // Go to the repository page, click "Milestones" then "New milestone"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Labels</strong>: Tags that allow categorizing issues and pull requests. Labels make task management and searching easier by adding categories like "bug," "enhancement," "documentation," etc. They help prioritize and organize work. Example:
+                            <strong>Labels</strong>:
+                            Tags that allow categorizing issues and pull
+                            requests. Labels make task management and searching
+                            easier by adding categories like "bug,"
+                            "enhancement," "documentation," etc. They help
+                            prioritize and organize work. Example:
                             <pre>
                             <code>
 // Adding a label to an issue on GitHub via the web interface
 // Open an issue, click "Labels," and select the appropriate labels
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Projects</strong>: Built-in project management tools that allow organizing tasks in Kanban-style boards. Projects provide an overview of tasks in progress, to do, and done. They help visualize workflows and manage tasks more efficiently. Example:
+                            <strong>Projects</strong>:
+                            Built-in project management tools that allow
+                            organizing tasks in Kanban-style boards. Projects
+                            provide an overview of tasks in progress, to do, and
+                            done. They help visualize workflows and manage tasks
+                            more efficiently. Example:
                             <pre>
                             <code>
 // Creating a project on GitHub via the web interface
 // Go to the repository page, click "Projects" then "New project"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Assignees</strong>: People assigned to an issue or pull request to be responsible for its resolution. Assigning developers to specific tasks clarifies responsibilities and helps track who is working on what. This improves collaboration and task management. Example:
+                            <strong>Assignees</strong>:
+                            People assigned to an issue or pull request to be
+                            responsible for its resolution. Assigning developers
+                            to specific tasks clarifies responsibilities and
+                            helps track who is working on what. This improves
+                            collaboration and task management. Example:
                             <pre>
                             <code>
 // Assigning an issue to a developer on GitHub via the web interface
 // Open an issue, click "Assignees," and select the appropriate developer
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Mentions</strong>: Use &#64; followed by a username to directly notify someone in an issue or comment. Mentions draw attention to the relevant users and facilitate communication and collaboration within the team. Example:
+                            <strong>Mentions</strong>:
+                            Use &#64; followed by a username to directly notify
+                            someone in an issue or comment. Mentions draw
+                            attention to the relevant users and facilitate
+                            communication and collaboration within the team.
+                            Example:
                             <pre>
                             <code>
 // Mentioning a user in a comment on GitHub
 // Type &#64;username in the comment to notify the user
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -166,53 +245,86 @@ git init
         <!-- Section Collaboration -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collaborationSection" aria-expanded="false" aria-controls="collaborationSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collaborationSection"
+                        aria-expanded="false"
+                        aria-controls="collaborationSection">
                     Collaboration on GitHub
                 </button>
             </h2>
-            <div id="collaborationSection" class="accordion-collapse collapse">
+            <div id="collaborationSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Collaborators</strong>: Users with access to a repository who can contribute directly to the code. Collaborators can clone the repository, create branches, submit commits, and open pull requests. They play a key role in collaborative development and project management on GitHub. Example:
+                            <strong>Collaborators</strong>:
+                            Users with access to a repository who can contribute
+                            directly to the code. Collaborators can clone the
+                            repository, create branches, submit commits, and
+                            open pull requests. They play a key role in
+                            collaborative development and project management on
+                            GitHub. Example:
                             <pre>
                             <code>
 // Adding a collaborator to a repository on GitHub via the web interface
 // Go to the repository page, click "Settings" then "Collaborators" and add the user
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Contributor</strong>: A person who has submitted a pull request or contributed to an open-source project. Contributors can be team members or external developers who propose improvements, bug fixes
-
-                            , or new features. Their participation is essential for the evolution and improvement of open-source projects. Example:
+                            <strong>Contributor</strong>:
+                            A person who has submitted a pull request or
+                            contributed to an open-source project. Contributors
+                            can be team members or external developers who
+                            propose improvements, bug fixes, or new features.
+                            Their participation is essential for the evolution
+                            and improvement of open-source projects. Example:
                             <pre>
                             <code>
 // Contributing to an open-source project via a pull request
 // Fork the repository, make your changes, then open a pull request to propose your changes
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Code Review</strong>: The process of reviewing code submitted in a pull request before merging changes. Code review helps detect errors, improve code quality, and share knowledge among team members. It is often done by collaborators or project maintainers. Example:
+                            <strong>Code Review</strong>:
+                            The process of reviewing code submitted in a pull
+                            request before merging changes. Code review helps
+                            detect errors, improve code quality, and share
+                            knowledge among team members. It is often done by
+                            collaborators or project maintainers. Example:
                             <pre>
                             <code>
 // Conducting a code review on GitHub via the web interface
 // Go to the pull request, click "Files changed," and add your comments and suggestions
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Blame</strong>: A GitHub feature to see who made a specific change in a file. The <code>git blame</code> command tracks the history of changes line by line, identifying the author and the associated commit. This helps understand the origin of changes and assign responsibility. Example:
+                            <strong>Blame</strong>:
+                            A GitHub feature to see who made a specific change
+                            in a file. The <code>git blame</code> command tracks
+                            the history of changes line by line, identifying the
+                            author and the associated commit. This helps
+                            understand the origin of changes and assign
+                            responsibility. Example:
                             <pre>
                             <code>
 // Using the git blame command to see the history of changes
 git blame filename
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>GitHub Actions</strong>: A continuous integration and delivery (CI/CD) platform that automates workflows from your GitHub repository. GitHub Actions allows creating custom workflows to build, test, and deploy code automatically. This improves development process efficiency and reliability. Example:
+                            <strong>GitHub Actions</strong>:
+                            A continuous integration and delivery (CI/CD)
+                            platform that automates workflows from your GitHub
+                            repository. GitHub Actions allows creating custom
+                            workflows to build, test, and deploy code
+                            automatically. This improves development process
+                            efficiency and reliability. Example:
                             <pre>
                             <code>
 // Creating a GitHub Actions workflow to build and test code
@@ -235,16 +347,22 @@ jobs:
         run: dotnet build --configuration Release
     - name: Test with dotnet
         run: dotnet test --no-build --verbosity normal
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Wiki</strong>: Collaborative documentation for a project, stored directly in a repository. The wiki allows creating and maintaining detailed documentation accessible to all contributors. It is often used to document features, usage guides, development processes, and important project information. Example:
+                            <strong>Wiki</strong>:
+                            Collaborative documentation for a project, stored
+                            directly in a repository. The wiki allows creating
+                            and maintaining detailed documentation accessible to
+                            all contributors. It is often used to document
+                            features, usage guides, development processes, and
+                            important project information. Example:
                             <pre>
                             <code>
 // Creating and editing a wiki page on GitHub via the web interface
 // Go to the repository page, click "Wiki" then "New Page" to add a new documentation page
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -255,79 +373,128 @@ jobs:
         <!-- Section Security and Versioning -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securityVersioningSection" aria-expanded="false" aria-controls="securityVersioningSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#securityVersioningSection"
+                        aria-expanded="false"
+                        aria-controls="securityVersioningSection">
                     Security and Versioning
                 </button>
             </h2>
-            <div id="securityVersioningSection" class="accordion-collapse collapse">
+            <div id="securityVersioningSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>SSH Key</strong>: A security key used to access your GitHub account and perform secure operations. An SSH key is made up of a pair of keys (public and private). The public key is added to your GitHub account, while the private key remains on your machine. This allows secure authentication without having to enter your password every time. Example:
+                            <strong>SSH Key</strong>:
+                            A security key used to access your GitHub account
+                            and perform secure operations. An SSH key is made up
+                            of a pair of keys (public and private). The public
+                            key is added to your GitHub account, while the
+                            private key remains on your machine. This allows
+                            secure authentication without having to enter your
+                            password every time. Example:
                             <pre>
                             <code>
 // Generating an SSH key and adding it to GitHub
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 cat ~/.ssh/id_rsa.pub
 // Copy the public key and add it to your GitHub account under "Settings" > "SSH and GPG keys"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Access Token</strong>: A token used to make secure requests to the GitHub API. Access tokens are used to authenticate applications and scripts interacting with the GitHub API. They offer a secure way to manage permissions without using your GitHub password. Example:
+                            <strong>Access Token</strong>:
+                            A token used to make secure requests to the GitHub
+                            API. Access tokens are used to authenticate
+                            applications and scripts interacting with the
+                            GitHub API. They offer a secure way to manage
+                            permissions without using your GitHub password.
+                            Example:
                             <pre>
                             <code>
 // Creating a personal access token on GitHub
 // Go to "Settings" > "Developer settings" > "Personal access tokens" > "Generate new token"
 // Use the generated token to authenticate API requests
 curl -H "Authorization: token YOUR_ACCESS_TOKEN" https://api.github.com/user
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Version Tag</strong>: A tag used to mark a specific version of the code in a repository. Version tags are often used to indicate stable releases or important reference points in the project's history. For example, a tag <code>v1.0.0</code> might indicate the first stable version of a project. Example:
+                            <strong>Version Tag</strong>:
+                            A tag used to mark a specific version of the code in
+                            a repository. Version tags are often used to
+                            indicate stable releases or important reference
+                            points in the project's history. For example, a tag
+                            <code>v1.0.0</code> might indicate the first stable
+                            version of a project. Example:
                             <pre>
                             <code>
 // Creating and pushing a version tag on GitHub
 git tag v1.0.0
 git push origin v1.0.0
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Release</strong>: The publication of a stable version of a project with binaries, release notes, and tags. Releases allow distributing specific versions of your project to users. They often include executables, libraries, and information about the changes since the last version. Example:
+                            <strong>Release</strong>:
+                            The publication of a stable version of a project
+                            with binaries, release notes, and tags. Releases
+                            allow distributing specific versions of your project
+                            to users. They often include executables,
+                            libraries, and information about the changes since
+                            the last version. Example:
                             <pre>
                             <code>
 // Creating a release on GitHub via the web interface
 // Go to the repository page, click "Releases" then "Draft a new release"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Dependency Graph</strong>: A tool that displays dependencies and alerts you if vulnerabilities are detected. The dependency graph allows visualizing the libraries and packages your project depends on. It helps identify necessary updates and manage security vulnerabilities. Example:
+                            <strong>Dependency Graph</strong>:
+                            A tool that displays dependencies and alerts you if
+                            vulnerabilities are detected. The dependency graph
+                            allows visualizing the libraries and packages your
+                            project depends on. It helps identify necessary
+                            updates and manage security vulnerabilities.
+                            Example:
                             <pre>
                             <code>
 // Viewing the dependency graph on GitHub
 // Go to the repository page, click "Insights" then "Dependency graph"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Branch Protection</strong>: A GitHub feature to protect a branch from unauthorized modifications (e.g., requiring review before a merge). Branch protection rules can include requirements such as mandatory code reviews, successful CI tests, and restrictions on who can push changes. Example:
+                            <strong>Branch Protection</strong>:
+                            A GitHub feature to protect a branch from
+                            unauthorized modifications (e.g., requiring review
+                            before a merge). Branch protection rules can include
+                            requirements such as mandatory code reviews,
+                            successful CI tests, and restrictions on who can
+                            push changes. Example:
                             <pre>
                             <code>
 // Configuring branch protection rules on GitHub
 // Go to the repository page, click "Settings" > "Branches" > "Add rule"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>GitHub Pages</strong>: A GitHub feature that allows hosting static web pages directly from a repository. GitHub Pages is often used to host documentation sites, blogs, or portfolios. It supports static site generators like Jekyll and allows easy deployment of websites from specific branches of your repository. Example:
+                            <strong>GitHub Pages</strong>:
+                            A GitHub feature that allows hosting static web
+                            pages directly from a repository. GitHub Pages is
+                            often used to host documentation sites, blogs, or
+                            portfolios. It supports static site generators like
+                            Jekyll and allows easy deployment of websites from
+                            specific branches of your repository. Example:
                             <pre>
                             <code>
 // Deploying a site with GitHub Pages
 // Go to the repository page, click "Settings" > "Pages" and configure the deployment source
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -338,36 +505,59 @@ git push origin v1.0.0
         <!-- Section Advanced Usage -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedUsageSection" aria-expanded="false" aria-controls="advancedUsageSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#advancedUsageSection"
+                        aria-expanded="false"
+                        aria-controls="advancedUsageSection">
                     Advanced Usage
                 </button>
             </h2>
-            <div id="advancedUsageSection" class="accordion-collapse collapse">
+            <div id="advancedUsageSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Webhooks</strong>: Connection points that allow receiving real-time notifications when an event occurs in a GitHub repository. Webhooks can be configured to trigger specific actions, such as sending notifications, executing scripts, or integrating with external services, in response to events like commits, pull requests, or issues. Example:
+                            <strong>Webhooks</strong>:
+                            Connection points that allow receiving real-time
+                            notifications when an event occurs in a GitHub
+                            repository. Webhooks can be configured to trigger
+                            specific actions, such as sending notifications,
+                            executing scripts, or integrating with external
+                            services, in response to events like commits, pull
+                            requests, or issues. Example:
                             <pre>
                             <code>
 // Configuring a webhook on GitHub via the web interface
 // Go to the repository page, click "Settings" > "Webhooks" > "Add webhook"
 // Enter the webhook URL and select the events to monitor
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>GitHub API</strong>: An interface for automating and interacting with GitHub features via HTTP requests. The GitHub API allows managing repositories, issues, pull requests, users, and more. It is used to create custom integrations, project management tools, and workflow automations. Example:
+                            <strong>GitHub API</strong>:
+                            An interface for automating and interacting with
+                            GitHub features via HTTP requests. The GitHub API
+                            allows managing repositories, issues, pull
+                            requests, users, and more. It is used to create
+                            custom integrations, project management tools, and
+                            workflow automations. Example:
                             <pre>
                             <code>
 // Using the GitHub API to list a user's repositories
-
-
 curl -H "Authorization: token YOUR_ACCESS_TOKEN" https://api.github.com/user/repos
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Actions Secrets</strong>: Secure environment variables used in GitHub Actions workflows to protect sensitive information. Secrets are encrypted and accessible only to authorized workflows. They are used to store API keys, access tokens, passwords, and other sensitive information needed to run workflows. Example:
+                            <strong>Actions Secrets</strong>:
+                            Secure environment variables used in GitHub Actions
+                            workflows to protect sensitive information. Secrets
+                            are encrypted and accessible only to authorized
+                            workflows. They are used to store API keys, access
+                            tokens, passwords, and other sensitive information
+                            needed to run workflows. Example:
                             <pre>
                             <code>
 // Adding a secret to a GitHub repository via the web interface
@@ -386,35 +576,54 @@ jobs:
         uses: actions/checkout@v2
     - name: Use secret
         run: echo ${{ secrets.MY_SECRET }}
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Squash Merge</strong>: Merging a branch into a single commit to keep the Git history clean. Squash merge combines all commits from a branch into a single commit before merging them into the target branch. This simplifies the project history and makes changes easier to track. Example:
+                            <strong>Squash Merge</strong>:
+                            Merging a branch into a single commit to keep the
+                            Git history clean. Squash merge combines all commits
+                            from a branch into a single commit before merging
+                            them into the target branch. This simplifies the
+                            project history and makes changes easier to track.
+                            Example:
                             <pre>
                             <code>
 // Performing a squash merge on GitHub via the web interface
 // Go to the pull request, click the merge button, and select "Squash and merge"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Rebase</strong>: Replay the commits of one branch onto another, creating a linear history. Rebase allows moving or combining commits by applying the changes from one branch onto another as if they were created from that branch. This helps keep a clean and linear commit history. Example:
+                            <strong>Rebase</strong>:
+                            Replay the commits of one branch onto another,
+                            creating a linear history. Rebase allows moving or
+                            combining commits by applying the changes from one
+                            branch onto another as if they were created from
+                            that branch. This helps keep a clean and linear
+                            commit history. Example:
                             <pre>
                             <code>
 // Rebase a branch onto the main branch
 git checkout feature-branch
 git rebase main
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>GitHub CLI</strong>: A command-line interface for interacting with GitHub directly from a terminal. The GitHub CLI (Command Line Interface) offers commands to manage repositories, issues, pull requests, actions, and more. It makes it easier to automate tasks and integrate GitHub into scripts and development workflows. Example:
+                            <strong>GitHub CLI</strong>:
+                            A command-line interface for interacting with GitHub
+                            directly from a terminal. The GitHub CLI (Command
+                            Line Interface) offers commands to manage
+                            repositories, issues, pull requests, actions, and
+                            more. It makes it easier to automate tasks and
+                            integrate GitHub into scripts and development
+                            workflows. Example:
                             <pre>
                             <code>
 // Installing GitHub CLI and creating an issue
 gh issue create --title "Bug report" --body "Bug description"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -426,7 +635,9 @@ gh issue create --title "Bug report" --body "Bug description"
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://docs.github.com/en" target="_blank">GitHub documentation</a>
+                <a href="https://docs.github.com/en" target="_blank">
+                    GitHub documentation
+                </a>
             </h5>
         </div>
     </div>

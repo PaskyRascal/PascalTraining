@@ -1,19 +1,34 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">Blazor Web App Vocabulary - Program.cs with Entity Framework Core</h1>
+    <h1 class="text-center text-primary mb-4">
+        Blazor Web App Vocabulary - Program.cs with
+        Entity Framework Core
+    </h1>
 
     <div class="accordion">
         <!-- Section Application Initialization -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#appInitializationSection" aria-expanded="false" aria-controls="appInitializationSection">
+                <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#appInitializationSection"
+                        aria-expanded="false"
+                        aria-controls="appInitializationSection">
                     Application Initialization
                 </button>
             </h2>
-            <div id="appInitializationSection" class="accordion-collapse collapse">
+            <div id="appInitializationSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>WebApplication.CreateBuilder()</strong>: Method used to create a <code>WebApplicationBuilder</code> that configures the application's services, hosting, and infrastructure. This method initializes a new web application builder with default settings, allowing you to configure services and the request pipeline. Example:
+                            <strong>WebApplication.CreateBuilder()</strong>:
+                            Method used to create a
+                            <code>WebApplicationBuilder</code> that
+                            configures the application's services, hosting,
+                            and infrastructure. This method initializes a
+                            new web application builder with default
+                            settings, allowing you to configure services and
+                            the request pipeline. Example:
                             <pre>
                             <code>
 // Example of creating a WebApplicationBuilder in C#
@@ -21,11 +36,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents();
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>builder.Services</strong>: Property used to configure the services used by the application (e.g., dependency injection, authentication). This property exposes an <code>IServiceCollection</code> that allows adding services to the dependency injection container. Example:
+                            <strong>builder.Services</strong>: Property used
+                            to configure the services used by the
+                            application (e.g., dependency injection,
+                            authentication). This property exposes an
+                            <code>IServiceCollection</code> that allows
+                            adding services to the dependency injection
+                            container. Example:
                             <pre>
                             <code>
 // Example of configuring services in C#
@@ -34,11 +55,15 @@ builder.Services.AddRazorComponents();
 builder.Services.AddAuthentication();
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>AddRazorComponents()</strong>: Adds support for Blazor components in an application. This method configures the services necessary to use Razor components in a Blazor application. Example:
+                            <strong>AddRazorComponents()</strong>: Adds
+                            support for Blazor components in an
+                            application. This method configures the
+                            services necessary to use Razor components in a
+                            Blazor application. Example:
                             <pre>
                             <code>
 // Example of adding support for Razor components in C#
@@ -46,11 +71,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents();
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>AddServerSideBlazor()</strong>: Adds support for server-side Blazor in an application. This method configures the services necessary to run Blazor components on the server and make them interactive via SignalR. Example:
+                            <strong>AddServerSideBlazor()</strong>: Adds
+                            support for server-side Blazor in an
+                            application. This method configures the
+                            services necessary to run Blazor components on
+                            the server and make them interactive via
+                            SignalR. Example:
                             <pre>
                             <code>
 // Example of adding support for Blazor Server in C#
@@ -59,18 +89,23 @@ builder.Services.AddServerSideBlazor();
 var app = builder.Build();
 app.MapBlazorHub();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>builder.Build()</strong>: Builds an instance of <code>WebApplication</code> that will be executed. This method compiles the application's configuration and prepares the request pipeline for handling HTTP requests. Example:
+                            <strong>builder.Build()</strong>: Builds an
+                            instance of <code>WebApplication</code> that
+                            will be executed. This method compiles the
+                            application's configuration and prepares the
+                            request pipeline for handling HTTP requests.
+                            Example:
                             <pre>
                             <code>
 // Example of building an instance of WebApplication in C#
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -81,15 +116,26 @@ app.Run();
         <!-- Section Services Configuration -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#servicesConfigurationSection" aria-expanded="false" aria-controls="servicesConfigurationSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#servicesConfigurationSection"
+                        aria-expanded="false"
+                        aria-controls="servicesConfigurationSection">
                     Services Configuration (with Entity Framework Core)
                 </button>
             </h2>
-            <div id="servicesConfigurationSection" class="accordion-collapse collapse">
+            <div id="servicesConfigurationSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>builder.Services.AddSingleton()</strong>: Adds a service as a singleton. The same object will be shared across all requests. This method is used to register a service with a singleton lifetime, meaning a single instance of the service will be created and used throughout the application's lifetime. Example:
+                            <strong>builder.Services.AddSingleton()</strong>:
+                            Adds a service as a singleton. The same object
+                            will be shared across all requests. This method
+                            is used to register a service with a singleton
+                            lifetime, meaning a single instance of the
+                            service will be created and used throughout the
+                            application's lifetime. Example:
                             <pre>
                             <code>
 // Example of adding a singleton service in C#
@@ -97,11 +143,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton&lt;IMyService, MyService&gt;();
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>builder.Services.AddTransient()</strong>: Adds a service as transient, creating a new instance for each request. This method is used to register a service with a transient lifetime, meaning a new instance of the service will be created each time it is requested. Example:
+                            <strong>builder.Services.AddTransient()</strong>:
+                            Adds a service as transient, creating a new
+                            instance for each request. This method is used
+                            to register a service with a transient lifetime,
+                            meaning a new instance of the service will be
+                            created each time it is requested. Example:
                             <pre>
                             <code>
 // Example of adding a transient service in C#
@@ -109,11 +160,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient&lt;IMyService, MyService&gt;();
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>builder.Services.AddScoped()</strong>: Adds a service with a "scoped" lifetime, one instance per user session. This method is used to register a service with a lifetime limited to the scope of a request or session, meaning a new instance of the service will be created for each user session. Example:
+                            <strong>builder.Services.AddScoped()</strong>:
+                            Adds a service with a "scoped" lifetime, one
+                            instance per user session. This method is used
+                            to register a service with a lifetime limited to
+                            the scope of a request or session, meaning a new
+                            instance of the service will be created for each
+                            user session. Example:
                             <pre>
                             <code>
 // Example of adding a scoped service in C#
@@ -121,27 +178,39 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped&lt;IMyService, MyService&gt;();
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>builder.Services.AddHttpClient()</strong>: Allows registering and configuring an HTTP client service for external HTTP requests. This method is used to configure instances of <code>HttpClient</code> with specific settings, like default headers, timeouts, and message handlers. Example:
+                            <strong>builder.Services.AddHttpClient()</strong>:
+                            Allows registering and configuring an HTTP
+                            client service for external HTTP requests. This
+                            method is used to configure instances of
+                            <code>HttpClient</code> with specific settings,
+                            like default headers, timeouts, and message
+                            handlers. Example:
                             <pre>
                             <code>
 // Example of adding an HttpClient service in C#
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddHttpClient&lt;IMyService, MyService&gt;(client =>
+builder.Services.AddHttpClient&lt;IMyService, MyService&gt;(client =&gt;
 {
     client.BaseAddress = new Uri("https://api.example.com/");
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>builder.Services.AddAuthorizationCore()</strong>: Adds authorization services to a Blazor application, typically used to manage access to specific pages or components. This method is used to configure basic authorization services necessary to control access to resources based on user roles or claims. Example:
+                            <strong>builder.Services.AddAuthorizationCore()</strong>:
+                            Adds authorization services to a Blazor
+                            application, typically used to manage access to
+                            specific pages or components. This method is
+                            used to configure basic authorization services
+                            necessary to control access to resources based
+                            on user roles or claims. Example:
                             <pre>
                             <code>
 // Example of adding authorization services in C#
@@ -149,46 +218,59 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthorizationCore();
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>builder.Services.AddDbContext&lt;TContext&gt;()</strong>: Adds and configures an Entity Framework Core database context service. This method is used to register a database context with specific options, such as the database provider and connection string. Example:
+                            <strong>builder.Services.AddDbContext&lt;TContext&gt;()</strong>:
+                            Adds and configures an Entity Framework Core
+                            database context service. This method is used to
+                            register a database context with specific
+                            options, such as the database provider and
+                            connection string. Example:
                             <pre>
                             <code>
 // Example of adding a database context in C#
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext&lt;MyDbContext&gt;(options =>
+builder.Services.AddDbContext&lt;MyDbContext&gt;(options =&gt;
     options.UseSqlServer("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;"));
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>UseSqlServer()</strong>: Configures SQL Server as the database provider for Entity Framework Core. This method is used to specify that SQL Server will be used as the database for the Entity Framework Core context. Example:
+                            <strong>UseSqlServer()</strong>: Configures SQL
+                            Server as the database provider for Entity
+                            Framework Core. This method is used to specify
+                            that SQL Server will be used as the database for
+                            the Entity Framework Core context. Example:
                             <pre>
                             <code>
 // Example of configuring SQL Server in C#
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext&lt;MyDbContext&gt;(options =>
+builder.Services.AddDbContext&lt;MyDbContext&gt;(options =&gt;
     options.UseSqlServer("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;"));
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>UseSqlite()</strong>: Configures SQLite as the database provider in a lightweight application. This method is used to specify that SQLite will be used as the database for the Entity Framework Core context. Example:
+                            <strong>UseSqlite()</strong>: Configures SQLite
+                            as the database provider in a lightweight
+                            application. This method is used to specify that
+                            SQLite will be used as the database for the
+                            Entity Framework Core context. Example:
                             <pre>
                             <code>
 // Example of configuring SQLite in C#
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext&lt;MyDbContext&gt;(options =>
+builder.Services.AddDbContext&lt;MyDbContext&gt;(options =&gt;
     options.UseSqlite("Data Source=mydatabase.db"));
 var app = builder.Build();
 app.Run();
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -200,15 +282,24 @@ app.Run();
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#endpointsManagementSection" aria-expanded="false" aria-controls="endpointsManagementSection">
+                        data-bs-toggle="collapse"
+                        data-bs-target="#endpointsManagementSection"
+                        aria-expanded="false"
+                        aria-controls="endpointsManagementSection">
                     Endpoints Management
                 </button>
             </h2>
-            <div id="endpointsManagementSection" class="accordion-collapse collapse">
+            <div id="endpointsManagementSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>app.MapBlazorHub()</strong>: Configures routes for real-time communication via SignalR for Blazor components. This allows Blazor components to communicate with the server using SignalR, which is essential for Blazor Server applications. Example:
+                            <strong>app.MapBlazorHub()</strong>: Configures
+                            routes for real-time communication via SignalR
+                            for Blazor components. This allows Blazor
+                            components to communicate with the server using
+                            SignalR, which is essential for Blazor Server
+                            applications. Example:
                             <pre>
                             <code>
 var builder = WebApplication.CreateBuilder(args);
@@ -222,7 +313,11 @@ app.Run();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.MapFallbackToPage()</strong>: Sets a default (fallback) page if no route matches the incoming request. This is useful for handling 404 errors and redirecting users to a specific page. Example:
+                            <strong>app.MapFallbackToPage()</strong>: Sets a
+                            default (fallback) page if no route matches the
+                            incoming request. This is useful for handling
+                            404 errors and redirecting users to a specific
+                            page. Example:
                             <pre>
                             <code>
 var builder = WebApplication.CreateBuilder(args);
@@ -236,7 +331,10 @@ app.Run();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.MapControllers()</strong>: Enables routing for MVC or API controllers in a Blazor Server application. This allows defining routes for controller actions. Example:
+                            <strong>app.MapControllers()</strong>: Enables
+                            routing for MVC or API controllers in a Blazor
+                            Server application. This allows defining routes
+                            for controller actions. Example:
                             <pre>
                             <code>
 var builder = WebApplication.CreateBuilder(args);
@@ -250,7 +348,11 @@ app.Run();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.UseRouting()</strong>: Enables routing in the application to manage incoming requests. This is necessary to use routing middleware and define the application's routes. Example:
+                            <strong>app.UseRouting()</strong>: Enables
+                            routing in the application to manage incoming
+                            requests. This is necessary to use routing
+                            middleware and define the application's routes.
+                            Example:
                             <pre>
                             <code>
 var builder = WebApplication.CreateBuilder(args);
@@ -263,14 +365,17 @@ app.Run();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.UseEndpoints()</strong>: Used to manually configure the routing endpoints in the application. This allows defining routes and endpoints for HTTP requests. Example:
+                            <strong>app.UseEndpoints()</strong>: Used to
+                            manually configure the routing endpoints in the
+                            application. This allows defining routes and
+                            endpoints for HTTP requests. Example:
                             <pre>
                             <code>
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 app.UseRouting();
-app.UseEndpoints(endpoints =>
+app.UseEndpoints(endpoints =&gt;
 {
     endpoints.MapBlazorHub();
     endpoints.MapFallbackToPage("/_Host");
@@ -289,15 +394,23 @@ app.Run();
         <!-- Section Middleware and HTTP Pipeline -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#middlewareSection" aria-expanded="false" aria-controls="middlewareSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#middlewareSection"
+                        aria-expanded="false"
+                        aria-controls="middlewareSection">
                     Middleware and HTTP Pipeline
                 </button>
             </h2>
-            <div id="middlewareSection" class="accordion-collapse collapse">
+            <div id="middlewareSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>app.UseMiddleware&lt;T&gt;()</strong>: Adds custom middleware to the application's HTTP pipeline. Middleware components handle incoming HTTP requests and outgoing responses. Example:
+                            <strong>app.UseMiddleware&lt;T&gt;()</strong>: Adds
+                            custom middleware to the application's HTTP
+                            pipeline. Middleware components handle incoming
+                            HTTP requests and outgoing responses. Example:
                             <pre>
                             <code>
 public class CustomMiddleware
@@ -323,7 +436,11 @@ app.UseMiddleware&lt;CustomMiddleware&gt;();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.UseAuthentication()</strong>: Enables authentication in the application to verify user identity. This is essential for securing applications and restricting access to resources. Example:
+                            <strong>app.UseAuthentication()</strong>:
+                            Enables authentication in the application to
+                            verify user identity. This is essential for
+                            securing applications and restricting access to
+                            resources. Example:
                             <pre>
                             <code>
 // In the Configure method of Startup.cs
@@ -332,7 +449,11 @@ app.UseAuthentication();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.UseAuthorization()</strong>: Enables authorization, which controls access to resources based on the user's authentication. This works in conjunction with authentication to enforce access rules. Example:
+                            <strong>app.UseAuthorization()</strong>: Enables
+                            authorization, which controls access to
+                            resources based on the user's authentication.
+                            This works in conjunction with authentication to
+                            enforce access rules. Example:
                             <pre>
                             <code>
 // In the Configure method of Startup.cs
@@ -341,7 +462,10 @@ app.UseAuthorization();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.UseStaticFiles()</strong>: Enables the handling of static files (HTML, CSS, JS) in the application. This is necessary to serve static files to clients. Example:
+                            <strong>app.UseStaticFiles()</strong>: Enables
+                            the handling of static files (HTML, CSS, JS) in
+                            the application. This is necessary to serve
+                            static files to clients. Example:
                             <pre>
                             <code>
 // In the Configure method of Startup.cs
@@ -350,7 +474,12 @@ app.UseStaticFiles();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>app.UseHttpsRedirection()</strong>: Automatically redirects all HTTP requests to HTTPS to secure communications. This is important to ensure that all data exchanged between the client and server is encrypted. Example:
+                            <strong>app.UseHttpsRedirection()</strong>:
+                            Automatically redirects all HTTP requests to
+                            HTTPS to secure communications. This is
+                            important to ensure that all data exchanged
+                            between the client and server is encrypted.
+                            Example:
                             <pre>
                             <code>
 // In the Configure method of Startup.cs
@@ -366,15 +495,25 @@ app.UseHttpsRedirection();
         <!-- Section Database Migration -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dbMigrationSection" aria-expanded="false" aria-controls="dbMigrationSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#dbMigrationSection"
+                        aria-expanded="false"
+                        aria-controls="dbMigrationSection">
                     Database Migration (Entity Framework Core)
                 </button>
             </h2>
-            <div id="dbMigrationSection" class="accordion-collapse collapse">
+            <div id="dbMigrationSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Database.EnsureCreated()</strong>: Checks if the database is created and creates it if it does not exist, but does not apply migrations. This is useful for development or test scenarios where you want to quickly initialize a database. Example:
+                            <strong>Database.EnsureCreated()</strong>:
+                            Checks if the database is created and creates it
+                            if it does not exist, but does not apply
+                            migrations. This is useful for development or
+                            test scenarios where you want to quickly
+                            initialize a database. Example:
                             <pre>
                             <code>
 using (var context = new MyDbContext())
@@ -385,7 +524,11 @@ using (var context = new MyDbContext())
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Database.Migrate()</strong>: Applies all pending migrations to ensure the database is up-to-date with the Entity Framework model. This is essential to keep the data model in sync with the database. Example:
+                            <strong>Database.Migrate()</strong>: Applies all
+                            pending migrations to ensure the database is
+                            up-to-date with the Entity Framework model. This
+                            is essential to keep the data model in sync with
+                            the database. Example:
                             <pre>
                             <code>
 using (var context = new MyDbContext())
@@ -396,7 +539,11 @@ using (var context = new MyDbContext())
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>dotnet ef migrations add &lt;MigrationName&gt;</strong>: CLI command used to add a migration to the application that describes changes to the database schema. This generates a migration file that can be applied to the database. Example:
+                            <strong>dotnet ef migrations add &lt:MigrationName&gt;</strong>:
+                            CLI command used to add a migration to the
+                            application that describes changes to the
+                            database schema. This generates a migration file
+                            that can be applied to the database. Example:
                             <pre>
                             <code>
 dotnet ef migrations add InitialCreate
@@ -404,7 +551,10 @@ dotnet ef migrations add InitialCreate
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>dotnet ef database update</strong>: CLI command that applies migrations to the database. This updates the database to match the current data model. Example:
+                            <strong>dotnet ef database update</strong>: CLI
+                            command that applies migrations to the database.
+                            This updates the database to match the current
+                            data model. Example:
                             <pre>
                             <code>
 dotnet ef database update
@@ -419,22 +569,252 @@ dotnet ef database update
         <!-- Section Running the Application -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#runAppSection" aria-expanded="false" aria-controls="runAppSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#runAppSection"
+                        aria-expanded="false"
+                        aria-controls="runAppSection">
                     Running the Application
                 </button>
             </h2>
-            <div id="runAppSection" class="accordion-collapse collapse">
+            <div id="runAppSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>app.Run()</strong>: Method used to start the Blazor Web application after configuring all services, middleware, and endpoints. This method blocks the calling thread and begins listening for HTTP requests. Example:
+                            <strong>app.Run()</strong>: Method used to start
+                            the Blazor Web application after configuring all
+                            services, middleware, and endpoints. This method
+                            blocks the calling thread and begins listeningfor HTTP requests. Example:
                             <pre>
                             <code>
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 app.UseRouting();
-app.UseEndpoints(endpoints =>
+app.UseEndpoints(endpoints =&gt;
+{
+    endpoints.MapBlazorHub();
+    endpoints.MapFallbackToPage("/_Host");
+    endpoints.MapControllers();
+});
+
+app.Run();
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Middleware and HTTP Pipeline -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#middlewareSection"
+                        aria-expanded="false"
+                        aria-controls="middlewareSection">
+                    Middleware and HTTP Pipeline
+                </button>
+            </h2>
+            <div id="middlewareSection"
+                 class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>app.UseMiddleware&lt;T&gt;()</strong>:
+                            Adds custom middleware to the application's
+                            HTTP pipeline. Middleware components handle
+                            incoming HTTP requests and outgoing responses.
+                            Example:
+                            <pre>
+                            <code>
+public class CustomMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public CustomMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // Middleware logic
+        await context.Response.WriteAsync("Custom middleware executed.");
+        await _next(context);
+    }
+}
+
+// In the Configure method of Startup.cs
+app.UseMiddleware&lt;CustomMiddleware&gt;();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseAuthentication()</strong>:
+                            Enables authentication in the application to
+                            verify user identity. This is essential for
+                            securing applications and restricting access to
+                            resources. Example:
+                            <pre>
+                            <code>
+// In the Configure method of Startup.cs
+app.UseAuthentication();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseAuthorization()</strong>:
+                            Enables authorization, which controls access to
+                            resources based on the user's authentication.
+                            This works in conjunction with authentication to
+                            enforce access rules. Example:
+                            <pre>
+                            <code>
+// In the Configure method of Startup.cs
+app.UseAuthorization();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseStaticFiles()</strong>: Enables
+                            the handling of static files (HTML, CSS, JS) in
+                            the application. This is necessary to serve
+                            static files to clients. Example:
+                            <pre>
+                            <code>
+// In the Configure method of Startup.cs
+app.UseStaticFiles();
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>app.UseHttpsRedirection()</strong>:
+                            Automatically redirects all HTTP requests to
+                            HTTPS to secure communications. This is
+                            important to ensure that all data exchanged
+                            between the client and server is encrypted.
+                            Example:
+                            <pre>
+                            <code>
+// In the Configure method of Startup.cs
+app.UseHttpsRedirection();
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Database Migration -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#dbMigrationSection"
+                        aria-expanded="false"
+                        aria-controls="dbMigrationSection">
+                    Database Migration (Entity Framework Core)
+                </button>
+            </h2>
+            <div id="dbMigrationSection"
+                 class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Database.EnsureCreated()</strong>:
+                            Checks if the database is created and creates it
+                            if it does not exist, but does not apply
+                            migrations. This is useful for development or
+                            test scenarios where you want to quickly
+                            initialize a database. Example:
+                            <pre>
+                            <code>
+using (var context = new MyDbContext())
+{
+    context.Database.EnsureCreated();
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Database.Migrate()</strong>: Applies all
+                            pending migrations to ensure the database is
+                            up-to-date with the Entity Framework model. This
+                            is essential to keep the data model in sync with
+                            the database. Example:
+                            <pre>
+                            <code>
+using (var context = new MyDbContext())
+{
+    context.Database.Migrate();
+}
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>
+                                dotnet ef migrations add
+                                &lt;MigrationName&gt;
+                            </strong>: CLI command used
+                            to add a migration to the application that
+                            describes changes to the database schema. This
+                            generates a migration file that can be applied
+                            to the database. Example:
+                            <pre>
+                            <code>
+dotnet ef migrations add InitialCreate
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>dotnet ef database update</strong>: CLI
+                            command that applies migrations to the database.
+                            This updates the database to match the current
+                            data model. Example:
+                            <pre>
+                            <code>
+dotnet ef database update
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Running the Application -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#runAppSection"
+                        aria-expanded="false"
+                        aria-controls="runAppSection">
+                    Running the Application
+                </button>
+            </h2>
+            <div id="runAppSection"
+                 class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>app.Run()</strong>: Method used to start
+                            the Blazor Web application after configuring all
+                            services, middleware, and endpoints. This method
+                            blocks the calling thread and begins listening
+                            for HTTP requests. Example:
+                            <pre>
+                            <code>
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.UseRouting();
+app.UseEndpoints(endpoints =&gt;
 {
     endpoints.MapBlazorHub();
     endpoints.MapFallbackToPage("/_Host");
@@ -445,7 +825,11 @@ app.Run();
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Environment</strong>: Variable used to define the environment in which the application is running (e.g., Development, Production). This allows configuring the application differently based on the environment. Example:
+                            <strong>Environment</strong>: Variable used to
+                            define the environment in which the application
+                            is running (e.g., Development, Production). This
+                            allows configuring the application differently
+                            based on the environment. Example:
                             <pre>
                             <code>
 var builder = WebApplication.CreateBuilder(args);
@@ -461,8 +845,6 @@ else
     app.UseHsts();
 }
 
-
-
 app.Run();
                             </code>
                             </pre>
@@ -471,12 +853,201 @@ app.Run();
                 </div>
             </div>
         </div>
+
+        <!-- Section WebAssembly -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#webAssemblySection"
+                        aria-expanded="false"
+                        aria-controls="webAssemblySection">
+                    WebAssembly (Wasm)
+                </button>
+            </h2>
+            <div id="webAssemblySection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <p class="h4">What is WebAssembly (Wasm)?</p>
+                            <p><strong>WebAssembly</strong>, commonly
+                            abbreviated as <strong>Wasm</strong>, is a binary
+                            instruction format that allows code written in
+                            high-level languages (such as C, C++, Rust, etc.)
+                            to run efficiently in web browsers. It provides a
+                            way to run code at near-native speed, bridging the
+                            performance gap between JavaScript and native
+                            code.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h4">Why is WebAssembly Important?</p>
+                            <p>WebAssembly is important because it enables
+                            high-performance applications, such as games,
+                            video editors, or scientific simulations, to run
+                            in web browsers without requiring plugins. It is
+                            designed to be portable, fast, and secure, making
+                            it an ideal solution for bringing complex
+                            applications to the web.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h4">Key Features of WebAssembly</p>
+                            <ul>
+                                <li><strong>Performance:</strong> WebAssembly
+                                executes code at near-native speeds, which is
+                                much faster than traditional JavaScript for
+                                certain use cases.</li>
+                                <li><strong>Portability:</strong> Wasm is
+                                platform-agnostic, meaning the same WebAssembly
+                                code can run in any modern browser on any
+                                device, including desktops, mobile phones, and
+                                tablets.</li>
+                                <li><strong>Security:</strong> WebAssembly
+                                runs in a sandboxed execution environment,
+                                making it secure and less prone to common
+                                vulnerabilities.</li>
+                                <li><strong>Interoperability with
+                                JavaScript:</strong> WebAssembly can be used
+                                alongside JavaScript, allowing developers to
+                                enhance the performance of critical parts of
+                                their applications while still using the
+                                flexibility of JavaScript for the rest.</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h4">Common Use Cases of WebAssembly</p>
+                            <ul>
+                                <li><strong>Games:</strong> WebAssembly enables
+                                high-performance games to run in browsers
+                                without the need for plugins like Flash or
+                                Java.</li>
+                                <li><strong>Heavy Computational Tasks:</strong>
+                                Applications requiring heavy computations, such
+                                as 3D rendering, image processing, or AI, can
+                                leverage WebAssembly for faster execution.</li>
+                                <li><strong>Porting Desktop
+                                Applications:</strong> WebAssembly allows
+                                developers to port existing desktop
+                                applications written in C, C++, or Rust to the
+                                web with minimal code changes.</li>
+                                <li><strong>Video and Audio
+                                Processing:</strong> Real-time video and audio
+                                editing or processing apps can benefit from
+                                WebAssembly’s performance improvements.</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h4">Benefits of WebAssembly</p>
+                            <p>Some key benefits of using WebAssembly in web
+                            development include:</p>
+                            <ul>
+                                <li>Improved performance for computationally
+                                intensive tasks</li>
+                                <li>Cross-platform support in all modern
+                                browsers</li>
+                                <li>Secure execution environment with
+                                sandboxing</li>
+                                <li>Seamless integration with existing
+                                JavaScript code</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <p>By adopting WebAssembly, developers can bring
+                            more complex, high-performance applications to the
+                            web, enhancing the user experience and expanding
+                            the range of possible web-based applications.</p>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>WebAssembly</strong>: A binary format for
+                            executables on the web. WebAssembly (Wasm) allows
+                            high-performance code execution in web browsers.
+                            It is designed to complement JavaScript, enabling
+                            developers to write parts of their applications in
+                            languages like C, C++, and Rust, and then compile
+                            them to WebAssembly. Example:
+                            <pre>
+                            <code>
+(module
+  (func $add (param $lhs i32) (param $rhs i32) (result i32)
+    local.get $lhs
+    local.get $rhs
+    i32.add)
+  (export "add" (func $add)))
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Compilation</strong>: WebAssembly is
+                            designed to be compiled from low-level programming
+                            languages like C, C++, and Rust. The source code is
+                            compiled into a binary format (.wasm) that can be
+                            executed in the browser. Example:
+                            <pre>
+                            <code>
+# Compiling a C file to WebAssembly
+$ emcc hello.c -o hello.html
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Interoperability</strong>: WebAssembly can
+                            interact with JavaScript, allowing developers to
+                            call JavaScript functions from WebAssembly and vice
+                            versa. This enables seamless integration into
+                            existing web applications. Example:
+                            <pre>
+                            <code>
+const importObject = {
+  env: {
+    consoleLog: (arg) => console.log(arg)
+  }
+};
+
+WebAssembly.instantiateStreaming(fetch('module.wasm'), importObject)
+  .then(obj => {
+    obj.instance.exports.exportedFunc();
+  });
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Performance</strong>: WebAssembly is
+                            designed to be fast and efficient. It allows code
+                            to run at near-native speed, which is particularly
+                            useful for applications requiring intensive
+                            computations like games, graphics applications,
+                            and data processing. Example:
+                            <pre>
+                            <code>
+# Performance example with WebAssembly
+function calculateFactorial(n) {
+  if (n === 0) return 1;
+  return n * calculateFactorial(n - 1);
+}
+
+console.time('JavaScript');
+console.log(calculateFactorial(10));
+console.timeEnd('JavaScript');
+
+console.time('WebAssembly');
+// Call the WebAssembly function to calculate factorial
+console.timeEnd('WebAssembly');
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0" target="_blank">Blazor Web App documentation</a>
+                <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0"
+                   target="_blank">Blazor Web App documentation</a>
             </h5>
         </div>
     </div>

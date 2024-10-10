@@ -1,19 +1,33 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">Vocabulaire GitHub</h1>
+    <h1 class="text-center text-primary mb-4">
+        Vocabulaire GitHub
+    </h1>
 
     <div class="accordion">
         <!-- Section GitHub Basics -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gitHubBasicsSection" aria-expanded="false" aria-controls="gitHubBasicsSection">
+                <button class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#gitHubBasicsSection"
+                        aria-expanded="false"
+                        aria-controls="gitHubBasicsSection">
                     Concepts de Base de GitHub
                 </button>
             </h2>
-            <div id="gitHubBasicsSection" class="accordion-collapse collapse">
+            <div id="gitHubBasicsSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Repository (Repo)</strong> : Espace ou projet où votre code et historique sont stockés sur GitHub. Un dépôt contient tous les fichiers de votre projet ainsi que l'historique de leurs modifications. Il permet de collaborer avec d'autres développeurs et de suivre les changements apportés au code. Exemple d'utilisation :
+                            <strong>Repository (Repo)</strong> :
+                            Espace ou projet où votre code et historique sont
+                            stockés sur GitHub. Un dépôt contient tous les
+                            fichiers de votre projet ainsi que l'historique de
+                            leurs modifications. Il permet de collaborer avec
+                            d'autres développeurs et de suivre les changements
+                            apportés au code. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'un nouveau dépôt sur GitHub
@@ -21,72 +35,109 @@ git init my-repo
 cd my-repo
 git remote add origin https://github.com/username/my-repo.git
 git push -u origin main
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Branch</strong> : Version alternative d'un dépôt où vous pouvez développer de nouvelles fonctionnalités indépendamment de la branche principale. Les branches permettent de travailler sur différentes fonctionnalités ou corrections de bugs sans affecter le code stable de la branche principale. Exemple d'utilisation :
+                            <strong>Branch</strong> :
+                            Version alternative d'un dépôt où vous pouvez
+                            développer de nouvelles fonctionnalités
+                            indépendamment de la branche principale. Les
+                            branches permettent de travailler sur différentes
+                            fonctionnalités ou corrections de bugs sans
+                            affecter le code stable de la branche principale.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Création et basculement vers une nouvelle branche
 git checkout -b new-feature
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Commit</strong> : Modification ou ensemble de modifications enregistrées dans un dépôt. Un commit capture l'état actuel des fichiers dans le dépôt et enregistre un message décrivant les changements. Exemple d'utilisation :
+                            <strong>Commit</strong> :
+                            Modification ou ensemble de modifications
+                            enregistrées dans un dépôt. Un commit capture
+                            l'état actuel des fichiers dans le dépôt et
+                            enregistre un message décrivant les changements.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Ajout de fichiers au commit et enregistrement des modifications
 git add .
 git commit -m "Ajout de la nouvelle fonctionnalité"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Clone</strong> : Copier un dépôt distant sur votre machine locale. Cloner un dépôt vous permet de travailler sur une copie locale du projet et de synchroniser les changements avec le dépôt distant. Exemple d'utilisation :
+                            <strong>Clone</strong> :
+                            Copier un dépôt distant sur votre machine locale.
+                            Cloner un dépôt vous permet de travailler sur une
+                            copie locale du projet et de synchroniser les
+                            changements avec le dépôt distant. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Clonage d'un dépôt GitHub
 git clone https://github.com/username/repo.git
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Fork</strong> : Copier un projet depuis un dépôt GitHub sur votre propre compte, vous permettant de modifier le code sans affecter l'original. Un fork est souvent utilisé pour contribuer à des projets open source. Exemple d'utilisation :
+                            <strong>Fork</strong> :
+                            Copier un projet depuis un dépôt GitHub sur votre
+                            propre compte, vous permettant de modifier le code
+                            sans affecter l'original. Un fork est souvent
+                            utilisé pour contribuer à des projets open source.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Fork d'un dépôt sur GitHub via l'interface web
 // Cliquez sur le bouton "Fork" sur la page du dépôt
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Pull Request (PR)</strong> : Demande d'intégration de vos modifications dans la branche principale ou dans un autre projet. Une pull request permet de proposer des changements, de discuter de leur pertinence et de les réviser avant de les fusionner. Exemple d'utilisation :
+                            <strong>Pull Request (PR)</strong> :
+                            Demande d'intégration de vos modifications dans la
+                            branche principale ou dans un autre projet. Une
+                            pull request permet de proposer des changements, de
+                            discuter de leur pertinence et de les réviser avant
+                            de les fusionner. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'une pull request sur GitHub via l'interface web
 // Allez sur la page du dépôt et cliquez sur "New pull request"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Merge</strong> : Fusionner une branche dans une autre (généralement dans la branche principale). La fusion intègre les changements d'une branche dans une autre, combinant les historiques de commits. Exemple d'utilisation :
+                            <strong>Merge</strong> :
+                            Fusionner une branche dans une autre (généralement
+                            dans la branche principale). La fusion intègre les
+                            changements d'une branche dans une autre, combinant
+                            les historiques de commits. Exemple d'utilisation :
                             <pre>
                             <code>
 // Fusion d'une branche dans la branche principale
 git checkout main
 git merge new-feature
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Git</strong> : Système de gestion de version distribué utilisé par GitHub pour suivre les changements dans le code. Git permet de gérer l'historique des modifications, de collaborer avec d'autres développeurs et de gérer différentes versions du code. Exemple d'utilisation :
+                            <strong>Git</strong> :
+                            Système de gestion de version distribué utilisé par
+                            GitHub pour suivre les changements dans le code.
+                            Git permet de gérer l'historique des modifications,
+                            de collaborer avec d'autres développeurs et de
+                            gérer différentes versions du code. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Initialisation d'un nouveau dépôt Git
 git init
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -97,65 +148,110 @@ git init
         <!-- Section Gestion de Projet -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#projectManagementSection" aria-expanded="false" aria-controls="projectManagementSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#projectManagementSection"
+                        aria-expanded="false"
+                        aria-controls="projectManagementSection">
                     Gestion de Projet sur GitHub
                 </button>
             </h2>
-            <div id="projectManagementSection" class="accordion-collapse collapse">
+            <div id="projectManagementSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Issue</strong> : Ticket créé pour signaler un bogue, demander une fonctionnalité ou poser une question. Les issues permettent de suivre les problèmes et les améliorations dans un projet. Elles peuvent être commentées, étiquetées, assignées à des développeurs et liées à des pull requests pour une meilleure gestion des tâches. Exemple d'utilisation :
+                            <strong>Issue</strong> :
+                            Ticket créé pour signaler un bogue, demander une
+                            fonctionnalité ou poser une question. Les issues
+                            permettent de suivre les problèmes et les
+                            améliorations dans un projet. Elles peuvent être
+                            commentées, étiquetées, assignées à des développeurs
+                            et liées à des pull requests pour une meilleure
+                            gestion des tâches. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'une issue sur GitHub via l'interface web
 // Allez sur la page du dépôt et cliquez sur "Issues" puis "New issue"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Milestone</strong> : Série d'issues ou de pull requests liées à une fonctionnalité ou une version spécifique. Les milestones aident à organiser et à planifier le travail en regroupant les tâches liées. Elles permettent de suivre la progression vers des objectifs spécifiques et de gérer les versions du projet. Exemple d'utilisation :
+                            <strong>Milestone</strong> :
+                            Série d'issues ou de pull requests liées à une
+                            fonctionnalité ou une version spécifique. Les
+                            milestones aident à organiser et à planifier le
+                            travail en regroupant les tâches liées. Elles
+                            permettent de suivre la progression vers des
+                            objectifs spécifiques et de gérer les versions du
+                            projet. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'un milestone sur GitHub via l'interface web
 // Allez sur la page du dépôt, cliquez sur "Milestones" puis "New milestone"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Labels</strong> : Étiquettes qui permettent de catégoriser les issues et les pull requests. Les labels facilitent la gestion et la recherche des tâches en ajoutant des catégories comme "bug", "enhancement", "documentation", etc. Ils aident à prioriser et à organiser le travail. Exemple d'utilisation :
+                            <strong>Labels</strong> :
+                            Étiquettes qui permettent de catégoriser les issues
+                            et les pull requests. Les labels facilitent la
+                            gestion et la recherche des tâches en ajoutant des
+                            catégories comme "bug", "enhancement",
+                            "documentation", etc. Ils aident à prioriser et à
+                            organiser le travail. Exemple d'utilisation :
                             <pre>
                             <code>
 // Ajout d'un label à une issue sur GitHub via l'interface web
 // Ouvrez une issue, cliquez sur "Labels" et sélectionnez les labels appropriés
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Projects</strong> : Outils de gestion de projet intégrés qui vous permettent d'organiser les tâches sous forme de tableaux Kanban. Les projets offrent une vue d'ensemble des tâches en cours, à faire et terminées. Ils aident à visualiser le flux de travail et à gérer les tâches de manière plus efficace. Exemple d'utilisation :
+                            <strong>Projects</strong> :
+                            Outils de gestion de projet intégrés qui vous
+                            permettent d'organiser les tâches sous forme de
+                            tableaux Kanban. Les projets offrent une vue
+                            d'ensemble des tâches en cours, à faire et
+                            terminées. Ils aident à visualiser le flux de
+                            travail et à gérer les tâches de manière plus
+                            efficace. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'un projet sur GitHub via l'interface web
 // Allez sur la page du dépôt, cliquez sur "Projects" puis "New project"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Assignees</strong> : Personnes assignées à une issue ou une pull request pour être responsables de sa résolution. Assigner des développeurs à des tâches spécifiques permet de clarifier les responsabilités et de suivre qui travaille sur quoi. Cela améliore la collaboration et la gestion des tâches. Exemple d'utilisation :
+                            <strong>Assignees</strong> :
+                            Personnes assignées à une issue ou une pull request
+                            pour être responsables de sa résolution. Assigner
+                            des développeurs à des tâches spécifiques permet de
+                            clarifier les responsabilités et de suivre qui
+                            travaille sur quoi. Cela améliore la collaboration
+                            et la gestion des tâches. Exemple d'utilisation :
                             <pre>
                             <code>
 // Assignation d'une issue à un développeur sur GitHub via l'interface web
 // Ouvrez une issue, cliquez sur "Assignees" et sélectionnez le développeur approprié
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Mentions</strong> : Utiliser &#64; suivi du nom d'un utilisateur pour notifier directement cette personne dans une issue ou un commentaire. Les mentions attirent l'attention des utilisateurs concernés et facilitent la communication et la collaboration au sein de l'équipe. Exemple d'utilisation :
+                            <strong>Mentions</strong> :
+                            Utiliser &#64; suivi du nom d'un utilisateur pour
+                            notifier directement cette personne dans une issue
+                            ou un commentaire. Les mentions attirent l'attention
+                            des utilisateurs concernés et facilitent la
+                            communication et la collaboration au sein de
+                            l'équipe. Exemple d'utilisation :
                             <pre>
                             <code>
 // Mention d'un utilisateur dans un commentaire sur GitHub
 // Tapez &#64;username dans le commentaire pour notifier l'utilisateur
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -166,51 +262,94 @@ git init
         <!-- Section Collaboration -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collaborationSection" aria-expanded="false" aria-controls="collaborationSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collaborationSection"
+                        aria-expanded="false"
+                        aria-controls="collaborationSection">
                     Collaboration sur GitHub
                 </button>
             </h2>
-            <div id="collaborationSection" class="accordion-collapse collapse">
+            <div id="collaborationSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Collaborators</strong> : Utilisateurs ayant accès à un dépôt pour contribuer directement au code. Les collaborateurs peuvent cloner le dépôt, créer des branches, soumettre des commits et ouvrir des pull requests. Ils jouent un rôle clé dans le développement collaboratif et la gestion des projets sur GitHub. Exemple d'utilisation :
+                            <strong>Collaborators</strong> :
+                            Utilisateurs ayant accès à un dépôt pour contribuer
+                            directement au code. Les collaborateurs peuvent
+                            cloner le dépôt, créer des branches, soumettre des
+                            commits et ouvrir des pull requests. Ils jouent un
+                            rôle clé dans le développement collaboratif et la
+                            gestion des projets sur GitHub. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Ajout d'un collaborateur à un dépôt sur GitHub via l'interface web
 // Allez sur la page du dépôt, cliquez sur "Settings" puis "Collaborators" et ajoutez l'utilisateur
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Contributor</strong> : Personne ayant soumis une pull request ou contribué à un projet open-source. Les contributeurs peuvent être des membres de l'équipe ou des développeurs externes qui proposent des améliorations, des corrections de bugs ou de nouvelles fonctionnalités. Leur participation est essentielle pour l'évolution et l'amélioration des projets open-source. Exemple d'utilisation :
+                            <strong>Contributor</strong> :
+                            Personne ayant soumis une pull request ou contribué
+                            à un projet open-source. Les contributeurs peuvent
+                            être des membres de l'équipe ou des développeurs
+                            externes qui proposent des améliorations, des
+                            corrections de bugs ou de nouvelles fonctionnalités.
+                            Leur participation est essentielle pour l'évolution
+                            et l'amélioration des projets open-source. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Contribution à un projet open-source via une pull request
 // Forkez le dépôt, faites vos modifications, puis ouvrez une pull request pour proposer vos changements
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Code Review</strong> : Processus d'examen du code soumis dans une pull request avant de fusionner les modifications. La revue de code permet de détecter les erreurs, d'améliorer la qualité du code et de partager des connaissances entre les membres de l'équipe. Elle est souvent réalisée par des collaborateurs ou des mainteneurs du projet. Exemple d'utilisation :
+                            <strong>Code Review</strong> :
+                            Processus d'examen du code soumis dans une pull
+                            request avant de fusionner les modifications. La
+                            revue de code permet de détecter les erreurs,
+                            d'améliorer la qualité du code et de partager des
+                            connaissances entre les membres de l'équipe. Elle
+                            est souvent réalisée par des collaborateurs ou des
+                            mainteneurs du projet. Exemple d'utilisation :
                             <pre>
                             <code>
 // Réalisation d'une revue de code sur GitHub via l'interface web
 // Allez sur la pull request, cliquez sur "Files changed" et ajoutez vos commentaires et suggestions
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Blame</strong> : Fonction GitHub pour voir qui a effectué une modification spécifique dans un fichier. La commande <code>git blame</code> permet de suivre l'historique des modifications ligne par ligne, identifiant l'auteur et le commit associé. Cela aide à comprendre l'origine des changements et à attribuer la responsabilité des modifications. Exemple d'utilisation :
+                            <strong>Blame</strong> :
+                            Fonction GitHub pour voir qui a effectué une
+                            modification spécifique dans un fichier. La commande
+                            <code>git blame</code> permet de suivre l'historique
+                            des modifications ligne par ligne, identifiant
+                            l'auteur et le commit associé. Cela aide à
+                            comprendre l'origine des changements et à attribuer
+                            la responsabilité des modifications. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Utilisation de la commande git blame pour voir l'historique des modifications
 git blame filename
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Actions GitHub</strong> : Plateforme d'intégration continue et de livraison continue (CI/CD) qui automatise les flux de travail à partir de votre dépôt GitHub. GitHub Actions permet de créer des workflows personnalisés pour compiler, tester et déployer le code automatiquement. Cela améliore l'efficacité et la fiabilité du processus de développement. Exemple d'utilisation :
+                            <strong>Actions GitHub</strong> :
+                            Plateforme d'intégration continue et de livraison
+                            continue (CI/CD) qui automatise les flux de travail
+                            à partir de votre dépôt GitHub. GitHub Actions
+                            permet de créer des workflows personnalisés pour
+                            compiler, tester et déployer le code automatiquement.
+                            Cela améliore l'efficacité et la fiabilité du
+                            processus de développement. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'un workflow GitHub Actions pour compiler et tester le code
@@ -233,16 +372,24 @@ jobs:
         run: dotnet build --configuration Release
     - name: Test with dotnet
         run: dotnet test --no-build --verbosity normal
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Wiki</strong> : Documentation collaborative pour un projet, stockée directement dans un dépôt. Le wiki permet de créer et de maintenir une documentation détaillée, accessible à tous les contributeurs. Il est souvent utilisé pour documenter les fonctionnalités, les guides d'utilisation, les processus de développement et les informations importantes sur le projet. Exemple d'utilisation :
+                            <strong>Wiki</strong> :
+                            Documentation collaborative pour un projet, stockée
+                            directement dans un dépôt. Le wiki permet de créer
+                            et de maintenir une documentation détaillée,
+                            accessible à tous les contributeurs. Il est souvent
+                            utilisé pour documenter les fonctionnalités, les
+                            guides d'utilisation, les processus de développement
+                            et les informations importantes sur le projet.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Création et édition d'une page de wiki sur GitHub via l'interface web
 // Allez sur la page du dépôt, cliquez sur "Wiki" puis "New Page" pour ajouter une nouvelle page de documentation
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -253,79 +400,137 @@ jobs:
         <!-- Section Sécurité et Gestion de Version -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securityVersioningSection" aria-expanded="false" aria-controls="securityVersioningSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#securityVersioningSection"
+                        aria-expanded="false"
+                        aria-controls="securityVersioningSection">
                     Sécurité et Gestion de Version
                 </button>
             </h2>
-            <div id="securityVersioningSection" class="accordion-collapse collapse">
+            <div id="securityVersioningSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>SSH Key</strong> : Clé de sécurité utilisée pour accéder à votre compte GitHub et effectuer des opérations sécurisées. Une clé SSH est composée d'une paire de clés (publique et privée). La clé publique est ajoutée à votre compte GitHub, tandis que la clé privée reste sur votre machine. Cela permet une authentification sécurisée sans avoir à entrer votre mot de passe à chaque fois. Exemple d'utilisation :
+                            <strong>SSH Key</strong> :
+                            Clé de sécurité utilisée pour accéder à votre
+                            compte GitHub et effectuer des opérations sécurisées.
+                            Une clé SSH est composée d'une paire de clés
+                            (publique et privée). La clé publique est ajoutée à
+                            votre compte GitHub, tandis que la clé privée reste
+                            sur votre machine. Cela permet une authentification
+                            sécurisée sans avoir à entrer votre mot de passe à
+                            chaque fois. Exemple d'utilisation :
                             <pre>
                             <code>
 // Génération d'une clé SSH et ajout à GitHub
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 cat ~/.ssh/id_rsa.pub
 // Copiez la clé publique et ajoutez-la à votre compte GitHub sous "Settings" > "SSH and GPG keys"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Access Token</strong> : Jeton d'accès permettant de faire des requêtes à l'API GitHub de manière sécurisée. Les tokens d'accès sont utilisés pour authentifier les applications et les scripts qui interagissent avec l'API GitHub. Ils offrent un moyen sécurisé de gérer les autorisations sans utiliser votre mot de passe GitHub. Exemple d'utilisation :
+                            <strong>Access Token</strong> :
+                            Jeton d'accès permettant de faire des requêtes à
+                            l'API GitHub de manière sécurisée. Les tokens
+                            d'accès sont utilisés pour authentifier les
+                            applications et les scripts qui interagissent avec
+                            l'API GitHub. Ils offrent un moyen sécurisé de
+                            gérer les autorisations sans utiliser votre mot de
+                            passe GitHub. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'un token d'accès personnel sur GitHub
 // Allez sur "Settings" > "Developer settings" > "Personal access tokens" > "Generate new token"
 // Utilisez le token généré pour authentifier les requêtes API
 curl -H "Authorization: token YOUR_ACCESS_TOKEN" https://api.github.com/user
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Version Tag</strong> : Balise utilisée pour marquer une version spécifique du code dans un dépôt. Les tags de version sont souvent utilisés pour indiquer des versions stables ou des points de référence importants dans l'historique du projet. Par exemple, un tag <code>v1.0.0</code> peut indiquer la première version stable d'un projet. Exemple d'utilisation :
+                            <strong>Version Tag</strong> :
+                            Balise utilisée pour marquer une version spécifique
+                            du code dans un dépôt. Les tags de version sont
+                            souvent utilisés pour indiquer des versions stables
+                            ou des points de référence importants dans
+                            l'historique du projet. Par exemple, un tag
+                            <code>v1.0.0</code> peut indiquer la première
+                            version stable d'un projet. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création et push d'un tag de version sur GitHub
 git tag v1.0.0
 git push origin v1.0.0
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Release</strong> : Publication d'une version stable d'un projet avec des fichiers binaires, des notes de version, et des tags. Les releases permettent de distribuer des versions spécifiques de votre projet aux utilisateurs. Elles incluent souvent des fichiers exécutables, des bibliothèques, et des informations sur les changements apportés depuis la dernière version. Exemple d'utilisation :
+                            <strong>Release</strong> :
+                            Publication d'une version stable d'un projet avec
+                            des fichiers binaires, des notes de version, et des
+                            tags. Les releases permettent de distribuer des
+                            versions spécifiques de votre projet aux
+                            utilisateurs. Elles incluent souvent des fichiers
+                            exécutables, des bibliothèques, et des informations
+                            sur les changements apportés depuis la dernière
+                            version. Exemple d'utilisation :
                             <pre>
                             <code>
 // Création d'une release sur GitHub via l'interface web
 // Allez sur la page du dépôt, cliquez sur "Releases" puis "Draft a new release"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Dependency Graph</strong> : Outil qui affiche les dépendances et avertit si des vulnérabilités sont détectées. Le graphe de dépendances permet de visualiser les bibliothèques et les packages dont dépend votre projet. Il aide à identifier les mises à jour nécessaires et à gérer les vulnérabilités de sécurité. Exemple d'utilisation :
+                            <strong>Dependency Graph</strong> :
+                            Outil qui affiche les dépendances et avertit si des
+                            vulnérabilités sont détectées. Le graphe de
+                            dépendances permet de visualiser les bibliothèques
+                            et les packages dont dépend votre projet. Il aide à
+                            identifier les mises à jour nécessaires et à gérer
+                            les vulnérabilités de sécurité. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Visualisation du graphe de dépendances sur GitHub
 // Allez sur la page du dépôt, cliquez sur "Insights" puis "Dependency graph"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Branch Protection</strong> : Fonctionnalité de GitHub pour protéger une branche contre les modifications non autorisées (ex: besoin de revue avant un merge). Les règles de protection de branche peuvent inclure des exigences telles que des revues de code obligatoires, des tests de CI réussis, et des restrictions sur qui peut pousser des modifications. Exemple d'utilisation :
+                            <strong>Branch Protection</strong> :
+                            Fonctionnalité de GitHub pour protéger une branche
+                            contre les modifications non autorisées (ex: besoin
+                            de revue avant un merge). Les règles de protection
+                            de branche peuvent inclure des exigences telles que
+                            des revues de code obligatoires, des tests de CI
+                            réussis, et des restrictions sur qui peut pousser
+                            des modifications. Exemple d'utilisation :
                             <pre>
                             <code>
 // Configuration des règles de protection de branche sur GitHub
 // Allez sur la page du dépôt, cliquez sur "Settings" > "Branches" > "Add rule"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>GitHub Pages</strong> : Fonctionnalité de GitHub qui permet d'héberger des pages web statiques directement depuis un dépôt. GitHub Pages est souvent utilisé pour héberger des sites de documentation, des blogs, ou des portfolios. Il prend en charge les générateurs de sites statiques comme Jekyll et permet de déployer facilement des sites web à partir de branches spécifiques de votre dépôt. Exemple d'utilisation :
+                            <strong>GitHub Pages</strong> :
+                            Fonctionnalité de GitHub qui permet d'héberger des
+                            pages web statiques directement depuis un dépôt.
+                            GitHub Pages est souvent utilisé pour héberger des
+                            sites de documentation, des blogs, ou des
+                            portfolios. Il prend en charge les générateurs de
+                            sites statiques comme Jekyll et permet de déployer
+                            facilement des sites web à partir de branches
+                            spécifiques de votre dépôt. Exemple d'utilisation :
                             <pre>
                             <code>
 // Déploiement d'un site avec GitHub Pages
 // Allez sur la page du dépôt, cliquez sur "Settings" > "Pages" et configurez la source de déploiement
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -336,34 +541,65 @@ git push origin v1.0.0
         <!-- Section Utilisation Avancée -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedUsageSection" aria-expanded="false" aria-controls="advancedUsageSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#advancedUsageSection"
+                        aria-expanded="false"
+                        aria-controls="advancedUsageSection">
                     Utilisation Avancée
                 </button>
             </h2>
-            <div id="advancedUsageSection" class="accordion-collapse collapse">
+            <div id="advancedUsageSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Webhooks</strong> : Points de connexion permettant de recevoir des notifications en temps réel lorsqu'un événement se produit dans un dépôt GitHub. Les webhooks peuvent être configurés pour déclencher des actions spécifiques, comme l'envoi de notifications, l'exécution de scripts ou l'intégration avec des services externes, en réponse à des événements tels que des commits, des pull requests ou des issues. Exemple d'utilisation :
+                            <strong>Webhooks</strong> :
+                            Points de connexion permettant de recevoir des
+                            notifications en temps réel lorsqu'un événement se
+                            produit dans un dépôt GitHub. Les webhooks peuvent
+                            être configurés pour déclencher des actions
+                            spécifiques, comme l'envoi de notifications,
+                            l'exécution de scripts ou l'intégration avec des
+                            services externes, en réponse à des événements tels
+                            que des commits, des pull requests ou des issues.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Configuration d'un webhook sur GitHub via l'interface web
 // Allez sur la page du dépôt, cliquez sur "Settings" > "Webhooks" > "Add webhook"
 // Entrez l'URL du webhook et sélectionnez les événements à surveiller
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>API GitHub</strong> : Interface permettant d'automatiser et d'interagir avec les fonctionnalités de GitHub via des requêtes HTTP. L'API GitHub permet de gérer les dépôts, les issues, les pull requests, les utilisateurs, et bien plus encore. Elle est utilisée pour créer des intégrations personnalisées, des outils de gestion de projet et des automatisations de workflow. Exemple d'utilisation :
+                            <strong>API GitHub</strong> :
+                            Interface permettant d'automatiser et d'interagir
+                            avec les fonctionnalités de GitHub via des requêtes
+                            HTTP. L'API GitHub permet de gérer les dépôts, les
+                            issues, les pull requests, les utilisateurs, et
+                            bien plus encore. Elle est utilisée pour créer des
+                            intégrations personnalisées, des outils de gestion
+                            de projet et des automatisations de workflow.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Utilisation de l'API GitHub pour lister les dépôts d'un utilisateur
 curl -H "Authorization: token YOUR_ACCESS_TOKEN" https://api.github.com/user/repos
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Actions Secrets</strong> : Variables d'environnement sécurisées utilisées dans les workflows GitHub Actions pour protéger les informations sensibles. Les secrets sont chiffrés et ne sont accessibles qu'aux workflows autorisés. Ils sont utilisés pour stocker des clés API, des tokens d'accès, des mots de passe, et d'autres informations sensibles nécessaires à l'exécution des workflows. Exemple d'utilisation :
+                            <strong>Actions Secrets</strong> :
+                            Variables d'environnement sécurisées utilisées dans
+                            les workflows GitHub Actions pour protéger les
+                            informations sensibles. Les secrets sont chiffrés et
+                            ne sont accessibles qu'aux workflows autorisés. Ils
+                            sont utilisés pour stocker des clés API, des tokens
+                            d'accès, des mots de passe, et d'autres informations
+                            sensibles nécessaires à l'exécution des workflows.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Ajout d'un secret dans un dépôt GitHub via l'interface web
@@ -382,35 +618,58 @@ jobs:
         uses: actions/checkout@v2
     - name: Use secret
         run: echo ${{ secrets.MY_SECRET }}
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Squash Merge</strong> : Fusionner une branche en un seul commit afin de maintenir un historique Git propre. Le squash merge combine tous les commits d'une branche en un seul commit avant de les fusionner dans la branche cible. Cela simplifie l'historique du projet et facilite la lecture des changements apportés. Exemple d'utilisation :
+                            <strong>Squash Merge</strong> :
+                            Fusionner une branche en un seul commit afin de
+                            maintenir un historique Git propre. Le squash merge
+                            combine tous les commits d'une branche en un seul
+                            commit avant de les fusionner dans la branche cible.
+                            Cela simplifie l'historique du projet et facilite la
+                            lecture des changements apportés. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Réalisation d'un squash merge sur GitHub via l'interface web
 // Allez sur la pull request, cliquez sur le bouton de fusion et sélectionnez "Squash and merge"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Rebase</strong> : Rejouer les commits d'une branche sur une autre, créant un historique linéaire. Le rebase permet de déplacer ou de combiner des commits, en appliquant les changements d'une branche sur une autre comme s'ils avaient été créés à partir de cette branche. Cela aide à maintenir un historique de commits propre et linéaire. Exemple d'utilisation :
+                            <strong>Rebase</strong> :
+                            Rejouer les commits d'une branche sur une autre,
+                            créant un historique linéaire. Le rebase permet de
+                            déplacer ou de combiner des commits, en appliquant
+                            les changements d'une branche sur une autre comme
+                            s'ils avaient été créés à partir de cette branche.
+                            Cela aide à maintenir un historique de commits
+                            propre et linéaire. Exemple d'utilisation :
                             <pre>
                             <code>
 // Rebase d'une branche sur la branche principale
 git checkout feature-branch
 git rebase main
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>GitHub CLI</strong> : Interface en ligne de commande permettant d'interagir avec GitHub directement depuis un terminal. La GitHub CLI (Command Line Interface) offre des commandes pour gérer les dépôts, les issues, les pull requests, les actions, et bien plus encore. Elle facilite l'automatisation des tâches et l'intégration de GitHub dans les scripts et les workflows de développement. Exemple d'utilisation :
+                            <strong>GitHub CLI</strong> :
+                            Interface en ligne de commande permettant
+                            d'interagir avec GitHub directement depuis un
+                            terminal. La GitHub CLI (Command Line Interface)
+                            offre des commandes pour gérer les dépôts, les
+                            issues, les pull requests, les actions, et bien
+                            plus encore. Elle facilite l'automatisation des
+                            tâches et l'intégration de GitHub dans les scripts
+                            et les workflows de développement. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Installation de GitHub CLI et création d'une issue
 gh issue create --title "Bug report" --body "Description du bug"
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -422,8 +681,10 @@ gh issue create --title "Bug report" --body "Description du bug"
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://docs.github.com/en" target="_blank">GitHub documentation</a>
+                <a href="https://docs.github.com/en"
+                   target="_blank">GitHub documentation</a>
             </h5>
         </div>
     </div>
 </div>
+

@@ -1,19 +1,30 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">Vocabulaire JavaScript</h1>
+    <h1 class="text-center text-primary mb-4">
+        Vocabulaire JavaScript
+    </h1>
 
     <div class="accordion">
         <!-- Section Variables et Types de Données -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#variablesSection" aria-expanded="false" aria-controls="variablesSection">
+                <button class="accordion-button" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#variablesSection" 
+                        aria-expanded="false" 
+                        aria-controls="variablesSection">
                     Variables et Types de Données
                 </button>
             </h2>
-            <div id="variablesSection" class="accordion-collapse collapse">
+            <div id="variablesSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>var</strong> : Déclare une variable globale ou locale à une fonction. La portée de la variable est la fonction entière, même si elle est déclarée dans un bloc. Par exemple :
+                            <strong>var</strong> : Déclare une variable 
+                            globale ou locale à une fonction. La portée de 
+                            la variable est la fonction entière, même si 
+                            elle est déclarée dans un bloc. Par exemple :
                             <pre>
                             <code>
 function exemple() {
@@ -22,11 +33,15 @@ function exemple() {
     }
     console.log(x); // 10, car var est fonctionnelle
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>let</strong> : Déclare une variable à portée de bloc. Utilisé pour éviter les hoistings, ce qui signifie que la variable n'est accessible que dans le bloc où elle est déclarée. Par exemple :
+                            <strong>let</strong> : Déclare une variable à 
+                            portée de bloc. Utilisé pour éviter les 
+                            hoistings, ce qui signifie que la variable 
+                            n'est accessible que dans le bloc où elle est 
+                            déclarée. Par exemple :
                             <pre>
                             <code>
 function exemple() {
@@ -36,11 +51,14 @@ function exemple() {
     }
     console.log(y); // Erreur, y n'est pas défini
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>const</strong> : Déclare une constante, une variable dont la valeur ne peut pas être réassignée. La portée est également limitée au bloc où elle est déclarée. Par exemple :
+                            <strong>const</strong> : Déclare une constante, 
+                            une variable dont la valeur ne peut pas être 
+                            réassignée. La portée est également limitée au 
+                            bloc où elle est déclarée. Par exemple :
                             <pre>
                             <code>
 function exemple() {
@@ -48,70 +66,89 @@ function exemple() {
     console.log(z); // 30
     z = 40; // Erreur, z ne peut pas être réassigné
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>String</strong> : Type de donnée utilisé pour représenter du texte. Les chaînes de caractères peuvent être créées en utilisant des guillemets simples ou doubles. Par exemple :
+                            <strong>String</strong> : Type de donnée utilisé 
+                            pour représenter du texte. Les chaînes de 
+                            caractères peuvent être créées en utilisant des 
+                            guillemets simples ou doubles. Par exemple :
                             <pre>
                             <code>
 let texte = "Bonjour";
 let autreTexte = 'Salut';
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Number</strong> : Type de donnée pour représenter des nombres, qu'ils soient entiers ou à virgule flottante. Par exemple :
+                            <strong>Number</strong> : Type de donnée pour 
+                            représenter des nombres, qu'ils soient entiers 
+                            ou à virgule flottante. Par exemple :
                             <pre>
                             <code>
 let entier = 42;
 let flottant = 3.14;
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Boolean</strong> : Type de donnée logique qui peut être <code>true</code> ou <code>false</code>. Utilisé pour les conditions et les comparaisons. Par exemple :
+                            <strong>Boolean</strong> : Type de donnée 
+                            logique qui peut être <code>true</code> ou 
+                            <code>false</code>. Utilisé pour les conditions 
+                            et les comparaisons. Par exemple :
                             <pre>
                             <code>
 let estVrai = true;
 let estFaux = false;
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Array</strong> : Collection d'éléments, qui peuvent être de n'importe quel type. Les éléments sont accessibles par leur index. Par exemple :
+                            <strong>Array</strong> : Collection d'éléments, 
+                            qui peuvent être de n'importe quel type. Les 
+                            éléments sont accessibles par leur index. Par 
+                            exemple :
                             <pre>
                             <code>
 let tableau = [1, 2, 3];
 console.log(tableau[0]); // 1
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Object</strong> : Collection de paires clé-valeur, où chaque clé est une chaîne de caractères et chaque valeur peut être de n'importe quel type. Par exemple :
+                            <strong>Object</strong> : Collection de paires 
+                            clé-valeur, où chaque clé est une chaîne de 
+                            caractères et chaque valeur peut être de 
+                            n'importe quel type. Par exemple :
                             <pre>
                             <code>
 let personne = { nom: "Alice", âge: 25 };
 console.log(personne.nom); // Alice
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>null</strong> : Valeur spéciale représentant l'absence de valeur. Utilisé pour indiquer qu'une variable n'a pas de valeur assignée. Par exemple :
+                            <strong>null</strong> : Valeur spéciale 
+                            représentant l'absence de valeur. Utilisé pour 
+                            indiquer qu'une variable n'a pas de valeur 
+                            assignée. Par exemple :
                             <pre>
                             <code>
 let a = null;
 console.log(a); // null
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>undefined</strong> : Représente une variable qui a été déclarée mais n'a pas encore de valeur. Par exemple :
+                            <strong>undefined</strong> : Représente une 
+                            variable qui a été déclarée mais n'a pas encore 
+                            de valeur. Par exemple :
                             <pre>
                             <code>
 let b;
 console.log(b); // undefined
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -122,43 +159,57 @@ console.log(b); // undefined
         <!-- Section Fonctions -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#functionsSection" aria-expanded="false" aria-controls="functionsSection">
+                <button class="accordion-button collapsed" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#functionsSection" 
+                        aria-expanded="false" 
+                        aria-controls="functionsSection">
                     Fonctions
                 </button>
             </h2>
-            <div id="functionsSection" class="accordion-collapse collapse">
+            <div id="functionsSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>function</strong> : Déclare une fonction qui peut être appelée plus tard. Par exemple :
+                            <strong>function</strong> : Déclare une 
+                            fonction qui peut être appelée plus tard. Par 
+                            exemple :
                             <pre>
                             <code>
 function maFonction() {
     // Code de la fonction
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>return</strong> : Instruction qui termine une fonction et renvoie une valeur. Par exemple :
+                            <strong>return</strong> : Instruction qui 
+                            termine une fonction et renvoie une valeur. Par 
+                            exemple :
                             <pre>
                             <code>
 function addition(a, b) {
     return a + b;
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>arrow function</strong> : Syntaxe concise pour définir des fonctions anonymes. Par exemple :
+                            <strong>arrow function</strong> : Syntaxe 
+                            concise pour définir des fonctions anonymes. 
+                            Par exemple :
                             <pre>
                             <code>
 const addition = (a, b) => a + b;
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>callback</strong> : Fonction passée en argument à une autre fonction et exécutée après une opération. Par exemple :
+                            <strong>callback</strong> : Fonction passée en 
+                            argument à une autre fonction et exécutée après 
+                            une opération. Par exemple :
                             <pre>
                             <code>
 function traitementAsynchrone(callback) {
@@ -167,28 +218,33 @@ function traitementAsynchrone(callback) {
         callback();
     }, 1000);
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>closure</strong> : Fonction ayant accès aux variables de son contexte extérieur, même après que cette fonction ait été exécutée. Par exemple :
+                            <strong>closure</strong> : Fonction ayant accès 
+                            aux variables de son contexte extérieur, même 
+                            après que cette fonction ait été exécutée. Par 
+                            exemple :
                             <pre>
                             <code>
 function createCounter() {
     let count = 0;
     return function() {
         count++;
-    return count;
+        return count;
     };
 }
 const counter = createCounter();
 console.log(counter()); // 1
 console.log(counter()); // 2
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>async / await</strong> : Mots-clés pour gérer les opérations asynchrones dans JavaScript. Par exemple :
+                            <strong>async / await</strong> : Mots-clés pour 
+                            gérer les opérations asynchrones dans 
+                            JavaScript. Par exemple :
                             <pre>
                             <code>
 async function fetchData() {
@@ -196,7 +252,7 @@ async function fetchData() {
     let data = await response.json();
     console.log(data);
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -207,17 +263,23 @@ async function fetchData() {
         <!-- Section Boucles et Conditions -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#loopsConditionsSection" aria-expanded="false" aria-controls="loopsConditionsSection">
+                <button class="accordion-button collapsed" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#loopsConditionsSection" 
+                        aria-expanded="false" 
+                        aria-controls="loopsConditionsSection">
                     Boucles et Conditions
                 </button>
             </h2>
-            <div id="loopsConditionsSection" class="accordion-collapse collapse">
+            <div id="loopsConditionsSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
-
-                        `
                         <li class="list-group-item">
-                            <strong>if / else</strong> : Exécute un bloc de code si une condition est vraie, et un autre bloc si elle est fausse. Par exemple :
+                            <strong>if / else</strong> : Exécute un bloc de 
+                            code si une condition est vraie, et un autre 
+                            bloc si elle est fausse. Par exemple :
                             <pre>
                             <code>
 if (condition) {
@@ -225,66 +287,75 @@ if (condition) {
 } else {
     // Code à exécuter si la condition est fausse
 }
-                        </code>
-                        </pre>
+                            </code>
+                            </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>switch</strong> : Évalue une expression et exécute un bloc de code correspondant à la valeur de l'expression. Par exemple :
+                            <strong>switch</strong> : Évalue une expression 
+                            et exécute un bloc de code correspondant à la 
+                            valeur de l'expression. Par exemple :
                             <pre>
                             <code>
 switch (expression) {
     case valeur1:
         // Code à exécuter si l'expression vaut valeur1
-    break;
+        break;
     case valeur2:
         // Code à exécuter si l'expression vaut valeur2
-    break;
+        break;
     default:
         // Code à exécuter si aucune des valeurs ne correspond
 }
-                        </code>
-                        </pre>
+                            </code>
+                            </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>for</strong> : Boucle qui s'exécute un nombre défini de fois. Par exemple :
+                            <strong>for</strong> : Boucle qui s'exécute un 
+                            nombre défini de fois. Par exemple :
                             <pre>
                             <code>
 for (int i = 0; i &lt; n; i++) {
     // Code à exécuter n fois
 }
-                        </code>
-                        </pre>
+                            </code>
+                            </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>while</strong> : Boucle qui s'exécute tant qu'une condition est vraie. Par exemple :
+                            <strong>while</strong> : Boucle qui s'exécute 
+                            tant qu'une condition est vraie. Par exemple :
                             <pre>
                             <code>
 while (condition) {
     // Code à exécuter tant que la condition est vraie
 }
-                        </code>
-                        </pre>
+                            </code>
+                            </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>forEach</strong> : Méthode qui exécute une fonction pour chaque élément d'un tableau. Par exemple :
+                            <strong>forEach</strong> : Méthode qui exécute 
+                            une fonction pour chaque élément d'un tableau. 
+                            Par exemple :
                             <pre>
                             <code>
 array.forEach(element => {
     // Code à exécuter pour chaque élément
 });
-                        </code>
-                        </pre>
+                            </code>
+                            </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>map</strong> : Méthode qui crée un nouveau tableau en appelant une fonction sur chaque élément du tableau d'origine. Par exemple :
+                            <strong>map</strong> : Méthode qui crée un 
+                            nouveau tableau en appelant une fonction sur 
+                            chaque élément du tableau d'origine. Par 
+                            exemple :
                             <pre>
                             <code>
 let newArray = array.map(element => {
     // Transformation de chaque élément
     return newElement;
 });
-                        </code>
-                        </pre>
+                            </code>
+                            </pre>
                         </li>
                     </ul>
                 </div>
@@ -294,77 +365,98 @@ let newArray = array.map(element => {
         <!-- Section Manipulation du DOM -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#domSection" aria-expanded="false" aria-controls="domSection">
+                <button class="accordion-button collapsed" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#domSection" 
+                        aria-expanded="false" 
+                        aria-controls="domSection">
                     Manipulation du DOM
                 </button>
             </h2>
-            <div id="domSection" class="accordion-collapse collapse">
+            <div id="domSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>document.getElementById()</strong> : Récupère un élément HTML par son ID. Par exemple :
+                            <strong>document.getElementById()</strong> : 
+                            Récupère un élément HTML par son ID. Par 
+                            exemple :
                             <pre>
                             <code>
 let element = document.getElementById("monId");
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>document.querySelector()</strong> : Sélectionne le premier élément qui correspond à un sélecteur CSS donné. Par exemple :
+                            <strong>document.querySelector()</strong> : 
+                            Sélectionne le premier élément qui correspond à 
+                            un sélecteur CSS donné. Par exemple :
                             <pre>
                             <code>
 let element = document.querySelector(".maClasse");
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>innerHTML</strong> : Propriété qui permet de définir ou récupérer le contenu HTML d'un élément. Par exemple :
+                            <strong>innerHTML</strong> : Propriété qui 
+                            permet de définir ou récupérer le contenu HTML 
+                            d'un élément. Par exemple :
                             <pre>
                             <code>
 element.innerHTML = "Nouveau contenu";
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>addEventListener()</strong> : Attache un gestionnaire d'événements à un élément. Par exemple :
+                            <strong>addEventListener()</strong> : Attache 
+                            un gestionnaire d'événements à un élément. Par 
+                            exemple :
                             <pre>
                             <code>
 element.addEventListener("click", function() {
     // Code à exécuter lors du clic
 });
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>removeEventListener()</strong> : Supprime un gestionnaire d'événements d'un élément. Par exemple :
+                            <strong>removeEventListener()</strong> : 
+                            Supprime un gestionnaire d'événements d'un 
+                            élément. Par exemple :
                             <pre>
                             <code>
 element.removeEventListener("click", maFonction);
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>createElement()</strong> : Crée un nouvel élément HTML. Par exemple :
+                            <strong>createElement()</strong> : Crée un 
+                            nouvel élément HTML. Par exemple :
                             <pre>
                             <code>
 let newElement = document.createElement("div");
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>appendChild()</strong> : Ajoute un élément enfant à un élément parent. Par exemple :
+                            <strong>appendChild()</strong> : Ajoute un 
+                            élément enfant à un élément parent. Par 
+                            exemple :
                             <pre>
                             <code>
 parentElement.appendChild(newElement);
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>removeChild()</strong> : Supprime un élément enfant d'un élément parent. Par exemple :
+                            <strong>removeChild()</strong> : Supprime un 
+                            élément enfant d'un élément parent. Par 
+                            exemple :
                             <pre>
                             <code>
 parentElement.removeChild(childElement);
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -375,88 +467,106 @@ parentElement.removeChild(childElement);
         <!-- Section Asynchrone et Promesses -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#asyncPromisesSection" aria-expanded="false" aria-controls="asyncPromisesSection">
+                <button class="accordion-button collapsed" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#asyncPromisesSection" 
+                        aria-expanded="false" 
+                        aria-controls="asyncPromisesSection">
                     Asynchrone et Promesses
                 </button>
             </h2>
-            <div id="asyncPromisesSection" class="accordion-collapse collapse">
+            <div id="asyncPromisesSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Promise</strong> : Objet représentant une opération asynchrone et ses résultats futurs. Par exemple :
+                            <strong>Promise</strong> : Objet représentant 
+                            une opération asynchrone et ses résultats 
+                            futurs. Par exemple :
                             <pre>
                             <code>
 let promise = new Promise((resolve, reject) => {
     // Opération asynchrone
     if (succès) {
         resolve(résultat);
-    } 
-    else {
+    } else {
         reject(erreur);
     }
 });
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>then()</strong> : Méthode appelée lorsque la promesse est résolue. Par exemple :
+                            <strong>then()</strong> : Méthode appelée 
+                            lorsque la promesse est résolue. Par exemple :
                             <pre>
                             <code>
 promise.then(résultat => {
     // Code à exécuter lorsque la promesse est résolue
 });
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>catch()</strong> : Méthode appelée lorsque la promesse est rejetée ou qu'une erreur est survenue. Par exemple :
+                            <strong>catch()</strong> : Méthode appelée 
+                            lorsque la promesse est rejetée ou qu'une 
+                            erreur est survenue. Par exemple :
                             <pre>
                             <code>
 promise.catch(erreur => {
     // Code à exécuter lorsque la promesse est rejetée
 });
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>async</strong> : Mot-clé qui permet d'écrire des fonctions asynchrones en JavaScript. Par exemple :
+                            <strong>async</strong> : Mot-clé qui permet 
+                            d'écrire des fonctions asynchrones en 
+                            JavaScript. Par exemple :
                             <pre>
                             <code>
 async function maFonction() {
     // Code asynchrone
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>await</strong> : Mot-clé utilisé pour attendre la résolution d'une promesse dans une fonction <code>async</code>. Par exemple :
+                            <strong>await</strong> : Mot-clé utilisé pour 
+                            attendre la résolution d'une promesse dans une 
+                            fonction <code>async</code>. Par exemple :
                             <pre>
                             <code>
 async function maFonction() {
     let résultat = await promise;
     // Code à exécuter après la résolution de la promesse
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>setTimeout()</strong> : Fonction qui exécute du code après un délai spécifié. Par exemple :
+                            <strong>setTimeout()</strong> : Fonction qui 
+                            exécute du code après un délai spécifié. Par 
+                            exemple :
                             <pre>
                             <code>
 setTimeout(() => {
     // Code à exécuter après le délai
 }, délaiEnMillisecondes);
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>setInterval()</strong> : Fonction qui exécute du code à intervalles réguliers. Par exemple :
+                            <strong>setInterval()</strong> : Fonction qui 
+                            exécute du code à intervalles réguliers. Par 
+                            exemple :
                             <pre>
                             <code>
 setInterval(() => {
-// Code à exécuter à chaque intervalle
+    // Code à exécuter à chaque intervalle
 }, intervalleEnMillisecondes);
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -469,7 +579,10 @@ setInterval(() => {
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://www.w3schools.com/js" target="_blank">W3 JS --- Tutorial</a>
+                <a href="https://www.w3schools.com/js" 
+                   target="_blank">
+                   W3 JS --- Tutorial
+                </a>
             </h5>
         </div>
     </div>
@@ -477,8 +590,12 @@ setInterval(() => {
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://docs.github.com/en" target="_blank">GitHub documentation</a>
+                <a href="https://docs.github.com/en" 
+                   target="_blank">
+                   GitHub documentation
+                </a>
             </h5>
         </div>
     </div>
 </div>
+

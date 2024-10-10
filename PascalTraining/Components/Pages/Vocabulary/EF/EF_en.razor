@@ -1,35 +1,55 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">Entity Framework Core Vocabulary</h1>
+    <h1 class="text-center text-primary mb-4">
+        Entity Framework Core Vocabulary
+    </h1>
 
     <div class="accordion">
         <!-- DbContext Section -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dbContextSection" aria-expanded="false" aria-controls="dbContextSection">
+                <button class="accordion-button" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#dbContextSection" 
+                        aria-expanded="false" 
+                        aria-controls="dbContextSection">
                     DbContext
                 </button>
             </h2>
-            <div id="dbContextSection" class="accordion-collapse collapse">
+            <div id="dbContextSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>DbContext</strong>: A central class that manages database queries and changes. The <code>DbContext</code> is responsible for managing the database connection, tracking changes made to entities, and coordinating data saving and retrieval operations. Example:
+                            <strong>DbContext</strong>: A central class 
+                            that manages database queries and changes. 
+                            The <code>DbContext</code> is responsible for 
+                            managing the database connection, tracking 
+                            changes made to entities, and coordinating 
+                            data saving and retrieval operations. 
+                            Example:
                             <pre>
                             <code>
 public class ApplicationDbContext : DbContext
 {
     public DbSet&lt;Product&gt; Products { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    protected override void OnConfiguring(
+        DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("YourConnectionString");
+        optionsBuilder.UseSqlServer(
+            "YourConnectionString");
     }
 }
                             </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>DbSet&lt;T&gt;</strong>: Represents a collection of entities of a particular type within the context. A <code>DbSet</code> allows creating, reading, updating, and deleting entities from the database. Example:
+                            <strong>DbSet&lt;T&gt;</strong>: Represents a 
+                            collection of entities of a particular type 
+                            within the context. A <code>DbSet</code> 
+                            allows creating, reading, updating, and 
+                            deleting entities from the database. 
+                            Example:
                             <pre>
                             <code>
 public class ApplicationDbContext : DbContext
@@ -40,24 +60,42 @@ public class ApplicationDbContext : DbContext
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>OnModelCreating</strong>: A method where data model configurations are defined (mapping between entities and the database). This method is used to configure relationships, constraints, and naming conventions for tables and columns. Example:
+                            <strong>OnModelCreating</strong>: A method 
+                            where data model configurations are defined 
+                            (mapping between entities and the database). 
+                            This method is used to configure 
+                            relationships, constraints, and naming 
+                            conventions for tables and columns. 
+                            Example:
                             <pre>
                             <code>
-protected override void OnModelCreating(ModelBuilder modelBuilder)
+protected override void OnModelCreating(
+    ModelBuilder modelBuilder)
 {
-    modelBuilder.Entity&lt;Product&gt;().HasKey(p => p.ProductId);
-    modelBuilder.Entity&lt;Product&gt;().Property(p => p.Name).IsRequired().HasMaxLength(100);
+    modelBuilder.Entity&lt;Product&gt;()
+        .HasKey(p => p.ProductId);
+    modelBuilder.Entity&lt;Product&gt;()
+        .Property(p => p.Name)
+        .IsRequired()
+        .HasMaxLength(100);
 }
                             </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>SaveChanges</strong>: Method to save changes made to entities in the database. This method sends all changes tracked by the <code>DbContext</code> to the database. Example:
+                            <strong>SaveChanges</strong>: Method to save 
+                            changes made to entities in the database. 
+                            This method sends all changes tracked by the 
+                            <code>DbContext</code> to the database. 
+                            Example:
                             <pre>
                             <code>
 using (var context = new ApplicationDbContext())
 {
-    var product = new Product { Name = "New Product" };
+    var product = new Product 
+    { 
+        Name = "New Product" 
+    };
     context.Products.Add(product);
     context.SaveChanges();
 }
@@ -65,7 +103,13 @@ using (var context = new ApplicationDbContext())
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>ChangeTracker</strong>: Tracks changes to entities managed by the DbContext. The <code>ChangeTracker</code> detects changes made to entities and determines what operations should be performed when <code>SaveChanges</code> is called. Example:
+                            <strong>ChangeTracker</strong>: Tracks 
+                            changes to entities managed by the DbContext. 
+                            The <code>ChangeTracker</code> detects 
+                            changes made to entities and determines what 
+                            operations should be performed when 
+                            <code>SaveChanges</code> is called. 
+                            Example:
                             <pre>
                             <code>
 using (var context = new ApplicationDbContext())
@@ -75,7 +119,8 @@ using (var context = new ApplicationDbContext())
     var entries = context.ChangeTracker.Entries();
     foreach (var entry in entries)
     {
-        Console.WriteLine($"{entry.Entity.GetType().Name} - {entry.State}");
+        Console.WriteLine(
+            $"{entry.Entity.GetType().Name} - {entry.State}");
     }
     context.SaveChanges();
 }
@@ -83,37 +128,55 @@ using (var context = new ApplicationDbContext())
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Lazy Loading</strong>: Lazy data loading, where relationships are only retrieved when accessed. This optimizes performance by not immediately loading all related data. Example:
+                            <strong>Lazy Loading</strong>: Lazy data 
+                            loading, where relationships are only 
+                            retrieved when accessed. This optimizes 
+                            performance by not immediately loading all 
+                            related data. Example:
                             <pre>
                             <code>
 public class Customer
 {
     public int CustomerId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection&lt;Order&gt; Orders { get; set; } // Lazy loading enabled
+    public virtual ICollection&lt;Order&gt; Orders 
+    { get; set; } // Lazy loading enabled
 }
                             </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Explicit Loading</strong>: Explicitly loading related data through methods like <code>Load()</code>. Used when lazy loading is disabled or for more precise control over when data is loaded. Example:
+                            <strong>Explicit Loading</strong>: Explicitly 
+                            loading related data through methods like 
+                            <code>Load()</code>. Used when lazy loading 
+                            is disabled or for more precise control over 
+                            when data is loaded. Example:
                             <pre>
                             <code>
 using (var context = new ApplicationDbContext())
 {
     var customer = context.Customers.First();
-    context.Entry(customer).Collection(c => c.Orders).Load();
+    context.Entry(customer)
+        .Collection(c => c.Orders)
+        .Load();
 }
                             </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Query Tracking</strong>: Controls whether retrieved entities are tracked for changes. By default, retrieved entities are tracked, but this can be disabled to improve performance using <code>AsNoTracking()</code>. Example:
+                            <strong>Query Tracking</strong>: Controls 
+                            whether retrieved entities are tracked for 
+                            changes. By default, retrieved entities are 
+                            tracked, but this can be disabled to improve 
+                            performance using <code>AsNoTracking()</code>. 
+                            Example:
                             <pre>
                             <code>
 using (var context = new ApplicationDbContext())
 {
-    var customers = context.Customers.AsNoTracking().ToList();
+    var customers = context.Customers
+        .AsNoTracking()
+        .ToList();
 }
                             </code>
                             </pre>
@@ -126,20 +189,31 @@ using (var context = new ApplicationDbContext())
         <!-- Migrations Section -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#migrationsSection" aria-expanded="false" aria-controls="migrationsSection">
+                <button class="accordion-button collapsed" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#migrationsSection" 
+                        aria-expanded="false" 
+                        aria-controls="migrationsSection">
                     Migrations
                 </button>
             </h2>
-            <div id="migrationsSection" class="accordion-collapse collapse">
+            <div id="migrationsSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Migration</strong>: A class representing a change to the database structure. A migration contains instructions to create, modify, or delete tables and columns. It allows syncing the data model with the database. Example:
+                            <strong>Migration</strong>: A class 
+                            representing a change to the database 
+                            structure. A migration contains instructions 
+                            to create, modify, or delete tables and 
+                            columns. It allows syncing the data model 
+                            with the database. Example:
                             <pre>
                             <code>
 public partial class AddProductTable : Migration
 {
-    protected override void Up(MigrationBuilder migrationBuilder)
+    protected override void Up(
+        MigrationBuilder migrationBuilder)
     {
         migrationBuilder.CreateTable(
             name: "Products",
@@ -155,7 +229,8 @@ public partial class AddProductTable : Migration
             });
     }
 
-    protected override void Down(MigrationBuilder migrationBuilder)
+    protected override void Down(
+        MigrationBuilder migrationBuilder)
     {
         migrationBuilder.DropTable(name: "Products");
     }
@@ -164,18 +239,37 @@ public partial class AddProductTable : Migration
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Add-Migration</strong>: Command to generate a new migration based on changes made to the model. This command creates a migration file containing instructions needed to apply changes to the database. Example:
-                            <pre><code>dotnet ef migrations add AddProductTable</code></pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Update-Database</strong>: Command to apply migrations to the database. It executes instructions contained in migration files to update the database structure. Example:
-                            <pre><code>dotnet ef database update</code></pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Down</strong>: A migration method that reverts applied changes. This method is used to undo the changes made by the <code>Up</code> method. Example:
+                            <strong>Add-Migration</strong>: Command to 
+                            generate a new migration based on changes 
+                            made to the model. This command creates a 
+                            migration file containing instructions needed 
+                            to apply changes to the database. Example:
                             <pre>
                             <code>
-protected override void Down(MigrationBuilder migrationBuilder)
+dotnet ef migrations add AddProductTable
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Update-Database</strong>: Command to 
+                            apply migrations to the database. It executes 
+                            instructions contained in migration files to 
+                            update the database structure. Example:
+                            <pre>
+                            <code>
+dotnet ef database update
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Down</strong>: A migration method 
+                            that reverts applied changes. This method is 
+                            used to undo the changes made by the 
+                            <code>Up</code> method. Example:
+                            <pre>
+                            <code>
+protected override void Down(
+    MigrationBuilder migrationBuilder)
 {
     migrationBuilder.DropTable(name: "Products");
 }
@@ -183,10 +277,15 @@ protected override void Down(MigrationBuilder migrationBuilder)
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Up</strong>: A migration method that defines changes to apply to the database. This method contains instructions to create, modify, or delete database elements. Example:
+                            <strong>Up</strong>: A migration method that 
+                            defines changes to apply to the database. 
+                            This method contains instructions to create, 
+                            modify, or delete database elements. 
+                            Example:
                             <pre>
                             <code>
-protected override void Up(MigrationBuilder migrationBuilder)
+protected override void Up(
+    MigrationBuilder migrationBuilder)
 {
     migrationBuilder.CreateTable(
         name: "Products",
@@ -205,8 +304,16 @@ protected override void Up(MigrationBuilder migrationBuilder)
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Rollback</strong>: Revert to a previous migration by undoing migrations applied after it. This operation uses the <code>Down</code> methods of migrations to undo changes. Example:
-                            <pre><code>dotnet ef database update PreviousMigration</code></pre>
+                            <strong>Rollback</strong>: Revert to a 
+                            previous migration by undoing migrations 
+                            applied after it. This operation uses the 
+                            <code>Down</code> methods of migrations to 
+                            undo changes. Example:
+                            <pre>
+                            <code>
+dotnet ef database update PreviousMigration
+                            </code>
+                            </pre>
                         </li>
                     </ul>
                 </div>
@@ -216,15 +323,23 @@ protected override void Up(MigrationBuilder migrationBuilder)
         <!-- Entities Section -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entitiesSection" aria-expanded="false" aria-controls="entitiesSection">
+                <button class="accordion-button collapsed" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#entitiesSection" 
+                        aria-expanded="false" 
+                        aria-controls="entitiesSection">
                     Entities
                 </button>
             </h2>
-            <div id="entitiesSection" class="accordion-collapse collapse">
+            <div id="entitiesSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Entity</strong>: A C# class representing a table in the database. An entity contains properties corresponding to table columns. Example:
+                            <strong>Entity</strong>: A C# class 
+                            representing a table in the database. An 
+                            entity contains properties corresponding to 
+                            table columns. Example:
                             <pre>
                             <code>
 public class Product
@@ -234,10 +349,15 @@ public class Product
 }
                             </code>
                             </pre>
-                            This represents a "Product" table with "Id" and "Name" columns.
+                            This represents a "Product" table with "Id" 
+                            and "Name" columns.
                         </li>
                         <li class="list-group-item">
-                            <strong>Primary Key</strong>: A property or set of properties uniquely identifying an entity. The primary key ensures the uniqueness of each record in the table. Example:
+                            <strong>Primary Key</strong>: A property or 
+                            set of properties uniquely identifying an 
+                            entity. The primary key ensures the 
+                            uniqueness of each record in the table. 
+                            Example:
                             <pre>
                             <code>
 public class Product
@@ -250,7 +370,11 @@ public class Product
                             This defines "Id" as the primary key.
                         </li>
                         <li class="list-group-item">
-                            <strong>Foreign Key</strong>: A foreign key establishes a relationship between two entities. It links one entity to another using a primary key from another table. Example:
+                            <strong>Foreign Key</strong>: A foreign key 
+                            establishes a relationship between two 
+                            entities. It links one entity to another 
+                            using a primary key from another table. 
+                            Example:
                             <pre>
                             <code>
 public class Order
@@ -263,10 +387,15 @@ public class Order
 }
                             </code>
                             </pre>
-                            This defines "ProductId" as a foreign key linking "Order" to "Product".
+                            This defines "ProductId" as a foreign key 
+                            linking "Order" to "Product".
                         </li>
                         <li class="list-group-item">
-                            <strong>Navigation Property</strong>: A property used to access related entities (relationships between tables). Navigation properties allow navigating between related entities. Example:
+                            <strong>Navigation Property</strong>: A 
+                            property used to access related entities 
+                            (relationships between tables). Navigation 
+                            properties allow navigating between related 
+                            entities. Example:
                             <pre>
                             <code>
 public class Order
@@ -277,10 +406,14 @@ public class Order
 }
                             </code>
                             </pre>
-                            This allows accessing the "Product" entity from "Order".
+                            This allows accessing the "Product" entity 
+                            from "Order".
                         </li>
                         <li class="list-group-item">
-                            <strong>Data Annotations</strong>: Attributes used to configure the behavior of entity properties. Data annotations define constraints and validation rules. Example:
+                            <strong>Data Annotations</strong>: Attributes 
+                            used to configure the behavior of entity 
+                            properties. Data annotations define 
+                            constraints and validation rules. Example:
                             <pre>
                             <code>
 public class Product
@@ -294,7 +427,10 @@ public class Product
 }
                             </code>
                             </pre>
-                            This uses <code>[Key]</code>, <code>[Required]</code>, and <code>[MaxLength(100)]</code> annotations to configure the "Product" entity's properties.
+                            This uses <code>[Key]</code>, 
+                            <code>[Required]</code>, and 
+                            <code>[MaxLength(100)]</code> annotations to 
+                            configure the "Product" entity's properties.
                         </li>
                     </ul>
                 </div>
@@ -304,15 +440,25 @@ public class Product
         <!-- LINQ and Queries Section -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#linqSection" aria-expanded="false" aria-controls="linqSection">
+                <button class="accordion-button collapsed" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#linqSection" 
+                        aria-expanded="false" 
+                        aria-controls="linqSection">
                     LINQ and Queries
                 </button>
             </h2>
-            <div id="linqSection" class="accordion-collapse collapse">
+            <div id="linqSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>LINQ</strong>: Language Integrated Query, used to write queries to retrieve collections of entities. LINQ offers a consistent syntax for querying data from various sources (in-memory collections, databases, XML, etc.). Example:
+                            <strong>LINQ</strong>: Language Integrated 
+                            Query, used to write queries to retrieve 
+                            collections of entities. LINQ offers a 
+                            consistent syntax for querying data from 
+                            various sources (in-memory collections, 
+                            databases, XML, etc.). Example:
                             <pre>
                             <code>
 var query = from p in products
@@ -320,36 +466,94 @@ where p.Price > 100
 select p;
                             </code>
                             </pre>
-                            This selects products with a price greater than 100.
+                            This selects products with a price greater 
+                            than 100.
                         </li>
                         <li class="list-group-item">
-                            <strong>Where</strong>: Method to filter entities based on a condition. It allows selecting only the elements that meet a specified condition. Example:
-                            <pre><code>var expensiveProducts = products.Where(p =&gt; p.Price &gt; 100);</code></pre>
-                            This retrieves products with a price greater than 100.
+                            <strong>Where</strong>: Method to filter 
+                            entities based on a condition. It allows 
+                            selecting only the elements that meet a 
+                            specified condition. Example:
+                            <pre>
+                            <code>
+var expensiveProducts = products
+    .Where(p => p.Price > 100);
+                            </code>
+                            </pre>
+                            This retrieves products with a price greater 
+                            than 100.
                         </li>
                         <li class="list-group-item">
-                            <strong>Include</strong>: Method to load related entities. Used with Entity Framework to include related data in query results. Example:
-                            <pre><code>var orders = context.Orders.Include(o =&gt; o.Customer).ToList();</code></pre>
-                            This loads orders with associated customer information.
+                            <strong>Include</strong>: Method to load 
+                            related entities. Used with Entity Framework 
+                            to include related data in query results. 
+                            Example:
+                            <pre>
+                            <code>
+var orders = context.Orders
+    .Include(o => o.Customer)
+    .ToList();
+                            </code>
+                            </pre>
+                            This loads orders with associated customer 
+                            information.
                         </li>
                         <li class="list-group-item">
-                            <strong>FirstOrDefault</strong>: Method that returns the first entity matching a condition or a default value if no entity matches. It's used to retrieve a single item from a collection. Example:
-                            <pre><code>var firstProduct = products.FirstOrDefault(p =&gt; p.Name == "Laptop");</code></pre>
-                            This retrieves the first product named "Laptop" or <code>null</code> if none exist.
+                            <strong>FirstOrDefault</strong>: Method that 
+                            returns the first entity matching a condition 
+                            or a default value if no entity matches. It's 
+                            used to retrieve a single item from a 
+                            collection. Example:
+                            <pre>
+                            <code>
+var firstProduct = products
+    .FirstOrDefault(p => p.Name == "Laptop");
+                            </code>
+                            </pre>
+                            This retrieves the first product named 
+                            "Laptop" or <code>null</code> if none exist.
                         </li>
                         <li class="list-group-item">
-                            <strong>ToList</strong>: Method to execute a query and convert the result into a list. It forces the immediate execution of the query and returns the results as a list. Example:
-                            <pre><code>var productList = products.Where(p =&gt; p.Price &gt; 100).ToList();</code></pre>
-                            This retrieves a list of products with a price greater than 100.
+                            <strong>ToList</strong>: Method to execute a 
+                            query and convert the result into a list. It 
+                            forces the immediate execution of the query 
+                            and returns the results as a list. Example:
+                            <pre>
+                            <code>
+var productList = products
+    .Where(p => p.Price > 100)
+    .ToList();
+                            </code>
+                            </pre>
+                            This retrieves a list of products with a 
+                            price greater than 100.
                         </li>
                         <li class="list-group-item">
-                            <strong>AsNoTracking</strong>: Executes a query without tracking retrieved entities in the ChangeTracker. Used to improve performance when change tracking is not needed. Example:
-                            <pre><code>var customers = context.Customers.AsNoTracking().ToList();</code></pre>
-                            This retrieves customers without tracking changes.
+                            <strong>AsNoTracking</strong>: Executes a 
+                            query without tracking retrieved entities in 
+                            the ChangeTracker. Used to improve 
+                            performance when change tracking is not 
+                            needed. Example:
+                            <pre>
+                            <code>
+var customers = context.Customers
+    .AsNoTracking()
+    .ToList();
+                            </code>
+                            </pre>
+                            This retrieves customers without tracking 
+                            changes.
                         </li>
                         <li class="list-group-item">
-                            <strong>GroupBy</strong>: Method to group results by a key. It creates groups of items sharing the same key value. Example:
-                            <pre><code>var productsByCategory = products.GroupBy(p =&gt; p.Category);</code></pre>
+                            <strong>GroupBy</strong>: Method to group 
+                            results by a key. It creates groups of items 
+                            sharing the same key value. Example:
+                            <pre>
+                            <code>
+var productsByCategory = products
+    .GroupBy(p => p.Category);
+                            </code>
+                            </pre>
                             This groups products by category.
                         </li>
                     </ul>
@@ -360,24 +564,36 @@ select p;
         <!-- Advanced Configurations Section -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advancedConfigSection" aria-expanded="false" aria-controls="advancedConfigSection">
+                <button class="accordion-button collapsed" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#advancedConfigSection" 
+                        aria-expanded="false" 
+                        aria-controls="advancedConfigSection">
                     Advanced Configurations
                 </button>
             </h2>
-            <div id="advancedConfigSection" class="accordion-collapse collapse">
+            <div id="advancedConfigSection" 
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Fluent API</strong>: API that allows configuring entity relationships and properties without using data annotations. It offers a fluid and expressive syntax for configuring the data model in the <code>OnModelCreating</code> method of <code>DbContext</code>. Example:
+                            <strong>Fluent API</strong>: API that allows 
+                            configuring entity relationships and 
+                            properties without using data annotations. 
+                            It offers a fluid and expressive syntax for 
+                            configuring the data model in the 
+                            <code>OnModelCreating</code> method of 
+                            <code>DbContext</code>. Example:
                             <pre>
                             <code>
-protected override void OnModelCreating(ModelBuilder modelBuilder)
+protected override void OnModelCreating(
+    ModelBuilder modelBuilder)
 {
     modelBuilder.Entity&lt;Product&gt;()
-        .HasKey(p =&gt; p.Id);
+        .HasKey(p => p.Id);
 
     modelBuilder.Entity&lt;Product&gt;()
-        .Property(p =&gt; p.Name)
+        .Property(p => p.Name)
         .IsRequired()
         .HasMaxLength(100);
 }
@@ -385,54 +601,14 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>HasKey</strong>: Used to define the primary key of an entity. This method specifies which property or properties form the primary key. Example:
+                            <strong>HasKey</strong>: Used to define the 
+                            primary key of an entity. This method 
+                            specifies which property or properties form 
+                            the primary key. Example:
                             <pre>
                             <code>
 modelBuilder.Entity&lt;Product&gt;()
-.HasKey(p =&gt; p.Id);
-                            </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>HasOne</strong>: Used to configure a one-to-one or one-to-many relationship between entities. This method specifies that an entity has a relationship with another entity. Example:
-                            <pre>
-                            <code>
-modelBuilder.Entity&lt;Order&gt;()
-.HasOne(o =&gt; o.Customer)
-.WithMany(c =&gt; c.Orders)
-.HasForeignKey(o =&gt; o.CustomerId);
-                            </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>HasMany</strong>: Used to configure a many-to-one or many-to-many relationship between entities. This method specifies that an entity has multiple relationships with another entity. Example:
-                            <pre>
-                            <code>
-modelBuilder.Entity&lt;Customer&gt;()
-.HasMany(c =&gt; c.Orders)
-.WithOne(o =&gt; o.Customer)
-.HasForeignKey(o =&gt; o.CustomerId);
-                            </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>ToTable</strong>: Method used to specify the table name for an entity. It maps an entity to a specific table in the database. Example:
-                            <pre>
-                            <code>
-modelBuilder.Entity&lt;Product&gt;()
-.ToTable("Products");
-                            </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Seed Data</strong>: A set of initial data
-
-                            automatically inserted into the database during migration. It is used to pre-fill the database with test data or default values. Example:
-                            <pre>
-                            <code>
-modelBuilder.Entity&lt;Product&gt;().HasData(
-new Product { Id = 1, Name = "Laptop" },
-new Product { Id = 2, Name = "Smartphone" });
+    .HasKey(p => p.Id);
                             </code>
                             </pre>
                         </li>
@@ -445,8 +621,12 @@ new Product { Id = 2, Name = "Smartphone" });
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://learn.microsoft.com/en-us/ef/core/" target="_blank">Entity Framwork Core documentation</a>
+                <a href="https://learn.microsoft.com/en-us/ef/core/"
+                   target="_blank">
+                    Entity Framework Core documentation
+                </a>
             </h5>
         </div>
     </div>
 </div>
+

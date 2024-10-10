@@ -1,55 +1,106 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">Azure Vocabulary</h1>
+    <h1 class="text-center text-primary mb-4">
+        Azure Vocabulary
+    </h1>
 
     <div class="accordion">
         <!-- Section Azure Basic Concepts -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#azureBasicsSection" aria-expanded="false" aria-controls="azureBasicsSection">
+                <button class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#azureBasicsSection"
+                        aria-expanded="false"
+                        aria-controls="azureBasicsSection">
                     Basic Azure Concepts
                 </button>
             </h2>
-            <div id="azureBasicsSection" class="accordion-collapse collapse">
+            <div id="azureBasicsSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Azure App Service</strong>: A service that allows you to create and host web apps, APIs, and mobile apps in a secure and scalable cloud environment. Azure App Service supports multiple programming languages, including .NET, Java, Node.js, PHP, and Python. It offers features such as continuous deployment, integration with GitHub, automatic scaling, and SSL certificate management. Example:
+                            <strong>Azure App Service</strong>:
+                            A service that allows you to create and host web
+                            apps, APIs, and mobile apps in a secure and
+                            scalable cloud environment. Azure App Service
+                            supports multiple programming languages, including
+                            .NET, Java, Node.js, PHP, and Python. It offers
+                            features such as continuous deployment, integration
+                            with GitHub, automatic scaling, and SSL certificate
+                            management. Example:
                             <pre>
                             <code>
 // Deploying an ASP.NET Core web app on Azure App Service
 az webapp up --name mywebapp --resource-group myResourceGroup --plan myAppServicePlan
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure Virtual Machines</strong>: Virtual machines that allow you to run operating systems and applications in the cloud without direct hardware management. Azure Virtual Machines offer complete flexibility in terms of hardware and software configuration, allowing you to choose the OS, machine size, and storage options. They are ideal for workloads that require granular control over resources. Example:
+                            <strong>Azure Virtual Machines</strong>:
+                            Virtual machines that allow you to run operating
+                            systems and applications in the cloud without
+                            direct hardware management. Azure Virtual Machines
+                            offer complete flexibility in terms of hardware and
+                            software configuration, allowing you to choose the
+                            OS, machine size, and storage options. They are
+                            ideal for workloads that require granular control
+                            over resources. Example:
                             <pre>
                             <code>
 // Creating a Windows Server virtual machine on Azure
 az vm create --resource-group myResourceGroup --name myVM --image Win2019Datacenter --admin-username azureuser --admin-password myPassword123!
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure Storage</strong>: A scalable storage service for managing blobs, queues, files, and tables in the cloud. Azure Storage offers several storage types, including Blob Storage for unstructured data, Queue Storage for managing message queues, File Storage for SMB-accessible file shares, and Table Storage for NoSQL data. It provides high availability, data durability, and geographic redundancy options. Example:
+                            <strong>Azure Storage</strong>:
+                            A scalable storage service for managing blobs,
+                            queues, files, and tables in the cloud. Azure
+                            Storage offers several storage types, including
+                            Blob Storage for unstructured data, Queue Storage
+                            for managing message queues, File Storage for
+                            SMB-accessible file shares, and Table Storage for
+                            NoSQL data. It provides high availability, data
+                            durability, and geographic redundancy options.
+                            Example:
                             <pre>
                             <code>
 // Uploading a file to Azure Blob Storage
 az storage blob upload --account-name myStorageAccount --container-name myContainer --name myBlob --file myFile.txt
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure Active Directory (Azure AD)</strong>: An identity and access management service that helps businesses protect access to applications and resources. Azure AD provides features such as Single Sign-On (SSO), user and group management, integration with SaaS applications, and identity protection with advanced security policies. It also integrates with on-premises directories via Azure AD Connect. Example:
+                            <strong>Azure Active Directory (Azure AD)</strong>:
+                            An identity and access management service that
+                            helps businesses protect access to applications and
+                            resources. Azure AD provides features such as Single
+                            Sign-On (SSO), user and group management,
+                            integration with SaaS applications, and identity
+                            protection with advanced security policies. It also
+                            integrates with on-premises directories via Azure AD
+                            Connect. Example:
                             <pre>
                             <code>
 // Creating a user in Azure AD
 az ad user create --display-name "John Doe" --user-principal-name johndoe@mydomain.com --password MyPassword123!
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure Functions</strong>: A serverless platform that enables you to create applications and services using an event-driven architecture. Azure Functions supports multiple programming languages, including C#, JavaScript, Python, and Java. Functions can be triggered by various events, such as data changes in Azure Storage, messages in Azure Service Bus, or HTTP requests. They allow building scalable applications without managing the underlying infrastructure. Example:
+                            <strong>Azure Functions</strong>:
+                            A serverless platform that enables you to create
+                            applications and services using an event-driven
+                            architecture. Azure Functions supports multiple
+                            programming languages, including C#, JavaScript,
+                            Python, and Java. Functions can be triggered by
+                            various events, such as data changes in Azure
+                            Storage, messages in Azure Service Bus, or HTTP
+                            requests. They allow building scalable applications
+                            without managing the underlying infrastructure.
+                            Example:
                             <pre>
                             <code>
 // Creating an Azure function in C#
@@ -64,7 +115,7 @@ public static async Task&lt;IActionResult&gt; Run(
         ? (ActionResult)new OkObjectResult($"Hello, {name}")
         : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -75,15 +126,29 @@ public static async Task&lt;IActionResult&gt; Run(
         <!-- Section Core Azure Services -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#azureServicesSection" aria-expanded="false" aria-controls="azureServicesSection">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#azureServicesSection"
+                        aria-expanded="false"
+                        aria-controls="azureServicesSection">
                     Core Azure Services
                 </button>
             </h2>
-            <div id="azureServicesSection" class="accordion-collapse collapse">
+            <div id="azureServicesSection"
+                 class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Azure SQL Database</strong>: A managed relational database that enables you to create, manage, and scale SQL databases in the cloud. Azure SQL Database provides features such as high availability, disaster recovery, automatic backups, and elastic scaling. It supports SQL queries, ACID transactions, and integration with other Azure services for analytics and reporting. Example:
+                            <strong>Azure SQL Database</strong>:
+                            A managed relational database that enables you to
+                            create, manage, and scale SQL databases in the
+                            cloud. Azure SQL Database provides features such as
+                            high availability, disaster recovery, automatic
+                            backups, and elastic scaling. It supports SQL
+                            queries, ACID transactions, and integration with
+                            other Azure services for analytics and reporting.
+                            Example:
                             <pre>
                             <code>
 // Connecting to an Azure SQL Database in C#
@@ -98,20 +163,36 @@ using (SqlConnection connection = new SqlConnection(connectionString))
         Console.WriteLine($"{reader["ColumnName"]}");
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure Kubernetes Service (AKS)</strong>: A container management service that enables deploying, managing, and scaling containerized applications using Kubernetes. AKS simplifies cluster management by automating tasks such as updates, monitoring, and scaling. It integrates with other Azure services, such as Azure DevOps for CI/CD pipelines and Azure Monitor for performance monitoring. Example:
+                            <strong>Azure Kubernetes Service (AKS)</strong>:
+                            A container management service that enables
+                            deploying, managing, and scaling containerized
+                            applications using Kubernetes. AKS simplifies
+                            cluster management by automating tasks such as
+                            updates, monitoring, and scaling. It integrates
+                            with other Azure services, such as Azure DevOps for
+                            CI/CD pipelines and Azure Monitor for performance
+                            monitoring. Example:
                             <pre>
                             <code>
 // Deploying an AKS cluster
 az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure Cosmos DB</strong>: A globally distributed NoSQL database for managing large amounts of data with high availability and low latency. Azure Cosmos DB supports multiple data models, including documents, graphs, wide-column, and key-value. It offers performance guarantees, multi-region replication, and adjustable consistency options to meet the specific needs of applications. Example:
+                            <strong>Azure Cosmos DB</strong>:
+                            A globally distributed NoSQL database for managing
+                            large amounts of data with high availability and
+                            low latency. Azure Cosmos DB supports multiple data
+                            models, including documents, graphs, wide-column,
+                            and key-value. It offers performance guarantees,
+                            multi-region replication, and adjustable consistency
+                            options to meet the specific needs of applications.
+                            Example:
                             <pre>
                             <code>
 // Connecting to Azure Cosmos DB in C#
@@ -119,11 +200,19 @@ CosmosClient client = new CosmosClient("accountEndpoint", "accountKey");
 Database database = await client.CreateDatabaseIfNotExistsAsync("myDatabase");
 Container container = await database.CreateContainerIfNotExistsAsync("myContainer", "/partitionKey");
 ItemResponse&lt;MyItem&gt; response = await container.CreateItemAsync(new MyItem { Id = "1", Name = "Item1" }, new PartitionKey("partitionKey"));
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure DevOps</strong>: A suite of tools for managing the entire application lifecycle, from planning to deployment, through development and testing. Azure DevOps includes services such as Azure Repos for version control, Azure Pipelines for continuous integration and delivery (CI/CD), Azure Boards for project and task management, and Azure Test Plans for automated and manual testing. Example:
+                            <strong>Azure DevOps</strong>:
+                            A suite of tools for managing the entire application
+                            lifecycle, from planning to deployment, through
+                            development and testing. Azure DevOps includes
+                            services such as Azure Repos for version control,
+                            Azure Pipelines for continuous integration and
+                            delivery (CI/CD), Azure Boards for project and task
+                            management, and Azure Test Plans for automated and
+                            manual testing. Example:
                             <pre>
                             <code>
 // Defining a CI/CD pipeline in Azure Pipelines
@@ -145,226 +234,19 @@ steps:
 
 - script: dotnet test --no-build --verbosity normal
     displayName: 'Run tests'
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Azure Logic Apps</strong>: A service for creating automated workflows that integrate apps, data, and systems within the cloud. Azure Logic Apps allows designing workflows visually using a graphical interface and easily connecting services such as Office 365, Dynamics 365, Salesforce, and more. It supports event-based triggers and actions to automate complex business processes. Example:
-                            <pre>
-                            <code>
-// Creating a Logic App to send an email when a file is added to Blob Storage
-{
-    "definition": {
-        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition
-
-.json#",
-        "actions": {
-            "Send_an_email": {
-                "inputs": {
-                    "body": "A new file has been added to the Blob Storage.",
-                    "subject": "New File Alert",
-                    "to": "user@example.com"
-                },
-                "runAfter": {},
-                "type": "Microsoft.Outlook.SendEmail"
-            }
-        },
-        "triggers": {
-            "When_a_blob_is_added_or_modified": {
-                "inputs": {
-                    "parameters": {
-                        "blobPath": "mycontainer/{name}"
-                    },
-                    "serviceProviderConfiguration": {
-                        "connectionName": "azureblob",
-                        "operationId": "OnBlobCreatedOrModified"
-                    }
-                },
-                "recurrence": {
-                    "frequency": "Minute",
-                    "interval": 5
-                },
-                "type": "ApiConnection"
-            }
-        }
-    }
-}
-                                </code>
-                            </pre>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Security and Management -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securitySection" aria-expanded="false" aria-controls="securitySection">
-                    Azure Security and Management
-                </button>
-            </h2>
-            <div id="securitySection" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>Azure Security Center</strong>: A security management tool that provides a centralized view for monitoring the security of resources in Azure and on-premises. Azure Security Center provides security recommendations, detects threats and vulnerabilities, and helps strengthen the security posture of your resources. It integrates features such as patch management, compliance assessment, and real-time threat detection. Example:
-                            <pre>
-                            <code>
-// Enable Azure Security Center on a subscription
-az security auto-provisioning-setting update --name default --auto-provision "On"
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Monitor</strong>: A performance and availability management platform that monitors applications, infrastructure, and networks. Azure Monitor collects and analyzes telemetry data to provide insights into the performance and health of your resources. It includes features such as alerts, customizable dashboards, and integration with incident management tools like Azure Log Analytics and Application Insights. Example:
-                            <pre>
-                            <code>
-// Create an alert in Azure Monitor
-az monitor metrics alert create --name "HighCPUAlert" --resource-group "myResourceGroup" --scopes "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Compute/virtualMachines/{vm-name}" --condition "avg Percentage CPU > 80" --description "Alert when CPU usage is over 80%"
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Policy</strong>: A governance tool that allows you to create rules to manage and enforce resource compliance in Azure. Azure Policy helps ensure that your resources comply with your organization's standards and requirements by applying compliance policies. It enables you to define rules for specific configurations, monitor compliance in real-time, and automatically remediate non-compliant resources. Example:
-                            <pre>
-                            <code>
-// Create a policy to deny resources without tags
-az policy definition create --name "require-tags" --rules '{ "if": { "field": "tags", "exists": "false" }, "then": { "effect": "deny" } }' --mode "All"
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Key Vault</strong>: A service for the centralized management of cryptographic keys, secrets, and certificates to secure your data and applications. Azure Key Vault allows storing and managing encryption keys, secrets (such as passwords and API keys), and SSL/TLS certificates securely. It offers features such as role-based access control, integration with Azure services, and version management of secrets. Example:
-                            <pre>
-                            <code>
-// Create an Azure Key Vault
-az keyvault create --name "myKeyVault" --resource-group "myResourceGroup" --location "eastus"
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Backup</strong>: A data backup service that ensures the protection of files, servers, and virtual machines in the cloud. Azure Backup provides a simple and reliable backup solution to protect your data from loss and corruption. It supports backing up Azure virtual machines, SQL databases, files and folders, and on-premises servers. It includes features such as backup policy management, granular restoration, and encryption of data in transit and at rest. Example:
-                            <pre>
-                            <code>
-// Configure a backup for an Azure virtual machine
-az backup protection enable-for-vm --resource-group "myResourceGroup" --vault-name "myRecoveryServicesVault" --vm "myVM"
-                                </code>
-                            </pre>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Azure Networking -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#networkingSection" aria-expanded="false" aria-controls="networkingSection">
-                    Azure Networking
-                </button>
-            </h2>
-            <div id="networkingSection" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>Azure Virtual Network (VNet)</strong>: A service that allows you to create private networks in Azure to connect resources and secure network traffic. Azure VNet allows segmenting the network into subnets, defining security rules with Network Security Groups (NSGs), and configuring custom routes. It supports hybrid connectivity with on-premises networks via VPN or ExpressRoute connections and integrates with other Azure services like Azure Firewall and Azure Bastion. Example:
-                            <pre>
-                            <code>
-// Creating a VNet with a subnet
-az network vnet create --name myVNet --resource-group myResourceGroup --address-prefix 10.0.0.0/16 --subnet-name mySubnet --subnet-prefix 10.0.1.0/24
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Load Balancer</strong>: A tool that distributes incoming traffic to multiple resources to improve application availability and resilience. Azure Load Balancer supports load balancing scenarios for web apps, cloud services, and virtual machines. It offers features such as health monitoring of instances, rule-based load distribution, and support for TCP and UDP protocols. Example:
-                            <pre>
-                            <code>
-// Creating a Load Balancer
-az network lb create --resource-group myResourceGroup --name myLoadBalancer --sku Basic --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Traffic Manager</strong>: A network traffic management service that directs users to optimal endpoints based on performance or priority. Azure Traffic Manager uses routing profiles to distribute traffic based on latency, geography, or endpoint priority. It helps improve application availability by redirecting traffic in case of endpoint failure and integrates with services like Azure App Service and Azure Functions. Example:
-                            <pre>
-                            <code>
-// Creating a Traffic Manager profile
-az network traffic-manager profile create --name myTrafficManagerProfile --resource-group myResourceGroup --routing-method Performance --unique-dns-name myapptrafficmanager
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure VPN Gateway</strong>: A service for establishing a secure VPN connection between on-premises networks and Azure. Azure VPN Gateway supports site-to-site, point-to-site, and VNet-to-VNet VPN connections. It offers robust encryption and authentication options to secure communications and allows configuring redundant VPN gateways for high availability. Example:
-                            <pre>
-                            <code>
-// Creating a VPN Gateway
-az network vnet-gateway create --resource-group myResourceGroup --name myVpnGateway --vnet myVNet --public-ip-address myPublicIP --gateway-type Vpn --vpn-type RouteBased --sku VpnGw1 --no-wait
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure CDN</strong>: A content delivery network (CDN) that delivers content quickly and efficiently to users worldwide. Azure CDN caches static content like images, videos, and JavaScript files at strategic locations to reduce latency and improve loading performance. It offers features such as caching rule management, DDoS protection, and integration with services like Azure Storage and Azure Media Services. Example:
-                            <pre>
-                            <code>
-// Creating a CDN profile
-az cdn profile create --name myCdnProfile --resource-group myResourceGroup --sku Standard_Microsoft
-                                </code>
-                            </pre>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Development and AI -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devAISection" aria-expanded="false" aria-controls="devAISection">
-                    Development and AI on Azure
-                </button>
-            </h2>
-            <div id="devAISection" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>Azure Machine Learning</strong>: A platform for training, deploying, and managing machine learning models at scale in the cloud. Azure Machine Learning offers tools for model development, including Jupyter notebooks, integrated development environments (IDEs), and popular frameworks like TensorFlow and PyTorch. It allows automating machine learning workflows with pipelines, managing experiments, and tracking models. It also provides deployment features to put models into production via containers or web services. Example:
-                            <pre>
-                            <code>
-// Creating an ML workspace
-az ml workspace create --name myMLWorkspace --resource-group myResourceGroup --location eastus
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Cognitive Services</strong>: A collection of APIs that add AI capabilities, such as speech and visual recognition, to your applications. Azure Cognitive Services includes services for computer vision, speech recognition, natural language understanding, and sentiment analysis. These services can be easily integrated into applications to add AI capabilities without requiring deep machine learning expertise. Example:
-                            <pre>
-                            <code>
-// Using the Azure Cognitive Services Face API
-az cognitiveservices account create --name myCognitiveService --resource-group myResourceGroup --kind Face --sku S0 --location eastus
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Bot Service</strong>: A platform for building intelligent bots that interact with users through channels like Teams, Skype, or websites. Azure Bot Service allows developing, testing, and deploying bots using frameworks such as the Bot Framework SDK. It offers features for managing dialogues, integrating with natural language services like LUIS (Language Understanding), and connecting to various communication channels for omnichannel interaction. Example:
-                            <pre>
-                            <code>
-// Creating a bot with Azure Bot Service
-az bot create --resource-group myResourceGroup --name myBot --kind webapp --location eastus --sku S1 --appid myAppId --password myAppPassword
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure DevTest Labs</strong>: A service for quickly setting up test and development environments based on developers' needs. Azure DevTest Labs allows creating pre-configured development and test environments with virtual machines, networks, and storage resources. It offers features for cost management, automating deployment tasks, and integrating with CI/CD tools to accelerate the development cycle. Example:
-                            <pre>
-                            <code>
-// Creating a DevTest lab
-az lab create --resource-group myResourceGroup --name myDevTestLab
-                                </code>
-                            </pre>
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Azure Logic Apps</strong>: A low-code platform for automating business processes through workflows that integrate various services and systems. Azure Logic Apps allows designing workflows visually using a graphical interface and easily connecting services such as Office 365, Dynamics 365, Salesforce, and more. It supports event-based triggers and actions to automate complex business processes. It also offers features for error handling, workflow monitoring, and integration with security and compliance services. Example:
+                            <strong>Azure Logic Apps</strong>:
+                            A service for creating automated workflows that
+                            integrate apps, data, and systems within the cloud.
+                            Azure Logic Apps allows designing workflows
+                            visually using a graphical interface and easily
+                            connecting services such as Office 365, Dynamics
+                            365, Salesforce, and more. It supports event-based
+                            triggers and actions to automate complex business
+                            processes. Example:
                             <pre>
                             <code>
 // Creating a Logic App to send an email when a file is added to Blob Storage
@@ -402,7 +284,374 @@ az lab create --resource-group myResourceGroup --name myDevTestLab
         }
     }
 }
-                                </code>
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Security and Management -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#securitySection"
+                        aria-expanded="false"
+                        aria-controls="securitySection">
+                    Azure Security and Management
+                </button>
+            </h2>
+            <div id="securitySection"
+                 class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Azure Security Center</strong>:
+                            A security management tool that provides a
+                            centralized view for monitoring the security of
+                            resources in Azure and on-premises. Azure Security
+                            Center provides security recommendations, detects
+                            threats and vulnerabilities, and helps strengthen
+                            the security posture of your resources. It
+                            integrates features such as patch management,
+                            compliance assessment, and real-time threat
+                            detection. Example:
+                            <pre>
+                            <code>
+// Enable Azure Security Center on a subscription
+az security auto-provisioning-setting update --name default --auto-provision "On"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Monitor</strong>:
+                            A performance and availability management platform
+                            that monitors applications, infrastructure, and
+                            networks. Azure Monitor collects and analyzes
+                            telemetry data to provide insights into the
+                            performance and health of your resources. It
+                            includes features such as alerts, customizable
+                            dashboards, and integration with incident
+                            management tools like Azure Log Analytics and
+                            Application Insights. Example:
+                            <pre>
+                            <code>
+// Create an alert in Azure Monitor
+az monitor metrics alert create --name "HighCPUAlert" --resource-group "myResourceGroup" --scopes "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Compute/virtualMachines/{vm-name}" --condition "avg Percentage CPU > 80" --description "Alert when CPU usage is over 80%"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Policy</strong>:
+                            A governance tool that allows you to create rules
+                            to manage and enforce resource compliance in Azure.
+                            Azure Policy helps ensure that your resources
+                            comply with your organization's standards and
+                            requirements by applying compliance policies. It
+                            enables you to define rules for specific
+                            configurations, monitor compliance in real-time,
+                            and automatically remediate non-compliant
+                            resources. Example:
+                            <pre>
+                            <code>
+// Create a policy to deny resources without tags
+az policy definition create --name "require-tags" --rules '{ "if": { "field": "tags", "exists": "false" }, "then": { "effect": "deny" } }' --mode "All"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Key Vault</strong>:
+                            A service for the centralized management of
+                            cryptographic keys, secrets, and certificates to
+                            secure your data and applications. Azure Key Vault
+                            allows storing and managing encryption keys,
+                            secrets (such as passwords and API keys), and
+                            SSL/TLS certificates securely. It offers features
+                            such as role-based access control, integration with
+                            Azure services, and version management of secrets.
+                            Example:
+                            <pre>
+                            <code>
+// Create an Azure Key Vault
+az keyvault create --name "myKeyVault" --resource-group "myResourceGroup" --location "eastus"
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Backup</strong>:
+                            A data backup service that ensures the protection
+                            of files, servers, and virtual machines in the
+                            cloud. Azure Backup provides a simple and reliable
+                            backup solution to protect your data from loss and
+                            corruption. It supports backing up Azure virtual
+                            machines, SQL databases, files and folders, and
+                            on-premises servers. It includes features such as
+                            backup policy management, granular restoration, and
+                            encryption of data in transit and at rest. Example:
+                            <pre>
+                            <code>
+// Configure a backup for an Azure virtual machine
+az backup protection enable-for-vm --resource-group "myResourceGroup" --vault-name "myRecoveryServicesVault" --vm "myVM"
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Azure Networking -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#networkingSection"
+                        aria-expanded="false"
+                        aria-controls="networkingSection">
+                    Azure Networking
+                </button>
+            </h2>
+            <div id="networkingSection"
+                 class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Azure Virtual Network (VNet)</strong>:
+                            A service that allows you to create private
+                            networks in Azure to connect resources and secure
+                            network traffic. Azure VNet allows segmenting the
+                            network into subnets, defining security rules with
+                            Network Security Groups (NSGs), and configuring
+                            custom routes. It supports hybrid connectivity with
+                            on-premises networks via VPN or ExpressRoute
+                            connections and integrates with other Azure
+                            services like Azure Firewall and Azure Bastion.
+                            Example:
+                            <pre>
+                            <code>
+// Creating a VNet with a subnet
+az network vnet create --name myVNet --resource-group myResourceGroup --address-prefix 10.0.0.0/16 --subnet-name mySubnet --subnet-prefix 10.0.1.0/24
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Load Balancer</strong>:
+                            A tool that distributes incoming traffic to
+                            multiple resources to improve application
+                            availability and resilience. Azure Load Balancer
+                            supports load balancing scenarios for web apps,
+                            cloud services, and virtual machines. It offers
+                            features such as health monitoring of instances,
+                            rule-based load distribution, and support for TCP
+                            and UDP protocols. Example:
+                            <pre>
+                            <code>
+// Creating a Load Balancer
+az network lb create --resource-group myResourceGroup --name myLoadBalancer --sku Basic --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Traffic Manager</strong>:
+                            A network traffic management service that directs
+                            users to optimal endpoints based on performance or
+                            priority. Azure Traffic Manager uses routing
+                            profiles to distribute traffic based on latency,
+                            geography, or endpoint priority. It helps improve
+                            application availability by redirecting traffic in
+                            case of endpoint failure and integrates with
+                            services like Azure App Service and Azure
+                            Functions. Example:
+                            <pre>
+                            <code>
+// Creating a Traffic Manager profile
+az network traffic-manager profile create --name myTrafficManagerProfile --resource-group myResourceGroup --routing-method Performance --unique-dns-name myapptrafficmanager
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure VPN Gateway</strong>:
+                            A service for establishing a secure VPN connection
+                            between on-premises networks and Azure. Azure VPN
+                            Gateway supports site-to-site, point-to-site, and
+                            VNet-to-VNet VPN connections. It offers robust
+                            encryption and authentication options to secure
+                            communications and allows configuring redundant VPN
+                            gateways for high availability. Example:
+                            <pre>
+                            <code>
+// Creating a VPN Gateway
+az network vnet-gateway create --resource-group myResourceGroup --name myVpnGateway --vnet myVNet --public-ip-address myPublicIP --gateway-type Vpn --vpn-type RouteBased --sku VpnGw1 --no-wait
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure CDN</strong>:
+                            A content delivery network (CDN) that delivers
+                            content quickly and efficiently to users worldwide.
+                            Azure CDN caches static content like images,
+                            videos, and JavaScript files at strategic locations
+                            to reduce latency and improve loading performance.
+                            It offers features such as caching rule management,
+                            DDoS protection, and integration with services like
+                            Azure Storage and Azure Media Services. Example:
+                            <pre>
+                            <code>
+// Creating a CDN profile
+az cdn profile create --name myCdnProfile --resource-group myResourceGroup --sku Standard_Microsoft
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Development and AI -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#devAISection"
+                        aria-expanded="false"
+                        aria-controls="devAISection">
+                    Development and AI on Azure
+                </button>
+            </h2>
+            <div id="devAISection"
+                 class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Azure Machine Learning</strong>:
+                            A platform for training, deploying, and managing
+                            machine learning models at scale in the cloud.
+                            Azure Machine Learning offers tools for model
+                            development, including Jupyter notebooks,
+                            integrated development environments (IDEs), and
+                            popular frameworks like TensorFlow and PyTorch. It
+                            allows automating machine learning workflows with
+                            pipelines, managing experiments, and tracking
+                            models. It also provides deployment features to put
+                            models into production via containers or web
+                            services. Example:
+                            <pre>
+                            <code>
+// Creating an ML workspace
+az ml workspace create --name myMLWorkspace --resource-group myResourceGroup --location eastus
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Cognitive Services</strong>:
+                            A collection of APIs that add AI capabilities, such
+                            as speech and visual recognition, to your
+                            applications. Azure Cognitive Services includes
+                            services for computer vision, speech recognition,
+                            natural language understanding, and sentiment
+                            analysis. These services can be easily integrated
+                            into applications to add AI capabilities without
+                            requiring deep machine learning expertise. Example:
+                            <pre>
+                            <code>
+// Using the Azure Cognitive Services Face API
+az cognitiveservices account create --name myCognitiveService --resource-group myResourceGroup --kind Face --sku S0 --location eastus
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Bot Service</strong>:
+                            A platform for building intelligent bots that
+                            interact with users through channels like Teams,
+                            Skype, or websites. Azure Bot Service allows
+                            developing, testing, and deploying bots using
+                            frameworks such as the Bot Framework SDK. It offers
+                            features for managing dialogues, integrating with
+                            natural language services like LUIS (Language
+                            Understanding), and connecting to various
+                            communication channels for omnichannel interaction.
+                            Example:
+                            <pre>
+                            <code>
+// Creating a bot with Azure Bot Service
+az bot create --resource-group myResourceGroup --name myBot --kind webapp --location eastus --sku S1 --appid myAppId --password myAppPassword
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure DevTest Labs</strong>:
+                            A service for quickly setting up test and
+                            development environments based on developers'
+                            needs. Azure DevTest Labs allows creating
+                            pre-configured development and test environments
+                            with virtual machines, networks, and storage
+                            resources. It offers features for cost management,
+                            automating deployment tasks, and integrating with
+                            CI/CD tools to accelerate the development cycle.
+                            Example:
+                            <pre>
+                            <code>
+// Creating a DevTest lab
+az lab create --resource-group myResourceGroup --name myDevTestLab
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Azure Logic Apps</strong>:
+                            A low-code platform for automating business
+                            processes through workflows that integrate various
+                            services and systems. Azure Logic Apps allows
+                            designing workflows visually using a graphical
+                            interface and easily connecting services such as
+                            Office 365, Dynamics 365, Salesforce, and more. It
+                            supports event-based triggers and actions to
+                            automate complex business processes. It also offers
+                            features for error handling, workflow monitoring,
+                            and integration with security and compliance
+                            services. Example:
+                            <pre>
+                            <code>
+// Creating a Logic App to send an email when a file is added to Blob Storage
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Send_an_email": {
+                "inputs": {
+                    "body": "A new file has been added to the Blob Storage.",
+                    "subject": "New File Alert",
+                    "to": "user@example.com"
+                },
+                "runAfter": {},
+                "type": "Microsoft.Outlook.SendEmail"
+            }
+        },
+        "triggers": {
+            "When_a_blob_is_added_or_modified": {
+                "inputs": {
+                    "parameters": {
+                        "blobPath": "mycontainer/{name}"
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "azureblob",
+                        "operationId": "OnBlobCreatedOrModified"
+                    }
+                },
+                "recurrence": {
+                    "frequency": "Minute",
+                    "interval": 5
+                },
+                "type": "ApiConnection"
+            }
+        }
+    }
+}
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -414,7 +663,8 @@ az lab create --resource-group myResourceGroup --name myDevTestLab
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://learn.microsoft.com/en-ca/azure/?product=popular" target="_blank">Azure documentation</a>
+                <a href="https://learn.microsoft.com/en-ca/azure/?product=popular"
+                   target="_blank">Azure documentation</a>
             </h5>
         </div>
     </div>

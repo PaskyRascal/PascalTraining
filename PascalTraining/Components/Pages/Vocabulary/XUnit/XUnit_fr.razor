@@ -1,19 +1,34 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">Vocabulaire xUnit</h1>
+    <h1 class="text-center text-primary mb-4">
+        Vocabulaire xUnit
+    </h1>
 
     <div class="accordion">
         <!-- Section Concepts de Base xUnit -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#xunitBasicsSection" aria-expanded="false" aria-controls="xunitBasicsSection">
+                <button class="accordion-button" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#xunitBasicsSection" 
+                        aria-expanded="false" 
+                        aria-controls="xunitBasicsSection">
                     Concepts de Base de xUnit
                 </button>
             </h2>
-            <div id="xunitBasicsSection" class="accordion-collapse collapse">
+            <div id="xunitBasicsSection" class="accordion-collapse 
+                 collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>[Fact]</strong> : Attribut indiquant qu'une méthode est un test qui ne prend aucun paramètre. Utilisé dans le framework de test xUnit, il marque une méthode comme un test unitaire standard. Les méthodes marquées avec <code>[Fact]</code> sont exécutées par le moteur de test sans nécessiter de données d'entrée spécifiques. Exemple d'utilisation :
+                            <strong>[Fact]</strong> : Attribut indiquant 
+                            qu'une méthode est un test qui ne prend 
+                            aucun paramètre. Utilisé dans le framework 
+                            de test xUnit, il marque une méthode comme 
+                            un test unitaire standard. Les méthodes 
+                            marquées avec <code>[Fact]</code> sont 
+                            exécutées par le moteur de test sans 
+                            nécessiter de données d'entrée spécifiques. 
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple de test unitaire avec [Fact]
@@ -32,11 +47,20 @@ public class CalculatorTests
         Assert.Equal(5, result);
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>[Theory]</strong> : Attribut utilisé pour marquer une méthode de test prenant des données paramétriques. Il est souvent utilisé avec l'attribut <code>[InlineData]</code> pour tester différentes valeurs dans un même test. Les théories permettent de tester une méthode avec plusieurs ensembles de données, ce qui est utile pour vérifier le comportement de la méthode sous différentes conditions. Exemple d'utilisation :
+                            <strong>[Theory]</strong> : Attribut utilisé 
+                            pour marquer une méthode de test prenant 
+                            des données paramétriques. Il est souvent 
+                            utilisé avec l'attribut <code>[InlineData]
+                            </code> pour tester différentes valeurs 
+                            dans un même test. Les théories permettent 
+                            de tester une méthode avec plusieurs 
+                            ensembles de données, ce qui est utile pour 
+                            vérifier le comportement de la méthode sous 
+                            différentes conditions. Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple de test paramétrique avec [Theory] et [InlineData]
@@ -58,11 +82,22 @@ public class CalculatorTests
         Assert.Equal(expected, result);
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Assert</strong> : Classe qui contient des méthodes utilisées pour vérifier si les conditions dans un test sont vraies. Par exemple, <code>Assert.Equal()</code> vérifie si deux valeurs sont égales, <code>Assert.True()</code> vérifie si une condition est vraie, et <code>Assert.NotNull()</code> vérifie si un objet n'est pas nul. Les assertions sont essentielles pour valider les résultats des tests et garantir que le code fonctionne comme prévu. Exemple d'utilisation :
+                            <strong>Assert</strong> : Classe qui contient 
+                            des méthodes utilisées pour vérifier si les 
+                            conditions dans un test sont vraies. Par 
+                            exemple, <code>Assert.Equal()</code> vérifie 
+                            si deux valeurs sont égales, <code>Assert.
+                            True()</code> vérifie si une condition est 
+                            vraie, et <code>Assert.NotNull()</code> 
+                            vérifie si un objet n'est pas nul. Les 
+                            assertions sont essentielles pour valider 
+                            les résultats des tests et garantir que le 
+                            code fonctionne comme prévu. Exemple 
+                            d'utilisation :
                             <pre>
                             <code>
 // Exemple d'utilisation des assertions
@@ -83,21 +118,40 @@ public class CalculatorTests
         Assert.NotNull(calculator); // Vérifie si l'objet calculator n'est pas nul
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Test Runner</strong> : Outil ou moteur qui exécute les tests xUnit et rapporte les résultats. Par exemple, Visual Studio Test Runner ou la commande <code>dotnet test</code> peuvent être utilisés pour exécuter les tests et afficher les résultats. Le Test Runner gère l'exécution des tests, collecte les résultats, et fournit des rapports sur les tests réussis et échoués. Exemple d'utilisation :
+                            <strong>Test Runner</strong> : Outil ou 
+                            moteur qui exécute les tests xUnit et 
+                            rapporte les résultats. Par exemple, Visual 
+                            Studio Test Runner ou la commande <code>
+                            dotnet test</code> peuvent être utilisés 
+                            pour exécuter les tests et afficher les 
+                            résultats. Le Test Runner gère l'exécution 
+                            des tests, collecte les résultats, et 
+                            fournit des rapports sur les tests réussis 
+                            et échoués. Exemple d'utilisation :
                             <pre>
                             <code>
 // Exécution des tests avec la commande dotnet test
 // Ouvrez une console et exécutez la commande suivante dans le répertoire du projet de test
 dotnet test
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Test Fixture</strong> : Ensemble d'initialisation partagé entre plusieurs tests. Cela peut inclure la configuration ou les objets partagés utilisés dans les tests. Les fixtures sont utilisées pour réduire la duplication de code et pour configurer un état commun nécessaire à plusieurs tests. Elles peuvent être définies en utilisant des constructeurs ou des méthodes d'initialisation dans les classes de test. Exemple d'utilisation :
+                            <strong>Test Fixture</strong> : Ensemble 
+                            d'initialisation partagé entre plusieurs 
+                            tests. Cela peut inclure la configuration 
+                            ou les objets partagés utilisés dans les 
+                            tests. Les fixtures sont utilisées pour 
+                            réduire la duplication de code et pour 
+                            configurer un état commun nécessaire à 
+                            plusieurs tests. Elles peuvent être 
+                            définies en utilisant des constructeurs ou 
+                            des méthodes d'initialisation dans les 
+                            classes de test. Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple d'utilisation d'une fixture partagée
@@ -129,7 +183,7 @@ public class DatabaseTests : IClassFixture&lt;DatabaseFixture&gt;
         // Utilisation de la fixture pour tester la connexion à la base de données
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -140,15 +194,31 @@ public class DatabaseTests : IClassFixture&lt;DatabaseFixture&gt;
         <!-- Section Gestion des Données -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dataManagementSection" aria-expanded="false" aria-controls="dataManagementSection">
+                <button class="accordion-button collapsed" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#dataManagementSection" 
+                        aria-expanded="false" 
+                        aria-controls="dataManagementSection">
                     Gestion des Données dans xUnit
                 </button>
             </h2>
-            <div id="dataManagementSection" class="accordion-collapse collapse">
+            <div id="dataManagementSection" class="accordion-collapse 
+                 collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>[InlineData]</strong> : Attribut qui fournit des valeurs littérales en entrée pour un test marqué avec l'attribut <code>[Theory]</code>. Cela permet de tester différentes combinaisons de paramètres. Par exemple, vous pouvez utiliser <code>[InlineData]</code> pour passer plusieurs ensembles de valeurs à une méthode de test, ce qui permet de vérifier le comportement de la méthode avec différentes entrées sans écrire plusieurs tests distincts. Exemple d'utilisation :
+                            <strong>[InlineData]</strong> : Attribut qui 
+                            fournit des valeurs littérales en entrée 
+                            pour un test marqué avec l'attribut <code>
+                            [Theory]</code>. Cela permet de tester 
+                            différentes combinaisons de paramètres. Par 
+                            exemple, vous pouvez utiliser <code>[InlineData]
+                            </code> pour passer plusieurs ensembles de 
+                            valeurs à une méthode de test, ce qui permet 
+                            de vérifier le comportement de la méthode 
+                            avec différentes entrées sans écrire 
+                            plusieurs tests distincts. Exemple 
+                            d'utilisation :
                             <pre>
                             <code>
 // Exemple de test paramétrique avec [InlineData]
@@ -170,11 +240,20 @@ public class CalculatorTests
         Assert.Equal(expected, result);
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>[ClassData]</strong> : Attribut qui permet de fournir des données à un test <code>Theory</code> via une classe externe qui implémente <code>IEnumerable</code>. Cette classe peut encapsuler des ensembles de données complexes et les fournir au test de manière structurée. Cela est utile pour les tests nécessitant des données plus élaborées ou générées dynamiquement. Exemple d'utilisation :
+                            <strong>[ClassData]</strong> : Attribut qui 
+                            permet de fournir des données à un test 
+                            <code>Theory</code> via une classe externe 
+                            qui implémente <code>IEnumerable</code>. 
+                            Cette classe peut encapsuler des ensembles 
+                            de données complexes et les fournir au test 
+                            de manière structurée. Cela est utile pour 
+                            les tests nécessitant des données plus 
+                            élaborées ou générées dynamiquement. Exemple 
+                            d'utilisation :
                             <pre>
                             <code>
 // Classe de données pour [ClassData]
@@ -207,11 +286,21 @@ public class CalculatorTests
         Assert.Equal(expected, result);
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>[MemberData]</strong> : Attribut utilisé pour fournir des données à partir d'une propriété ou méthode statique d'une classe qui retourne une collection d'objets ou un tableau. <code>[MemberData]</code> permet de réutiliser des données de test définies ailleurs dans le code, facilitant la maintenance et la gestion des données de test. Les données peuvent être stockées dans des propriétés, des méthodes ou des champs statiques. Exemple d'utilisation :
+                            <strong>[MemberData]</strong> : Attribut 
+                            utilisé pour fournir des données à partir 
+                            d'une propriété ou méthode statique d'une 
+                            classe qui retourne une collection d'objets 
+                            ou un tableau. <code>[MemberData]</code> 
+                            permet de réutiliser des données de test 
+                            définies ailleurs dans le code, facilitant 
+                            la maintenance et la gestion des données de 
+                            test. Les données peuvent être stockées 
+                            dans des propriétés, des méthodes ou des 
+                            champs statiques. Exemple d'utilisation :
                             <pre>
                             <code>
 // Propriété de données pour [MemberData]
@@ -239,12 +328,23 @@ public class CalculatorTests
         // Assert
         Assert.Equal(expected, result);
     }
-                        }
-                                </code>
+}
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Data Driven Tests</strong> : Ensemble de tests paramétrés avec des valeurs multiples, exécutés avec des attributs comme <code>[InlineData]</code>, <code>[ClassData]</code>, ou <code>[MemberData]</code>. Les tests pilotés par les données permettent de valider le comportement d'une méthode avec une variété d'entrées sans dupliquer le code de test. Ils sont particulièrement utiles pour vérifier la robustesse et la fiabilité du code face à différentes conditions d'entrée. Exemple d'utilisation :
+                            <strong>Data Driven Tests</strong> : Ensemble 
+                            de tests paramétrés avec des valeurs 
+                            multiples, exécutés avec des attributs comme 
+                            <code>[InlineData]</code>, <code>[ClassData]
+                            </code>, ou <code>[MemberData]</code>. Les 
+                            tests pilotés par les données permettent de 
+                            valider le comportement d'une méthode avec 
+                            une variété d'entrées sans dupliquer le code 
+                            de test. Ils sont particulièrement utiles 
+                            pour vérifier la robustesse et la fiabilité 
+                            du code face à différentes conditions 
+                            d'entrée. Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple de test piloté par les données avec [InlineData]
@@ -266,7 +366,7 @@ public class CalculatorTests
         Assert.Equal(expected, result);
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -277,15 +377,31 @@ public class CalculatorTests
         <!-- Section Configuration et Nettoyage -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#setupTeardownSection" aria-expanded="false" aria-controls="setupTeardownSection">
+                <button class="accordion-button collapsed" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#setupTeardownSection" 
+                        aria-expanded="false" 
+                        aria-controls="setupTeardownSection">
                     Configuration et Nettoyage
                 </button>
             </h2>
-            <div id="setupTeardownSection" class="accordion-collapse collapse">
+            <div id="setupTeardownSection" class="accordion-collapse 
+                 collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>IClassFixture</strong> : Interface qui permet de partager des objets d'initialisation entre différents tests d'une même classe, utilisée pour gérer la configuration ou l'état avant l'exécution des tests. En implémentant <code>IClassFixture</code>, vous pouvez définir une classe de fixture qui sera instanciée une seule fois par classe de test, permettant ainsi de partager des ressources coûteuses ou des configurations complexes entre plusieurs tests. Exemple d'utilisation :
+                            <strong>IClassFixture</strong> : Interface 
+                            qui permet de partager des objets 
+                            d'initialisation entre différents tests 
+                            d'une même classe, utilisée pour gérer la 
+                            configuration ou l'état avant l'exécution 
+                            des tests. En implémentant <code>IClassFixture
+                            </code>, vous pouvez définir une classe de 
+                            fixture qui sera instanciée une seule fois 
+                            par classe de test, permettant ainsi de 
+                            partager des ressources coûteuses ou des 
+                            configurations complexes entre plusieurs 
+                            tests. Exemple d'utilisation :
                             <pre>
                             <code>
 // Définition d'une fixture
@@ -318,11 +434,21 @@ public class MyTests : IClassFixture&lt;DatabaseFixture&gt;
         // Utilisation des ressources partagées
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>ICollectionFixture</strong> : Interface permettant de partager des objets d'initialisation à travers plusieurs classes de tests. <code>ICollectionFixture</code> est utile pour partager des ressources ou des configurations entre plusieurs classes de test, en définissant une collection de tests qui partagent la même instance de la fixture. Cela permet de réduire la duplication de code et d'améliorer l'efficacité des tests. Exemple d'utilisation :
+                            <strong>ICollectionFixture</strong> : 
+                            Interface permettant de partager des objets 
+                            d'initialisation à travers plusieurs classes 
+                            de tests. <code>ICollectionFixture</code> 
+                            est utile pour partager des ressources ou 
+                            des configurations entre plusieurs classes 
+                            de test, en définissant une collection de 
+                            tests qui partagent la même instance de la 
+                            fixture. Cela permet de réduire la 
+                            duplication de code et d'améliorer 
+                            l'efficacité des tests. Exemple d'utilisation :
                             <pre>
                             <code>
 // Définition d'une fixture
@@ -379,11 +505,22 @@ public class MyTests2
         // Utilisation des ressources partagées
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Dispose</strong> : Méthode utilisée pour nettoyer ou libérer des ressources à la fin d'un test ou d'une fixture, en implémentant l'interface <code>IDisposable</code>. La méthode <code>Dispose()</code> est appelée automatiquement par le framework de test à la fin de l'exécution des tests, permettant de libérer des ressources telles que des connexions de base de données, des fichiers ouverts, ou d'autres objets coûteux. Exemple d'utilisation :
+                            <strong>Dispose</strong> : Méthode utilisée 
+                            pour nettoyer ou libérer des ressources à la 
+                            fin d'un test ou d'une fixture, en 
+                            implémentant l'interface <code>IDisposable
+                            </code>. La méthode <code>Dispose()</code> 
+                            est appelée automatiquement par le 
+                            framework de test à la fin de l'exécution 
+                            des tests, permettant de libérer des 
+                            ressources telles que des connexions de 
+                            base de données, des fichiers ouverts, ou 
+                            d'autres objets coûteux. Exemple 
+                            d'utilisation :
                             <pre>
                             <code>
 // Définition d'une fixture avec Dispose
@@ -416,11 +553,22 @@ public class MyTests : IClassFixture&lt;DatabaseFixture&gt;
         // Utilisation des ressources partagées
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Constructor and Dispose Pattern</strong> : Approche courante pour configurer un état partagé dans le constructeur d'une classe de tests et libérer des ressources avec <code>Dispose()</code>. En utilisant ce pattern, vous pouvez initialiser des ressources partagées dans le constructeur de la classe de test et les nettoyer dans la méthode <code>Dispose()</code>, assurant ainsi une gestion efficace des ressources et une isolation appropriée des tests. Exemple d'utilisation :
+                            <strong>Constructor and Dispose Pattern
+                            </strong> : Approche courante pour configurer 
+                            un état partagé dans le constructeur d'une 
+                            classe de tests et libérer des ressources 
+                            avec <code>Dispose()</code>. En utilisant 
+                            ce pattern, vous pouvez initialiser des 
+                            ressources partagées dans le constructeur 
+                            de la classe de test et les nettoyer dans 
+                            la méthode <code>Dispose()</code>, assurant 
+                            ainsi une gestion efficace des ressources 
+                            et une isolation appropriée des tests. 
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Définition d'une fixture avec constructeur et Dispose
@@ -453,7 +601,7 @@ public class MyTests : IClassFixture&lt;DatabaseFixture&gt;
         // Utilisation des ressources partagées
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -464,15 +612,34 @@ public class MyTests : IClassFixture&lt;DatabaseFixture&gt;
         <!-- Section Tests Asynchrones et Avancés -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#asyncTestsSection" aria-expanded="false" aria-controls="asyncTestsSection">
+                <button class="accordion-button collapsed"
+                        type="button" data-bs-toggle="collapse"
+                        data-bs-target="#asyncTestsSection"
+                        aria-expanded="false"
+                        aria-controls="asyncTestsSection">
                     Tests Asynchrones et Avancés
                 </button>
             </h2>
-            <div id="asyncTestsSection" class="accordion-collapse collapse">
+            <div id="asyncTestsSection" class="accordion-collapse
+                 collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Test Asynchrone</strong> : Test qui utilise <code>async</code> et <code>await</code> pour exécuter des méthodes asynchrones dans un test. xUnit supporte nativement les tests asynchrones, ce qui permet de tester des méthodes qui effectuent des opérations asynchrones comme des appels réseau ou des accès à des bases de données sans bloquer le thread de test. Les tests asynchrones sont définis en utilisant la signature <code>public async Task TestMethod()</code>. Exemple d'utilisation :
+                            <strong>Test Asynchrone</strong> : Test qui
+                            utilise <code>async</code> et <code>
+                                await
+                            </code> pour exécuter des méthodes
+                            asynchrones dans un test. xUnit supporte
+                            nativement les tests asynchrones, ce qui
+                            permet de tester des méthodes qui effectuent
+                            des opérations asynchrones comme des appels
+                            réseau ou des accès à des bases de données
+                            sans bloquer le thread de test. Les tests
+                            asynchrones sont définis en utilisant la
+                            signature <code>
+                                public async Task
+                                TestMethod()
+                            </code>. Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple de test asynchrone avec xUnit
@@ -494,11 +661,25 @@ public class MyAsyncTests
         return 42;
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Assert.ThrowsAsync</strong> : Méthode utilisée pour vérifier qu'une exception est levée lors de l'exécution d'une méthode asynchrone. Par exemple, <code>await Assert.ThrowsAsync&lt;InvalidOperationException&gt;(async () => await SomeAsyncMethod())</code> vérifie que <code>SomeAsyncMethod</code> lève une <code>InvalidOperationException</code>. Cette méthode est essentielle pour tester le comportement des méthodes asynchrones en cas d'erreurs. Exemple d'utilisation :
+                            <strong>Assert.ThrowsAsync</strong> : Méthode
+                            utilisée pour vérifier qu'une exception est
+                            levée lors de l'exécution d'une méthode
+                            asynchrone. Par exemple, <code>
+                                await Assert.
+                                ThrowsAsync&lt;InvalidOperationException&gt;
+                                (async () => await SomeAsyncMethod())
+                            </code>
+                            vérifie que <code>SomeAsyncMethod</code>
+                            lève une <code>
+                                InvalidOperationException
+                            </code>. Cette méthode est essentielle pour
+                            tester le comportement des méthodes
+                            asynchrones en cas d'erreurs. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Exemple d'utilisation de Assert.ThrowsAsync avec xUnit
@@ -517,11 +698,25 @@ public class MyAsyncExceptionTests
         throw new InvalidOperationException("An error occurred");
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Fluent Assertions</strong> : Extension populaire pour les assertions dans xUnit, permettant d'écrire des tests plus expressifs avec une syntaxe fluide. Fluent Assertions offre une large gamme de méthodes d'assertion qui rendent les tests plus lisibles et maintenables. Par exemple, au lieu d'utiliser <code>Assert.Equal(expected, actual)</code>, vous pouvez écrire <code>actual.Should().Be(expected)</code>, ce qui améliore la clarté des tests. Exemple d'utilisation :
+                            <strong>Fluent Assertions</strong> : Extension
+                            populaire pour les assertions dans xUnit,
+                            permettant d'écrire des tests plus
+                            expressifs avec une syntaxe fluide. Fluent
+                            Assertions offre une large gamme de méthodes
+                            d'assertion qui rendent les tests plus
+                            lisibles et maintenables. Par exemple, au
+                            lieu d'utiliser <code>
+                                Assert.Equal(expected,
+                                actual)
+                            </code>, vous pouvez écrire <code>
+                                actual.Should().Be(expected)
+                            </code>, ce qui
+                            améliore la clarté des tests. Exemple
+                            d'utilisation :
                             <pre>
                             <code>
 // Exemple d'utilisation de Fluent Assertions avec xUnit
@@ -537,11 +732,23 @@ public class MyFluentAssertionsTests
         actual.Should().Be(expected);
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Mocking</strong> : Pratique consistant à simuler des objets ou des services externes dans les tests, souvent utilisée avec des bibliothèques comme Moq ou NSubstitute. Le mocking permet de créer des objets factices qui imitent le comportement des dépendances réelles, facilitant ainsi le test des composants en isolation. Par exemple, vous pouvez utiliser Moq pour créer un mock d'un service de base de données et définir des comportements spécifiques pour les méthodes de ce service. Exemple d'utilisation :
+                            <strong>Mocking</strong> : Pratique
+                            consistant à simuler des objets ou des
+                            services externes dans les tests, souvent
+                            utilisée avec des bibliothèques comme Moq
+                            ou NSubstitute. Le mocking permet de créer
+                            des objets factices qui imitent le
+                            comportement des dépendances réelles,
+                            facilitant ainsi le test des composants en
+                            isolation. Par exemple, vous pouvez utiliser
+                            Moq pour créer un mock d'un service de base
+                            de données et définir des comportements
+                            spécifiques pour les méthodes de ce service.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple d'utilisation de Moq pour le mocking avec xUnit
@@ -568,7 +775,7 @@ public interface IMyService
 {
     string GetData();
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
@@ -579,15 +786,29 @@ public interface IMyService
         <!-- Section Bonnes Pratiques -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bestPracticesSection" aria-expanded="false" aria-controls="bestPracticesSection">
+                <button class="accordion-button collapsed"
+                        type="button" data-bs-toggle="collapse"
+                        data-bs-target="#bestPracticesSection"
+                        aria-expanded="false"
+                        aria-controls="bestPracticesSection">
                     Bonnes Pratiques avec xUnit
                 </button>
             </h2>
-            <div id="bestPracticesSection" class="accordion-collapse collapse">
+            <div id="bestPracticesSection" class="accordion-collapse
+                 collapse">
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>Nommer les Tests</strong> : Utilisez des noms explicites qui décrivent clairement ce qui est testé et quelles sont les attentes. Par exemple, au lieu de nommer un test <code>Test1</code>, utilisez un nom comme <code>ShouldReturnTrueWhenInputIsValid</code>. Cela rend les tests plus compréhensibles et facilite le diagnostic des échecs de test. Exemple d'utilisation :
+                            <strong>Nommer les Tests</strong> : Utilisez
+                            des noms explicites qui décrivent clairement
+                            ce qui est testé et quelles sont les
+                            attentes. Par exemple, au lieu de nommer un
+                            test <code>Test1</code>, utilisez un nom
+                            comme <code>
+                                ShouldReturnTrueWhenInputIsValid
+                            </code>. Cela rend les tests plus
+                            compréhensibles et facilite le diagnostic
+                            des échecs de test. Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple de nommage explicite des tests avec xUnit
@@ -613,11 +834,19 @@ public class MyTests
         return input == "validInput";
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Tests Isolés</strong> : Assurez-vous que chaque test est indépendant des autres et qu'il n'y a pas de dépendances partagées qui pourraient causer des interférences. Utilisez des mocks ou des stubs pour isoler les dépendances externes et garantir que les tests ne sont pas affectés par l'état global ou les effets secondaires d'autres tests. Exemple d'utilisation :
+                            <strong>Tests Isolés</strong> : Assurez-vous
+                            que chaque test est indépendant des autres
+                            et qu'il n'y a pas de dépendances partagées
+                            qui pourraient causer des interférences.
+                            Utilisez des mocks ou des stubs pour isoler
+                            les dépendances externes et garantir que
+                            les tests ne sont pas affectés par l'état
+                            global ou les effets secondaires d'autres
+                            tests. Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple d'utilisation de Moq pour isoler les dépendances avec xUnit
@@ -644,11 +873,20 @@ public interface IMyService
 {
     string GetData();
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Coverage</strong> : Utilisez des outils de couverture de code comme Coverlet pour mesurer et améliorer la couverture des tests. La couverture de code indique quelles parties du code sont exécutées par les tests, aidant à identifier les zones non testées. Une couverture élevée ne garantit pas l'absence de bugs, mais elle augmente la confiance dans la qualité du code. Exemple d'utilisation :
+                            <strong>Coverage</strong> : Utilisez des
+                            outils de couverture de code comme Coverlet
+                            pour mesurer et améliorer la couverture des
+                            tests. La couverture de code indique quelles
+                            parties du code sont exécutées par les
+                            tests, aidant à identifier les zones non
+                            testées. Une couverture élevée ne garantit
+                            pas l'absence de bugs, mais elle augmente
+                            la confiance dans la qualité du code.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple d'utilisation de Coverlet pour mesurer la couverture de code
@@ -662,11 +900,21 @@ dotnet test --collect:"XPlat Code Coverage"
 
 // Générez un rapport de couverture de code
 reportgenerator -reports:coverage.cobertura.xml -targetdir:coveragereport
-                                </code>
+                            </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Refactorisation et Tests</strong> : Refactorisez régulièrement le code des tests pour le rendre plus lisible et maintenable. La refactorisation des tests inclut la suppression des duplications, l'amélioration des noms de méthodes et de variables, et la simplification des assertions. Un code de test propre et bien structuré facilite la maintenance et l'évolution des tests à mesure que le code de production change. Exemple d'utilisation :
+                            <strong>Refactorisation et Tests</strong> :
+                            Refactorisez régulièrement le code des tests
+                            pour le rendre plus lisible et maintenable.
+                            La refactorisation des tests inclut la
+                            suppression des duplications, l'amélioration
+                            des noms de méthodes et de variables, et la
+                            simplification des assertions. Un code de
+                            test propre et bien structuré facilite la
+                            maintenance et l'évolution des tests à
+                            mesure que le code de production change.
+                            Exemple d'utilisation :
                             <pre>
                             <code>
 // Exemple de refactorisation des tests avec xUnit
@@ -706,20 +954,21 @@ public class MyTests
         return input == "validInput";
     }
 }
-                                </code>
+                            </code>
                             </pre>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://xunit.net/" target="_blank">XUnit testing documentation</a>
+                <a href="https://xunit.net/" target="_blank">
+                    XUnit testing documentation
+                </a>
             </h5>
         </div>
     </div>
@@ -727,7 +976,9 @@ public class MyTests
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test" target="_blank">XUnit testing - Microsoft documentation</a>
+                <a href="https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test" target="_blank">
+                    XUnit testing - Microsoft documentation
+                </a>
             </h5>
         </div>
     </div>

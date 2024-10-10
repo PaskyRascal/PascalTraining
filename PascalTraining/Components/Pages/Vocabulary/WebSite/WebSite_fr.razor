@@ -1,12 +1,17 @@
 ﻿<div class="container mt-5">
-    <h1 class="text-center text-primary mb-4">Vocabulaire du Développement de Site Web</h1>
+    <h1 class="text-center text-primary mb-4">
+        Vocabulaire du Développement de Site Web
+    </h1>
 
     <div class="accordion">
         <!-- Section HTML -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#htmlSection"
-                        aria-expanded="false" aria-controls="htmlSection">
+                <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#htmlSection"
+                        aria-expanded="false"
+                        aria-controls="htmlSection">
                     HTML (HyperText Markup Language)
                 </button>
             </h2>
@@ -14,7 +19,12 @@
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>&lt;html&gt;</strong> : Élément racine d'un document HTML (contient tous les autres éléments HTML). Il encapsule tout le contenu HTML de la page et doit contenir deux éléments principaux : <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>. Exemple :
+                            <strong>&lt;html&gt;</strong> : Élément racine d'un
+                            document HTML (contient tous les autres éléments
+                            HTML). Il encapsule tout le contenu HTML de la page
+                            et doit contenir deux éléments principaux :
+                            <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>.
+                            Exemple :
                             <pre>
                             <code>
 &lt;html&gt;
@@ -29,7 +39,13 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;head&gt;</strong> : Métadonnées du document (contient des informations comme le titre, les liens vers les feuilles de style, les scripts, etc.). Les métadonnées incluent des informations comme le jeu de caractères, les auteurs du document, et les instructions pour les moteurs de recherche. Exemple :
+                            <strong>&lt;head&gt;</strong> : Métadonnées du
+                            document (contient des informations comme le titre,
+                            les liens vers les feuilles de style, les scripts,
+                            etc.). Les métadonnées incluent des informations
+                            comme le jeu de caractères, les auteurs du document,
+                            et les instructions pour les moteurs de recherche.
+                            Exemple :
                             <pre>
                             <code>
 &lt;head&gt;
@@ -42,7 +58,12 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;body&gt;</strong> : Contenu visible de la page (contient tous les éléments visibles par l'utilisateur, comme les paragraphes, les images, les liens, etc.). C'est dans cet élément que vous placez les balises HTML qui définissent la structure et le contenu de la page. Exemple :
+                            <strong>&lt;body&gt;</strong> : Contenu visible de
+                            la page (contient tous les éléments visibles par
+                            l'utilisateur, comme les paragraphes, les images,
+                            les liens, etc.). C'est dans cet élément que vous
+                            placez les balises HTML qui définissent la structure
+                            et le contenu de la page. Exemple :
                             <pre>
                             <code>
 &lt;body&gt;
@@ -54,7 +75,12 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;h1&gt; à &lt;h6&gt;</strong> : Titres de niveaux (utilisés pour définir des titres, <code>&lt;h1&gt;</code> étant le plus important et <code>&lt;h6&gt;</code> le moins important). Les titres sont utilisés pour structurer le contenu et améliorer la lisibilité. Exemple :
+                            <strong>&lt;h1&gt; à &lt;h6&gt;</strong> : Titres de
+                            niveaux (utilisés pour définir des titres,
+                            <code>&lt;h1&gt;</code> étant le plus important et
+                            <code>&lt;h6&gt;</code> le moins important). Les
+                            titres sont utilisés pour structurer le contenu et
+                            améliorer la lisibilité. Exemple :
                             <pre>
                             <code>
 &lt;h1&gt;Titre Principal&lt;/h1&gt;
@@ -64,7 +90,10 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;p&gt;</strong> : Paragraphe (utilisé pour définir un bloc de texte). Chaque paragraphe est automatiquement séparé par un espace vertical, ce qui améliore la lisibilité du texte. Exemple :
+                            <strong>&lt;p&gt;</strong> : Paragraphe (utilisé
+                            pour définir un bloc de texte). Chaque paragraphe
+                            est automatiquement séparé par un espace vertical,
+                            ce qui améliore la lisibilité du texte. Exemple :
                             <pre>
                             <code>
 &lt;p&gt;Ceci est un paragraphe de texte.&lt;/p&gt;
@@ -72,7 +101,10 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;a&gt;</strong> : Lien hypertexte (utilisé pour créer des liens vers d'autres pages ou ressources). L'attribut <code>href</code> définit l'URL de destination. Exemple :
+                            <strong>&lt;a&gt;</strong> : Lien hypertexte
+                            (utilisé pour créer des liens vers d'autres pages ou
+                            ressources). L'attribut <code>href</code> définit
+                            l'URL de destination. Exemple :
                             <pre>
                             <code>
 &lt;a href="https://example.com"&gt;Visitez Example&lt;/a&gt;
@@ -80,7 +112,13 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;img&gt;</strong> : Image (utilisé pour afficher des images sur la page, nécessite l'attribut <code>src</code> pour spécifier la source de l'image). L'attribut <code>alt</code> fournit une description alternative pour les lecteurs d'écran et les cas où l'image ne peut pas être affichée. Exemple :
+                            <strong>&lt;img&gt;</strong> : Image (utilisé pour
+                            afficher des images sur la page, nécessite
+                            l'attribut <code>src</code> pour spécifier la source
+                            de l'image). L'attribut <code>alt</code> fournit une
+                            description alternative pour les lecteurs d'écran et
+                            les cas où l'image ne peut pas être affichée.
+                            Exemple :
                             <pre>
                             <code>
 &lt;img src="image.jpg" alt="Description de l'image"&gt;
@@ -88,7 +126,11 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;div&gt;</strong> : Division de contenu (utilisé pour regrouper des éléments et appliquer des styles ou des scripts). Il est souvent utilisé avec des classes ou des identifiants pour appliquer des styles CSS ou des scripts JavaScript. Exemple :
+                            <strong>&lt;div&gt;</strong> : Division de contenu
+                            (utilisé pour regrouper des éléments et appliquer
+                            des styles ou des scripts). Il est souvent utilisé
+                            avec des classes ou des identifiants pour appliquer
+                            des styles CSS ou des scripts JavaScript. Exemple :
                             <pre>
                             <code>
 &lt;div class="container"&gt;
@@ -99,7 +141,12 @@
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>&lt;form&gt;</strong> : Formulaire (utilisé pour collecter des données auprès des utilisateurs, contient des éléments comme des champs de texte, des boutons, etc.). Les formulaires sont utilisés pour envoyer des données à un serveur pour traitement. Exemple :
+                            <strong>&lt;form&gt;</strong> : Formulaire (utilisé
+                            pour collecter des données auprès des utilisateurs,
+                            contient des éléments comme des champs de texte, des
+                            boutons, etc.). Les formulaires sont utilisés pour
+                            envoyer des données à un serveur pour traitement.
+                            Exemple :
                             <pre>
                             <code>
 &lt;form action="/submit" method="post"&gt;
@@ -118,7 +165,11 @@
         <!-- Section CSS -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cssSection" aria-expanded="false" aria-controls="cssSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#cssSection"
+                        aria-expanded="false"
+                        aria-controls="cssSection">
                     CSS (Cascading Style Sheets)
                 </button>
             </h2>
@@ -126,7 +177,11 @@
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>color</strong> : Couleur du texte (définit la couleur du texte d'un élément, peut être spécifiée en nom de couleur, code hexadécimal, RGB, etc.). Utilisé pour styliser le texte et améliorer la lisibilité ou l'esthétique. Exemple :
+                            <strong>color</strong> : Couleur du texte (définit
+                            la couleur du texte d'un élément, peut être
+                            spécifiée en nom de couleur, code hexadécimal, RGB,
+                            etc.). Utilisé pour styliser le texte et améliorer
+                            la lisibilité ou l'esthétique. Exemple :
                             <pre>
                             <code>
 p {
@@ -138,7 +193,11 @@ p {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>background-color</strong> : Couleur de fond (définit la couleur de fond d'un élément, peut être spécifiée en nom de couleur, code hexadécimal, RGB, etc.). Utilisé pour mettre en évidence des sections ou des éléments spécifiques. Exemple :
+                            <strong>background-color</strong> : Couleur de fond
+                            (définit la couleur de fond d'un élément, peut être
+                            spécifiée en nom de couleur, code hexadécimal, RGB,
+                            etc.). Utilisé pour mettre en évidence des sections
+                            ou des éléments spécifiques. Exemple :
                             <pre>
                             <code>
 div {
@@ -150,7 +209,12 @@ div {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>padding</strong> : Espacement interne (espace entre le contenu d'un élément et ses bordures, peut être spécifié en pixels, pourcentages, etc.). Utilisé pour créer de l'espace autour du contenu à l'intérieur d'un élément. Exemple :
+                            <strong>padding</strong> : Espacement interne
+                            (espace entre le contenu d'un élément et ses
+                            bordures, peut être spécifié en pixels,
+                            pourcentages, etc.). Utilisé pour créer de l'espace
+                            autour du contenu à l'intérieur d'un élément.
+                            Exemple :
                             <pre>
                             <code>
 div {
@@ -161,7 +225,11 @@ div {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>margin</strong> : Espacement externe (espace autour d'un élément, séparant l'élément de ses voisins, peut être spécifié en pixels, pourcentages, etc.). Utilisé pour créer de l'espace autour des éléments. Exemple :
+                            <strong>margin</strong> : Espacement externe (espace
+                            autour d'un élément, séparant l'élément de ses
+                            voisins, peut être spécifié en pixels,
+                            pourcentages, etc.). Utilisé pour créer de l'espace
+                            autour des éléments. Exemple :
                             <pre>
                             <code>
 div {
@@ -172,7 +240,11 @@ div {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>border</strong> : Bordure d'un élément (définit la bordure autour d'un élément, peut inclure la largeur, le style et la couleur). Utilisé pour encadrer des éléments et les distinguer visuellement. Exemple :
+                            <strong>border</strong> : Bordure d'un élément
+                            (définit la bordure autour d'un élément, peut
+                            inclure la largeur, le style et la couleur). Utilisé
+                            pour encadrer des éléments et les distinguer
+                            visuellement. Exemple :
                             <pre>
                             <code>
 div {
@@ -183,7 +255,13 @@ div {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>display</strong> : Contrôle de l'affichage (définit comment un élément est affiché, valeurs courantes : <code>block</code> pour un bloc, <code>inline</code> pour un élément en ligne, <code>flex</code> pour un conteneur flexible). Utilisé pour gérer la disposition des éléments. Exemple :
+                            <strong>display</strong> : Contrôle de l'affichage
+                            (définit comment un élément est affiché, valeurs
+                            courantes : <code>block</code> pour un bloc,
+                            <code>inline</code> pour un élément en ligne,
+                            <code>flex</code> pour un conteneur flexible).
+                            Utilisé pour gérer la disposition des éléments.
+                            Exemple :
                             <pre>
                             <code>
 div {
@@ -195,7 +273,15 @@ div {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>position</strong> : Positionnement d'un élément (définit comment un élément est positionné dans le document, valeurs courantes : <code>static</code> pour le positionnement normal, <code>absolute</code> pour un positionnement absolu, <code>relative</code> pour un positionnement relatif à sa position normale). Utilisé pour contrôler la position des éléments sur la page. Exemple :
+                            <strong>position</strong> : Positionnement d'un
+                            élément (définit comment un élément est positionné
+                            dans le document, valeurs courantes :
+                            <code>static</code> pour le positionnement normal,
+                            <code>absolute</code> pour un positionnement
+                            absolu, <code>relative</code> pour un
+                            positionnement relatif à sa position normale).
+                            Utilisé pour contrôler la position des éléments sur
+                            la page. Exemple :
                             <pre>
                             <code>
 div {
@@ -207,14 +293,19 @@ div {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>media queries</strong> : Adaptation des styles selon la taille de l'écran (permet d'appliquer des styles CSS spécifiques en fonction des caractéristiques du dispositif, comme la largeur de l'écran, la résolution, etc.). Utilisé pour créer des designs réactifs. Exemple :
+                            <strong>media queries</strong> : Adaptation des
+                            styles selon la taille de l'écran (permet d'appliquer
+                            des styles CSS spécifiques en fonction des
+                            caractéristiques du dispositif, comme la largeur de
+                            l'écran, la résolution, etc.). Utilisé pour créer
+                            des designs réactifs. Exemple :
                             <pre>
                             <code>
 &#64;media (max-width: 600px) {
 body {
     background-color: lightblue;
+    }
 }
-                              }
                             </code>
                             </pre>
                         </li>
@@ -226,7 +317,11 @@ body {
         <!-- Section JavaScript -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#jsSection" aria-expanded="false" aria-controls="jsSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#jsSection"
+                        aria-expanded="false"
+                        aria-controls="jsSection">
                     JavaScript (JS)
                 </button>
             </h2>
@@ -234,7 +329,10 @@ body {
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>let</strong>, <strong>const</strong>, <strong>var</strong> : Déclaration de variables. Utilisé pour déclarer des variables en JavaScript avec des portées différentes. Exemple :
+                            <strong>let</strong>, <strong>const</strong>,
+                            <strong>var</strong> : Déclaration de variables.
+                            Utilisé pour déclarer des variables en JavaScript
+                            avec des portées différentes. Exemple :
                             <pre>
                             <code>
 let x = 10; // Portée de bloc
@@ -244,7 +342,9 @@ var z = 30; // Portée de fonction
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>function</strong> : Définition de fonction. Utilisé pour déclarer des fonctions en JavaScript. Exemple :
+                            <strong>function</strong> : Définition de fonction.
+                            Utilisé pour déclarer des fonctions en JavaScript.
+                            Exemple :
                             <pre>
                             <code>
 function greet(name) {
@@ -255,7 +355,10 @@ console.log(greet("Alice")); // Affiche "Hello, Alice!"
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>DOM</strong> : Document Object Model, pour manipuler le HTML. Utilisé pour accéder et manipuler les éléments HTML via JavaScript. Exemple :
+                            <strong>DOM</strong> : Document Object Model, pour
+                            manipuler le HTML. Utilisé pour accéder et
+                            manipuler les éléments HTML via JavaScript.
+                            Exemple :
                             <pre>
                             <code>
 document.getElementById("myElement").innerHTML = "Nouveau contenu";
@@ -263,7 +366,9 @@ document.getElementById("myElement").innerHTML = "Nouveau contenu";
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>addEventListener</strong> : Gestion des événements. Utilisé pour attacher des gestionnaires d'événements aux éléments HTML. Exemple :
+                            <strong>addEventListener</strong> : Gestion des
+                            événements. Utilisé pour attacher des gestionnaires
+                            d'événements aux éléments HTML. Exemple :
                             <pre>
                             <code>
 document.getElementById("myButton").addEventListener("click", function() {
@@ -273,7 +378,10 @@ document.getElementById("myButton").addEventListener("click", function() {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>fetch</strong> : Requête HTTP pour récupérer des données. Utilisé pour effectuer des requêtes HTTP et récupérer des données de manière asynchrone. Exemple :
+                            <strong>fetch</strong> : Requête HTTP pour
+                            récupérer des données. Utilisé pour effectuer des
+                            requêtes HTTP et récupérer des données de manière
+                            asynchrone. Exemple :
                             <pre>
                             <code>
 fetch("https://api.example.com/data")
@@ -284,7 +392,10 @@ fetch("https://api.example.com/data")
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>localStorage</strong>, <strong>sessionStorage</strong> : Stockage local dans le navigateur. Utilisé pour stocker des données côté client. Exemple :
+                            <strong>localStorage</strong>,
+                            <strong>sessionStorage</strong> : Stockage local
+                            dans le navigateur. Utilisé pour stocker des données
+                            côté client. Exemple :
                             <pre>
                             <code>
 localStorage.setItem("key", "value");
@@ -295,7 +406,9 @@ let sessionValue = sessionStorage.getItem("sessionKey");
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>JSON</strong> : Format de données JavaScript Object Notation. Utilisé pour échanger des données entre un client et un serveur. Exemple :
+                            <strong>JSON</strong> : Format de données JavaScript
+                            Object Notation. Utilisé pour échanger des données
+                            entre un client et un serveur. Exemple :
                             <pre>
                             <code>
 let jsonString = '{"name": "Alice", "age": 25}';
@@ -305,7 +418,9 @@ console.log(jsonObject.name); // Affiche "Alice"
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>promise</strong>, <strong>async/await</strong> : Gestion asynchrone. Utilisé pour gérer des opérations asynchrones en JavaScript. Exemple :
+                            <strong>promise</strong>, <strong>async/await</strong>
+                            : Gestion asynchrone. Utilisé pour gérer des
+                            opérations asynchrones en JavaScript. Exemple :
                             <pre>
                             <code>
 function fetchData() {
@@ -335,7 +450,11 @@ getData();
         <!-- Section Frameworks JavaScript -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#frameworksSection" aria-expanded="false" aria-controls="frameworksSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#frameworksSection"
+                        aria-expanded="false"
+                        aria-controls="frameworksSection">
                     Frameworks et Bibliothèques JavaScript
                 </button>
             </h2>
@@ -343,7 +462,10 @@ getData();
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>jQuery</strong> : Simplifie la manipulation du DOM et les requêtes AJAX. Utilisé pour écrire moins de code JavaScript pour des tâches courantes. Exemple :
+                            <strong>jQuery</strong> : Simplifie la manipulation
+                            du DOM et les requêtes AJAX. Utilisé pour écrire
+                            moins de code JavaScript pour des tâches courantes.
+                            Exemple :
                             <pre>
                             <code>
 $(document).ready(function() {
@@ -355,7 +477,10 @@ $(document).ready(function() {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>React.js</strong> : Bibliothèque pour créer des interfaces utilisateur. Utilisé pour construire des composants réutilisables et gérer l'état de l'application. Exemple :
+                            <strong>React.js</strong> : Bibliothèque pour créer
+                            des interfaces utilisateur. Utilisé pour construire
+                            des composants réutilisables et gérer l'état de
+                            l'application. Exemple :
                             <pre>
                             <code>
 import React, { useState } from 'react';
@@ -365,7 +490,7 @@ function App() {
 
     return (
                             &lt;div&gt;
-                            &lt;p&gt;Vous avez cliqué {count} fois&lt;/p&gt;
+                            &lt;p&gt;Vous avez cliqué {count} fois&lt;p&gt;
                             &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
                 Cliquez ici
             &lt;/button&gt;
@@ -378,13 +503,16 @@ export default App;
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Vue.js</strong> : Framework pour créer des interfaces utilisateur réactives. Utilisé pour construire des applications web interactives. Exemple :
+                            <strong>Vue.js</strong> : Framework pour créer des
+                            interfaces utilisateur réactives. Utilisé pour
+                            construire des applications web interactives.
+                            Exemple :
                             <pre>
                             <code>
 &lt;template&gt;
     &lt;div id="app"&gt;
     &lt;p&gt;{{ message }}&lt;/p&gt;
-    &lt;button &#64;click="reverseMessage"&gt;Inverser le message&lt;/button&gt;
+    &lt;button &#64;click="reverseMessage"&gt;Reverse Message&lt;/button&gt;
     &lt;/div&gt;
 &lt;/template&gt;
 
@@ -392,7 +520,7 @@ export default App;
     export default {
         data() {
             return {
-                message: 'Bonjour Vue!'
+                message: 'Hello Vue!'
             }
         },
         methods: {
@@ -406,7 +534,10 @@ export default App;
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Angular</strong> : Framework complet pour les applications web complexes. Utilisé pour construire des applications web robustes et maintenables. Exemple :
+                            <strong>Angular</strong> : Framework complet pour
+                            les applications web complexes. Utilisé pour
+                            construire des applications web robustes et
+                            maintenables. Exemple :
                             <pre>
                             <code>
 import { Component } from '&#64;angular/core';
@@ -414,22 +545,25 @@ import { Component } from '&#64;angular/core';
 &#64;Component({
     selector: 'app-root',
     template: `
-    &lt:h1&gt;{{ title }}&lt;/&lt:h1&gt;
-                            <button (click)="changeTitle()">Changer le titre</button>
+    &lt;h1&gt;{{ title }}&lt;/h1&gt;
+                            <button (click)="changeTitle()">Change Title</button>
     `
 })
 export class AppComponent {
-    title = 'Bienvenue sur Angular';
+    title = 'Welcome to Angular';
 
     changeTitle() {
-    this.title = 'Titre changé!';
+    this.title = 'Title changed!';
     }
 }
                             </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Node.js</strong> : Exécute du JavaScript côté serveur. Utilisé pour construire des applications serveur rapides et évolutives. Exemple :
+                            <strong>Node.js</strong> : Exécute du JavaScript
+                            côté serveur. Utilisé pour construire des
+                            applications serveur rapides et évolutives.
+                            Exemple :
                             <pre>
                             <code>
 const http = require('http');
@@ -447,18 +581,20 @@ server.listen(3000, '127.0.0.1', () => {
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Express.js</strong> : Framework minimal pour des applications Node.js. Utilisé pour construire des applications web et des API. Exemple :
+                            <strong>Express.js</strong> : Framework minimal pour
+                            des applications Node.js. Utilisé pour construire
+                            des applications web et des API. Exemple :
                             <pre>
                             <code>
 const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-res.send('Hello World!');
+    res.send('Hello World!');
 });
 
 app.listen(3000, () => {
-console.log('Serveur en cours d\'exécution sur http://localhost:3000/');
+    console.log('Serveur en cours d\'exécution sur http://localhost:3000/');
 });
                             </code>
                             </pre>
@@ -471,7 +607,11 @@ console.log('Serveur en cours d\'exécution sur http://localhost:3000/');
         <!-- Section Base de Données -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dbSection" aria-expanded="false" aria-controls="dbSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#dbSection"
+                        aria-expanded="false"
+                        aria-controls="dbSection">
                     Bases de Données (Back-end)
                 </button>
             </h2>
@@ -479,7 +619,10 @@ console.log('Serveur en cours d\'exécution sur http://localhost:3000/');
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>SQL</strong> : Langage pour interagir avec des bases de données relationnelles. Utilisé pour effectuer des requêtes sur des bases de données structurées. Exemple :
+                            <strong>SQL</strong> : Langage pour interagir avec
+                            des bases de données relationnelles. Utilisé pour
+                            effectuer des requêtes sur des bases de données
+                            structurées. Exemple :
                             <pre>
                             <code>
 SELECT * FROM utilisateurs WHERE age > 30;
@@ -487,7 +630,10 @@ SELECT * FROM utilisateurs WHERE age > 30;
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>NoSQL</strong> : Bases de données non relationnelles (par ex. MongoDB). Utilisé pour stocker des données non structurées ou semi-structurées. Exemple :
+                            <strong>NoSQL</strong> : Bases de données non
+                            relationnelles (par ex. MongoDB). Utilisé pour
+                            stocker des données non structurées ou
+                            semi-structurées. Exemple :
                             <pre>
                             <code>
 db.utilisateurs.insert({ nom: "Alice", age: 25 });
@@ -495,7 +641,9 @@ db.utilisateurs.insert({ nom: "Alice", age: 25 });
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>CRUD</strong> : Create, Read, Update, Delete (opérations basiques). Utilisé pour les opérations de base sur les données. Exemple :
+                            <strong>CRUD</strong> : Create, Read, Update,
+                            Delete (opérations basiques). Utilisé pour les
+                            opérations de base sur les données. Exemple :
                             <pre>
                             <code>
 // Create
@@ -513,7 +661,10 @@ DELETE FROM utilisateurs WHERE nom = 'Alice';
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>ORM</strong> : Object-Relational Mapping pour interagir avec des bases via des objets. Utilisé pour simplifier les interactions avec les bases de données en utilisant des objets. Exemple :
+                            <strong>ORM</strong> : Object-Relational Mapping
+                            pour interagir avec des bases via des objets.
+                            Utilisé pour simplifier les interactions avec les
+                            bases de données en utilisant des objets. Exemple :
                             <pre>
                             <code>
 class Utilisateur {
@@ -536,7 +687,11 @@ utilisateur.save(); // Sauvegarde l'utilisateur dans la base de données
         <!-- Section Hébergement -->
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hostingSection" aria-expanded="false" aria-controls="hostingSection">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#hostingSection"
+                        aria-expanded="false"
+                        aria-controls="hostingSection">
                     Hébergement et Déploiement
                 </button>
             </h2>
@@ -544,27 +699,42 @@ utilisateur.save(); // Sauvegarde l'utilisateur dans la base de données
                 <div class="accordion-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <strong>FTP</strong> : Protocole de transfert de fichiers. Utilisé pour transférer des fichiers entre un client et un serveur sur un réseau. FTP est souvent utilisé pour télécharger des fichiers sur un serveur web ou pour récupérer des fichiers depuis un serveur. Exemple :
+                            <strong>FTP</strong> : Protocole de transfert de
+                            fichiers. Utilisé pour transférer des fichiers entre
+                            un client et un serveur sur un réseau. FTP est
+                            souvent utilisé pour télécharger des fichiers sur
+                            un serveur web ou pour récupérer des fichiers depuis
+                            un serveur. Exemple :
                             <pre>
                             <code>
-ftp&gt; open ftp.example.com
-ftp&gt; login
-ftp&gt; put localfile.txt remotefile.txt
-ftp&gt; get remotefile.txt localfile.txt
-ftp&gt; bye
+ftp> open ftp.example.com
+ftp> login
+ftp> put localfile.txt remotefile.txt
+ftp> get remotefile.txt localfile.txt
+ftp> bye
                             </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>CDN</strong> : Content Delivery Network. Réseau de serveurs distribués géographiquement qui travaillent ensemble pour fournir rapidement du contenu Internet aux utilisateurs. Les CDNs sont utilisés pour améliorer les temps de chargement des sites web et réduire la latence. Exemple :
+                            <strong>CDN</strong> : Content Delivery Network.
+                            Réseau de serveurs distribués géographiquement qui
+                            travaillent ensemble pour fournir rapidement du
+                            contenu Internet aux utilisateurs. Les CDNs sont
+                            utilisés pour améliorer les temps de chargement des
+                            sites web et réduire la latence. Exemple :
                             <pre>
                             <code>
-&lt;script src="https://cdn.example.com/library.js"&gt;&lt;/script&gt;
+<script src="https://cdn.example.com/library.js"></script>
                             </code>
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>SSL/TLS</strong> : Protocoles de sécurisation des communications sur le web. SSL (Secure Sockets Layer) et TLS (Transport Layer Security) chiffrent les données échangées entre un client et un serveur, garantissant la confidentialité et l'intégrité des données. Exemple :
+                            <strong>SSL/TLS</strong> : Protocoles de sécurisation
+                            des communications sur le web. SSL (Secure Sockets
+                            Layer) et TLS (Transport Layer Security) chiffrent
+                            les données échangées entre un client et un serveur,
+                            garantissant la confidentialité et l'intégrité des
+                            données. Exemple :
                             <pre>
                             <code>
 https://www.example.com
@@ -572,7 +742,12 @@ https://www.example.com
                             </pre>
                         </li>
                         <li class="list-group-item">
-                            <strong>Hosting Providers</strong> : Fournisseurs de services d'hébergement. Entreprises qui offrent des services pour héberger des sites web, des applications et des bases de données. Exemples : AWS (Amazon Web Services), Azure (Microsoft), Heroku, Netlify. Exemple :
+                            <strong>Hosting Providers</strong> : Fournisseurs de
+                            services d'hébergement. Entreprises qui offrent des
+                            services pour héberger des sites web, des
+                            applications et des bases de données. Exemples : AWS
+                            (Amazon Web Services), Azure (Microsoft), Heroku,
+                            Netlify. Exemple :
                             <pre>
                             <code>
 # Déploiement sur Heroku
@@ -588,6 +763,254 @@ $ git push heroku master
                 </div>
             </div>
         </div>
+
+        <!-- Section SEO -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#seoSection"
+                        aria-expanded="false"
+                        aria-controls="seoSection">
+                    SEO (Search Engine Optimization)
+                </button>
+            </h2>
+            <div id="seoSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <p class="h4">Qu'est-ce que le SEO ?</p>
+                            <p>
+                                <strong>SEO</strong> signifie <strong>
+                                    Search
+                                    Engine Optimization
+                                </strong> (optimisation pour les moteurs de
+                                recherche). Cela fait référence au processus
+                                d'optimisation d'un site web pour améliorer sa
+                                visibilité dans les pages de résultats des
+                                moteurs de recherche (SERP) comme Google, Bing,
+                                et autres. Le SEO vise à faire apparaître votre
+                                site plus haut dans les résultats de recherche
+                                lorsque les utilisateurs recherchent des mots-
+                                clés ou des phrases pertinents.
+                            </p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h4">Pourquoi le SEO est-il important ?</p>
+                            <p>
+                                Le SEO est important car il augmente les
+                                chances que votre site web soit découvert par
+                                des visiteurs potentiels. Plus votre site est
+                                bien classé, plus les gens sont susceptibles de
+                                le visiter. Un SEO efficace peut entraîner une
+                                augmentation du trafic, un meilleur engagement
+                                des utilisateurs, et finalement plus de
+                                business ou de conversions.
+                            </p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h4">Composants clés du SEO</p>
+                            <ul>
+                                <li>
+                                    <strong>Recherche de mots-clés :</strong>
+                                    Identifier les mots-clés les plus pertinents
+                                    et efficaces que les utilisateurs sont
+                                    susceptibles de rechercher en relation avec
+                                    votre contenu.
+                                </li>
+                                <li>
+                                    <strong>SEO sur la page :</strong>
+                                    Optimiser le contenu sur des pages web
+                                    individuelles, y compris l'utilisation de
+                                    mots-clés appropriés dans le titre, les
+                                    descriptions méta, les en-têtes, et le texte
+                                    du corps.
+                                </li>
+                                <li>
+                                    <strong>SEO hors page :</strong> Construire
+                                    des backlinks à partir de sites réputés,
+                                    ce qui aide à améliorer la crédibilité et
+                                    l'autorité de votre site web.
+                                </li>
+                                <li>
+                                    <strong>SEO technique :</strong> Améliorer
+                                    les aspects techniques de votre site, tels
+                                    que la vitesse de chargement des pages, la
+                                    réactivité mobile, et les données structurées
+                                    pour un meilleur indexage par les moteurs de
+                                    recherche.
+                                </li>
+                                <li>
+                                    <strong>Expérience utilisateur (UX) :</strong>
+                                    Créer un site facile à naviguer et convivial,
+                                    ce qui impacte indirectement le SEO à travers
+                                    des métriques d'engagement comme les taux de
+                                    rebond et le temps passé sur le site.
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="h4">Avantages du SEO</p>
+                            <p>Quelques avantages clés du SEO incluent :</p>
+                            <ul>
+                                <li>Augmentation du trafic organique</li>
+                                <li>
+                                    Meilleure visibilité et crédibilité de la
+                                    marque
+                                </li>
+                                <li>Amélioration de l'expérience utilisateur</li>
+                                <li>
+                                    Retour sur investissement (ROI) plus élevé
+                                    par rapport aux publicités payantes
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <p>
+                                En mettant en œuvre des stratégies SEO efficaces,
+                                votre site web peut atteindre des classements
+                                plus élevés et une croissance du trafic à long
+                                terme plus durable.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="seoSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>SEO</strong> : Optimisation pour les moteurs de recherche
+                            (techniques utilisées pour améliorer la visibilité d'un site web
+                            sur les moteurs de recherche). Le SEO implique l'optimisation du contenu,
+                            l'utilisation de mots-clés pertinents et la garantie que le site web
+                            est accessible et rapide. Exemple :
+                            <pre>
+                            <code>
+&lt;meta name="description" content="Apprenez le HTML avec ce
+tutoriel complet et pratique."&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>robots.txt</strong> : Fichier utilisé pour contrôler
+                            comment les moteurs de recherche explorent et indexent un site web. Il
+                            spécifie quelles parties du site ne doivent pas être
+                            accessibles par les robots des moteurs de recherche. Exemple :
+                            <pre>
+                            <code>
+User-agent: *
+Disallow: /private/
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>sitemap.xml</strong> : Fichier XML qui liste
+                            toutes les pages d'un site web. Il aide les moteurs de recherche
+                            à comprendre la structure du site et à trouver toutes
+                            les pages. Exemple :
+                            <pre>
+                            <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+    &lt;url&gt;
+        &lt;loc&gt;https://example.com/&lt;/loc&gt;
+        &lt;lastmod&gt;2023-01-01&lt;/lastmod&gt;
+        &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+        &lt;priority&gt;1.0&lt;/priority&gt;
+    &lt;/url&gt;
+&lt;/urlset&gt;
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="seoSection" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>&lt;title&gt;</strong> : Élément utilisé
+                            pour définir le titre de la page. Le titre est
+                            affiché dans l'onglet du navigateur et est
+                            important pour le référencement. Un bon titre doit
+                            être descriptif et contenir des mots-clés
+                            pertinents. Par exemple :
+                            <pre>
+                            <code>
+&lt;title&gt;Apprendre le HTML - Tutoriel Complet&lt;/title&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;meta name="description"&gt;</strong> :
+                            Balise utilisée pour fournir une description
+                            concise de la page. Cette description est souvent
+                            affichée dans les résultats de recherche sous le
+                            titre de la page. Par exemple :
+                            <pre>
+                            <code>
+&lt;meta name="description" content="Apprenez le HTML avec ce
+tutoriel complet et pratique."&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;meta name="keywords"&gt;</strong> :
+                            Balise utilisée pour spécifier des mots-clés
+                            pertinents pour la page. Bien que moins utilisée
+                            aujourd'hui, elle peut encore être utile pour
+                            certains moteurs de recherche. Par exemple :
+                            <pre>
+                            <code>
+&lt;meta name="keywords" content="HTML, tutoriel, apprendre
+HTML, balises HTML"&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;h1&gt; à &lt;h6&gt;</strong> : Balises
+                            de titres utilisées pour structurer le contenu. Les
+                            titres aident les moteurs de recherche à comprendre
+                            la hiérarchie et le contenu de la page. Par exemple :
+                            <pre>
+                            <code>
+&lt;h1&gt;Introduction au HTML&lt;/h1&gt;
+&lt;h2&gt;Les Bases du HTML&lt;/h2&gt;
+&lt;h3&gt;Balises HTML Essentielles&lt;/h3&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;a&gt;</strong> : Balise utilisée pour
+                            créer des liens hypertextes. Les liens internes et
+                            externes sont importants pour le référencement.
+                            Utilisez des textes d'ancrage descriptifs. Par
+                            exemple :
+                            <pre>
+                            <code>
+&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
+Visitez Example&lt;/a&gt;
+                            </code>
+                            </pre>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>&lt;img&gt;</strong> : Élément pour
+                            insérer des images. Utilisez l'attribut <code>
+                                alt
+                            </code> pour fournir une description alternative de
+                            l'image, ce qui aide à l'accessibilité et au
+                            référencement. Par exemple :
+                            <pre>
+                            <code>
+&lt;img src="image.jpg" alt="Description de l'image" width="600"
+height="400" loading="lazy"/&gt;
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
