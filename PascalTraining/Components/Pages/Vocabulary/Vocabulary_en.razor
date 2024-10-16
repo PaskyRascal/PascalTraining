@@ -2,6 +2,7 @@
 
 @using Microsoft.Extensions.Localization
 @using System.Globalization;
+@using PascalTraining.Components.Pages.Vocabulary.Acronym
 @using PascalTraining.Components.Pages.Vocabulary.WebSite
 @using PascalTraining.Components.Pages.Vocabulary.HTML
 @using PascalTraining.Components.Pages.Vocabulary.CSS
@@ -20,7 +21,6 @@
 @using PascalTraining.Components.Pages.Vocabulary.GitHub
 @using PascalTraining.Components.Pages.Vocabulary.Azure
 
-
 @rendermode InteractiveServer
 
 <PageTitle>Vocabulary</PageTitle>
@@ -36,7 +36,6 @@
             <div id="basicConceptsSection" class="accordion-collapse collapse show">
                 <div class="accordion-body">
                     <p>
-                        <strong>Note:</strong>
                         If you want to be good at golf, you
                         have to hit balls—lots of them—every
                         day, at least 100, even when you don't
@@ -65,6 +64,8 @@
     </div>
 </div>
 
+<p>&nbsp;</p>
+<Acronym />
 <p>&nbsp;</p>
 <WebSite />
 <p>&nbsp;</p>
